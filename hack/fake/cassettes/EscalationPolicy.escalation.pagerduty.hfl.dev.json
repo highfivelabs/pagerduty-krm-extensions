@@ -1,0 +1,91 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ep": "rehearsal-ep",
+    "orch": "rehearsal-orch",
+    "svc": "rehearsal-svc",
+    "user": "rehearsal-user"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/escalation_policies",
+      "body": "{\"escalation_policy\":{\"description\":\"first\",\"escalation_rules\":[{\"escalation_delay_in_minutes\":30,\"targets\":[{\"id\":\"rehearsal-user\",\"type\":\"user_reference\"}]}],\"name\":\"{{name}}\",\"type\":\"escalation_policy\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"escalation_policy\":{\"description\":\"first\",\"escalation_rules\":[{\"escalation_delay_in_minutes\":30,\"targets\":[{\"id\":\"rehearsal-user\",\"type\":\"user_reference\"}]}],\"html_url\":\"https://example.com/\",\"id\":270000004,\"name\":\"{{name}}\",\"self\":\"https://example.com/\",\"services\":[],\"summary\":\"example-summary\",\"type\":\"escalation_policy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/escalation_policies/270000004",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"escalation_policy\":{\"description\":\"first\",\"escalation_rules\":[{\"escalation_delay_in_minutes\":30,\"targets\":[{\"id\":\"rehearsal-user\",\"type\":\"user_reference\"}]}],\"html_url\":\"https://example.com/\",\"id\":270000004,\"name\":\"{{name}}\",\"self\":\"https://example.com/\",\"services\":[],\"summary\":\"example-summary\",\"type\":\"escalation_policy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/escalation_policies/270000004",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"escalation_policy\":{\"description\":\"first\",\"escalation_rules\":[{\"escalation_delay_in_minutes\":30,\"targets\":[{\"id\":\"rehearsal-user\",\"type\":\"user_reference\"}]}],\"html_url\":\"https://example.com/\",\"id\":270000004,\"name\":\"{{name}}\",\"self\":\"https://example.com/\",\"services\":[],\"summary\":\"example-summary\",\"type\":\"escalation_policy\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/escalation_policies/270000004",
+      "body": "{\"escalation_policy\":{\"description\":\"second\",\"escalation_rules\":[{\"escalation_delay_in_minutes\":30,\"targets\":[{\"id\":\"rehearsal-user\",\"type\":\"user_reference\"}]}],\"name\":\"{{name}}\",\"type\":\"escalation_policy\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"escalation_policy\":{\"description\":\"second\",\"escalation_rules\":[{\"escalation_delay_in_minutes\":30,\"targets\":[{\"id\":\"rehearsal-user\",\"type\":\"user_reference\"}]}],\"html_url\":\"https://example.com/\",\"id\":270000004,\"name\":\"{{name}}\",\"self\":\"https://example.com/\",\"services\":[],\"summary\":\"example-summary\",\"type\":\"escalation_policy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/escalation_policies/270000004",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"escalation_policy\":{\"description\":\"second\",\"escalation_rules\":[{\"escalation_delay_in_minutes\":30,\"targets\":[{\"id\":\"rehearsal-user\",\"type\":\"user_reference\"}]}],\"html_url\":\"https://example.com/\",\"id\":270000004,\"name\":\"{{name}}\",\"self\":\"https://example.com/\",\"services\":[],\"summary\":\"example-summary\",\"type\":\"escalation_policy\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/escalation_policies/270000004",
+      "body": "{\"escalation_policy\":{\"description\":\"hfl-live-drift\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"escalation_policy\":{\"description\":\"hfl-live-drift\",\"escalation_rules\":[{\"escalation_delay_in_minutes\":30,\"targets\":[{\"id\":\"rehearsal-user\",\"type\":\"user_reference\"}]}],\"html_url\":\"https://example.com/\",\"id\":270000004,\"name\":\"{{name}}\",\"self\":\"https://example.com/\",\"services\":[],\"summary\":\"example-summary\",\"type\":\"escalation_policy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/escalation_policies/270000004",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"escalation_policy\":{\"description\":\"hfl-live-drift\",\"escalation_rules\":[{\"escalation_delay_in_minutes\":30,\"targets\":[{\"id\":\"rehearsal-user\",\"type\":\"user_reference\"}]}],\"html_url\":\"https://example.com/\",\"id\":270000004,\"name\":\"{{name}}\",\"self\":\"https://example.com/\",\"services\":[],\"summary\":\"example-summary\",\"type\":\"escalation_policy\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/escalation_policies/270000004",
+      "body": "{\"escalation_policy\":{\"description\":\"second\",\"escalation_rules\":[{\"escalation_delay_in_minutes\":30,\"targets\":[{\"id\":\"rehearsal-user\",\"type\":\"user_reference\"}]}],\"name\":\"{{name}}\",\"type\":\"escalation_policy\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"escalation_policy\":{\"description\":\"second\",\"escalation_rules\":[{\"escalation_delay_in_minutes\":30,\"targets\":[{\"id\":\"rehearsal-user\",\"type\":\"user_reference\"}]}],\"html_url\":\"https://example.com/\",\"id\":270000004,\"name\":\"{{name}}\",\"self\":\"https://example.com/\",\"services\":[],\"summary\":\"example-summary\",\"type\":\"escalation_policy\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/escalation_policies/270000004",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"escalation_policy\":{\"description\":\"second\",\"escalation_rules\":[{\"escalation_delay_in_minutes\":30,\"targets\":[{\"id\":\"rehearsal-user\",\"type\":\"user_reference\"}]}],\"html_url\":\"https://example.com/\",\"id\":270000004,\"name\":\"{{name}}\",\"self\":\"https://example.com/\",\"services\":[],\"summary\":\"example-summary\",\"type\":\"escalation_policy\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/escalation_policies/270000004",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/escalation_policies/270000004",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

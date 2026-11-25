@@ -1,0 +1,46 @@
+{
+  "recorded": "2026-11-20T23:56:40Z",
+  "target": "api.pagerduty.com",
+  "vars": {
+    "ep": "PA3XGDX",
+    "orch": "056d1b59-d56b-4bdd-9dd2-0f0afd05fdca",
+    "svc": "PBF07IY",
+    "user": "PTZKMBJ"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/tags",
+      "body": "{\"tag\":{\"label\":\"{{name}}\",\"type\":\"tag\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"tag\":{\"id\":\"PGXCMQX\",\"label\":\"{{name}}\",\"type\":\"tag\",\"self\":\"{{baseURL}}/tags/PGXCMQX\",\"html_url\":null,\"summary\":\"{{name}}\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/tags/PGXCMQX",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"tag\":{\"id\":\"PGXCMQX\",\"label\":\"{{name}}\",\"type\":\"tag\",\"self\":\"{{baseURL}}/tags/PGXCMQX\",\"html_url\":null,\"summary\":\"{{name}}\"}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/tags/PGXCMQX",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/tags/PGXCMQX",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"tag\":{\"id\":\"PGXCMQX\",\"label\":\"{{name}}\",\"type\":\"tag\",\"self\":\"{{baseURL}}/tags/PGXCMQX\",\"html_url\":null,\"summary\":\"{{name}}\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/tags/PGXCMQX",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "\"Object not found\""
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ep": "rehearsal-ep",
+    "optfield": "rehearsal-optfield",
+    "orch": "rehearsal-orch",
+    "supporting": "rehearsal-supporting",
+    "svc": "rehearsal-svc",
+    "svcfield": "rehearsal-svcfield",
+    "user": "rehearsal-user",
+    "wf": "rehearsal-wf"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/services",
+      "body": "{\"service\":{\"escalation_policy\":{\"id\":\"rehearsal-ep\",\"type\":\"escalation_policy_reference\"},\"name\":\"{{name}}-supporting\",\"type\":\"service\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"id\":280000008,\"service\":{\"escalation_policy\":{\"id\":\"rehearsal-ep\",\"type\":\"escalation_policy_reference\"},\"name\":\"{{name}}-supporting\",\"type\":\"service\"}}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/service_dependencies/associate",
+      "body": "{\"relationships\":[{\"dependent_service\":{\"id\":\"rehearsal-svc\",\"type\":\"service\"},\"supporting_service\":{\"id\":\"rehearsal-supporting\",\"type\":\"service\"}}]}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"relationships\":[{\"id\":270000033,\"type\":\"service_dependency\"}]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/service_dependencies/technical_services/rehearsal-svc",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"relationships\":[{\"dependent_service\":{\"id\":\"rehearsal-svc\",\"type\":\"service\"},\"id\":270000033,\"supporting_service\":{\"id\":\"rehearsal-supporting\",\"type\":\"service\"}}]}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/service_dependencies/disassociate",
+      "body": "{\"relationships\":[{\"dependent_service\":{\"id\":\"rehearsal-svc\",\"type\":\"service\"},\"supporting_service\":{\"id\":\"rehearsal-supporting\",\"type\":\"service\"}}]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{}"
+    },
+    {
+      "method": "GET",
+      "path": "/service_dependencies/technical_services/rehearsal-svc",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"relationships\":[]}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/services/rehearsal-supporting",
+      "status": 204
+    }
+  ]
+}

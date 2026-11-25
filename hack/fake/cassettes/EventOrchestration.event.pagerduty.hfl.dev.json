@@ -1,0 +1,91 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ep": "rehearsal-ep",
+    "orch": "rehearsal-orch",
+    "svc": "rehearsal-svc",
+    "user": "rehearsal-user"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/event_orchestrations",
+      "body": "{\"orchestration\":{\"description\":\"first\",\"name\":\"{{name}}\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"orchestration\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"created_by\":{},\"description\":\"first\",\"id\":270000007,\"integrations\":[],\"name\":\"{{name}}\",\"routes\":1,\"self\":\"https://example.com/\",\"updated_at\":\"2000-01-01T00:00:00Z\",\"updated_by\":{},\"version\":\"example-version\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/270000007",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"orchestration\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"created_by\":{},\"description\":\"first\",\"id\":270000007,\"integrations\":[],\"name\":\"{{name}}\",\"routes\":1,\"self\":\"https://example.com/\",\"updated_at\":\"2000-01-01T00:00:00Z\",\"updated_by\":{},\"version\":\"example-version\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/270000007",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"orchestration\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"created_by\":{},\"description\":\"first\",\"id\":270000007,\"integrations\":[],\"name\":\"{{name}}\",\"routes\":1,\"self\":\"https://example.com/\",\"updated_at\":\"2000-01-01T00:00:00Z\",\"updated_by\":{},\"version\":\"example-version\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/event_orchestrations/270000007",
+      "body": "{\"orchestration\":{\"description\":\"second\",\"name\":\"{{name}}\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"orchestration\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"created_by\":{},\"description\":\"second\",\"id\":270000007,\"integrations\":[],\"name\":\"{{name}}\",\"routes\":1,\"self\":\"https://example.com/\",\"updated_at\":\"2000-01-01T00:00:00Z\",\"updated_by\":{},\"version\":\"example-version\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/270000007",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"orchestration\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"created_by\":{},\"description\":\"second\",\"id\":270000007,\"integrations\":[],\"name\":\"{{name}}\",\"routes\":1,\"self\":\"https://example.com/\",\"updated_at\":\"2000-01-01T00:00:00Z\",\"updated_by\":{},\"version\":\"example-version\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/event_orchestrations/270000007",
+      "body": "{\"orchestration\":{\"description\":\"hfl-live-drift\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"orchestration\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"created_by\":{},\"description\":\"hfl-live-drift\",\"id\":270000007,\"integrations\":[],\"name\":\"{{name}}\",\"routes\":1,\"self\":\"https://example.com/\",\"updated_at\":\"2000-01-01T00:00:00Z\",\"updated_by\":{},\"version\":\"example-version\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/270000007",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"orchestration\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"created_by\":{},\"description\":\"hfl-live-drift\",\"id\":270000007,\"integrations\":[],\"name\":\"{{name}}\",\"routes\":1,\"self\":\"https://example.com/\",\"updated_at\":\"2000-01-01T00:00:00Z\",\"updated_by\":{},\"version\":\"example-version\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/event_orchestrations/270000007",
+      "body": "{\"orchestration\":{\"description\":\"second\",\"name\":\"{{name}}\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"orchestration\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"created_by\":{},\"description\":\"second\",\"id\":270000007,\"integrations\":[],\"name\":\"{{name}}\",\"routes\":1,\"self\":\"https://example.com/\",\"updated_at\":\"2000-01-01T00:00:00Z\",\"updated_by\":{},\"version\":\"example-version\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/270000007",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"orchestration\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"created_by\":{},\"description\":\"second\",\"id\":270000007,\"integrations\":[],\"name\":\"{{name}}\",\"routes\":1,\"self\":\"https://example.com/\",\"updated_at\":\"2000-01-01T00:00:00Z\",\"updated_by\":{},\"version\":\"example-version\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/event_orchestrations/270000007",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/270000007",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

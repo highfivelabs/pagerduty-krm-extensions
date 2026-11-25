@@ -1,0 +1,100 @@
+{
+  "recorded": "2026-11-20T23:57:23Z",
+  "target": "api.pagerduty.com",
+  "vars": {
+    "ep": "PA3XGDX",
+    "optfield": "PX1KJ3W",
+    "orch": "056d1b59-d56b-4bdd-9dd2-0f0afd05fdca",
+    "svc": "PBF07IY",
+    "user": "PTZKMBJ",
+    "wf": "P01HLCA"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/v3/schedules",
+      "body": "{\"schedule\":{\"description\":\"first\",\"name\":\"{{name}}\",\"time_zone\":\"America/New_York\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"first\",\"escalation_policies\":[],\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/schedules/PXXQQDG\",\"http_cal_url\":null,\"id\":\"PXXQQDG\",\"name\":\"{{name}}\",\"rotations\":[],\"self\":\"{{baseURL}}/v3/schedules/PXXQQDG\",\"teams\":[],\"time_zone\":\"America/New_York\",\"type\":\"schedule_v3\",\"web_cal_url\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/v3/schedules/PXXQQDG",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"first\",\"escalation_policies\":[],\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/schedules/PXXQQDG\",\"http_cal_url\":null,\"id\":\"PXXQQDG\",\"name\":\"{{name}}\",\"rotations\":[],\"self\":\"{{baseURL}}/v3/schedules/PXXQQDG\",\"teams\":[],\"time_zone\":\"America/New_York\",\"type\":\"schedule_v3\",\"web_cal_url\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/v3/schedules/PXXQQDG",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"first\",\"escalation_policies\":[],\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/schedules/PXXQQDG\",\"http_cal_url\":null,\"id\":\"PXXQQDG\",\"name\":\"{{name}}\",\"rotations\":[],\"self\":\"{{baseURL}}/v3/schedules/PXXQQDG\",\"teams\":[],\"time_zone\":\"America/New_York\",\"type\":\"schedule_v3\",\"web_cal_url\":null}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/v3/schedules/PXXQQDG",
+      "body": "{\"schedule\":{\"description\":\"second\",\"name\":\"{{name}}\",\"time_zone\":\"America/New_York\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"second\",\"escalation_policies\":[],\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/schedules/PXXQQDG\",\"http_cal_url\":null,\"id\":\"PXXQQDG\",\"name\":\"{{name}}\",\"rotations\":[],\"self\":\"{{baseURL}}/v3/schedules/PXXQQDG\",\"teams\":[],\"time_zone\":\"America/New_York\",\"type\":\"schedule_v3\",\"web_cal_url\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/v3/schedules/PXXQQDG",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"second\",\"escalation_policies\":[],\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/schedules/PXXQQDG\",\"http_cal_url\":null,\"id\":\"PXXQQDG\",\"name\":\"{{name}}\",\"rotations\":[],\"self\":\"{{baseURL}}/v3/schedules/PXXQQDG\",\"teams\":[],\"time_zone\":\"America/New_York\",\"type\":\"schedule_v3\",\"web_cal_url\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/v3/schedules/PXXQQDG",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"second\",\"escalation_policies\":[],\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/schedules/PXXQQDG\",\"http_cal_url\":null,\"id\":\"PXXQQDG\",\"name\":\"{{name}}\",\"rotations\":[],\"self\":\"{{baseURL}}/v3/schedules/PXXQQDG\",\"teams\":[],\"time_zone\":\"America/New_York\",\"type\":\"schedule_v3\",\"web_cal_url\":null}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/v3/schedules/PXXQQDG",
+      "body": "{\"schedule\":{\"description\":\"hfl-live-drift\",\"escalation_policies\":[],\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/schedules/PXXQQDG\",\"http_cal_url\":null,\"id\":\"PXXQQDG\",\"name\":\"{{name}}\",\"rotations\":[],\"self\":\"{{baseURL}}/v3/schedules/PXXQQDG\",\"teams\":[],\"time_zone\":\"America/New_York\",\"type\":\"schedule_v3\",\"web_cal_url\":null}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"hfl-live-drift\",\"escalation_policies\":[],\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/schedules/PXXQQDG\",\"http_cal_url\":null,\"id\":\"PXXQQDG\",\"name\":\"{{name}}\",\"rotations\":[],\"self\":\"{{baseURL}}/v3/schedules/PXXQQDG\",\"teams\":[],\"time_zone\":\"America/New_York\",\"type\":\"schedule_v3\",\"web_cal_url\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/v3/schedules/PXXQQDG",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"hfl-live-drift\",\"escalation_policies\":[],\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/schedules/PXXQQDG\",\"http_cal_url\":null,\"id\":\"PXXQQDG\",\"name\":\"{{name}}\",\"rotations\":[],\"self\":\"{{baseURL}}/v3/schedules/PXXQQDG\",\"teams\":[],\"time_zone\":\"America/New_York\",\"type\":\"schedule_v3\",\"web_cal_url\":null}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/v3/schedules/PXXQQDG",
+      "body": "{\"schedule\":{\"description\":\"second\",\"name\":\"{{name}}\",\"time_zone\":\"America/New_York\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"second\",\"escalation_policies\":[],\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/schedules/PXXQQDG\",\"http_cal_url\":null,\"id\":\"PXXQQDG\",\"name\":\"{{name}}\",\"rotations\":[],\"self\":\"{{baseURL}}/v3/schedules/PXXQQDG\",\"teams\":[],\"time_zone\":\"America/New_York\",\"type\":\"schedule_v3\",\"web_cal_url\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/v3/schedules/PXXQQDG",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"second\",\"escalation_policies\":[],\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/schedules/PXXQQDG\",\"http_cal_url\":null,\"id\":\"PXXQQDG\",\"name\":\"{{name}}\",\"rotations\":[],\"self\":\"{{baseURL}}/v3/schedules/PXXQQDG\",\"teams\":[],\"time_zone\":\"America/New_York\",\"type\":\"schedule_v3\",\"web_cal_url\":null}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/v3/schedules/PXXQQDG",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/v3/schedules/PXXQQDG",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"error\":{\"code\":3004,\"message\":\"Schedule Not Found\"}}"
+    }
+  ]
+}

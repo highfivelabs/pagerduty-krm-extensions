@@ -1,0 +1,75 @@
+{
+  "recorded": "2026-11-20T23:57:10Z",
+  "target": "api.pagerduty.com",
+  "vars": {
+    "ep": "PA3XGDX",
+    "optfield": "PX1KJ3W",
+    "orch": "056d1b59-d56b-4bdd-9dd2-0f0afd05fdca",
+    "svc": "PBF07IY",
+    "user": "PTZKMBJ"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/incidents/types/incident_default/custom_fields",
+      "body": "{\"field\":{\"data_type\":\"string\",\"display_name\":\"{{name}}-parent\",\"field_options\":[{\"data\":{\"data_type\":\"string\",\"value\":\"keep\"}}],\"field_type\":\"single_value_fixed\",\"name\":\"{{name_}}_parent\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"field\":{\"enabled\":true,\"id\":\"PX1KJ3W\",\"name\":\"{{name_}}_parent\",\"type\":\"field\",\"self\":\"{{baseURL}}/incidents/types/PHGNAIF/custom_fields/PX1KJ3W\",\"origin\":\"PAGERDUTY\",\"description\":null,\"field_type\":\"single_value_fixed\",\"data_type\":\"string\",\"updated_at\":\"2026-11-20T23:57:09Z\",\"default_value\":null,\"created_at\":\"2026-11-20T23:57:09Z\",\"incident_type\":\"PHGNAIF\",\"display_name\":\"{{name}}-parent\",\"field_options\":[{\"data\":{\"value\":\"keep\",\"data_type\":\"string\"},\"id\":\"PNV008J\",\"type\":\"field_option\",\"updated_at\":\"2026-11-20T23:57:09Z\",\"created_at\":\"2026-11-20T23:57:09Z\"}],\"summary\":\"{{name_}}_parent\"}}"
+    },
+    {
+      "method": "POST",
+      "path": "/incidents/types/incident_default/custom_fields/PX1KJ3W/field_options",
+      "body": "{\"field_option\":{\"data\":{\"data_type\":\"string\",\"value\":\"{{name}}\"}}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"field_option\":{\"data\":{\"value\":\"{{name}}\",\"data_type\":\"string\"},\"id\":\"P6IBMWW\",\"type\":\"field_option\",\"updated_at\":\"2026-11-20T23:57:09Z\",\"created_at\":\"2026-11-20T23:57:09Z\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/incidents/types/incident_default/custom_fields/PX1KJ3W/field_options/P6IBMWW",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"field_option\":{\"data\":{\"value\":\"{{name}}\",\"data_type\":\"string\"},\"id\":\"P6IBMWW\",\"type\":\"field_option\",\"updated_at\":\"2026-11-20T23:57:09Z\",\"created_at\":\"2026-11-20T23:57:09Z\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/incidents/types/incident_default/custom_fields/PX1KJ3W/field_options/P6IBMWW",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"field_option\":{\"data\":{\"value\":\"{{name}}\",\"data_type\":\"string\"},\"id\":\"P6IBMWW\",\"type\":\"field_option\",\"updated_at\":\"2026-11-20T23:57:09Z\",\"created_at\":\"2026-11-20T23:57:09Z\"}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/incidents/types/incident_default/custom_fields/PX1KJ3W/field_options/P6IBMWW",
+      "body": "{\"field_option\":{\"data\":{\"data_type\":\"string\",\"value\":\"{{name}}-changed\"}}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"field_option\":{\"data\":{\"value\":\"{{name}}-changed\",\"data_type\":\"string\"},\"id\":\"P6IBMWW\",\"type\":\"field_option\",\"updated_at\":\"2026-11-20T23:57:10Z\",\"created_at\":\"2026-11-20T23:57:09Z\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/incidents/types/incident_default/custom_fields/PX1KJ3W/field_options/P6IBMWW",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"field_option\":{\"data\":{\"value\":\"{{name}}-changed\",\"data_type\":\"string\"},\"id\":\"P6IBMWW\",\"type\":\"field_option\",\"updated_at\":\"2026-11-20T23:57:10Z\",\"created_at\":\"2026-11-20T23:57:09Z\"}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/incidents/types/incident_default/custom_fields/PX1KJ3W/field_options/P6IBMWW",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/incidents/types/incident_default/custom_fields/PX1KJ3W/field_options/P6IBMWW",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"error\":{\"code\":2100,\"message\":\"Not found\",\"errors\":[\"Custom field option 'P6IBMWW' not found.\"]}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/incidents/types/incident_default/custom_fields/PX1KJ3W",
+      "status": 204
+    }
+  ]
+}

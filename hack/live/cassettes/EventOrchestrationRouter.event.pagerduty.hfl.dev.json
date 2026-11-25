@@ -1,0 +1,93 @@
+{
+  "recorded": "2026-11-20T23:56:59Z",
+  "target": "api.pagerduty.com",
+  "vars": {
+    "ep": "PA3XGDX",
+    "orch": "056d1b59-d56b-4bdd-9dd2-0f0afd05fdca",
+    "svc": "PBF07IY",
+    "user": "PTZKMBJ"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/router",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\",\"type\":\"event_orchestration_reference\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\"},\"type\":\"router\",\"version\":\"JWKvibvBdSoKbVBS4vCs8viruiHEvArf\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/router\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:56:37Z\",\"catch_all\":{\"actions\":{\"route_to\":\"unrouted\"}},\"created_at\":\"2026-11-20T23:56:37Z\",\"updated_by\":null,\"created_by\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/router",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\",\"type\":\"event_orchestration_reference\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\"},\"type\":\"router\",\"version\":\"JWKvibvBdSoKbVBS4vCs8viruiHEvArf\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/router\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:56:37Z\",\"catch_all\":{\"actions\":{\"route_to\":\"unrouted\"}},\"created_at\":\"2026-11-20T23:56:37Z\",\"updated_by\":null,\"created_by\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/router",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\",\"type\":\"event_orchestration_reference\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\"},\"type\":\"router\",\"version\":\"JWKvibvBdSoKbVBS4vCs8viruiHEvArf\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/router\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:56:37Z\",\"catch_all\":{\"actions\":{\"route_to\":\"unrouted\"}},\"created_at\":\"2026-11-20T23:56:37Z\",\"updated_by\":null,\"created_by\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/router",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\",\"type\":\"event_orchestration_reference\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\"},\"type\":\"router\",\"version\":\"JWKvibvBdSoKbVBS4vCs8viruiHEvArf\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/router\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:56:37Z\",\"catch_all\":{\"actions\":{\"route_to\":\"unrouted\"}},\"created_at\":\"2026-11-20T23:56:37Z\",\"updated_by\":null,\"created_by\":null}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/router",
+      "body": "{\"orchestration_path\":{\"catch_all\":{\"actions\":{\"route_to\":\"PBF07IY\"}},\"sets\":[{\"id\":\"start\",\"rules\":[]}]}}",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\",\"type\":\"event_orchestration_reference\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\"},\"type\":\"router\",\"version\":\"lXTrylGbBDMWjRox7v.hILQ5OdyRnJdR\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/router\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:56:58Z\",\"catch_all\":{\"actions\":{\"route_to\":\"PBF07IY\"}},\"created_at\":\"2026-11-20T23:56:37Z\",\"updated_by\":null,\"created_by\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/router",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\",\"type\":\"event_orchestration_reference\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\"},\"type\":\"router\",\"version\":\"lXTrylGbBDMWjRox7v.hILQ5OdyRnJdR\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/router\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:56:58Z\",\"catch_all\":{\"actions\":{\"route_to\":\"PBF07IY\"}},\"created_at\":\"2026-11-20T23:56:37Z\",\"updated_by\":null,\"created_by\":null}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/router",
+      "body": "{\"orchestration_path\":{\"catch_all\":{\"actions\":{\"route_to\":\"unrouted\"}}}}",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\",\"type\":\"event_orchestration_reference\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\"},\"type\":\"router\",\"version\":\"clqYD.EQe5L9WD7.Wl5usRCInaCXq0eC\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/router\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:56:58Z\",\"catch_all\":{\"actions\":{\"route_to\":\"unrouted\"}},\"created_at\":\"2026-11-20T23:56:37Z\",\"updated_by\":null,\"created_by\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/router",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\",\"type\":\"event_orchestration_reference\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\"},\"type\":\"router\",\"version\":\"clqYD.EQe5L9WD7.Wl5usRCInaCXq0eC\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/router\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:56:58Z\",\"catch_all\":{\"actions\":{\"route_to\":\"unrouted\"}},\"created_at\":\"2026-11-20T23:56:37Z\",\"updated_by\":null,\"created_by\":null}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/router",
+      "body": "{\"orchestration_path\":{\"catch_all\":{\"actions\":{\"route_to\":\"PBF07IY\"}},\"sets\":[{\"id\":\"start\",\"rules\":[]}]}}",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\",\"type\":\"event_orchestration_reference\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\"},\"type\":\"router\",\"version\":\"M4Wp9yyh58EZ4MVT9oFejPBFxL_mnY_t\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/router\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:56:58Z\",\"catch_all\":{\"actions\":{\"route_to\":\"PBF07IY\"}},\"created_at\":\"2026-11-20T23:56:37Z\",\"updated_by\":null,\"created_by\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/router",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\",\"type\":\"event_orchestration_reference\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\"},\"type\":\"router\",\"version\":\"M4Wp9yyh58EZ4MVT9oFejPBFxL_mnY_t\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/router\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:56:58Z\",\"catch_all\":{\"actions\":{\"route_to\":\"PBF07IY\"}},\"created_at\":\"2026-11-20T23:56:37Z\",\"updated_by\":null,\"created_by\":null}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/router",
+      "body": "{\"orchestration_path\":{\"catch_all\":{\"actions\":{\"route_to\":\"unrouted\"}},\"sets\":[{\"id\":\"start\",\"rules\":[]}]}}",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\",\"type\":\"event_orchestration_reference\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\"},\"type\":\"router\",\"version\":\"qVRKbAekpsdktRkdhU_TFyOPARdO_NxN\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/router\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:56:59Z\",\"catch_all\":{\"actions\":{\"route_to\":\"unrouted\"}},\"created_at\":\"2026-11-20T23:56:37Z\",\"updated_by\":null,\"created_by\":null}}"
+    }
+  ]
+}

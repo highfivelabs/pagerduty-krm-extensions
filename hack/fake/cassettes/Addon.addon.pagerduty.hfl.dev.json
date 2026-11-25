@@ -1,0 +1,91 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ep": "rehearsal-ep",
+    "orch": "rehearsal-orch",
+    "svc": "rehearsal-svc",
+    "user": "rehearsal-user"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/addons",
+      "body": "{\"addon\":{\"name\":\"{{name}}\",\"src\":\"https://example.com/{{name}}\",\"type\":\"full_page_addon\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"addon\":{\"html_url\":\"https://example.com/\",\"id\":270000006,\"name\":\"{{name}}\",\"self\":\"https://example.com/\",\"src\":\"https://example.com/{{name}}\",\"summary\":\"example-summary\",\"type\":\"full_page_addon\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/addons/270000006",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"addon\":{\"html_url\":\"https://example.com/\",\"id\":270000006,\"name\":\"{{name}}\",\"self\":\"https://example.com/\",\"src\":\"https://example.com/{{name}}\",\"summary\":\"example-summary\",\"type\":\"full_page_addon\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/addons/270000006",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"addon\":{\"html_url\":\"https://example.com/\",\"id\":270000006,\"name\":\"{{name}}\",\"self\":\"https://example.com/\",\"src\":\"https://example.com/{{name}}\",\"summary\":\"example-summary\",\"type\":\"full_page_addon\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/addons/270000006",
+      "body": "{\"addon\":{\"name\":\"{{name}}-changed\",\"src\":\"https://example.com/{{name}}\",\"type\":\"full_page_addon\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"addon\":{\"html_url\":\"https://example.com/\",\"id\":270000006,\"name\":\"{{name}}-changed\",\"self\":\"https://example.com/\",\"src\":\"https://example.com/{{name}}\",\"summary\":\"example-summary\",\"type\":\"full_page_addon\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/addons/270000006",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"addon\":{\"html_url\":\"https://example.com/\",\"id\":270000006,\"name\":\"{{name}}-changed\",\"self\":\"https://example.com/\",\"src\":\"https://example.com/{{name}}\",\"summary\":\"example-summary\",\"type\":\"full_page_addon\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/addons/270000006",
+      "body": "{\"addon\":{\"name\":\"hfl-live-drift\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"addon\":{\"html_url\":\"https://example.com/\",\"id\":270000006,\"name\":\"hfl-live-drift\",\"self\":\"https://example.com/\",\"src\":\"https://example.com/{{name}}\",\"summary\":\"example-summary\",\"type\":\"full_page_addon\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/addons/270000006",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"addon\":{\"html_url\":\"https://example.com/\",\"id\":270000006,\"name\":\"hfl-live-drift\",\"self\":\"https://example.com/\",\"src\":\"https://example.com/{{name}}\",\"summary\":\"example-summary\",\"type\":\"full_page_addon\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/addons/270000006",
+      "body": "{\"addon\":{\"name\":\"{{name}}-changed\",\"src\":\"https://example.com/{{name}}\",\"type\":\"full_page_addon\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"addon\":{\"html_url\":\"https://example.com/\",\"id\":270000006,\"name\":\"{{name}}-changed\",\"self\":\"https://example.com/\",\"src\":\"https://example.com/{{name}}\",\"summary\":\"example-summary\",\"type\":\"full_page_addon\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/addons/270000006",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"addon\":{\"html_url\":\"https://example.com/\",\"id\":270000006,\"name\":\"{{name}}-changed\",\"self\":\"https://example.com/\",\"src\":\"https://example.com/{{name}}\",\"summary\":\"example-summary\",\"type\":\"full_page_addon\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/addons/270000006",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/addons/270000006",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

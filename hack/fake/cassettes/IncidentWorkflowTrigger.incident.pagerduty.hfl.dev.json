@@ -1,0 +1,76 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ep": "rehearsal-ep",
+    "optfield": "rehearsal-optfield",
+    "orch": "rehearsal-orch",
+    "svc": "rehearsal-svc",
+    "user": "rehearsal-user",
+    "wf": "rehearsal-wf"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/incident_workflows",
+      "body": "{\"incident_workflow\":{\"name\":\"{{name}}-workflow\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"id\":280000006,\"incident_workflow\":{\"name\":\"{{name}}-workflow\"}}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/incident_workflows/triggers",
+      "body": "{\"trigger\":{\"is_subscribed_to_all_services\":false,\"services\":[{\"id\":\"rehearsal-svc\"}],\"trigger_type\":\"manual\",\"workflow\":{\"id\":\"rehearsal-wf\"}}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"trigger\":{\"html_url\":\"https://example.com/\",\"id\":270000016,\"is_subscribed_to_all_services\":false,\"self\":\"https://example.com/\",\"services\":[{\"id\":\"rehearsal-svc\"}],\"summary\":\"example-summary\",\"trigger_type\":\"manual\",\"trigger_type_name\":\"example-trigger-type-name\",\"type\":\"workflow_trigger\",\"workflow\":{\"id\":\"rehearsal-wf\"}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/incident_workflows/triggers/270000016",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"trigger\":{\"html_url\":\"https://example.com/\",\"id\":270000016,\"is_subscribed_to_all_services\":false,\"self\":\"https://example.com/\",\"services\":[{\"id\":\"rehearsal-svc\"}],\"summary\":\"example-summary\",\"trigger_type\":\"manual\",\"trigger_type_name\":\"example-trigger-type-name\",\"type\":\"workflow_trigger\",\"workflow\":{\"id\":\"rehearsal-wf\"}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/incident_workflows/triggers/270000016",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"trigger\":{\"html_url\":\"https://example.com/\",\"id\":270000016,\"is_subscribed_to_all_services\":false,\"self\":\"https://example.com/\",\"services\":[{\"id\":\"rehearsal-svc\"}],\"summary\":\"example-summary\",\"trigger_type\":\"manual\",\"trigger_type_name\":\"example-trigger-type-name\",\"type\":\"workflow_trigger\",\"workflow\":{\"id\":\"rehearsal-wf\"}}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/incident_workflows/triggers/270000016",
+      "body": "{\"trigger\":{\"is_subscribed_to_all_services\":true,\"services\":[]}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"trigger\":{\"html_url\":\"https://example.com/\",\"id\":270000016,\"is_subscribed_to_all_services\":true,\"self\":\"https://example.com/\",\"services\":[],\"summary\":\"example-summary\",\"trigger_type\":\"manual\",\"trigger_type_name\":\"example-trigger-type-name\",\"type\":\"workflow_trigger\",\"workflow\":{\"id\":\"rehearsal-wf\"}}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/incident_workflows/triggers/270000016",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"trigger\":{\"html_url\":\"https://example.com/\",\"id\":270000016,\"is_subscribed_to_all_services\":true,\"self\":\"https://example.com/\",\"services\":[],\"summary\":\"example-summary\",\"trigger_type\":\"manual\",\"trigger_type_name\":\"example-trigger-type-name\",\"type\":\"workflow_trigger\",\"workflow\":{\"id\":\"rehearsal-wf\"}}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/incident_workflows/triggers/270000016",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/incident_workflows/triggers/270000016",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/incident_workflows/rehearsal-wf",
+      "status": 204
+    }
+  ]
+}

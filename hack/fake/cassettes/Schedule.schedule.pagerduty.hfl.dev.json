@@ -1,0 +1,100 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ep": "rehearsal-ep",
+    "optfield": "rehearsal-optfield",
+    "orch": "rehearsal-orch",
+    "svc": "rehearsal-svc",
+    "user": "rehearsal-user",
+    "wf": "rehearsal-wf"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/schedules",
+      "body": "{\"schedule\":{\"description\":\"first\",\"name\":\"{{name}}\",\"schedule_layers\":[{\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2000-01-31T00:00:00Z\",\"start\":\"2000-01-31T00:00:00Z\",\"users\":[{\"user\":{\"id\":\"rehearsal-user\",\"type\":\"user_reference\"}}]}],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"first\",\"escalation_policies\":[],\"html_url\":\"https://example.com/\",\"id\":270000018,\"name\":\"{{name}}\",\"schedule_layers\":[{\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2000-01-31T00:00:00Z\",\"start\":\"2000-01-31T00:00:00Z\",\"users\":[{\"user\":{\"id\":\"rehearsal-user\",\"type\":\"user_reference\"}}]}],\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"teams\":[],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\",\"users\":[]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/schedules/270000018",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"first\",\"escalation_policies\":[],\"html_url\":\"https://example.com/\",\"id\":270000018,\"name\":\"{{name}}\",\"schedule_layers\":[{\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2000-01-31T00:00:00Z\",\"start\":\"2000-01-31T00:00:00Z\",\"users\":[{\"user\":{\"id\":\"rehearsal-user\",\"type\":\"user_reference\"}}]}],\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"teams\":[],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\",\"users\":[]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/schedules/270000018",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"first\",\"escalation_policies\":[],\"html_url\":\"https://example.com/\",\"id\":270000018,\"name\":\"{{name}}\",\"schedule_layers\":[{\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2000-01-31T00:00:00Z\",\"start\":\"2000-01-31T00:00:00Z\",\"users\":[{\"user\":{\"id\":\"rehearsal-user\",\"type\":\"user_reference\"}}]}],\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"teams\":[],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\",\"users\":[]}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/schedules/270000018",
+      "body": "{\"schedule\":{\"description\":\"second\",\"name\":\"{{name}}\",\"schedule_layers\":[{\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2000-01-31T00:00:00Z\",\"start\":\"2000-01-31T00:00:00Z\",\"users\":[{\"user\":{\"id\":\"rehearsal-user\",\"type\":\"user_reference\"}}]}],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"second\",\"escalation_policies\":[],\"html_url\":\"https://example.com/\",\"id\":270000018,\"name\":\"{{name}}\",\"schedule_layers\":[{\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2000-01-31T00:00:00Z\",\"start\":\"2000-01-31T00:00:00Z\",\"users\":[{\"user\":{\"id\":\"rehearsal-user\",\"type\":\"user_reference\"}}]}],\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"teams\":[],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\",\"users\":[]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/schedules/270000018",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"second\",\"escalation_policies\":[],\"html_url\":\"https://example.com/\",\"id\":270000018,\"name\":\"{{name}}\",\"schedule_layers\":[{\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2000-01-31T00:00:00Z\",\"start\":\"2000-01-31T00:00:00Z\",\"users\":[{\"user\":{\"id\":\"rehearsal-user\",\"type\":\"user_reference\"}}]}],\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"teams\":[],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\",\"users\":[]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/schedules/270000018",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"second\",\"escalation_policies\":[],\"html_url\":\"https://example.com/\",\"id\":270000018,\"name\":\"{{name}}\",\"schedule_layers\":[{\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2000-01-31T00:00:00Z\",\"start\":\"2000-01-31T00:00:00Z\",\"users\":[{\"user\":{\"id\":\"rehearsal-user\",\"type\":\"user_reference\"}}]}],\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"teams\":[],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\",\"users\":[]}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/schedules/270000018",
+      "body": "{\"schedule\":{\"description\":\"hfl-live-drift\",\"escalation_policies\":[],\"html_url\":\"https://example.com/\",\"id\":270000018,\"name\":\"{{name}}\",\"schedule_layers\":[{\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2000-01-31T00:00:00Z\",\"start\":\"2000-01-31T00:00:00Z\",\"users\":[{\"user\":{\"id\":\"rehearsal-user\",\"type\":\"user_reference\"}}]}],\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"teams\":[],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\",\"users\":[]}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"hfl-live-drift\",\"escalation_policies\":[],\"html_url\":\"https://example.com/\",\"id\":270000018,\"name\":\"{{name}}\",\"schedule_layers\":[{\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2000-01-31T00:00:00Z\",\"start\":\"2000-01-31T00:00:00Z\",\"users\":[{\"user\":{\"id\":\"rehearsal-user\",\"type\":\"user_reference\"}}]}],\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"teams\":[],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\",\"users\":[]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/schedules/270000018",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"hfl-live-drift\",\"escalation_policies\":[],\"html_url\":\"https://example.com/\",\"id\":270000018,\"name\":\"{{name}}\",\"schedule_layers\":[{\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2000-01-31T00:00:00Z\",\"start\":\"2000-01-31T00:00:00Z\",\"users\":[{\"user\":{\"id\":\"rehearsal-user\",\"type\":\"user_reference\"}}]}],\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"teams\":[],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\",\"users\":[]}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/schedules/270000018",
+      "body": "{\"schedule\":{\"description\":\"second\",\"name\":\"{{name}}\",\"schedule_layers\":[{\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2000-01-31T00:00:00Z\",\"start\":\"2000-01-31T00:00:00Z\",\"users\":[{\"user\":{\"id\":\"rehearsal-user\",\"type\":\"user_reference\"}}]}],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"second\",\"escalation_policies\":[],\"html_url\":\"https://example.com/\",\"id\":270000018,\"name\":\"{{name}}\",\"schedule_layers\":[{\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2000-01-31T00:00:00Z\",\"start\":\"2000-01-31T00:00:00Z\",\"users\":[{\"user\":{\"id\":\"rehearsal-user\",\"type\":\"user_reference\"}}]}],\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"teams\":[],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\",\"users\":[]}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/schedules/270000018",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"second\",\"escalation_policies\":[],\"html_url\":\"https://example.com/\",\"id\":270000018,\"name\":\"{{name}}\",\"schedule_layers\":[{\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2000-01-31T00:00:00Z\",\"start\":\"2000-01-31T00:00:00Z\",\"users\":[{\"user\":{\"id\":\"rehearsal-user\",\"type\":\"user_reference\"}}]}],\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"teams\":[],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\",\"users\":[]}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/schedules/270000018",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/schedules/270000018",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

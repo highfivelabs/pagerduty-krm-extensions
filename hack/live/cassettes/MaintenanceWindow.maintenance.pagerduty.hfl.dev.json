@@ -1,0 +1,93 @@
+{
+  "recorded": "2026-11-20T23:57:16Z",
+  "target": "api.pagerduty.com",
+  "vars": {
+    "ep": "PA3XGDX",
+    "optfield": "PX1KJ3W",
+    "orch": "056d1b59-d56b-4bdd-9dd2-0f0afd05fdca",
+    "svc": "PBF07IY",
+    "user": "PTZKMBJ",
+    "wf": "P01HLCA"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/maintenance_windows",
+      "body": "{\"maintenance_window\":{\"description\":\"{{name}}\",\"end_time\":\"2026-12-20T01:00:00Z\",\"services\":[{\"id\":\"PBF07IY\",\"type\":\"service_reference\"}],\"start_time\":\"2026-12-20T00:00:00Z\",\"type\":\"maintenance_window\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"maintenance_window\":{\"id\":\"PCDRDUR\",\"type\":\"maintenance_window\",\"summary\":\"{{name}}\",\"self\":\"{{baseURL}}/maintenance_windows/PCDRDUR\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/maintenance-windows/PCDRDUR\",\"sequence_number\":1,\"start_time\":\"2026-12-19T18:00:00-06:00\",\"end_time\":\"2026-12-19T19:00:00-06:00\",\"description\":\"{{name}}\",\"services\":[{\"id\":\"PBF07IY\",\"type\":\"service_reference\",\"summary\":\"{{run}}\",\"self\":\"{{baseURL}}/services/PBF07IY\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/PBF07IY\"}],\"created_by\":null,\"teams\":[]}}"
+    },
+    {
+      "method": "GET",
+      "path": "/maintenance_windows/PCDRDUR",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"maintenance_window\":{\"id\":\"PCDRDUR\",\"type\":\"maintenance_window\",\"summary\":\"{{name}}\",\"self\":\"{{baseURL}}/maintenance_windows/PCDRDUR\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/maintenance-windows/PCDRDUR\",\"sequence_number\":1,\"start_time\":\"2026-12-19T18:00:00-06:00\",\"end_time\":\"2026-12-19T19:00:00-06:00\",\"description\":\"{{name}}\",\"services\":[{\"id\":\"PBF07IY\",\"type\":\"service_reference\",\"summary\":\"{{run}}\",\"self\":\"{{baseURL}}/services/PBF07IY\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/PBF07IY\"}],\"created_by\":null,\"teams\":[]}}"
+    },
+    {
+      "method": "GET",
+      "path": "/maintenance_windows/PCDRDUR",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"maintenance_window\":{\"id\":\"PCDRDUR\",\"type\":\"maintenance_window\",\"summary\":\"{{name}}\",\"self\":\"{{baseURL}}/maintenance_windows/PCDRDUR\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/maintenance-windows/PCDRDUR\",\"sequence_number\":1,\"start_time\":\"2026-12-19T18:00:00-06:00\",\"end_time\":\"2026-12-19T19:00:00-06:00\",\"description\":\"{{name}}\",\"services\":[{\"id\":\"PBF07IY\",\"type\":\"service_reference\",\"summary\":\"{{run}}\",\"self\":\"{{baseURL}}/services/PBF07IY\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/PBF07IY\"}],\"created_by\":null,\"teams\":[]}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/maintenance_windows/PCDRDUR",
+      "body": "{\"maintenance_window\":{\"description\":\"{{name}}-changed\",\"end_time\":\"2026-12-20T01:00:00Z\",\"services\":[{\"id\":\"PBF07IY\",\"type\":\"service_reference\"}],\"start_time\":\"2026-12-20T00:00:00Z\",\"type\":\"maintenance_window\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"maintenance_window\":{\"id\":\"PCDRDUR\",\"type\":\"maintenance_window\",\"summary\":\"{{name}}-changed\",\"self\":\"{{baseURL}}/maintenance_windows/PCDRDUR\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/maintenance-windows/PCDRDUR\",\"sequence_number\":1,\"start_time\":\"2026-12-19T18:00:00-06:00\",\"end_time\":\"2026-12-19T19:00:00-06:00\",\"description\":\"{{name}}-changed\",\"services\":[{\"id\":\"PBF07IY\",\"type\":\"service_reference\",\"summary\":\"{{run}}\",\"self\":\"{{baseURL}}/services/PBF07IY\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/PBF07IY\"}],\"created_by\":null,\"teams\":[]}}"
+    },
+    {
+      "method": "GET",
+      "path": "/maintenance_windows/PCDRDUR",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"maintenance_window\":{\"id\":\"PCDRDUR\",\"type\":\"maintenance_window\",\"summary\":\"{{name}}-changed\",\"self\":\"{{baseURL}}/maintenance_windows/PCDRDUR\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/maintenance-windows/PCDRDUR\",\"sequence_number\":1,\"start_time\":\"2026-12-19T18:00:00-06:00\",\"end_time\":\"2026-12-19T19:00:00-06:00\",\"description\":\"{{name}}-changed\",\"services\":[{\"id\":\"PBF07IY\",\"type\":\"service_reference\",\"summary\":\"{{run}}\",\"self\":\"{{baseURL}}/services/PBF07IY\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/PBF07IY\"}],\"created_by\":null,\"teams\":[]}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/maintenance_windows/PCDRDUR",
+      "body": "{\"maintenance_window\":{\"description\":\"hfl-live-drift\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"maintenance_window\":{\"id\":\"PCDRDUR\",\"type\":\"maintenance_window\",\"summary\":\"hfl-live-drift\",\"self\":\"{{baseURL}}/maintenance_windows/PCDRDUR\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/maintenance-windows/PCDRDUR\",\"sequence_number\":1,\"start_time\":\"2026-12-19T18:00:00-06:00\",\"end_time\":\"2026-12-19T19:00:00-06:00\",\"description\":\"hfl-live-drift\",\"services\":[{\"id\":\"PBF07IY\",\"type\":\"service_reference\",\"summary\":\"{{run}}\",\"self\":\"{{baseURL}}/services/PBF07IY\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/PBF07IY\"}],\"created_by\":null,\"teams\":[]}}"
+    },
+    {
+      "method": "GET",
+      "path": "/maintenance_windows/PCDRDUR",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"maintenance_window\":{\"id\":\"PCDRDUR\",\"type\":\"maintenance_window\",\"summary\":\"hfl-live-drift\",\"self\":\"{{baseURL}}/maintenance_windows/PCDRDUR\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/maintenance-windows/PCDRDUR\",\"sequence_number\":1,\"start_time\":\"2026-12-19T18:00:00-06:00\",\"end_time\":\"2026-12-19T19:00:00-06:00\",\"description\":\"hfl-live-drift\",\"services\":[{\"id\":\"PBF07IY\",\"type\":\"service_reference\",\"summary\":\"{{run}}\",\"self\":\"{{baseURL}}/services/PBF07IY\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/PBF07IY\"}],\"created_by\":null,\"teams\":[]}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/maintenance_windows/PCDRDUR",
+      "body": "{\"maintenance_window\":{\"description\":\"{{name}}-changed\",\"end_time\":\"2026-12-20T01:00:00Z\",\"services\":[{\"id\":\"PBF07IY\",\"type\":\"service_reference\"}],\"start_time\":\"2026-12-20T00:00:00Z\",\"type\":\"maintenance_window\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"maintenance_window\":{\"id\":\"PCDRDUR\",\"type\":\"maintenance_window\",\"summary\":\"{{name}}-changed\",\"self\":\"{{baseURL}}/maintenance_windows/PCDRDUR\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/maintenance-windows/PCDRDUR\",\"sequence_number\":1,\"start_time\":\"2026-12-19T18:00:00-06:00\",\"end_time\":\"2026-12-19T19:00:00-06:00\",\"description\":\"{{name}}-changed\",\"services\":[{\"id\":\"PBF07IY\",\"type\":\"service_reference\",\"summary\":\"{{run}}\",\"self\":\"{{baseURL}}/services/PBF07IY\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/PBF07IY\"}],\"created_by\":null,\"teams\":[]}}"
+    },
+    {
+      "method": "GET",
+      "path": "/maintenance_windows/PCDRDUR",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"maintenance_window\":{\"id\":\"PCDRDUR\",\"type\":\"maintenance_window\",\"summary\":\"{{name}}-changed\",\"self\":\"{{baseURL}}/maintenance_windows/PCDRDUR\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/maintenance-windows/PCDRDUR\",\"sequence_number\":1,\"start_time\":\"2026-12-19T18:00:00-06:00\",\"end_time\":\"2026-12-19T19:00:00-06:00\",\"description\":\"{{name}}-changed\",\"services\":[{\"id\":\"PBF07IY\",\"type\":\"service_reference\",\"summary\":\"{{run}}\",\"self\":\"{{baseURL}}/services/PBF07IY\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/PBF07IY\"}],\"created_by\":null,\"teams\":[]}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/maintenance_windows/PCDRDUR",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/maintenance_windows/PCDRDUR",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"error\":{\"message\":\"Maintenance Window Not Found\",\"code\":5001}}"
+    }
+  ]
+}

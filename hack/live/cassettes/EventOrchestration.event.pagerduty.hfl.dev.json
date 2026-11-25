@@ -1,0 +1,91 @@
+{
+  "recorded": "2026-11-20T23:56:51Z",
+  "target": "api.pagerduty.com",
+  "vars": {
+    "ep": "PA3XGDX",
+    "orch": "056d1b59-d56b-4bdd-9dd2-0f0afd05fdca",
+    "svc": "PBF07IY",
+    "user": "PTZKMBJ"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/event_orchestrations",
+      "body": "{\"orchestration\":{\"description\":\"first\",\"name\":\"{{name}}\"}}",
+      "status": 201,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration\":{\"created_at\":\"2026-11-20T23:56:49Z\",\"created_by\":null,\"description\":\"first\",\"id\":\"38a4ffc9-e0c8-41ae-8158-cf05047a2b82\",\"integrations\":[{\"id\":\"c5e380a5-5d0b-4206-b24e-b24c2843879f\",\"label\":\"{{name}} Default Integration\",\"parameters\":{\"routing_key\":\"{{redacted}}\",\"type\":\"global\"}}],\"name\":\"{{name}}\",\"self\":\"{{baseURL}}/event_orchestrations/38a4ffc9-e0c8-41ae-8158-cf05047a2b82\",\"team\":null,\"updated_at\":\"2026-11-20T23:56:49Z\",\"updated_by\":null,\"version\":\"0\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/38a4ffc9-e0c8-41ae-8158-cf05047a2b82",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration\":{\"created_at\":\"2026-11-20T23:56:49Z\",\"created_by\":null,\"description\":\"first\",\"id\":\"38a4ffc9-e0c8-41ae-8158-cf05047a2b82\",\"integrations\":[{\"id\":\"c5e380a5-5d0b-4206-b24e-b24c2843879f\",\"label\":\"{{name}} Default Integration\",\"parameters\":{\"routing_key\":\"{{redacted}}\",\"type\":\"global\"}}],\"name\":\"{{name}}\",\"self\":\"{{baseURL}}/event_orchestrations/38a4ffc9-e0c8-41ae-8158-cf05047a2b82\",\"team\":null,\"updated_at\":\"2026-11-20T23:56:49Z\",\"updated_by\":null,\"version\":\"AApxJm_mezbfM8H8aqTWroejsUCOi6Yg\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/38a4ffc9-e0c8-41ae-8158-cf05047a2b82",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration\":{\"created_at\":\"2026-11-20T23:56:49Z\",\"created_by\":null,\"description\":\"first\",\"id\":\"38a4ffc9-e0c8-41ae-8158-cf05047a2b82\",\"integrations\":[{\"id\":\"c5e380a5-5d0b-4206-b24e-b24c2843879f\",\"label\":\"{{name}} Default Integration\",\"parameters\":{\"routing_key\":\"{{redacted}}\",\"type\":\"global\"}}],\"name\":\"{{name}}\",\"self\":\"{{baseURL}}/event_orchestrations/38a4ffc9-e0c8-41ae-8158-cf05047a2b82\",\"team\":null,\"updated_at\":\"2026-11-20T23:56:49Z\",\"updated_by\":null,\"version\":\"AApxJm_mezbfM8H8aqTWroejsUCOi6Yg\"}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/event_orchestrations/38a4ffc9-e0c8-41ae-8158-cf05047a2b82",
+      "body": "{\"orchestration\":{\"description\":\"second\",\"name\":\"{{name}}\"}}",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration\":{\"created_at\":\"2026-11-20T23:56:49Z\",\"created_by\":null,\"description\":\"second\",\"id\":\"38a4ffc9-e0c8-41ae-8158-cf05047a2b82\",\"integrations\":[{\"id\":\"c5e380a5-5d0b-4206-b24e-b24c2843879f\",\"label\":\"{{name}} Default Integration\",\"parameters\":{\"routing_key\":\"{{redacted}}\",\"type\":\"global\"}}],\"name\":\"{{name}}\",\"self\":\"{{baseURL}}/event_orchestrations/38a4ffc9-e0c8-41ae-8158-cf05047a2b82\",\"team\":null,\"updated_at\":\"2026-11-20T23:56:50Z\",\"updated_by\":null,\"version\":\"yMAf2T8T2CZM9GSS3ChHpYh4t.Bd45lc\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/38a4ffc9-e0c8-41ae-8158-cf05047a2b82",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration\":{\"created_at\":\"2026-11-20T23:56:49Z\",\"created_by\":null,\"description\":\"second\",\"id\":\"38a4ffc9-e0c8-41ae-8158-cf05047a2b82\",\"integrations\":[{\"id\":\"c5e380a5-5d0b-4206-b24e-b24c2843879f\",\"label\":\"{{name}} Default Integration\",\"parameters\":{\"routing_key\":\"{{redacted}}\",\"type\":\"global\"}}],\"name\":\"{{name}}\",\"self\":\"{{baseURL}}/event_orchestrations/38a4ffc9-e0c8-41ae-8158-cf05047a2b82\",\"team\":null,\"updated_at\":\"2026-11-20T23:56:50Z\",\"updated_by\":null,\"version\":\"yMAf2T8T2CZM9GSS3ChHpYh4t.Bd45lc\"}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/event_orchestrations/38a4ffc9-e0c8-41ae-8158-cf05047a2b82",
+      "body": "{\"orchestration\":{\"description\":\"hfl-live-drift\"}}",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration\":{\"created_at\":\"2026-11-20T23:56:49Z\",\"created_by\":null,\"description\":\"hfl-live-drift\",\"id\":\"38a4ffc9-e0c8-41ae-8158-cf05047a2b82\",\"integrations\":[{\"id\":\"c5e380a5-5d0b-4206-b24e-b24c2843879f\",\"label\":\"{{name}} Default Integration\",\"parameters\":{\"routing_key\":\"{{redacted}}\",\"type\":\"global\"}}],\"name\":\"{{name}}\",\"self\":\"{{baseURL}}/event_orchestrations/38a4ffc9-e0c8-41ae-8158-cf05047a2b82\",\"team\":null,\"updated_at\":\"2026-11-20T23:56:50Z\",\"updated_by\":null,\"version\":\"DDZJyMQ0opzfUEgl2apxI6tQU18EEsCC\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/38a4ffc9-e0c8-41ae-8158-cf05047a2b82",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration\":{\"created_at\":\"2026-11-20T23:56:49Z\",\"created_by\":null,\"description\":\"hfl-live-drift\",\"id\":\"38a4ffc9-e0c8-41ae-8158-cf05047a2b82\",\"integrations\":[{\"id\":\"c5e380a5-5d0b-4206-b24e-b24c2843879f\",\"label\":\"{{name}} Default Integration\",\"parameters\":{\"routing_key\":\"{{redacted}}\",\"type\":\"global\"}}],\"name\":\"{{name}}\",\"self\":\"{{baseURL}}/event_orchestrations/38a4ffc9-e0c8-41ae-8158-cf05047a2b82\",\"team\":null,\"updated_at\":\"2026-11-20T23:56:50Z\",\"updated_by\":null,\"version\":\"DDZJyMQ0opzfUEgl2apxI6tQU18EEsCC\"}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/event_orchestrations/38a4ffc9-e0c8-41ae-8158-cf05047a2b82",
+      "body": "{\"orchestration\":{\"description\":\"second\",\"name\":\"{{name}}\"}}",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration\":{\"created_at\":\"2026-11-20T23:56:49Z\",\"created_by\":null,\"description\":\"second\",\"id\":\"38a4ffc9-e0c8-41ae-8158-cf05047a2b82\",\"integrations\":[{\"id\":\"c5e380a5-5d0b-4206-b24e-b24c2843879f\",\"label\":\"{{name}} Default Integration\",\"parameters\":{\"routing_key\":\"{{redacted}}\",\"type\":\"global\"}}],\"name\":\"{{name}}\",\"self\":\"{{baseURL}}/event_orchestrations/38a4ffc9-e0c8-41ae-8158-cf05047a2b82\",\"team\":null,\"updated_at\":\"2026-11-20T23:56:51Z\",\"updated_by\":null,\"version\":\"xUmV.hrClBEqyaUSssax.J4fvIULrQ0U\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/38a4ffc9-e0c8-41ae-8158-cf05047a2b82",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration\":{\"created_at\":\"2026-11-20T23:56:49Z\",\"created_by\":null,\"description\":\"second\",\"id\":\"38a4ffc9-e0c8-41ae-8158-cf05047a2b82\",\"integrations\":[{\"id\":\"c5e380a5-5d0b-4206-b24e-b24c2843879f\",\"label\":\"{{name}} Default Integration\",\"parameters\":{\"routing_key\":\"{{redacted}}\",\"type\":\"global\"}}],\"name\":\"{{name}}\",\"self\":\"{{baseURL}}/event_orchestrations/38a4ffc9-e0c8-41ae-8158-cf05047a2b82\",\"team\":null,\"updated_at\":\"2026-11-20T23:56:51Z\",\"updated_by\":null,\"version\":\"xUmV.hrClBEqyaUSssax.J4fvIULrQ0U\"}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/event_orchestrations/38a4ffc9-e0c8-41ae-8158-cf05047a2b82",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/38a4ffc9-e0c8-41ae-8158-cf05047a2b82",
+      "status": 404,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"error\":{\"message\":\"Not Found\"}}"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "recorded": "2026-11-20T23:57:04Z",
+  "target": "api.pagerduty.com",
+  "vars": {
+    "ep": "PA3XGDX",
+    "orch": "056d1b59-d56b-4bdd-9dd2-0f0afd05fdca",
+    "svc": "PBF07IY",
+    "user": "PTZKMBJ"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/event_orchestrations/services/PBF07IY/cache_variables",
+      "body": "{\"cache_variable\":{\"configuration\":{\"regex\":\"(.*)\",\"source\":\"event.summary\",\"type\":\"recent_value\"},\"name\":\"{{name_}}\"}}",
+      "status": 201,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"cache_variable\":{\"id\":\"f3ae46fc-0cdd-4e1d-bcc5-ba823dc5f9c5\",\"name\":\"{{name_}}\",\"updated_at\":\"2026-11-20T23:57:02Z\",\"created_at\":\"2026-11-20T23:57:02Z\",\"updated_by\":null,\"created_by\":null,\"configuration\":{\"type\":\"recent_value\",\"source\":\"event.summary\",\"regex\":\"(.*)\"},\"conditions\":[]}}"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/services/PBF07IY/cache_variables/f3ae46fc-0cdd-4e1d-bcc5-ba823dc5f9c5",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"cache_variable\":{\"id\":\"f3ae46fc-0cdd-4e1d-bcc5-ba823dc5f9c5\",\"name\":\"{{name_}}\",\"updated_at\":\"2026-11-20T23:57:02Z\",\"created_at\":\"2026-11-20T23:57:02Z\",\"updated_by\":null,\"created_by\":null,\"configuration\":{\"type\":\"recent_value\",\"source\":\"event.summary\",\"regex\":\"(.*)\"},\"conditions\":[]}}"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/services/PBF07IY/cache_variables/f3ae46fc-0cdd-4e1d-bcc5-ba823dc5f9c5",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"cache_variable\":{\"id\":\"f3ae46fc-0cdd-4e1d-bcc5-ba823dc5f9c5\",\"name\":\"{{name_}}\",\"updated_at\":\"2026-11-20T23:57:02Z\",\"created_at\":\"2026-11-20T23:57:02Z\",\"updated_by\":null,\"created_by\":null,\"configuration\":{\"type\":\"recent_value\",\"source\":\"event.summary\",\"regex\":\"(.*)\"},\"conditions\":[]}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/event_orchestrations/services/PBF07IY/cache_variables/f3ae46fc-0cdd-4e1d-bcc5-ba823dc5f9c5",
+      "body": "{\"cache_variable\":{\"configuration\":{\"regex\":\"(.*)\",\"source\":\"event.summary\",\"type\":\"recent_value\"},\"name\":\"{{name_}}_changed\"}}",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"cache_variable\":{\"id\":\"f3ae46fc-0cdd-4e1d-bcc5-ba823dc5f9c5\",\"name\":\"{{name_}}_changed\",\"updated_at\":\"2026-11-20T23:57:03Z\",\"created_at\":\"2026-11-20T23:57:02Z\",\"updated_by\":null,\"created_by\":null,\"configuration\":{\"type\":\"recent_value\",\"source\":\"event.summary\",\"regex\":\"(.*)\"},\"conditions\":[]}}"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/services/PBF07IY/cache_variables/f3ae46fc-0cdd-4e1d-bcc5-ba823dc5f9c5",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"cache_variable\":{\"id\":\"f3ae46fc-0cdd-4e1d-bcc5-ba823dc5f9c5\",\"name\":\"{{name_}}_changed\",\"updated_at\":\"2026-11-20T23:57:03Z\",\"created_at\":\"2026-11-20T23:57:02Z\",\"updated_by\":null,\"created_by\":null,\"configuration\":{\"type\":\"recent_value\",\"source\":\"event.summary\",\"regex\":\"(.*)\"},\"conditions\":[]}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/event_orchestrations/services/PBF07IY/cache_variables/f3ae46fc-0cdd-4e1d-bcc5-ba823dc5f9c5",
+      "body": "{\"cache_variable\":{\"name\":\"hfl_live_drift\"}}",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"cache_variable\":{\"id\":\"f3ae46fc-0cdd-4e1d-bcc5-ba823dc5f9c5\",\"name\":\"hfl_live_drift\",\"updated_at\":\"2026-11-20T23:57:03Z\",\"created_at\":\"2026-11-20T23:57:02Z\",\"updated_by\":null,\"created_by\":null,\"configuration\":{\"type\":\"recent_value\",\"source\":\"event.summary\",\"regex\":\"(.*)\"},\"conditions\":[]}}"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/services/PBF07IY/cache_variables/f3ae46fc-0cdd-4e1d-bcc5-ba823dc5f9c5",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"cache_variable\":{\"id\":\"f3ae46fc-0cdd-4e1d-bcc5-ba823dc5f9c5\",\"name\":\"hfl_live_drift\",\"updated_at\":\"2026-11-20T23:57:03Z\",\"created_at\":\"2026-11-20T23:57:02Z\",\"updated_by\":null,\"created_by\":null,\"configuration\":{\"type\":\"recent_value\",\"source\":\"event.summary\",\"regex\":\"(.*)\"},\"conditions\":[]}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/event_orchestrations/services/PBF07IY/cache_variables/f3ae46fc-0cdd-4e1d-bcc5-ba823dc5f9c5",
+      "body": "{\"cache_variable\":{\"configuration\":{\"regex\":\"(.*)\",\"source\":\"event.summary\",\"type\":\"recent_value\"},\"name\":\"{{name_}}_changed\"}}",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"cache_variable\":{\"id\":\"f3ae46fc-0cdd-4e1d-bcc5-ba823dc5f9c5\",\"name\":\"{{name_}}_changed\",\"updated_at\":\"2026-11-20T23:57:03Z\",\"created_at\":\"2026-11-20T23:57:02Z\",\"updated_by\":null,\"created_by\":null,\"configuration\":{\"type\":\"recent_value\",\"source\":\"event.summary\",\"regex\":\"(.*)\"},\"conditions\":[]}}"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/services/PBF07IY/cache_variables/f3ae46fc-0cdd-4e1d-bcc5-ba823dc5f9c5",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"cache_variable\":{\"id\":\"f3ae46fc-0cdd-4e1d-bcc5-ba823dc5f9c5\",\"name\":\"{{name_}}_changed\",\"updated_at\":\"2026-11-20T23:57:03Z\",\"created_at\":\"2026-11-20T23:57:02Z\",\"updated_by\":null,\"created_by\":null,\"configuration\":{\"type\":\"recent_value\",\"source\":\"event.summary\",\"regex\":\"(.*)\"},\"conditions\":[]}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/event_orchestrations/services/PBF07IY/cache_variables/f3ae46fc-0cdd-4e1d-bcc5-ba823dc5f9c5",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/services/PBF07IY/cache_variables/f3ae46fc-0cdd-4e1d-bcc5-ba823dc5f9c5",
+      "status": 404,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"error\":{\"message\":\"Not Found\"}}"
+    }
+  ]
+}

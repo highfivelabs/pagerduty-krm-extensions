@@ -1,0 +1,93 @@
+{
+  "recorded": "2026-11-20T23:57:25Z",
+  "target": "api.pagerduty.com",
+  "vars": {
+    "ep": "PA3XGDX",
+    "optfield": "PX1KJ3W",
+    "orch": "056d1b59-d56b-4bdd-9dd2-0f0afd05fdca",
+    "svc": "PBF07IY",
+    "user": "PTZKMBJ",
+    "wf": "P01HLCA"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/services/custom_fields",
+      "body": "{\"field\":{\"data_type\":\"string\",\"description\":\"first\",\"display_name\":\"{{name}}\",\"field_type\":\"single_value\",\"name\":\"{{name_}}\"}}",
+      "status": 201,
+      "contentType": "application/vnd.pagerduty+json; version=2",
+      "response": "{\"field\":{\"id\":\"P2AA43V\",\"type\":\"field\",\"summary\":\"{{name}}\",\"self\":\"{{baseURL}}/services/custom_fields/P2AA43V\",\"data_type\":\"string\",\"name\":\"{{name_}}\",\"display_name\":\"{{name}}\",\"field_type\":\"single_value\",\"origin\":\"PAGERDUTY\",\"description\":\"first\",\"created_at\":\"2026-11-20T23:57:23Z\",\"updated_at\":\"2026-11-20T23:57:23Z\",\"enabled\":true}}"
+    },
+    {
+      "method": "GET",
+      "path": "/services/custom_fields/P2AA43V",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; version=2",
+      "response": "{\"field\":{\"id\":\"P2AA43V\",\"type\":\"field\",\"summary\":\"{{name}}\",\"self\":\"{{baseURL}}/services/custom_fields/P2AA43V\",\"data_type\":\"string\",\"name\":\"{{name_}}\",\"display_name\":\"{{name}}\",\"field_type\":\"single_value\",\"origin\":\"PAGERDUTY\",\"description\":\"first\",\"created_at\":\"2026-11-20T23:57:23Z\",\"updated_at\":\"2026-11-20T23:57:23Z\",\"enabled\":true}}"
+    },
+    {
+      "method": "GET",
+      "path": "/services/custom_fields/P2AA43V",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; version=2",
+      "response": "{\"field\":{\"id\":\"P2AA43V\",\"type\":\"field\",\"summary\":\"{{name}}\",\"self\":\"{{baseURL}}/services/custom_fields/P2AA43V\",\"data_type\":\"string\",\"name\":\"{{name_}}\",\"display_name\":\"{{name}}\",\"field_type\":\"single_value\",\"origin\":\"PAGERDUTY\",\"description\":\"first\",\"created_at\":\"2026-11-20T23:57:23Z\",\"updated_at\":\"2026-11-20T23:57:23Z\",\"enabled\":true}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/services/custom_fields/P2AA43V",
+      "body": "{\"field\":{\"description\":\"second\",\"display_name\":\"{{name}}\"}}",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; version=2",
+      "response": "{\"field\":{\"id\":\"P2AA43V\",\"type\":\"field\",\"summary\":\"{{name}}\",\"self\":\"{{baseURL}}/services/custom_fields/P2AA43V\",\"data_type\":\"string\",\"name\":\"{{name_}}\",\"display_name\":\"{{name}}\",\"field_type\":\"single_value\",\"origin\":\"PAGERDUTY\",\"description\":\"second\",\"created_at\":\"2026-11-20T23:57:23Z\",\"updated_at\":\"2026-11-20T23:57:23Z\",\"enabled\":true}}"
+    },
+    {
+      "method": "GET",
+      "path": "/services/custom_fields/P2AA43V",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; version=2",
+      "response": "{\"field\":{\"id\":\"P2AA43V\",\"type\":\"field\",\"summary\":\"{{name}}\",\"self\":\"{{baseURL}}/services/custom_fields/P2AA43V\",\"data_type\":\"string\",\"name\":\"{{name_}}\",\"display_name\":\"{{name}}\",\"field_type\":\"single_value\",\"origin\":\"PAGERDUTY\",\"description\":\"second\",\"created_at\":\"2026-11-20T23:57:23Z\",\"updated_at\":\"2026-11-20T23:57:23Z\",\"enabled\":true}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/services/custom_fields/P2AA43V",
+      "body": "{\"field\":{\"description\":\"hfl-live-drift\"}}",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; version=2",
+      "response": "{\"field\":{\"id\":\"P2AA43V\",\"type\":\"field\",\"summary\":\"{{name}}\",\"self\":\"{{baseURL}}/services/custom_fields/P2AA43V\",\"data_type\":\"string\",\"name\":\"{{name_}}\",\"display_name\":\"{{name}}\",\"field_type\":\"single_value\",\"origin\":\"PAGERDUTY\",\"description\":\"hfl-live-drift\",\"created_at\":\"2026-11-20T23:57:23Z\",\"updated_at\":\"2026-11-20T23:57:23Z\",\"enabled\":true}}"
+    },
+    {
+      "method": "GET",
+      "path": "/services/custom_fields/P2AA43V",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; version=2",
+      "response": "{\"field\":{\"id\":\"P2AA43V\",\"type\":\"field\",\"summary\":\"{{name}}\",\"self\":\"{{baseURL}}/services/custom_fields/P2AA43V\",\"data_type\":\"string\",\"name\":\"{{name_}}\",\"display_name\":\"{{name}}\",\"field_type\":\"single_value\",\"origin\":\"PAGERDUTY\",\"description\":\"hfl-live-drift\",\"created_at\":\"2026-11-20T23:57:23Z\",\"updated_at\":\"2026-11-20T23:57:23Z\",\"enabled\":true}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/services/custom_fields/P2AA43V",
+      "body": "{\"field\":{\"description\":\"second\",\"display_name\":\"{{name}}\"}}",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; version=2",
+      "response": "{\"field\":{\"id\":\"P2AA43V\",\"type\":\"field\",\"summary\":\"{{name}}\",\"self\":\"{{baseURL}}/services/custom_fields/P2AA43V\",\"data_type\":\"string\",\"name\":\"{{name_}}\",\"display_name\":\"{{name}}\",\"field_type\":\"single_value\",\"origin\":\"PAGERDUTY\",\"description\":\"second\",\"created_at\":\"2026-11-20T23:57:23Z\",\"updated_at\":\"2026-11-20T23:57:23Z\",\"enabled\":true}}"
+    },
+    {
+      "method": "GET",
+      "path": "/services/custom_fields/P2AA43V",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; version=2",
+      "response": "{\"field\":{\"id\":\"P2AA43V\",\"type\":\"field\",\"summary\":\"{{name}}\",\"self\":\"{{baseURL}}/services/custom_fields/P2AA43V\",\"data_type\":\"string\",\"name\":\"{{name_}}\",\"display_name\":\"{{name}}\",\"field_type\":\"single_value\",\"origin\":\"PAGERDUTY\",\"description\":\"second\",\"created_at\":\"2026-11-20T23:57:23Z\",\"updated_at\":\"2026-11-20T23:57:23Z\",\"enabled\":true}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/services/custom_fields/P2AA43V",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/services/custom_fields/P2AA43V",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"error\":{\"message\":\"No such resource found.\",\"code\":2100,\"errors\":[\"Failed to get resource with id P2AA43V\"]}}"
+    }
+  ]
+}

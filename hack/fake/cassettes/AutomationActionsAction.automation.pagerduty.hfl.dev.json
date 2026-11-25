@@ -1,0 +1,94 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ep": "rehearsal-ep",
+    "optfield": "rehearsal-optfield",
+    "orch": "rehearsal-orch",
+    "svc": "rehearsal-svc",
+    "svcfield": "rehearsal-svcfield",
+    "user": "rehearsal-user",
+    "wf": "rehearsal-wf"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/automation_actions/actions",
+      "body": "{\"action\":{\"action_data_reference\":{},\"action_type\":\"process_automation\",\"description\":\"Restarts apache on the us-west-2-shopping-cart host\",\"name\":\"Restart apache\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"action\":{\"action_data_reference\":{},\"action_type\":\"process_automation\",\"creation_time\":\"2000-01-01T00:00:00Z\",\"description\":\"Restarts apache on the us-west-2-shopping-cart host\",\"html_url\":\"https://example.com/\",\"id\":270000024,\"last_run\":\"2000-01-01T00:00:00Z\",\"last_run_by\":{\"id\":\"example-id\",\"type\":\"event_orchestration_reference\"},\"metadata\":{},\"modify_time\":\"2000-01-01T00:00:00Z\",\"name\":\"Restart apache\",\"privileges\":{\"permissions\":[]},\"runner_type\":\"runbook\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"type\":\"example-type\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/automation_actions/actions/270000024",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"action\":{\"action_data_reference\":{},\"action_type\":\"process_automation\",\"creation_time\":\"2000-01-01T00:00:00Z\",\"description\":\"Restarts apache on the us-west-2-shopping-cart host\",\"html_url\":\"https://example.com/\",\"id\":270000024,\"last_run\":\"2000-01-01T00:00:00Z\",\"last_run_by\":{\"id\":\"example-id\",\"type\":\"event_orchestration_reference\"},\"metadata\":{},\"modify_time\":\"2000-01-01T00:00:00Z\",\"name\":\"Restart apache\",\"privileges\":{\"permissions\":[]},\"runner_type\":\"runbook\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"type\":\"example-type\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/automation_actions/actions/270000024",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"action\":{\"action_data_reference\":{},\"action_type\":\"process_automation\",\"creation_time\":\"2000-01-01T00:00:00Z\",\"description\":\"Restarts apache on the us-west-2-shopping-cart host\",\"html_url\":\"https://example.com/\",\"id\":270000024,\"last_run\":\"2000-01-01T00:00:00Z\",\"last_run_by\":{\"id\":\"example-id\",\"type\":\"event_orchestration_reference\"},\"metadata\":{},\"modify_time\":\"2000-01-01T00:00:00Z\",\"name\":\"Restart apache\",\"privileges\":{\"permissions\":[]},\"runner_type\":\"runbook\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"type\":\"example-type\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/automation_actions/actions/270000024",
+      "body": "{\"action\":{\"action_data_reference\":{},\"action_type\":\"changed-action_type\",\"description\":\"Restarts apache on the us-west-2-shopping-cart host\",\"name\":\"Restart apache\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"action\":{\"action_data_reference\":{},\"action_type\":\"changed-action_type\",\"creation_time\":\"2000-01-01T00:00:00Z\",\"description\":\"Restarts apache on the us-west-2-shopping-cart host\",\"html_url\":\"https://example.com/\",\"id\":270000024,\"last_run\":\"2000-01-01T00:00:00Z\",\"last_run_by\":{\"id\":\"example-id\",\"type\":\"event_orchestration_reference\"},\"metadata\":{},\"modify_time\":\"2000-01-01T00:00:00Z\",\"name\":\"Restart apache\",\"privileges\":{\"permissions\":[]},\"runner_type\":\"runbook\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"type\":\"example-type\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/automation_actions/actions/270000024",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"action\":{\"action_data_reference\":{},\"action_type\":\"changed-action_type\",\"creation_time\":\"2000-01-01T00:00:00Z\",\"description\":\"Restarts apache on the us-west-2-shopping-cart host\",\"html_url\":\"https://example.com/\",\"id\":270000024,\"last_run\":\"2000-01-01T00:00:00Z\",\"last_run_by\":{\"id\":\"example-id\",\"type\":\"event_orchestration_reference\"},\"metadata\":{},\"modify_time\":\"2000-01-01T00:00:00Z\",\"name\":\"Restart apache\",\"privileges\":{\"permissions\":[]},\"runner_type\":\"runbook\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"type\":\"example-type\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/automation_actions/actions/270000024",
+      "body": "{\"action\":{\"action_type\":\"hfl-live-drift\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"action\":{\"action_data_reference\":{},\"action_type\":\"hfl-live-drift\",\"creation_time\":\"2000-01-01T00:00:00Z\",\"description\":\"Restarts apache on the us-west-2-shopping-cart host\",\"html_url\":\"https://example.com/\",\"id\":270000024,\"last_run\":\"2000-01-01T00:00:00Z\",\"last_run_by\":{\"id\":\"example-id\",\"type\":\"event_orchestration_reference\"},\"metadata\":{},\"modify_time\":\"2000-01-01T00:00:00Z\",\"name\":\"Restart apache\",\"privileges\":{\"permissions\":[]},\"runner_type\":\"runbook\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"type\":\"example-type\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/automation_actions/actions/270000024",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"action\":{\"action_data_reference\":{},\"action_type\":\"hfl-live-drift\",\"creation_time\":\"2000-01-01T00:00:00Z\",\"description\":\"Restarts apache on the us-west-2-shopping-cart host\",\"html_url\":\"https://example.com/\",\"id\":270000024,\"last_run\":\"2000-01-01T00:00:00Z\",\"last_run_by\":{\"id\":\"example-id\",\"type\":\"event_orchestration_reference\"},\"metadata\":{},\"modify_time\":\"2000-01-01T00:00:00Z\",\"name\":\"Restart apache\",\"privileges\":{\"permissions\":[]},\"runner_type\":\"runbook\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"type\":\"example-type\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/automation_actions/actions/270000024",
+      "body": "{\"action\":{\"action_data_reference\":{},\"action_type\":\"changed-action_type\",\"description\":\"Restarts apache on the us-west-2-shopping-cart host\",\"name\":\"Restart apache\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"action\":{\"action_data_reference\":{},\"action_type\":\"changed-action_type\",\"creation_time\":\"2000-01-01T00:00:00Z\",\"description\":\"Restarts apache on the us-west-2-shopping-cart host\",\"html_url\":\"https://example.com/\",\"id\":270000024,\"last_run\":\"2000-01-01T00:00:00Z\",\"last_run_by\":{\"id\":\"example-id\",\"type\":\"event_orchestration_reference\"},\"metadata\":{},\"modify_time\":\"2000-01-01T00:00:00Z\",\"name\":\"Restart apache\",\"privileges\":{\"permissions\":[]},\"runner_type\":\"runbook\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"type\":\"example-type\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/automation_actions/actions/270000024",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"action\":{\"action_data_reference\":{},\"action_type\":\"changed-action_type\",\"creation_time\":\"2000-01-01T00:00:00Z\",\"description\":\"Restarts apache on the us-west-2-shopping-cart host\",\"html_url\":\"https://example.com/\",\"id\":270000024,\"last_run\":\"2000-01-01T00:00:00Z\",\"last_run_by\":{\"id\":\"example-id\",\"type\":\"event_orchestration_reference\"},\"metadata\":{},\"modify_time\":\"2000-01-01T00:00:00Z\",\"name\":\"Restart apache\",\"privileges\":{\"permissions\":[]},\"runner_type\":\"runbook\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"type\":\"example-type\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/automation_actions/actions/270000024",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/automation_actions/actions/270000024",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

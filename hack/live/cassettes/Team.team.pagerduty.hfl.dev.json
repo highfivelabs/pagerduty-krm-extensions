@@ -1,0 +1,91 @@
+{
+  "recorded": "2026-11-20T23:56:42Z",
+  "target": "api.pagerduty.com",
+  "vars": {
+    "ep": "PA3XGDX",
+    "orch": "056d1b59-d56b-4bdd-9dd2-0f0afd05fdca",
+    "svc": "PBF07IY",
+    "user": "PTZKMBJ"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/teams",
+      "body": "{\"team\":{\"description\":\"first\",\"name\":\"{{name}}\",\"type\":\"team\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"team\":{\"id\":\"P7OW69Y\",\"name\":\"{{name}}\",\"description\":\"first\",\"type\":\"team\",\"summary\":\"{{name}}\",\"self\":\"{{baseURL}}/teams/P7OW69Y\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/teams/P7OW69Y\",\"default_role\":\"manager\",\"parent\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/teams/P7OW69Y",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"team\":{\"id\":\"P7OW69Y\",\"name\":\"{{name}}\",\"description\":\"first\",\"type\":\"team\",\"summary\":\"{{name}}\",\"self\":\"{{baseURL}}/teams/P7OW69Y\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/teams/P7OW69Y\",\"default_role\":\"manager\",\"parent\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/teams/P7OW69Y",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"team\":{\"id\":\"P7OW69Y\",\"name\":\"{{name}}\",\"description\":\"first\",\"type\":\"team\",\"summary\":\"{{name}}\",\"self\":\"{{baseURL}}/teams/P7OW69Y\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/teams/P7OW69Y\",\"default_role\":\"manager\",\"parent\":null}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/teams/P7OW69Y",
+      "body": "{\"team\":{\"description\":\"second\",\"name\":\"{{name}}\",\"type\":\"team\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"team\":{\"id\":\"P7OW69Y\",\"name\":\"{{name}}\",\"description\":\"second\",\"type\":\"team\",\"summary\":\"{{name}}\",\"self\":\"{{baseURL}}/teams/P7OW69Y\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/teams/P7OW69Y\",\"default_role\":\"manager\",\"parent\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/teams/P7OW69Y",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"team\":{\"id\":\"P7OW69Y\",\"name\":\"{{name}}\",\"description\":\"second\",\"type\":\"team\",\"summary\":\"{{name}}\",\"self\":\"{{baseURL}}/teams/P7OW69Y\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/teams/P7OW69Y\",\"default_role\":\"manager\",\"parent\":null}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/teams/P7OW69Y",
+      "body": "{\"team\":{\"description\":\"hfl-live-drift\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"team\":{\"id\":\"P7OW69Y\",\"name\":\"{{name}}\",\"description\":\"hfl-live-drift\",\"type\":\"team\",\"summary\":\"{{name}}\",\"self\":\"{{baseURL}}/teams/P7OW69Y\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/teams/P7OW69Y\",\"default_role\":\"manager\",\"parent\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/teams/P7OW69Y",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"team\":{\"id\":\"P7OW69Y\",\"name\":\"{{name}}\",\"description\":\"hfl-live-drift\",\"type\":\"team\",\"summary\":\"{{name}}\",\"self\":\"{{baseURL}}/teams/P7OW69Y\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/teams/P7OW69Y\",\"default_role\":\"manager\",\"parent\":null}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/teams/P7OW69Y",
+      "body": "{\"team\":{\"description\":\"second\",\"name\":\"{{name}}\",\"type\":\"team\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"team\":{\"id\":\"P7OW69Y\",\"name\":\"{{name}}\",\"description\":\"second\",\"type\":\"team\",\"summary\":\"{{name}}\",\"self\":\"{{baseURL}}/teams/P7OW69Y\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/teams/P7OW69Y\",\"default_role\":\"manager\",\"parent\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/teams/P7OW69Y",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"team\":{\"id\":\"P7OW69Y\",\"name\":\"{{name}}\",\"description\":\"second\",\"type\":\"team\",\"summary\":\"{{name}}\",\"self\":\"{{baseURL}}/teams/P7OW69Y\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/teams/P7OW69Y\",\"default_role\":\"manager\",\"parent\":null}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/teams/P7OW69Y",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/teams/P7OW69Y",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"error\":{\"code\":6001,\"message\":\"Team Not Found\"}}"
+    }
+  ]
+}

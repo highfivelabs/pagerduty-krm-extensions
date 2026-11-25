@@ -1,0 +1,94 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ep": "rehearsal-ep",
+    "optfield": "rehearsal-optfield",
+    "orch": "rehearsal-orch",
+    "svc": "rehearsal-svc",
+    "svcfield": "rehearsal-svcfield",
+    "user": "rehearsal-user",
+    "wf": "rehearsal-wf"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/users/example-id/oncall_handoff_notification_rules",
+      "body": "{\"oncall_handoff_notification_rule\":{\"contact_method\":{\"id\":\"example-id\",\"type\":\"email_contact_method_reference\"},\"handoff_type\":\"both\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"oncall_handoff_notification_rule\":{\"contact_method\":{\"id\":\"example-id\",\"type\":\"email_contact_method_reference\"},\"handoff_type\":\"both\",\"id\":270000029}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/users/example-id/oncall_handoff_notification_rules/270000029",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"oncall_handoff_notification_rule\":{\"contact_method\":{\"id\":\"example-id\",\"type\":\"email_contact_method_reference\"},\"handoff_type\":\"both\",\"id\":270000029}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/users/example-id/oncall_handoff_notification_rules/270000029",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"oncall_handoff_notification_rule\":{\"contact_method\":{\"id\":\"example-id\",\"type\":\"email_contact_method_reference\"},\"handoff_type\":\"both\",\"id\":270000029}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/users/example-id/oncall_handoff_notification_rules/270000029",
+      "body": "{\"oncall_handoff_notification_rule\":{\"contact_method\":{\"id\":\"example-id\",\"type\":\"email_contact_method_reference\"},\"handoff_type\":\"changed-handoff_type\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"oncall_handoff_notification_rule\":{\"contact_method\":{\"id\":\"example-id\",\"type\":\"email_contact_method_reference\"},\"handoff_type\":\"changed-handoff_type\",\"id\":270000029}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/users/example-id/oncall_handoff_notification_rules/270000029",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"oncall_handoff_notification_rule\":{\"contact_method\":{\"id\":\"example-id\",\"type\":\"email_contact_method_reference\"},\"handoff_type\":\"changed-handoff_type\",\"id\":270000029}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/users/example-id/oncall_handoff_notification_rules/270000029",
+      "body": "{\"oncall_handoff_notification_rule\":{\"handoff_type\":\"hfl-live-drift\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"oncall_handoff_notification_rule\":{\"contact_method\":{\"id\":\"example-id\",\"type\":\"email_contact_method_reference\"},\"handoff_type\":\"hfl-live-drift\",\"id\":270000029}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/users/example-id/oncall_handoff_notification_rules/270000029",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"oncall_handoff_notification_rule\":{\"contact_method\":{\"id\":\"example-id\",\"type\":\"email_contact_method_reference\"},\"handoff_type\":\"hfl-live-drift\",\"id\":270000029}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/users/example-id/oncall_handoff_notification_rules/270000029",
+      "body": "{\"oncall_handoff_notification_rule\":{\"contact_method\":{\"id\":\"example-id\",\"type\":\"email_contact_method_reference\"},\"handoff_type\":\"changed-handoff_type\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"oncall_handoff_notification_rule\":{\"contact_method\":{\"id\":\"example-id\",\"type\":\"email_contact_method_reference\"},\"handoff_type\":\"changed-handoff_type\",\"id\":270000029}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/users/example-id/oncall_handoff_notification_rules/270000029",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"oncall_handoff_notification_rule\":{\"contact_method\":{\"id\":\"example-id\",\"type\":\"email_contact_method_reference\"},\"handoff_type\":\"changed-handoff_type\",\"id\":270000029}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/users/example-id/oncall_handoff_notification_rules/270000029",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/users/example-id/oncall_handoff_notification_rules/270000029",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

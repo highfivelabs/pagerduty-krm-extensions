@@ -1,0 +1,93 @@
+{
+  "recorded": "2026-11-20T23:57:02Z",
+  "target": "api.pagerduty.com",
+  "vars": {
+    "ep": "PA3XGDX",
+    "orch": "056d1b59-d56b-4bdd-9dd2-0f0afd05fdca",
+    "svc": "PBF07IY",
+    "user": "PTZKMBJ"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/services/PBF07IY",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"PBF07IY\",\"type\":\"service_reference\",\"self\":\"{{baseURL}}/services/PBF07IY\"},\"type\":\"service\",\"version\":null,\"self\":\"{{baseURL}}/event_orchestrations/services/PBF07IY\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:57:01Z\",\"catch_all\":{\"actions\":{}},\"created_at\":\"2026-11-20T23:57:01Z\",\"updated_by\":null,\"created_by\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/services/PBF07IY",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"PBF07IY\",\"type\":\"service_reference\",\"self\":\"{{baseURL}}/services/PBF07IY\"},\"type\":\"service\",\"version\":null,\"self\":\"{{baseURL}}/event_orchestrations/services/PBF07IY\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:57:01Z\",\"catch_all\":{\"actions\":{}},\"created_at\":\"2026-11-20T23:57:01Z\",\"updated_by\":null,\"created_by\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/services/PBF07IY",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"PBF07IY\",\"type\":\"service_reference\",\"self\":\"{{baseURL}}/services/PBF07IY\"},\"type\":\"service\",\"version\":null,\"self\":\"{{baseURL}}/event_orchestrations/services/PBF07IY\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:57:01Z\",\"catch_all\":{\"actions\":{}},\"created_at\":\"2026-11-20T23:57:01Z\",\"updated_by\":null,\"created_by\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/services/PBF07IY",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"PBF07IY\",\"type\":\"service_reference\",\"self\":\"{{baseURL}}/services/PBF07IY\"},\"type\":\"service\",\"version\":null,\"self\":\"{{baseURL}}/event_orchestrations/services/PBF07IY\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:57:01Z\",\"catch_all\":{\"actions\":{}},\"created_at\":\"2026-11-20T23:57:01Z\",\"updated_by\":null,\"created_by\":null}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/event_orchestrations/services/PBF07IY",
+      "body": "{\"orchestration_path\":{\"catch_all\":{\"actions\":{\"suppress\":true}},\"sets\":[{\"id\":\"start\",\"rules\":[]}]}}",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"PBF07IY\",\"type\":\"service_reference\",\"self\":\"{{baseURL}}/services/PBF07IY\"},\"type\":\"service\",\"version\":\"mJseVm_RHaRrve5j5gG5Ou3J1aVWCwRY\",\"self\":\"{{baseURL}}/event_orchestrations/services/PBF07IY\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:57:01Z\",\"catch_all\":{\"actions\":{\"suppress\":true}},\"created_at\":\"2026-11-20T23:57:01Z\",\"updated_by\":null,\"created_by\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/services/PBF07IY",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"PBF07IY\",\"type\":\"service_reference\",\"self\":\"{{baseURL}}/services/PBF07IY\"},\"type\":\"service\",\"version\":\"mJseVm_RHaRrve5j5gG5Ou3J1aVWCwRY\",\"self\":\"{{baseURL}}/event_orchestrations/services/PBF07IY\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:57:01Z\",\"catch_all\":{\"actions\":{\"suppress\":true}},\"created_at\":\"2026-11-20T23:57:01Z\",\"updated_by\":null,\"created_by\":null}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/event_orchestrations/services/PBF07IY",
+      "body": "{\"orchestration_path\":{\"catch_all\":{\"actions\":{\"suppress\":false}}}}",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"PBF07IY\",\"type\":\"service_reference\",\"self\":\"{{baseURL}}/services/PBF07IY\"},\"type\":\"service\",\"version\":\"xrGVoBr3tb0Ls0ODzInJT2R8wBJvCOlJ\",\"self\":\"{{baseURL}}/event_orchestrations/services/PBF07IY\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:57:02Z\",\"catch_all\":{\"actions\":{\"suppress\":false}},\"created_at\":\"2026-11-20T23:57:01Z\",\"updated_by\":null,\"created_by\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/services/PBF07IY",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"PBF07IY\",\"type\":\"service_reference\",\"self\":\"{{baseURL}}/services/PBF07IY\"},\"type\":\"service\",\"version\":\"xrGVoBr3tb0Ls0ODzInJT2R8wBJvCOlJ\",\"self\":\"{{baseURL}}/event_orchestrations/services/PBF07IY\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:57:02Z\",\"catch_all\":{\"actions\":{\"suppress\":false}},\"created_at\":\"2026-11-20T23:57:01Z\",\"updated_by\":null,\"created_by\":null}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/event_orchestrations/services/PBF07IY",
+      "body": "{\"orchestration_path\":{\"catch_all\":{\"actions\":{\"suppress\":true}},\"sets\":[{\"id\":\"start\",\"rules\":[]}]}}",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"PBF07IY\",\"type\":\"service_reference\",\"self\":\"{{baseURL}}/services/PBF07IY\"},\"type\":\"service\",\"version\":\"ny8JK_chV5wK6tO2IPWp6wS504QfZRmH\",\"self\":\"{{baseURL}}/event_orchestrations/services/PBF07IY\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:57:02Z\",\"catch_all\":{\"actions\":{\"suppress\":true}},\"created_at\":\"2026-11-20T23:57:01Z\",\"updated_by\":null,\"created_by\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/services/PBF07IY",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"PBF07IY\",\"type\":\"service_reference\",\"self\":\"{{baseURL}}/services/PBF07IY\"},\"type\":\"service\",\"version\":\"ny8JK_chV5wK6tO2IPWp6wS504QfZRmH\",\"self\":\"{{baseURL}}/event_orchestrations/services/PBF07IY\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:57:02Z\",\"catch_all\":{\"actions\":{\"suppress\":true}},\"created_at\":\"2026-11-20T23:57:01Z\",\"updated_by\":null,\"created_by\":null}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/event_orchestrations/services/PBF07IY",
+      "body": "{\"orchestration_path\":{\"catch_all\":{\"actions\":{}},\"sets\":[{\"id\":\"start\",\"rules\":[]}]}}",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"PBF07IY\",\"type\":\"service_reference\",\"self\":\"{{baseURL}}/services/PBF07IY\"},\"type\":\"service\",\"version\":\"Nm3VHMiGBZdI7mtG2Na1AxApGh5clkLM\",\"self\":\"{{baseURL}}/event_orchestrations/services/PBF07IY\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:57:02Z\",\"catch_all\":{\"actions\":{\"suppress\":true}},\"created_at\":\"2026-11-20T23:57:01Z\",\"updated_by\":null,\"created_by\":null}}"
+    }
+  ]
+}

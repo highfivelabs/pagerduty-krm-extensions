@@ -1,0 +1,60 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "dependentBusiness": "rehearsal-dependentBusiness",
+    "ep": "rehearsal-ep",
+    "optfield": "rehearsal-optfield",
+    "orch": "rehearsal-orch",
+    "supporting": "rehearsal-supporting",
+    "svc": "rehearsal-svc",
+    "svcfield": "rehearsal-svcfield",
+    "user": "rehearsal-user",
+    "wf": "rehearsal-wf"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/business_services",
+      "body": "{\"business_service\":{\"name\":\"{{name}}-dependent\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"business_service\":{\"name\":\"{{name}}-dependent\"},\"id\":280000009}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/service_dependencies/associate",
+      "body": "{\"relationships\":[{\"dependent_service\":{\"id\":\"rehearsal-dependentBusiness\",\"type\":\"business_service\"},\"supporting_service\":{\"id\":\"rehearsal-svc\",\"type\":\"service\"}}]}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"relationships\":[{\"id\":270000034,\"type\":\"service_dependency\"}]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/service_dependencies/business_services/rehearsal-dependentBusiness",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"relationships\":[{\"dependent_service\":{\"id\":\"rehearsal-dependentBusiness\",\"type\":\"business_service\"},\"id\":270000034,\"supporting_service\":{\"id\":\"rehearsal-svc\",\"type\":\"service\"}}]}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/service_dependencies/disassociate",
+      "body": "{\"relationships\":[{\"dependent_service\":{\"id\":\"rehearsal-dependentBusiness\",\"type\":\"business_service\"},\"supporting_service\":{\"id\":\"rehearsal-svc\",\"type\":\"service\"}}]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{}"
+    },
+    {
+      "method": "GET",
+      "path": "/service_dependencies/business_services/rehearsal-dependentBusiness",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"relationships\":[]}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/business_services/rehearsal-dependentBusiness",
+      "status": 204
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "recorded": "2026-11-20T23:57:05Z",
+  "target": "api.pagerduty.com",
+  "vars": {
+    "ep": "PA3XGDX",
+    "orch": "056d1b59-d56b-4bdd-9dd2-0f0afd05fdca",
+    "svc": "PBF07IY",
+    "user": "PTZKMBJ"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/extensions",
+      "body": "{\"extension\":{\"endpoint_url\":\"https://example.com/{{name}}\",\"extension_objects\":[{\"id\":\"PBF07IY\",\"type\":\"service_reference\"}],\"extension_schema\":{\"id\":\"PJFWPEP\",\"type\":\"extension_schema_reference\"},\"name\":\"{{name}}\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"extension\":{\"endpoint_url\":\"https://example.com/{{name}}\",\"name\":\"{{name}}\",\"config\":{},\"extension_schema\":{\"id\":\"PJFWPEP\",\"type\":\"extension_schema_reference\",\"summary\":\"Generic V2 Webhook\",\"self\":\"{{baseURL}}/extension_schemas/PJFWPEP\",\"html_url\":null},\"extension_objects\":[{\"id\":\"PBF07IY\",\"type\":\"service_reference\",\"summary\":\"{{run}}\",\"self\":\"{{baseURL}}/services/PBF07IY\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/PBF07IY\"}],\"id\":\"PBJYERS\",\"type\":\"webhook\",\"summary\":\"{{name}}\",\"self\":\"{{baseURL}}/webhooks/PBJYERS\",\"html_url\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/extensions/PBJYERS",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"extension\":{\"endpoint_url\":\"https://example.com/{{name}}\",\"name\":\"{{name}}\",\"config\":{},\"extension_schema\":{\"id\":\"PJFWPEP\",\"type\":\"extension_schema_reference\",\"summary\":\"Generic V2 Webhook\",\"self\":\"{{baseURL}}/extension_schemas/PJFWPEP\",\"html_url\":null},\"extension_objects\":[{\"id\":\"PBF07IY\",\"type\":\"service_reference\",\"summary\":\"{{run}}\",\"self\":\"{{baseURL}}/services/PBF07IY\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/PBF07IY\"}],\"id\":\"PBJYERS\",\"type\":\"webhook\",\"summary\":\"{{name}}\",\"self\":\"{{baseURL}}/webhooks/PBJYERS\",\"html_url\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/extensions/PBJYERS",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"extension\":{\"endpoint_url\":\"https://example.com/{{name}}\",\"name\":\"{{name}}\",\"config\":{},\"extension_schema\":{\"id\":\"PJFWPEP\",\"type\":\"extension_schema_reference\",\"summary\":\"Generic V2 Webhook\",\"self\":\"{{baseURL}}/extension_schemas/PJFWPEP\",\"html_url\":null},\"extension_objects\":[{\"id\":\"PBF07IY\",\"type\":\"service_reference\",\"summary\":\"{{run}}\",\"self\":\"{{baseURL}}/services/PBF07IY\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/PBF07IY\"}],\"id\":\"PBJYERS\",\"type\":\"webhook\",\"summary\":\"{{name}}\",\"self\":\"{{baseURL}}/webhooks/PBJYERS\",\"html_url\":null}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/extensions/PBJYERS",
+      "body": "{\"extension\":{\"endpoint_url\":\"https://example.com/{{name}}\",\"extension_objects\":[{\"id\":\"PBF07IY\",\"type\":\"service_reference\"}],\"extension_schema\":{\"id\":\"PJFWPEP\",\"type\":\"extension_schema_reference\"},\"name\":\"{{name}}-changed\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"extension\":{\"endpoint_url\":\"https://example.com/{{name}}\",\"name\":\"{{name}}-changed\",\"config\":{},\"extension_schema\":{\"id\":\"PJFWPEP\",\"type\":\"extension_schema_reference\",\"summary\":\"Generic V2 Webhook\",\"self\":\"{{baseURL}}/extension_schemas/PJFWPEP\",\"html_url\":null},\"extension_objects\":[{\"id\":\"PBF07IY\",\"type\":\"service_reference\",\"summary\":\"{{run}}\",\"self\":\"{{baseURL}}/services/PBF07IY\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/PBF07IY\"}],\"id\":\"PBJYERS\",\"type\":\"webhook\",\"summary\":\"{{name}}-changed\",\"self\":\"{{baseURL}}/webhooks/PBJYERS\",\"html_url\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/extensions/PBJYERS",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"extension\":{\"endpoint_url\":\"https://example.com/{{name}}\",\"name\":\"{{name}}-changed\",\"config\":{},\"extension_schema\":{\"id\":\"PJFWPEP\",\"type\":\"extension_schema_reference\",\"summary\":\"Generic V2 Webhook\",\"self\":\"{{baseURL}}/extension_schemas/PJFWPEP\",\"html_url\":null},\"extension_objects\":[{\"id\":\"PBF07IY\",\"type\":\"service_reference\",\"summary\":\"{{run}}\",\"self\":\"{{baseURL}}/services/PBF07IY\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/PBF07IY\"}],\"id\":\"PBJYERS\",\"type\":\"webhook\",\"summary\":\"{{name}}-changed\",\"self\":\"{{baseURL}}/webhooks/PBJYERS\",\"html_url\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/extensions/PBJYERS",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"extension\":{\"endpoint_url\":\"https://example.com/{{name}}\",\"name\":\"{{name}}-changed\",\"config\":{},\"extension_schema\":{\"id\":\"PJFWPEP\",\"type\":\"extension_schema_reference\",\"summary\":\"Generic V2 Webhook\",\"self\":\"{{baseURL}}/extension_schemas/PJFWPEP\",\"html_url\":null},\"extension_objects\":[{\"id\":\"PBF07IY\",\"type\":\"service_reference\",\"summary\":\"{{run}}\",\"self\":\"{{baseURL}}/services/PBF07IY\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/PBF07IY\"}],\"id\":\"PBJYERS\",\"type\":\"webhook\",\"summary\":\"{{name}}-changed\",\"self\":\"{{baseURL}}/webhooks/PBJYERS\",\"html_url\":null}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/extensions/PBJYERS",
+      "body": "{\"extension\":{\"config\":{},\"endpoint_url\":\"https://example.com/{{name}}\",\"extension_objects\":[{\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/PBF07IY\",\"id\":\"PBF07IY\",\"self\":\"{{baseURL}}/services/PBF07IY\",\"summary\":\"{{run}}\",\"type\":\"service_reference\"}],\"extension_schema\":{\"html_url\":null,\"id\":\"PJFWPEP\",\"self\":\"{{baseURL}}/extension_schemas/PJFWPEP\",\"summary\":\"Generic V2 Webhook\",\"type\":\"extension_schema_reference\"},\"html_url\":null,\"id\":\"PBJYERS\",\"name\":\"hfl-live-drift\",\"self\":\"{{baseURL}}/webhooks/PBJYERS\",\"summary\":\"{{name}}-changed\",\"type\":\"webhook\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"extension\":{\"endpoint_url\":\"https://example.com/{{name}}\",\"name\":\"hfl-live-drift\",\"config\":{},\"extension_schema\":{\"id\":\"PJFWPEP\",\"type\":\"extension_schema_reference\",\"summary\":\"Generic V2 Webhook\",\"self\":\"{{baseURL}}/extension_schemas/PJFWPEP\",\"html_url\":null},\"extension_objects\":[{\"id\":\"PBF07IY\",\"type\":\"service_reference\",\"summary\":\"{{run}}\",\"self\":\"{{baseURL}}/services/PBF07IY\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/PBF07IY\"}],\"id\":\"PBJYERS\",\"type\":\"webhook\",\"summary\":\"hfl-live-drift\",\"self\":\"{{baseURL}}/webhooks/PBJYERS\",\"html_url\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/extensions/PBJYERS",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"extension\":{\"endpoint_url\":\"https://example.com/{{name}}\",\"name\":\"hfl-live-drift\",\"config\":{},\"extension_schema\":{\"id\":\"PJFWPEP\",\"type\":\"extension_schema_reference\",\"summary\":\"Generic V2 Webhook\",\"self\":\"{{baseURL}}/extension_schemas/PJFWPEP\",\"html_url\":null},\"extension_objects\":[{\"id\":\"PBF07IY\",\"type\":\"service_reference\",\"summary\":\"{{run}}\",\"self\":\"{{baseURL}}/services/PBF07IY\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/PBF07IY\"}],\"id\":\"PBJYERS\",\"type\":\"webhook\",\"summary\":\"hfl-live-drift\",\"self\":\"{{baseURL}}/webhooks/PBJYERS\",\"html_url\":null}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/extensions/PBJYERS",
+      "body": "{\"extension\":{\"endpoint_url\":\"https://example.com/{{name}}\",\"extension_objects\":[{\"id\":\"PBF07IY\",\"type\":\"service_reference\"}],\"extension_schema\":{\"id\":\"PJFWPEP\",\"type\":\"extension_schema_reference\"},\"name\":\"{{name}}-changed\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"extension\":{\"endpoint_url\":\"https://example.com/{{name}}\",\"name\":\"{{name}}-changed\",\"config\":{},\"extension_schema\":{\"id\":\"PJFWPEP\",\"type\":\"extension_schema_reference\",\"summary\":\"Generic V2 Webhook\",\"self\":\"{{baseURL}}/extension_schemas/PJFWPEP\",\"html_url\":null},\"extension_objects\":[{\"id\":\"PBF07IY\",\"type\":\"service_reference\",\"summary\":\"{{run}}\",\"self\":\"{{baseURL}}/services/PBF07IY\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/PBF07IY\"}],\"id\":\"PBJYERS\",\"type\":\"webhook\",\"summary\":\"{{name}}-changed\",\"self\":\"{{baseURL}}/webhooks/PBJYERS\",\"html_url\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/extensions/PBJYERS",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"extension\":{\"endpoint_url\":\"https://example.com/{{name}}\",\"name\":\"{{name}}-changed\",\"config\":{},\"extension_schema\":{\"id\":\"PJFWPEP\",\"type\":\"extension_schema_reference\",\"summary\":\"Generic V2 Webhook\",\"self\":\"{{baseURL}}/extension_schemas/PJFWPEP\",\"html_url\":null},\"extension_objects\":[{\"id\":\"PBF07IY\",\"type\":\"service_reference\",\"summary\":\"{{run}}\",\"self\":\"{{baseURL}}/services/PBF07IY\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/PBF07IY\"}],\"id\":\"PBJYERS\",\"type\":\"webhook\",\"summary\":\"{{name}}-changed\",\"self\":\"{{baseURL}}/webhooks/PBJYERS\",\"html_url\":null}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/extensions/PBJYERS",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/extensions/PBJYERS",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"error\":{\"message\":\"Extension Not Found\",\"code\":5001}}"
+    }
+  ]
+}

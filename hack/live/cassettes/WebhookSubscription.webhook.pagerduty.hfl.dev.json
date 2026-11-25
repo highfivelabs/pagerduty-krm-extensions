@@ -1,0 +1,94 @@
+{
+  "recorded": "2026-11-20T23:57:28Z",
+  "target": "api.pagerduty.com",
+  "vars": {
+    "ep": "PA3XGDX",
+    "optfield": "PX1KJ3W",
+    "orch": "056d1b59-d56b-4bdd-9dd2-0f0afd05fdca",
+    "svc": "PBF07IY",
+    "svcfield": "PLWJ4QC",
+    "user": "PTZKMBJ",
+    "wf": "P01HLCA"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/webhook_subscriptions",
+      "body": "{\"webhook_subscription\":{\"active\":false,\"delivery_method\":{\"type\":\"http_delivery_method\",\"url\":\"https://example.com/{{name}}\"},\"description\":\"{{name}}\",\"events\":[\"incident.triggered\"],\"filter\":{\"id\":\"PBF07IY\",\"type\":\"service_reference\"},\"type\":\"webhook_subscription\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"webhook_subscription\":{\"active\":false,\"delivery_method\":{\"custom_headers\":[],\"extension_id\":null,\"id\":\"PWPDXTH\",\"secret\":\"{{redacted}}\",\"temporarily_disabled\":false,\"type\":\"http_delivery_method\",\"url\":\"https://example.com/{{name}}\"},\"description\":\"{{name}}\",\"events\":[\"incident.triggered\"],\"filter\":{\"id\":\"PBF07IY\",\"type\":\"service_reference\"},\"id\":\"PSMQPMQ\",\"oauth_client\":null,\"type\":\"webhook_subscription\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/webhook_subscriptions/PSMQPMQ",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"webhook_subscription\":{\"active\":false,\"id\":\"PSMQPMQ\",\"type\":\"webhook_subscription\",\"events\":[\"incident.triggered\"],\"description\":\"{{name}}\",\"filter\":{\"id\":\"PBF07IY\",\"type\":\"service_reference\"},\"oauth_client\":null,\"delivery_method\":{\"id\":\"PWPDXTH\",\"type\":\"http_delivery_method\",\"secret\":null,\"extension_id\":null,\"url\":\"https://example.com/{{name}}\",\"custom_headers\":[],\"temporarily_disabled\":false}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/webhook_subscriptions/PSMQPMQ",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"webhook_subscription\":{\"active\":false,\"id\":\"PSMQPMQ\",\"type\":\"webhook_subscription\",\"events\":[\"incident.triggered\"],\"description\":\"{{name}}\",\"filter\":{\"id\":\"PBF07IY\",\"type\":\"service_reference\"},\"oauth_client\":null,\"delivery_method\":{\"id\":\"PWPDXTH\",\"type\":\"http_delivery_method\",\"secret\":null,\"extension_id\":null,\"url\":\"https://example.com/{{name}}\",\"custom_headers\":[],\"temporarily_disabled\":false}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/webhook_subscriptions/PSMQPMQ",
+      "body": "{\"webhook_subscription\":{\"active\":false,\"description\":\"{{name}}-changed\",\"events\":[\"incident.triggered\"],\"filter\":{\"id\":\"PBF07IY\",\"type\":\"service_reference\"}}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"webhook_subscription\":{\"active\":false,\"id\":\"PSMQPMQ\",\"type\":\"webhook_subscription\",\"events\":[\"incident.triggered\"],\"description\":\"{{name}}-changed\",\"filter\":{\"id\":\"PBF07IY\",\"type\":\"service_reference\"},\"oauth_client\":null,\"delivery_method\":{\"id\":\"PWPDXTH\",\"type\":\"http_delivery_method\",\"secret\":null,\"extension_id\":null,\"url\":\"https://example.com/{{name}}\",\"custom_headers\":[],\"temporarily_disabled\":false}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/webhook_subscriptions/PSMQPMQ",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"webhook_subscription\":{\"active\":false,\"id\":\"PSMQPMQ\",\"type\":\"webhook_subscription\",\"events\":[\"incident.triggered\"],\"description\":\"{{name}}-changed\",\"filter\":{\"id\":\"PBF07IY\",\"type\":\"service_reference\"},\"oauth_client\":null,\"delivery_method\":{\"id\":\"PWPDXTH\",\"type\":\"http_delivery_method\",\"secret\":null,\"extension_id\":null,\"url\":\"https://example.com/{{name}}\",\"custom_headers\":[],\"temporarily_disabled\":false}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/webhook_subscriptions/PSMQPMQ",
+      "body": "{\"webhook_subscription\":{\"description\":\"hfl-live-drift\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"webhook_subscription\":{\"active\":false,\"id\":\"PSMQPMQ\",\"type\":\"webhook_subscription\",\"events\":[\"incident.triggered\"],\"description\":\"hfl-live-drift\",\"filter\":{\"id\":\"PBF07IY\",\"type\":\"service_reference\"},\"oauth_client\":null,\"delivery_method\":{\"id\":\"PWPDXTH\",\"type\":\"http_delivery_method\",\"secret\":null,\"extension_id\":null,\"url\":\"https://example.com/{{name}}\",\"custom_headers\":[],\"temporarily_disabled\":false}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/webhook_subscriptions/PSMQPMQ",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"webhook_subscription\":{\"active\":false,\"id\":\"PSMQPMQ\",\"type\":\"webhook_subscription\",\"events\":[\"incident.triggered\"],\"description\":\"hfl-live-drift\",\"filter\":{\"id\":\"PBF07IY\",\"type\":\"service_reference\"},\"oauth_client\":null,\"delivery_method\":{\"id\":\"PWPDXTH\",\"type\":\"http_delivery_method\",\"secret\":null,\"extension_id\":null,\"url\":\"https://example.com/{{name}}\",\"custom_headers\":[],\"temporarily_disabled\":false}}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/webhook_subscriptions/PSMQPMQ",
+      "body": "{\"webhook_subscription\":{\"active\":false,\"description\":\"{{name}}-changed\",\"events\":[\"incident.triggered\"],\"filter\":{\"id\":\"PBF07IY\",\"type\":\"service_reference\"}}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"webhook_subscription\":{\"active\":false,\"id\":\"PSMQPMQ\",\"type\":\"webhook_subscription\",\"events\":[\"incident.triggered\"],\"description\":\"{{name}}-changed\",\"filter\":{\"id\":\"PBF07IY\",\"type\":\"service_reference\"},\"oauth_client\":null,\"delivery_method\":{\"id\":\"PWPDXTH\",\"type\":\"http_delivery_method\",\"secret\":null,\"extension_id\":null,\"url\":\"https://example.com/{{name}}\",\"custom_headers\":[],\"temporarily_disabled\":false}}}"
+    },
+    {
+      "method": "GET",
+      "path": "/webhook_subscriptions/PSMQPMQ",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"webhook_subscription\":{\"active\":false,\"id\":\"PSMQPMQ\",\"type\":\"webhook_subscription\",\"events\":[\"incident.triggered\"],\"description\":\"{{name}}-changed\",\"filter\":{\"id\":\"PBF07IY\",\"type\":\"service_reference\"},\"oauth_client\":null,\"delivery_method\":{\"id\":\"PWPDXTH\",\"type\":\"http_delivery_method\",\"secret\":null,\"extension_id\":null,\"url\":\"https://example.com/{{name}}\",\"custom_headers\":[],\"temporarily_disabled\":false}}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/webhook_subscriptions/PSMQPMQ",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/webhook_subscriptions/PSMQPMQ",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errors\":{\"detail\":\"Not Found\"}}"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "recorded": "2026-11-20T23:56:49Z",
+  "target": "api.pagerduty.com",
+  "vars": {
+    "ep": "PA3XGDX",
+    "orch": "056d1b59-d56b-4bdd-9dd2-0f0afd05fdca",
+    "svc": "PBF07IY",
+    "user": "PTZKMBJ"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/addons",
+      "body": "{\"addon\":{\"name\":\"{{name}}\",\"src\":\"https://example.com/{{name}}\",\"type\":\"full_page_addon\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"addon\":{\"id\":\"PGN02BL\",\"type\":\"full_page_addon\",\"summary\":\"{{name}}\",\"self\":\"{{baseURL}}/addons/PGN02BL\",\"html_url\":null,\"name\":\"{{name}}\",\"src\":\"https://example.com/{{name}}\",\"services\":[]}}"
+    },
+    {
+      "method": "GET",
+      "path": "/addons/PGN02BL",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"addon\":{\"id\":\"PGN02BL\",\"type\":\"full_page_addon\",\"summary\":\"{{name}}\",\"self\":\"{{baseURL}}/addons/PGN02BL\",\"html_url\":null,\"name\":\"{{name}}\",\"src\":\"https://example.com/{{name}}\",\"services\":[]}}"
+    },
+    {
+      "method": "GET",
+      "path": "/addons/PGN02BL",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"addon\":{\"id\":\"PGN02BL\",\"type\":\"full_page_addon\",\"summary\":\"{{name}}\",\"self\":\"{{baseURL}}/addons/PGN02BL\",\"html_url\":null,\"name\":\"{{name}}\",\"src\":\"https://example.com/{{name}}\",\"services\":[]}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/addons/PGN02BL",
+      "body": "{\"addon\":{\"name\":\"{{name}}-changed\",\"src\":\"https://example.com/{{name}}\",\"type\":\"full_page_addon\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"addon\":{\"id\":\"PGN02BL\",\"type\":\"full_page_addon\",\"summary\":\"{{name}}-changed\",\"self\":\"{{baseURL}}/addons/PGN02BL\",\"html_url\":null,\"name\":\"{{name}}-changed\",\"src\":\"https://example.com/{{name}}\",\"services\":[]}}"
+    },
+    {
+      "method": "GET",
+      "path": "/addons/PGN02BL",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"addon\":{\"id\":\"PGN02BL\",\"type\":\"full_page_addon\",\"summary\":\"{{name}}-changed\",\"self\":\"{{baseURL}}/addons/PGN02BL\",\"html_url\":null,\"name\":\"{{name}}-changed\",\"src\":\"https://example.com/{{name}}\",\"services\":[]}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/addons/PGN02BL",
+      "body": "{\"addon\":{\"name\":\"hfl-live-drift\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"addon\":{\"id\":\"PGN02BL\",\"type\":\"full_page_addon\",\"summary\":\"hfl-live-drift\",\"self\":\"{{baseURL}}/addons/PGN02BL\",\"html_url\":null,\"name\":\"hfl-live-drift\",\"src\":\"https://example.com/{{name}}\",\"services\":[]}}"
+    },
+    {
+      "method": "GET",
+      "path": "/addons/PGN02BL",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"addon\":{\"id\":\"PGN02BL\",\"type\":\"full_page_addon\",\"summary\":\"hfl-live-drift\",\"self\":\"{{baseURL}}/addons/PGN02BL\",\"html_url\":null,\"name\":\"hfl-live-drift\",\"src\":\"https://example.com/{{name}}\",\"services\":[]}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/addons/PGN02BL",
+      "body": "{\"addon\":{\"name\":\"{{name}}-changed\",\"src\":\"https://example.com/{{name}}\",\"type\":\"full_page_addon\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"addon\":{\"id\":\"PGN02BL\",\"type\":\"full_page_addon\",\"summary\":\"{{name}}-changed\",\"self\":\"{{baseURL}}/addons/PGN02BL\",\"html_url\":null,\"name\":\"{{name}}-changed\",\"src\":\"https://example.com/{{name}}\",\"services\":[]}}"
+    },
+    {
+      "method": "GET",
+      "path": "/addons/PGN02BL",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"addon\":{\"id\":\"PGN02BL\",\"type\":\"full_page_addon\",\"summary\":\"{{name}}-changed\",\"self\":\"{{baseURL}}/addons/PGN02BL\",\"html_url\":null,\"name\":\"{{name}}-changed\",\"src\":\"https://example.com/{{name}}\",\"services\":[]}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/addons/PGN02BL",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/addons/PGN02BL",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"error\":{\"message\":\"Not Found\",\"code\":2100}}"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ep": "rehearsal-ep",
+    "optfield": "rehearsal-optfield",
+    "orch": "rehearsal-orch",
+    "svc": "rehearsal-svc",
+    "svcfield": "rehearsal-svcfield",
+    "user": "rehearsal-user",
+    "wf": "rehearsal-wf"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/users",
+      "body": "{\"user\":{\"email\":\"{{redacted}}\",\"name\":\"{{redacted}}\",\"type\":\"user\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"user\":{\"avatar_url\":\"{{redacted}}\",\"contact_methods\":[],\"created_via_sso\":true,\"email\":\"{{redacted}}\",\"html_url\":\"{{redacted}}\",\"http_cal_url\":\"{{redacted}}\",\"id\":270000026,\"invitation_sent\":true,\"name\":\"{{redacted}}\",\"notification_rules\":[],\"self\":\"https://example.com/\",\"summary\":\"{{redacted}}\",\"teams\":[],\"type\":\"user\",\"web_cal_url\":\"{{redacted}}\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/users/270000026",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"user\":{\"avatar_url\":\"{{redacted}}\",\"contact_methods\":[],\"created_via_sso\":true,\"email\":\"{{redacted}}\",\"html_url\":\"{{redacted}}\",\"http_cal_url\":\"{{redacted}}\",\"id\":270000026,\"invitation_sent\":true,\"name\":\"{{redacted}}\",\"notification_rules\":[],\"self\":\"https://example.com/\",\"summary\":\"{{redacted}}\",\"teams\":[],\"type\":\"user\",\"web_cal_url\":\"{{redacted}}\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/users/270000026",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"user\":{\"avatar_url\":\"{{redacted}}\",\"contact_methods\":[],\"created_via_sso\":true,\"email\":\"{{redacted}}\",\"html_url\":\"{{redacted}}\",\"http_cal_url\":\"{{redacted}}\",\"id\":270000026,\"invitation_sent\":true,\"name\":\"{{redacted}}\",\"notification_rules\":[],\"self\":\"https://example.com/\",\"summary\":\"{{redacted}}\",\"teams\":[],\"type\":\"user\",\"web_cal_url\":\"{{redacted}}\"}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/users/270000026",
+      "body": "{\"user\":{\"email\":\"{{redacted}}\",\"name\":\"{{redacted}}\",\"type\":\"user\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"user\":{\"avatar_url\":\"{{redacted}}\",\"contact_methods\":[],\"created_via_sso\":true,\"email\":\"{{redacted}}\",\"html_url\":\"{{redacted}}\",\"http_cal_url\":\"{{redacted}}\",\"id\":270000026,\"invitation_sent\":true,\"name\":\"{{redacted}}\",\"notification_rules\":[],\"self\":\"https://example.com/\",\"summary\":\"{{redacted}}\",\"teams\":[],\"type\":\"user\",\"web_cal_url\":\"{{redacted}}\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/users/270000026",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"user\":{\"avatar_url\":\"{{redacted}}\",\"contact_methods\":[],\"created_via_sso\":true,\"email\":\"{{redacted}}\",\"html_url\":\"{{redacted}}\",\"http_cal_url\":\"{{redacted}}\",\"id\":270000026,\"invitation_sent\":true,\"name\":\"{{redacted}}\",\"notification_rules\":[],\"self\":\"https://example.com/\",\"summary\":\"{{redacted}}\",\"teams\":[],\"type\":\"user\",\"web_cal_url\":\"{{redacted}}\"}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/users/270000026",
+      "body": "{\"user\":{\"email\":\"hfl-live-drift\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"user\":{\"avatar_url\":\"{{redacted}}\",\"contact_methods\":[],\"created_via_sso\":true,\"email\":\"{{redacted}}\",\"html_url\":\"{{redacted}}\",\"http_cal_url\":\"{{redacted}}\",\"id\":270000026,\"invitation_sent\":true,\"name\":\"{{redacted}}\",\"notification_rules\":[],\"self\":\"https://example.com/\",\"summary\":\"{{redacted}}\",\"teams\":[],\"type\":\"user\",\"web_cal_url\":\"{{redacted}}\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/users/270000026",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"user\":{\"avatar_url\":\"{{redacted}}\",\"contact_methods\":[],\"created_via_sso\":true,\"email\":\"{{redacted}}\",\"html_url\":\"{{redacted}}\",\"http_cal_url\":\"{{redacted}}\",\"id\":270000026,\"invitation_sent\":true,\"name\":\"{{redacted}}\",\"notification_rules\":[],\"self\":\"https://example.com/\",\"summary\":\"{{redacted}}\",\"teams\":[],\"type\":\"user\",\"web_cal_url\":\"{{redacted}}\"}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/users/270000026",
+      "body": "{\"user\":{\"email\":\"{{redacted}}\",\"name\":\"{{redacted}}\",\"type\":\"user\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"user\":{\"avatar_url\":\"{{redacted}}\",\"contact_methods\":[],\"created_via_sso\":true,\"email\":\"{{redacted}}\",\"html_url\":\"{{redacted}}\",\"http_cal_url\":\"{{redacted}}\",\"id\":270000026,\"invitation_sent\":true,\"name\":\"{{redacted}}\",\"notification_rules\":[],\"self\":\"https://example.com/\",\"summary\":\"{{redacted}}\",\"teams\":[],\"type\":\"user\",\"web_cal_url\":\"{{redacted}}\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/users/270000026",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"user\":{\"avatar_url\":\"{{redacted}}\",\"contact_methods\":[],\"created_via_sso\":true,\"email\":\"{{redacted}}\",\"html_url\":\"{{redacted}}\",\"http_cal_url\":\"{{redacted}}\",\"id\":270000026,\"invitation_sent\":true,\"name\":\"{{redacted}}\",\"notification_rules\":[],\"self\":\"https://example.com/\",\"summary\":\"{{redacted}}\",\"teams\":[],\"type\":\"user\",\"web_cal_url\":\"{{redacted}}\"}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/users/270000026",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/users/270000026",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

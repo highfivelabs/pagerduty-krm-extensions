@@ -1,0 +1,42 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ep": "rehearsal-ep",
+    "optfield": "rehearsal-optfield",
+    "orch": "rehearsal-orch",
+    "svc": "rehearsal-svc",
+    "svcfield": "rehearsal-svcfield",
+    "user": "rehearsal-user",
+    "wf": "rehearsal-wf"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/automation_actions/actions/example-id/services",
+      "body": "{\"service\":{\"id\":\"example-id\",\"type\":\"service_reference\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"service\":{\"html_url\":\"https://example.com/\",\"id\":\"example-id\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"type\":\"service_reference\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/automation_actions/actions/example-id/services/example-id",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"service\":{\"html_url\":\"https://example.com/\",\"id\":\"example-id\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"type\":\"service_reference\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/automation_actions/actions/example-id/services/example-id",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/automation_actions/actions/example-id/services/example-id",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

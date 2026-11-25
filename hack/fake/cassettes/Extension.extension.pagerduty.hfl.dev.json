@@ -1,0 +1,98 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ep": "rehearsal-ep",
+    "orch": "rehearsal-orch",
+    "svc": "rehearsal-svc",
+    "user": "rehearsal-user"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/extensions",
+      "body": "{\"extension\":{\"endpoint_url\":\"https://example.com/{{name}}\",\"extension_objects\":[{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"}],\"extension_schema\":{\"id\":\"PJFWPEP\",\"type\":\"extension_schema_reference\"},\"name\":\"{{name}}\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"extension\":{\"endpoint_url\":\"https://example.com/{{name}}\",\"extension_objects\":[{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"}],\"extension_schema\":{\"id\":\"PJFWPEP\",\"type\":\"extension_schema_reference\"},\"html_url\":\"https://example.com/\",\"id\":270000011,\"name\":\"{{name}}\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"temporarily_disabled\":false,\"type\":\"extension\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/extensions/270000011",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"extension\":{\"endpoint_url\":\"https://example.com/{{name}}\",\"extension_objects\":[{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"}],\"extension_schema\":{\"id\":\"PJFWPEP\",\"type\":\"extension_schema_reference\"},\"html_url\":\"https://example.com/\",\"id\":270000011,\"name\":\"{{name}}\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"temporarily_disabled\":false,\"type\":\"extension\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/extensions/270000011",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"extension\":{\"endpoint_url\":\"https://example.com/{{name}}\",\"extension_objects\":[{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"}],\"extension_schema\":{\"id\":\"PJFWPEP\",\"type\":\"extension_schema_reference\"},\"html_url\":\"https://example.com/\",\"id\":270000011,\"name\":\"{{name}}\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"temporarily_disabled\":false,\"type\":\"extension\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/extensions/270000011",
+      "body": "{\"extension\":{\"endpoint_url\":\"https://example.com/{{name}}\",\"extension_objects\":[{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"}],\"extension_schema\":{\"id\":\"PJFWPEP\",\"type\":\"extension_schema_reference\"},\"name\":\"{{name}}-changed\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"extension\":{\"endpoint_url\":\"https://example.com/{{name}}\",\"extension_objects\":[{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"}],\"extension_schema\":{\"id\":\"PJFWPEP\",\"type\":\"extension_schema_reference\"},\"html_url\":\"https://example.com/\",\"id\":270000011,\"name\":\"{{name}}-changed\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"temporarily_disabled\":false,\"type\":\"extension\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/extensions/270000011",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"extension\":{\"endpoint_url\":\"https://example.com/{{name}}\",\"extension_objects\":[{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"}],\"extension_schema\":{\"id\":\"PJFWPEP\",\"type\":\"extension_schema_reference\"},\"html_url\":\"https://example.com/\",\"id\":270000011,\"name\":\"{{name}}-changed\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"temporarily_disabled\":false,\"type\":\"extension\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/extensions/270000011",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"extension\":{\"endpoint_url\":\"https://example.com/{{name}}\",\"extension_objects\":[{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"}],\"extension_schema\":{\"id\":\"PJFWPEP\",\"type\":\"extension_schema_reference\"},\"html_url\":\"https://example.com/\",\"id\":270000011,\"name\":\"{{name}}-changed\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"temporarily_disabled\":false,\"type\":\"extension\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/extensions/270000011",
+      "body": "{\"extension\":{\"endpoint_url\":\"https://example.com/{{name}}\",\"extension_objects\":[{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"}],\"extension_schema\":{\"id\":\"PJFWPEP\",\"type\":\"extension_schema_reference\"},\"html_url\":\"https://example.com/\",\"id\":270000011,\"name\":\"hfl-live-drift\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"temporarily_disabled\":false,\"type\":\"extension\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"extension\":{\"endpoint_url\":\"https://example.com/{{name}}\",\"extension_objects\":[{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"}],\"extension_schema\":{\"id\":\"PJFWPEP\",\"type\":\"extension_schema_reference\"},\"html_url\":\"https://example.com/\",\"id\":270000011,\"name\":\"hfl-live-drift\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"temporarily_disabled\":false,\"type\":\"extension\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/extensions/270000011",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"extension\":{\"endpoint_url\":\"https://example.com/{{name}}\",\"extension_objects\":[{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"}],\"extension_schema\":{\"id\":\"PJFWPEP\",\"type\":\"extension_schema_reference\"},\"html_url\":\"https://example.com/\",\"id\":270000011,\"name\":\"hfl-live-drift\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"temporarily_disabled\":false,\"type\":\"extension\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/extensions/270000011",
+      "body": "{\"extension\":{\"endpoint_url\":\"https://example.com/{{name}}\",\"extension_objects\":[{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"}],\"extension_schema\":{\"id\":\"PJFWPEP\",\"type\":\"extension_schema_reference\"},\"name\":\"{{name}}-changed\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"extension\":{\"endpoint_url\":\"https://example.com/{{name}}\",\"extension_objects\":[{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"}],\"extension_schema\":{\"id\":\"PJFWPEP\",\"type\":\"extension_schema_reference\"},\"html_url\":\"https://example.com/\",\"id\":270000011,\"name\":\"{{name}}-changed\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"temporarily_disabled\":false,\"type\":\"extension\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/extensions/270000011",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"extension\":{\"endpoint_url\":\"https://example.com/{{name}}\",\"extension_objects\":[{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"}],\"extension_schema\":{\"id\":\"PJFWPEP\",\"type\":\"extension_schema_reference\"},\"html_url\":\"https://example.com/\",\"id\":270000011,\"name\":\"{{name}}-changed\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"temporarily_disabled\":false,\"type\":\"extension\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/extensions/270000011",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/extensions/270000011",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

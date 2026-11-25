@@ -1,0 +1,533 @@
+# Supplement to PagerDuty's REST spec (hack/gen/vendor.yaml specs[]): service
+# integrations (pagerduty_service_integration), as one resource.
+#
+# PagerDuty's REST spec (PagerDuty/api-schema@3fe48a2b, reference/REST/openapiv3.json)
+# documents POST /services/{id}/integrations and GET/PUT
+# /services/{id}/integrations/{integration_id}, but not the DELETE that
+# removes an integration, so the generator cannot pair them into a resource.
+# The Terraform provider deletes one with DELETE
+# /services/{id}/integrations/{integration_id}
+# pagerduty/resource_pagerduty_service_integration.go, through
+# heimweh/go-pagerduty pagerduty/service.go DeleteIntegration).
+#
+# The POST, GET and PUT operations and every schema below are copied from the
+# REST spec at that commit (examples left out); only the DELETE is added, and
+# Integration's allOf is written as one object: the REST spec's read-only base
+# `type` (Tag/allOf/0) gives way to Integration's own writable `type` enum,
+# which a create sends (the REST spec's request examples; the provider's
+# `type` attribute).
+# Written 2026-11-22.
+openapi: 3.0.2
+info:
+  title: PagerDuty service integrations (supplement)
+  version: 2.0.0
+servers:
+- url: https://api.pagerduty.com
+  description: PagerDuty V2 API.
+paths:
+  /services/{id}/integrations:
+    post:
+      x-pd-requires-scope: services.write
+      tags:
+      - Services
+      operationId: createServiceIntegration
+      summary: Create a new integration
+      parameters:
+      - $ref: '#/components/parameters/header_Accept'
+      - $ref: '#/components/parameters/header_Content-Type'
+      - $ref: '#/components/parameters/id'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                integration:
+                  $ref: '#/components/schemas/Integration'
+              required:
+              - integration
+        description: The integration to be created
+      responses:
+        '201':
+          description: The integration that was created.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  integration:
+                    $ref: '#/components/schemas/Integration'
+                required:
+                - integration
+        '400':
+          $ref: '#/components/responses/ArgumentError'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+  /services/{id}/integrations/{integration_id}:
+    get:
+      x-pd-requires-scope: services.read
+      tags:
+      - Services
+      operationId: getServiceIntegration
+      summary: View an integration
+      parameters:
+      - $ref: '#/components/parameters/header_Accept'
+      - $ref: '#/components/parameters/header_Content-Type'
+      - $ref: '#/components/parameters/id'
+      - $ref: '#/components/parameters/integration_id'
+      - $ref: '#/components/parameters/include_services_integrations'
+      responses:
+        '200':
+          description: The integration that was requested.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  integration:
+                    $ref: '#/components/schemas/Integration'
+                required:
+                - integration
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+    put:
+      x-pd-requires-scope: services.write
+      tags:
+      - Services
+      operationId: updateServiceIntegration
+      summary: Update an existing integration
+      parameters:
+      - $ref: '#/components/parameters/header_Accept'
+      - $ref: '#/components/parameters/header_Content-Type'
+      - $ref: '#/components/parameters/id'
+      - $ref: '#/components/parameters/integration_id'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                integration:
+                  $ref: '#/components/schemas/Integration'
+              required:
+              - integration
+        description: The integration to be updated
+      responses:
+        '200':
+          description: The integration that was updated.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  integration:
+                    $ref: '#/components/schemas/Integration'
+                required:
+                - integration
+        '400':
+          $ref: '#/components/responses/ArgumentError'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+    delete:
+      tags:
+      - Services
+      operationId: deleteServiceIntegration
+      summary: Delete an integration
+      parameters:
+      - $ref: '#/components/parameters/header_Accept'
+      - $ref: '#/components/parameters/header_Content-Type'
+      - $ref: '#/components/parameters/id'
+      - $ref: '#/components/parameters/integration_id'
+      responses:
+        '204':
+          description: The integration was deleted.
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+components:
+  parameters:
+    header_Accept:
+      name: Accept
+      description: The `Accept` header is used as a versioning header.
+      in: header
+      required: true
+      schema:
+        type: string
+        default: application/vnd.pagerduty+json;version=2
+    header_Content-Type:
+      name: Content-Type
+      in: header
+      required: true
+      schema:
+        type: string
+        default: application/json
+        enum:
+        - application/json
+    id:
+      name: id
+      description: The ID of the resource.
+      in: path
+      required: true
+      schema:
+        type: string
+    include_services_integrations:
+      name: include[]
+      in: query
+      description: Array of additional details to include.
+      explode: true
+      schema:
+        type: string
+        enum:
+        - services
+        - vendors
+        uniqueItems: true
+    integration_id:
+      name: integration_id
+      in: path
+      description: The integration ID on the service.
+      required: true
+      schema:
+        type: string
+  responses:
+    ArgumentError:
+      description: Caller provided invalid arguments. Please review the response for error details. Retrying with the same arguments will *not* work.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/responses/Conflict/content/application~1json/schema'
+    Conflict:
+      description: The request conflicts with the current state of the server.
+      content:
+        application/json:
+          schema:
+            description: Generic error response from the PagerDuty API
+            type: object
+            properties:
+              error:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    readOnly: true
+                  message:
+                    type: string
+                    readOnly: true
+                    description: Error message string
+                  errors:
+                    type: array
+                    readOnly: true
+                    items:
+                      type: string
+                      readOnly: true
+    Forbidden:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/responses/Conflict/content/application~1json/schema'
+    NotFound:
+      description: The requested resource was not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/responses/Conflict/content/application~1json/schema'
+    TooManyRequests:
+      description: Too many requests have been made, the rate limit has been reached.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/responses/Conflict/content/application~1json/schema'
+    Unauthorized:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/responses/Conflict/content/application~1json/schema'
+  schemas:
+    EmailParser:
+      type: object
+      properties:
+        action:
+          type: string
+          enum:
+          - trigger
+          - resolve
+        match_predicate:
+          $ref: '#/components/schemas/MatchPredicate'
+        value_extractors:
+          type: array
+          description: Additional values that will be pulled in to the Incident object. Exactly one value extractor must have a `value_name` of `incident_key`.
+          uniqueItems: true
+          minItems: 1
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                - entire
+                - regex
+                - between
+              part:
+                type: string
+                enum:
+                - body
+                - subject
+                - from_addresses
+              value_name:
+                type: string
+                minLength: 1
+                description: The field name to set in the Incident object. Exactly one must use the `value_name` of `incident_key`
+              regex:
+                type: string
+              starts_after:
+                type: string
+              ends_with:
+                type: string
+            required:
+            - type
+            - part
+            - value_name
+      required:
+      - action
+      - match_predicate
+    Integration:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        summary:
+          type: string
+          nullable: true
+          readOnly: true
+          description: A short-form, server-generated string that provides succinct, important information about an object suitable for primary labeling of an entity in a client. In many cases, this will be identical to `name`, though it is not intended to be an identifier.
+        self:
+          type: string
+          nullable: true
+          readOnly: true
+          format: url
+          description: the API show URL at which the object is accessible
+        html_url:
+          type: string
+          nullable: true
+          readOnly: true
+          format: url
+          description: a URL at which the entity is uniquely displayed in the Web app
+        type:
+          type: string
+          enum:
+          - aws_cloudwatch_inbound_integration
+          - cloudkick_inbound_integration
+          - event_transformer_api_inbound_integration
+          - generic_email_inbound_integration
+          - generic_events_api_inbound_integration
+          - keynote_inbound_integration
+          - nagios_inbound_integration
+          - pingdom_inbound_integration
+          - sql_monitor_inbound_integration
+          - events_api_v2_inbound_integration
+        name:
+          type: string
+          description: The name of this integration.
+        service:
+          $ref: '#/components/schemas/ServiceReference'
+        created_at:
+          type: string
+          format: date-time
+          description: The date/time when this integration was created.
+          readOnly: true
+        vendor:
+          $ref: '#/components/schemas/VendorReference'
+        integration_email:
+          type: string
+          description: Specify for generic_email_inbound_integration. Must be set to an email address @your-subdomain.pagerduty.com
+        email_incident_creation:
+          type: string
+          description: Specify for generic_email_inbound_integration
+          enum:
+          - on_new_email
+          - on_new_email_subject
+          - only_if_no_open_incidents
+          - use_rules
+        email_filter_mode:
+          type: string
+          description: Specify for generic_email_inbound_integration. May override email_incident_creation
+          enum:
+          - all-email
+          - or-rules-email
+          - and-rules-email
+        email_parsers:
+          type: array
+          description: Specify for generic_email_inbound_integration.
+          uniqueItems: true
+          minItems: 1
+          items:
+            $ref: '#/components/schemas/EmailParser'
+        email_parsing_fallback:
+          type: string
+          description: Specify for generic_email_inbound_integration.
+          enum:
+          - open_new_incident
+          - discard
+        email_filters:
+          type: array
+          description: Specify for generic_email_inbound_integration.
+          uniqueItems: true
+          minItems: 1
+          items:
+            type: object
+            properties:
+              subject_mode:
+                type: string
+                enum:
+                - match
+                - no-match
+                - always
+              subject_regex:
+                type: string
+                description: Specify if subject_mode is set to match or no-match
+              body_mode:
+                type: string
+                enum:
+                - match
+                - no-match
+                - always
+              body_regex:
+                type: string
+                description: Specify if body_mode is set to match or no-match
+              from_email_mode:
+                type: string
+                enum:
+                - match
+                - no-match
+                - always
+              from_email_regex:
+                type: string
+                description: Specify if from_email_mode is set to match or no-match
+            required:
+            - subject_mode
+            - body_mode
+            - from_email_mode
+          required:
+          - type
+          - name
+    MatchPredicate:
+      type: object
+      properties:
+        type:
+          type: string
+          enum:
+          - all
+          - any
+          - not
+          - contains
+          - exactly
+          - regex
+        matcher:
+          type: string
+          description: Required if the type is `contains`, `exactly` or `regex`.
+          minLength: 1
+        part:
+          type: string
+          description: The email field that will attempt to use the matcher expression. Required if the type is `contains`, `exactly` or `regex`.
+          enum:
+          - body
+          - subject
+          - from_addresses
+        children:
+          type: array
+          description: Additional matchers to be run. Must be not empty if the type is `all`, `any`, or `not`.
+          items:
+            $ref: '#/components/schemas/MatchPredicate'
+      required:
+      - type
+      - part
+      - children
+    Reference:
+      allOf:
+      - $ref: '#/components/schemas/Tag/allOf/0'
+      - type: object
+        required:
+        - type
+        - id
+    ServiceReference:
+      allOf:
+      - $ref: '#/components/schemas/Reference'
+      - type: object
+        properties:
+          type:
+            type: string
+            enum:
+            - service_reference
+    Tag:
+      allOf:
+      - type: object
+        properties:
+          id:
+            type: string
+            readOnly: true
+          summary:
+            type: string
+            nullable: true
+            readOnly: true
+            description: A short-form, server-generated string that provides succinct, important information about an object suitable for primary labeling of an entity in a client. In many cases, this will be identical to `name`, though it is not intended to be an identifier.
+          type:
+            type: string
+            readOnly: true
+            description: A string that determines the schema of the object. This must be the standard name for the entity, suffixed by `_reference` if the object is a reference.
+          self:
+            type: string
+            nullable: true
+            readOnly: true
+            format: url
+            description: the API show URL at which the object is accessible
+          html_url:
+            type: string
+            nullable: true
+            readOnly: true
+            format: url
+            description: a URL at which the entity is uniquely displayed in the Web app
+      - type: object
+        properties:
+          type:
+            type: string
+            description: The type of object being created.
+            default: tag
+            enum:
+            - tag
+          label:
+            type: string
+            description: The label of the tag.
+            maxLength: 191
+        required:
+        - label
+        - type
+    VendorReference:
+      allOf:
+      - $ref: '#/components/schemas/Reference'
+      - type: object
+        properties:
+          type:
+            type: string
+            enum:
+            - vendor_reference

@@ -1,0 +1,358 @@
+# Copyright 2026 High Five Labs
+# SPDX-License-Identifier: Apache-2.0
+#
+# Live tests (TestEveryKindLive, krm-rest-runtime's kindtest.Live): these
+# kinds, in this order, against the real API. Kinds not listed are not run
+# live. They skip, naming the secret, until it exists in Secret Manager; then
+#   KRM_LIVE=1 go test -tags live -run TestEveryKindLive -v .
+# Everything a run makes is named hfl-live-<stamp>-<hex> (or hfl_live_...),
+# deleted at the end; the sweep deletes older leftovers. How it works and
+# what the {{...}} templates mean: krm-rest-runtime docs/live.md.
+#
+# The token is a REST API key (General Access, not read-only) of the
+# developer account (its subdomain is the secret's `subdomain`). Nothing here pages
+# anyone: no incident or event is ever sent, the escalation policy's only
+# target is the account's first user (read, never changed), and the one
+# schedule's layer starts 30 days out, so no on-call shift (and no handoff
+# notification) begins during a run. Webhooks and extensions point at
+# example.com.
+secret: krm-live-pagerduty      # JSON: {"token": "u+..."}
+target: api.pagerduty.com
+
+before:
+- {method: GET, path: "/users?limit=1", save: {user: users/0/id}}
+- method: POST
+  path: /escalation_policies
+  body: {escalation_policy: {type: escalation_policy, name: "{{run}}", escalation_rules: [{escalation_delay_in_minutes: 30, targets: [{id: "{{var:user}}", type: user_reference}]}]}}
+  save: {ep: escalation_policy/id}
+- method: POST
+  path: /services
+  body: {service: {type: service, name: "{{run}}", escalation_policy: {id: "{{var:ep}}", type: escalation_policy_reference}}}
+  save: {svc: service/id}
+- method: POST
+  path: /event_orchestrations
+  body: {orchestration: {name: "{{run}}"}}
+  save: {orch: orchestration/id}
+after:
+- {method: DELETE, path: "/event_orchestrations/{{var:orch}}", ok: [404]}
+- {method: DELETE, path: "/services/{{var:svc}}", ok: [404]}
+- {method: DELETE, path: "/escalation_policies/{{var:ep}}", ok: [404]}
+
+sweep:
+- {list: "/services?query=hfl-live-&limit=100", items: services, name: name, id: id, delete: "/services/{id}"}
+- {list: "/escalation_policies?query=hfl-live-&limit=100", items: escalation_policies, name: name, id: id, delete: "/escalation_policies/{id}"}
+- {list: "/teams?query=hfl-live-&limit=100", items: teams, name: name, id: id, delete: "/teams/{id}"}
+- {list: "/business_services?limit=100", items: business_services, name: name, id: id, delete: "/business_services/{id}"}
+- {list: "/tags?query=hfl-live-&limit=100", items: tags, name: label, id: id, delete: "/tags/{id}"}
+- {list: "/event_orchestrations?limit=100", items: orchestrations, name: name, id: id, delete: "/event_orchestrations/{id}"}
+- {list: "/addons?limit=100", items: addons, name: name, id: id, delete: "/addons/{id}"}
+- {list: "/extensions?query=hfl-live-&limit=100", items: extensions, name: name, id: id, delete: "/extensions/{id}"}
+- {list: "/incidents/types/incident_default/custom_fields", items: fields, name: name, id: id, delete: "/incidents/types/incident_default/custom_fields/{id}"}
+- {list: "/services/custom_fields", items: fields, name: name, id: id, delete: "/services/custom_fields/{id}"}
+- {list: "/incident_workflows?query=hfl-live-&limit=100", items: incident_workflows, name: name, id: id, delete: "/incident_workflows/{id}"}
+- {list: "/maintenance_windows?query=hfl-live-&limit=100", items: maintenance_windows, name: description, id: id, delete: "/maintenance_windows/{id}"}
+- {list: "/rulesets?limit=100", items: rulesets, name: name, id: id, delete: "/rulesets/{id}"}
+- {list: "/schedules?query=hfl-live-&limit=100", items: schedules, name: name, id: id, delete: "/schedules/{id}"}
+- {list: "/v3/schedules?limit=100", items: schedules, name: name, id: id, delete: "/v3/schedules/{id}"}
+- {list: "/webhook_subscriptions?limit=100", items: webhook_subscriptions, name: description, id: id, delete: "/webhook_subscriptions/{id}"}
+- {list: "/alert_grouping_settings?limit=100", items: alert_grouping_settings, name: name, id: id, delete: "/alert_grouping_settings/{id}"}
+
+kinds:
+- kind: Tag
+  replaceSample: true
+  spec: {type: tag, label: "{{name}}"}
+
+- kind: Team
+  replaceSample: true
+  spec: {type: team, name: "{{name}}", description: first}
+  change: {description: second}
+
+- kind: BusinessService
+  replaceSample: true
+  spec: {name: "{{name}}", description: first}
+  change: {description: second}
+
+- kind: EscalationPolicy
+  replaceSample: true
+  spec:
+    type: escalation_policy
+    name: "{{name}}"
+    description: first
+    escalation_rules: [{escalation_delay_in_minutes: 30, targets: [{id: "{{var:user}}", type: user_reference}]}]
+  change: {description: second}
+
+- kind: Service
+  replaceSample: true
+  spec: {type: service, name: "{{name}}", description: first, escalation_policy: {id: "{{var:ep}}", type: escalation_policy_reference}}
+  change: {description: second}
+
+- kind: Addon
+  replaceSample: true
+  spec: {type: full_page_addon, name: "{{name}}", src: "https://example.com/{{name}}"}
+  change: {name: "{{name}}-changed"}
+
+- kind: EventOrchestration
+  replaceSample: true
+  spec: {name: "{{name}}", description: first}
+  change: {description: second}
+
+- kind: EventOrchestrationIntegration
+  replaceSample: true
+  spec: {eventOrchestrationID: "{{var:orch}}", label: "{{name}}"}
+  change: {label: "{{name}}-changed"}
+
+- kind: EventOrchestrationGlobalCacheVariable
+  replaceSample: true
+  spec:
+    eventOrchestrationID: "{{var:orch}}"
+    name: "{{name_}}"
+    configuration: {type: recent_value, source: event.summary, regex: "(.*)"}
+  change: {name: "{{name_}}_changed"}
+  drift: hfl_live_drift          # a variable name: letters, digits, _
+
+- kind: EventOrchestrationGlobal
+  replaceSample: true
+  spec:
+    eventOrchestrationID: "{{var:orch}}"
+    sets: [{id: start, rules: []}]
+    catch_all: {actions: {}}
+  change: {catch_all: {actions: {suppress: true}}}
+  drift: {actions: {suppress: false}}
+
+- kind: EventOrchestrationRouter
+  replaceSample: true
+  spec:
+    eventOrchestrationID: "{{var:orch}}"
+    sets: [{id: start, rules: []}]
+    catch_all: {actions: {route_to: unrouted}}
+  change: {catch_all: {actions: {route_to: "{{var:svc}}"}}}
+  drift: {actions: {route_to: unrouted}}
+
+- kind: EventOrchestrationUnrouted
+  replaceSample: true
+  spec:
+    eventOrchestrationID: "{{var:orch}}"
+    sets: [{id: start, rules: []}]
+    catch_all: {actions: {}}
+  change: {catch_all: {actions: {severity: warning}}}
+  drift: {actions: {severity: info}}
+
+- kind: EventOrchestrationService
+  replaceSample: true
+  spec:
+    serviceID: "{{var:svc}}"
+    sets: [{id: start, rules: []}]
+    catch_all: {actions: {}}
+  change: {catch_all: {actions: {suppress: true}}}
+  drift: {actions: {suppress: false}}
+
+- kind: EventOrchestrationServiceCacheVariable
+  replaceSample: true
+  spec:
+    serviceID: "{{var:svc}}"
+    name: "{{name_}}"
+    configuration: {type: recent_value, source: event.summary, regex: "(.*)"}
+  change: {name: "{{name_}}_changed"}
+  drift: hfl_live_drift          # a variable name: letters, digits, _
+
+- kind: Extension
+  replaceSample: true
+  spec:
+    name: "{{name}}"
+    endpoint_url: "https://example.com/{{name}}"
+    extension_schema: {id: PJFWPEP, type: extension_schema_reference}
+    extension_objects: [{id: "{{var:svc}}", type: service_reference}]
+  change: {name: "{{name}}-changed"}
+  driftFull: true                # the update refuses a body without extension_schema
+
+- kind: IncidentCustomField
+  replaceSample: true
+  spec: {name: "{{name_}}", display_name: "{{name}}", data_type: string, field_type: single_value, description: first}
+  change: {description: second}
+
+- kind: IncidentTypeCustomField
+  replaceSample: true
+  spec: {typeIdOrName: incident_default, name: "{{name_}}", display_name: "{{name}}", data_type: string, field_type: single_value, description: first}
+  change: {description: second}
+
+- kind: IncidentCustomFieldOption
+  replaceSample: true
+  before:
+  - method: POST
+    path: /incidents/types/incident_default/custom_fields
+    body: {field: {name: "{{name_}}_parent", display_name: "{{name}}-parent", data_type: string, field_type: single_value_fixed, field_options: [{data: {data_type: string, value: keep}}]}}
+    save: {optfield: field/id}
+  after:
+  - {method: DELETE, path: "/incidents/types/incident_default/custom_fields/{{var:optfield}}", ok: [404]}
+  spec: {typeIdOrName: incident_default, fieldID: "{{var:optfield}}", data: {data_type: string, value: "{{name}}"}}
+  change: {data: {data_type: string, value: "{{name}}-changed"}}
+  noDrift: an option's only field is its value; the update step covers it
+
+- kind: IncidentWorkflow
+  replaceSample: true
+  spec: {name: "{{name}}", description: first}
+  change: {description: second}
+
+- kind: IncidentWorkflowTrigger
+  replaceSample: true
+  before:
+  - method: POST
+    path: /incident_workflows
+    body: {incident_workflow: {name: "{{name}}-workflow"}}
+    save: {wf: incident_workflow/id}
+  after:
+  - {method: DELETE, path: "/incident_workflows/{{var:wf}}", ok: [404]}
+  spec:
+    trigger_type: manual
+    workflow: {id: "{{var:wf}}"}   # the API refuses workflow.type
+    is_subscribed_to_all_services: false
+    services: [{id: "{{var:svc}}"}]   # read back as type service
+  change: {is_subscribed_to_all_services: true, services: []}   # all services, or a list
+  noDrift: no string field to change behind the controller's back
+
+- kind: MaintenanceWindow
+  replaceSample: true
+  spec:
+    type: maintenance_window
+    start_time: "{{date:30}}T00:00:00Z"
+    end_time: "{{date:30}}T01:00:00Z"
+    description: "{{name}}"
+    services: [{id: "{{var:svc}}", type: service_reference}]
+  change: {description: "{{name}}-changed"}
+
+- kind: Schedule
+  replaceSample: true
+  spec:
+    type: schedule
+    name: "{{name}}"
+    description: first
+    time_zone: Etc/UTC             # "UTC" reads back as Etc/UTC
+    schedule_layers:
+    - start: "{{date:30}}T00:00:00Z"
+      rotation_virtual_start: "{{date:30}}T00:00:00Z"
+      rotation_turn_length_seconds: 86400
+      users: [{user: {id: "{{var:user}}", type: user_reference}}]
+  change: {description: second}
+  driftFull: true                # a PUT of the description alone answers 500
+
+- kind: Schedulev2
+  replaceSample: true
+  spec: {name: "{{name}}", time_zone: America/New_York, description: first}   # /v3 refuses UTC and Etc/UTC
+  change: {description: second}
+  driftFull: true                # the update refuses a body without time_zone
+
+- kind: ServiceCustomField
+  replaceSample: true
+  spec: {name: "{{name_}}", display_name: "{{name}}", data_type: string, field_type: single_value, description: first}
+  change: {description: second}
+
+- kind: ServiceCustomFieldValue
+  replaceSample: true
+  before:
+  - method: POST
+    path: /services/custom_fields
+    body: {field: {name: "{{name_}}_parent", display_name: "{{name}}-parent", data_type: string, field_type: single_value}}
+    save: {svcfield: field/id}
+  after:
+  - {method: DELETE, path: "/services/custom_fields/{{var:svcfield}}", ok: [404]}
+  spec:
+    serviceID: "{{var:svc}}"
+    custom_fields: [{id: "{{var:svcfield}}", value: first}]
+  change: {custom_fields: [{id: "{{var:svcfield}}", value: second}]}
+  noDrift: the values are a list; the update step covers it
+
+- kind: WebhookSubscription
+  replaceSample: true
+  spec:
+    type: webhook_subscription
+    description: "{{name}}"
+    active: false
+    delivery_method: {type: http_delivery_method, url: "https://example.com/{{name}}"}
+    events: [incident.triggered]
+    filter: {type: service_reference, id: "{{var:svc}}"}
+  change: {description: "{{name}}-changed"}
+
+- kind: ServiceIntegration
+  replaceSample: true
+  spec: {serviceID: "{{var:svc}}", type: generic_events_api_inbound_integration, name: "{{name}}"}   # as Terraform's generic test; no event is ever sent to it
+  change: {name: "{{name}}-changed"}
+  driftFull: true                # the PUT takes the whole integration (type and all), as the API's example sends
+
+# AIOps is a paid add-on; for an account without it, the API documents that
+# the setting is still read and written, with a warning alongside.
+- kind: Enablement
+  replaceSample: true
+  spec: {serviceID: "{{var:svc}}", featureName: aiops, enabled: false}
+  change: {enabled: true}
+  drift: false
+
+# Last of the run: right after the service is made, the alert grouping API
+# sometimes answers "service id ... not found" (it learns of new services
+# a little later).
+- kind: AlertGroupingSetting
+  replaceSample: true
+  spec:
+    name: "{{name}}"
+    description: first
+    type: time
+    config: {timeout: 300}
+    services: [{id: "{{var:svc}}"}]
+  change: {description: second}
+  driftFull: true                # a PUT of the description alone answers 500
+
+- kind: AutomationActionsAction
+  fakeOnly: Automation Actions is a paid add-on; the developer account answers 402 (not entitled) on /automation_actions
+- kind: AutomationActionsActionServiceAssociation
+  fakeOnly: Automation Actions is a paid add-on; the developer account answers 402 (not entitled) on /automation_actions
+- kind: AutomationActionsActionTeamAssociation
+  fakeOnly: Automation Actions is a paid add-on; the developer account answers 402 (not entitled) on /automation_actions
+- kind: AutomationActionsRunner
+  fakeOnly: Automation Actions is a paid add-on; the developer account answers 402 (not entitled) on /automation_actions
+- kind: AutomationActionsRunnerTeamAssociation
+  fakeOnly: Automation Actions is a paid add-on; the developer account answers 402 (not entitled) on /automation_actions
+- kind: User
+  skip: the account allows only @highfivelabs.dev user emails (an account setting we do not change), so a test user would get a deliverable address and an invitation; the owner is never changed
+- kind: UserContactMethod
+  skip: needs a user other than the owner (see User); contact methods are not added to the owner
+- kind: UserNotificationRule
+  skip: needs a user other than the owner (see User); notification rules are not added to the owner
+- kind: UserHandoffNotificationRule
+  skip: needs a user other than the owner (see User); handoff rules are not added to the owner
+- kind: TeamMembership
+  skip: needs a user other than the owner (see User); the owner is not added to teams
+- kind: IncidentType
+  skip: PagerDuty's API cannot delete an incident type (it can only be disabled), so every run would leave one in the account for good
+- kind: SlackConnection
+  skip: needs a Slack workspace connected to the PagerDuty account (an outside account and its app install); the developer account has none
+
+- kind: BusinessServiceSubscriber
+  skip: "not yet written: needs a business service and a team or user to subscribe, made for the run"
+- kind: JiraCloudAccountMappingRule
+  skip: needs a Jira Cloud account mapped to the PagerDuty account (the Jira Cloud integration); the developer account has none
+- kind: TagAssignment
+  skip: "not yet written: needs a tag and a team, user or escalation policy to tag, made for the run"
+
+# The run's service ({{var:svc}}) depends on another made for this kind.
+- kind: TechnicalServiceDependency
+  replaceSample: true
+  before:
+  - method: POST
+    path: /services
+    body: {service: {type: service, name: "{{name}}-supporting", escalation_policy: {id: "{{var:ep}}", type: escalation_policy_reference}}}
+    save: {supporting: service/id}
+  after:
+  - {method: DELETE, path: "/services/{{var:supporting}}", ok: [404]}
+  spec: {supporting_service: {id: "{{var:supporting}}", type: service}, dependent_service: {id: "{{var:svc}}", type: service}}
+  noUpdate: a service dependency cannot be changed, only made again
+
+- kind: BusinessServiceDependency
+  replaceSample: true
+  before:
+  - method: POST
+    path: /business_services
+    body: {business_service: {name: "{{name}}-dependent"}}
+    save: {dependentBusiness: business_service/id}
+  after:
+  - {method: DELETE, path: "/business_services/{{var:dependentBusiness}}", ok: [404]}
+  spec: {supporting_service: {id: "{{var:svc}}", type: service}, dependent_service: {id: "{{var:dependentBusiness}}", type: business_service}}
+  noUpdate: a service dependency cannot be changed, only made again

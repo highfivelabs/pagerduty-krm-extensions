@@ -1,0 +1,45 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ep": "rehearsal-ep",
+    "optfield": "rehearsal-optfield",
+    "orch": "rehearsal-orch",
+    "svc": "rehearsal-svc",
+    "svcfield": "rehearsal-svcfield",
+    "user": "rehearsal-user",
+    "wf": "rehearsal-wf"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/business_services/example-id/subscribers",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"subscribers\":[]}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/business_services/example-id/subscribers",
+      "body": "{\"subscribers\":[{\"subscriber_id\":\"example-subscriber-id\",\"subscriber_type\":\"user\"}]}",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"status\":\"ok\"}"
+    },
+    {
+      "method": "GET",
+      "path": "/business_services/example-id/subscribers",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"subscribers\":[{\"subscriber_id\":\"example-subscriber-id\",\"subscriber_type\":\"user\"}]}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/business_services/example-id/unsubscribe",
+      "body": "{\"subscribers\":[{\"subscriber_id\":\"example-subscriber-id\",\"subscriber_type\":\"user\"}]}",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"status\":\"ok\"}"
+    }
+  ]
+}

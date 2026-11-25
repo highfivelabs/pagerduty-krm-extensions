@@ -1,0 +1,163 @@
+# Inputs to krm-rest-runtime/gen/krmgen.py. Specs are pinned to the commit in each url;
+# hack/gen/fetch-specs.sh downloads them. overrides: map (Terraform type -> API item path),
+# exclude (Terraform types), excludePaths (API item paths).
+vendor: pagerduty
+title: PagerDuty
+groupSuffix: pagerduty.hfl.dev
+connectionKind: Connection
+credentialKeys:
+- token
+baseURLHelp: 'PagerDuty REST API base URL; default https://api.pagerduty.com (EU accounts: https://api.eu.pagerduty.com).'
+terraform:
+  provider: PagerDuty/pagerduty
+  prefix: pagerduty
+  gaps: terraform-gaps.json
+specs:
+- file: specs/pagerduty.json
+  url: https://raw.githubusercontent.com/PagerDuty/api-schema/3fe48a2b037cad384edd1ae4f51645eca145faa5/reference/REST/openapiv3.json
+# PagerDuty's own spec of its Jira Cloud integration API, on the same host
+# (api.pagerduty.com/integration-jira-cloud/...): account mapping rules.
+- file: specs/integration-jira-cloud.json
+  url: https://raw.githubusercontent.com/PagerDuty/api-schema/3fe48a2b037cad384edd1ae4f51645eca145faa5/reference/integration-jira-cloud/openapiv3.json
+# PagerDuty's own spec of its Slack integration API. Its paths (/workspaces/...)
+# are relative to a base URL of their own: https://app.pagerduty.com/integration-slack,
+# as the Terraform provider calls it with a user-level token (the spec's servers
+# entry names https://api.pagerduty.com/integration-slack). Objects of its kinds
+# name a second Connection with that baseURL (README, "Slack connections").
+- file: specs/integration-slack-service.json
+  url: https://raw.githubusercontent.com/PagerDuty/api-schema/3fe48a2b037cad384edd1ae4f51645eca145faa5/reference/integration-slack-service/openapiv3.json
+# Hand-written supplement: the service integration DELETE the REST spec leaves
+# out (sources in the file's header).
+- file: supplement/service-integrations.yaml
+envelope:
+  auto: true
+# Kinds written by hand (hack/gen/kinds/*.yaml, sources in each).
+handwritten: {dir: kinds}
+# Terraform types that will not be kinds (README "Not covered", generated).
+hardBlocks:
+  pagerduty_event_rule: >-
+    A retired API (/event_rules): terraform-provider-pagerduty v3.37.0
+    deprecates the type in favor of rulesets (website/docs/r/event_rule),
+    which are end-of-life too, and PagerDuty's REST spec no longer has the
+    path.
+  pagerduty_ruleset: >-
+    End-of-life: the provider's docs say rulesets and event rules "will
+    end-of-life soon" (use Event Orchestration), and PagerDuty's API refuses
+    new ones (HTTP 405 "Creating new rulesets and rules is not allowed").
+  pagerduty_ruleset_rule: >-
+    End-of-life, as pagerduty_ruleset: the API refuses new ruleset rules
+    (HTTP 405).
+  pagerduty_service_event_rule: >-
+    End-of-life, as pagerduty_ruleset: the API refuses new service event
+    rules (HTTP 405); Event Orchestration's service rules
+    (EventOrchestrationService) replace them.
+  pagerduty_response_play: >-
+    Removed from PagerDuty's API on 2025-09-09 (the provider's docs: "Response
+    Play will end-of-life soon"); incident workflows (IncidentWorkflow)
+    replace response plays.
+# Fields a create takes and its update's body does not (custom fields' name,
+# data_type) are sent on create only: PagerDuty refuses them on update.
+createOnlyFromSpec: true
+overrides:
+  # The spec documents a custom field's value as an object ({value: ...});
+  # the API takes the bare value (a string, number, boolean or list), as
+  # the live test sends it.
+  anyValue:
+    /services/{id}/custom_fields/values: ["custom_fields[].value"]
+  map:
+    pagerduty_tag_assignment: /{entity_type}/{id}/tags
+    # A ServiceNow extension is an extension (POST /extensions) whose
+    # extension_schema is ServiceNow's and whose config holds its settings
+    # (snow_user, snow_password, sync_options, target, task_type, referer).
+    pagerduty_extension: /extensions/{id}
+    pagerduty_extension_servicenow: /extensions/{id}
+    pagerduty_slack_connection: /workspaces/{slack_team_id}/connections/{connection_id}
+    pagerduty_automation_actions_action_service_association: /automation_actions/actions/{id}/services/{service_id}
+    pagerduty_automation_actions_action_team_association: /automation_actions/actions/{id}/teams/{team_id}
+    pagerduty_automation_actions_runner_team_association: /automation_actions/runners/{id}/teams/{team_id}
+    pagerduty_event_orchestration_global_cache_variable: /event_orchestrations/{id}/cache_variables/{cache_variable_id}
+    pagerduty_schedulev2: /v3/schedules/{id}
+    pagerduty_team_membership: /teams/{id}/users/{user_id}
+    pagerduty_enablement: /services/{id}/enablements/{feature_name}
+    pagerduty_incident_type: /incidents/types/{type_id_or_name}
+  kindNames:
+    /extensions/{id}: Extension
+  # Written and deleted but never read singly: read by finding the item in a
+  # list on another path. A team member (PUT/DELETE /teams/{id}/users/{user_id})
+  # is the entry of GET /teams/{id}/members whose user.id is the user, as the
+  # Terraform provider reads it. A service's feature enablement (PUT
+  # /services/{id}/enablements/{feature_name}; no DELETE, so a settings kind)
+  # is the entry of GET /services/{id}/enablements whose feature is the name.
+  readFrom:
+    /teams/{id}/users/{user_id}:
+      path: /teams/{id}/members
+      field: user.id
+      list: members
+      param: user_id
+    /services/{id}/enablements/{feature_name}:
+      path: /services/{id}/enablements
+      field: feature
+      list: enablements
+      param: feature_name
+  # A business service's subscriber: a link made by POST
+  # .../subscribers {"subscribers": [<one>]}, listed in the same path's
+  # subscribers, and undone by the same body to .../unsubscribe.
+  assocs:
+  - create: /business_services/{id}/subscribers
+    read: /business_services/{id}/subscribers
+    delete: /business_services/{id}/unsubscribe
+    list: subscribers
+  # A tag on a user, team or escalation policy: added by POST
+  # .../change_tags {"add": [<a tag reference>]}, listed at .../tags, and
+  # removed by the same reference in {"remove": [...]}. The reference names
+  # the tag by its id, which the spec marks read-only; a read answers the
+  # tag with type tag, not tag_reference, so only the id is compared.
+  - create: /{entity_type}/{id}/change_tags
+    read: /{entity_type}/{id}/tags
+    delete: /{entity_type}/{id}/change_tags
+    list: tags
+    deleteEnvelope: remove
+  bodyArray:
+  - /business_services/{id}/subscribers
+  - /{entity_type}/{id}/tags
+  # A team's member list is paginated (25 by default, 100 at most).
+  readQuery:
+    /teams/{id}/users/{user_id}: {limit: 100}
+  # The API creates, reads and updates incident types but cannot delete one;
+  # the Terraform provider's delete only forgets it.
+  forget:
+    /incidents/types/{type_id_or_name}: PagerDuty's API cannot delete an incident type (set enabled to false to retire it)
+  # The update's body takes display_name, enabled and description only; the
+  # parent type is set at create (and is not read back: the read names a
+  # parent reference instead).
+  createOnly:
+    /incidents/types/{type_id_or_name}: [parent_type]
+    # A Jira Cloud account mapping rule's service and Jira project: the
+    # update's body (RuleUpdateRequest) has neither.
+    /integration-jira-cloud/accounts_mappings/{id}/rules/{rule_id}: [config.service, config.jira.project]
+  # A ServiceNow extension's password is not read back (the Terraform
+  # provider keeps it from its own state).
+  writeOnly:
+    /extensions/{id}: [config.snow_password]
+    /{entity_type}/{id}/tags: [type]
+  writable:
+    /{entity_type}/{id}/tags: [id]
+  # {id} is the tagged entity's; the body's id is the tag's.
+  paramFields:
+    /{entity_type}/{id}/tags: {id: entityID}
+  # The create's array is the body's add (remove is the undo's).
+  envelope:
+    /{entity_type}/{id}/tags: {request: add}
+  exclude:
+  - pagerduty_event_rule
+  - pagerduty_ruleset
+  - pagerduty_ruleset_rule
+  - pagerduty_service_event_rule
+  excludePaths:
+  # Retired APIs (405 Creating new rulesets and rules is not allowed).
+  - /rulesets/{id}
+  - /rulesets/{id}/rules/{rule_id}
+  - /services/{id}/rules/{rule_id}
+  compare:
+    # Layers read back highest priority first, the reverse of how they are sent.
+    /schedules/{id}: {schedule_layers: unordered}

@@ -1,0 +1,37 @@
+{
+  "recorded": "2026-11-20T23:56:37Z",
+  "target": "api.pagerduty.com",
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/users?limit=1",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"limit\":1,\"more\":false,\"offset\":0,\"total\":null,\"users\":[{\"avatar_url\":\"{{redacted}}\",\"billed\":true,\"color\":\"purple\",\"contact_methods\":[{\"html_url\":null,\"id\":\"PFV88L5\",\"self\":\"{{baseURL}}/users/PTZKMBJ/contact_methods/PFV88L5\",\"summary\":\"Default\",\"type\":\"email_contact_method_reference\"}],\"coordinated_incidents\":[],\"created_via_sso\":false,\"description\":null,\"email\":\"{{redacted}}\",\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"invitation_sent\":false,\"job_title\":null,\"locale\":\"en-US\",\"name\":\"{{redacted}}\",\"notification_rules\":[{\"html_url\":null,\"id\":\"PSH29Z6\",\"self\":\"{{baseURL}}/users/PTZKMBJ/notification_rules/PSH29Z6\",\"summary\":\"0 minutes: channel PFV88L5\",\"type\":\"assignment_notification_rule_reference\"},{\"html_url\":null,\"id\":\"PWTQNOW\",\"self\":\"{{baseURL}}/users/PTZKMBJ/notification_rules/PWTQNOW\",\"summary\":\"0 minutes: channel PFV88L5\",\"type\":\"assignment_notification_rule_reference\"}],\"role\":\"owner\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"teams\":[],\"time_zone\":\"America/Chicago\",\"type\":\"user\"}]}"
+    },
+    {
+      "method": "POST",
+      "path": "/escalation_policies",
+      "body": "{\"escalation_policy\":{\"escalation_rules\":[{\"escalation_delay_in_minutes\":30,\"targets\":[{\"id\":\"PTZKMBJ\",\"type\":\"user_reference\"}]}],\"name\":\"{{run}}\",\"type\":\"escalation_policy\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"escalation_policy\":{\"created_at\":\"2026-11-20T17:56:37-06:00\",\"description\":null,\"escalation_rules\":[{\"escalation_delay_in_minutes\":30,\"id\":\"PSF64AX\",\"targets\":[{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}]}],\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/escalation_policies/PA3XGDX\",\"id\":\"PA3XGDX\",\"name\":\"{{run}}\",\"num_loops\":0,\"on_call_handoff_notifications\":\"if_has_services\",\"privilege\":null,\"self\":\"{{baseURL}}/escalation_policies/PA3XGDX\",\"send_ochons_through_level\":null,\"services\":[],\"summary\":\"{{run}}\",\"teams\":[],\"type\":\"escalation_policy\",\"updated_at\":\"2026-11-20T17:56:37-06:00\"}}"
+    },
+    {
+      "method": "POST",
+      "path": "/services",
+      "body": "{\"service\":{\"escalation_policy\":{\"id\":\"PA3XGDX\",\"type\":\"escalation_policy_reference\"},\"name\":\"{{run}}\",\"type\":\"service\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"service\":{\"id\":\"PBF07IY\",\"name\":\"{{run}}\",\"description\":null,\"created_at\":\"2026-11-20T17:56:37-06:00\",\"updated_at\":\"2026-11-20T17:56:37-06:00\",\"status\":\"active\",\"teams\":[],\"alert_creation\":\"create_alerts_and_incidents\",\"addons\":[],\"scheduled_actions\":[],\"support_hours\":null,\"last_incident_timestamp\":null,\"escalation_policy\":{\"id\":\"PA3XGDX\",\"type\":\"escalation_policy_reference\",\"summary\":\"{{run}}\",\"self\":\"{{baseURL}}/escalation_policies/PA3XGDX\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/escalation_policies/PA3XGDX\"},\"incident_urgency_rule\":{\"type\":\"constant\",\"urgency\":\"high\"},\"acknowledgement_timeout\":null,\"auto_resolve_timeout\":null,\"alert_grouping\":null,\"alert_grouping_timeout\":null,\"alert_grouping_parameters\":{\"type\":null,\"config\":null},\"integrations\":[],\"type\":\"service\",\"summary\":\"{{run}}\",\"self\":\"{{baseURL}}/services/PBF07IY\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/PBF07IY\"}}"
+    },
+    {
+      "method": "POST",
+      "path": "/event_orchestrations",
+      "body": "{\"orchestration\":{\"name\":\"{{run}}\"}}",
+      "status": 201,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration\":{\"created_at\":\"2026-11-20T23:56:37Z\",\"created_by\":null,\"description\":null,\"id\":\"056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\",\"integrations\":[{\"id\":\"8dbb2e89-24aa-4911-b06f-e7f559b06b82\",\"label\":\"{{run}} Default Integration\",\"parameters\":{\"routing_key\":\"{{redacted}}\",\"type\":\"global\"}}],\"name\":\"{{run}}\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\",\"team\":null,\"updated_at\":\"2026-11-20T23:56:37Z\",\"updated_by\":null,\"version\":\"0\"}}"
+    }
+  ]
+}

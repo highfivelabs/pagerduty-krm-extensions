@@ -1,0 +1,91 @@
+{
+  "recorded": "2026-11-20T23:56:46Z",
+  "target": "api.pagerduty.com",
+  "vars": {
+    "ep": "PA3XGDX",
+    "orch": "056d1b59-d56b-4bdd-9dd2-0f0afd05fdca",
+    "svc": "PBF07IY",
+    "user": "PTZKMBJ"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/escalation_policies",
+      "body": "{\"escalation_policy\":{\"description\":\"first\",\"escalation_rules\":[{\"escalation_delay_in_minutes\":30,\"targets\":[{\"id\":\"PTZKMBJ\",\"type\":\"user_reference\"}]}],\"name\":\"{{name}}\",\"type\":\"escalation_policy\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"escalation_policy\":{\"created_at\":\"2026-11-20T17:56:43-06:00\",\"description\":\"first\",\"escalation_rules\":[{\"escalation_delay_in_minutes\":30,\"id\":\"PZPN008\",\"targets\":[{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}]}],\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/escalation_policies/PP8AEZU\",\"id\":\"PP8AEZU\",\"name\":\"{{name}}\",\"num_loops\":0,\"on_call_handoff_notifications\":\"if_has_services\",\"privilege\":null,\"self\":\"{{baseURL}}/escalation_policies/PP8AEZU\",\"send_ochons_through_level\":null,\"services\":[],\"summary\":\"{{name}}\",\"teams\":[],\"type\":\"escalation_policy\",\"updated_at\":\"2026-11-20T17:56:43-06:00\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/escalation_policies/PP8AEZU",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"escalation_policy\":{\"created_at\":\"2026-11-20T17:56:43-06:00\",\"description\":\"first\",\"escalation_rules\":[{\"escalation_delay_in_minutes\":30,\"id\":\"PZPN008\",\"targets\":[{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}]}],\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/escalation_policies/PP8AEZU\",\"id\":\"PP8AEZU\",\"name\":\"{{name}}\",\"num_loops\":0,\"on_call_handoff_notifications\":\"if_has_services\",\"privilege\":null,\"self\":\"{{baseURL}}/escalation_policies/PP8AEZU\",\"send_ochons_through_level\":null,\"services\":[],\"summary\":\"{{name}}\",\"teams\":[],\"type\":\"escalation_policy\",\"updated_at\":\"2026-11-20T17:56:43-06:00\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/escalation_policies/PP8AEZU",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"escalation_policy\":{\"created_at\":\"2026-11-20T17:56:43-06:00\",\"description\":\"first\",\"escalation_rules\":[{\"escalation_delay_in_minutes\":30,\"id\":\"PZPN008\",\"targets\":[{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}]}],\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/escalation_policies/PP8AEZU\",\"id\":\"PP8AEZU\",\"name\":\"{{name}}\",\"num_loops\":0,\"on_call_handoff_notifications\":\"if_has_services\",\"privilege\":null,\"self\":\"{{baseURL}}/escalation_policies/PP8AEZU\",\"send_ochons_through_level\":null,\"services\":[],\"summary\":\"{{name}}\",\"teams\":[],\"type\":\"escalation_policy\",\"updated_at\":\"2026-11-20T17:56:43-06:00\"}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/escalation_policies/PP8AEZU",
+      "body": "{\"escalation_policy\":{\"description\":\"second\",\"escalation_rules\":[{\"escalation_delay_in_minutes\":30,\"targets\":[{\"id\":\"PTZKMBJ\",\"type\":\"user_reference\"}]}],\"name\":\"{{name}}\",\"type\":\"escalation_policy\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"escalation_policy\":{\"created_at\":\"2026-11-20T17:56:43-06:00\",\"description\":\"second\",\"escalation_rules\":[{\"escalation_delay_in_minutes\":30,\"id\":\"PS3ALYV\",\"targets\":[{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}]}],\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/escalation_policies/PP8AEZU\",\"id\":\"PP8AEZU\",\"name\":\"{{name}}\",\"num_loops\":0,\"on_call_handoff_notifications\":\"if_has_services\",\"privilege\":null,\"self\":\"{{baseURL}}/escalation_policies/PP8AEZU\",\"send_ochons_through_level\":null,\"services\":[],\"summary\":\"{{name}}\",\"teams\":[],\"type\":\"escalation_policy\",\"updated_at\":\"2026-11-20T17:56:44-06:00\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/escalation_policies/PP8AEZU",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"escalation_policy\":{\"created_at\":\"2026-11-20T17:56:43-06:00\",\"description\":\"second\",\"escalation_rules\":[{\"escalation_delay_in_minutes\":30,\"id\":\"PS3ALYV\",\"targets\":[{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}]}],\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/escalation_policies/PP8AEZU\",\"id\":\"PP8AEZU\",\"name\":\"{{name}}\",\"num_loops\":0,\"on_call_handoff_notifications\":\"if_has_services\",\"privilege\":null,\"self\":\"{{baseURL}}/escalation_policies/PP8AEZU\",\"send_ochons_through_level\":null,\"services\":[],\"summary\":\"{{name}}\",\"teams\":[],\"type\":\"escalation_policy\",\"updated_at\":\"2026-11-20T17:56:44-06:00\"}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/escalation_policies/PP8AEZU",
+      "body": "{\"escalation_policy\":{\"description\":\"hfl-live-drift\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"escalation_policy\":{\"created_at\":\"2026-11-20T17:56:43-06:00\",\"description\":\"hfl-live-drift\",\"escalation_rules\":[{\"escalation_delay_in_minutes\":30,\"id\":\"PS3ALYV\",\"targets\":[{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}]}],\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/escalation_policies/PP8AEZU\",\"id\":\"PP8AEZU\",\"name\":\"{{name}}\",\"num_loops\":0,\"on_call_handoff_notifications\":\"if_has_services\",\"privilege\":null,\"self\":\"{{baseURL}}/escalation_policies/PP8AEZU\",\"send_ochons_through_level\":null,\"services\":[],\"summary\":\"{{name}}\",\"teams\":[],\"type\":\"escalation_policy\",\"updated_at\":\"2026-11-20T17:56:45-06:00\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/escalation_policies/PP8AEZU",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"escalation_policy\":{\"created_at\":\"2026-11-20T17:56:43-06:00\",\"description\":\"hfl-live-drift\",\"escalation_rules\":[{\"escalation_delay_in_minutes\":30,\"id\":\"PS3ALYV\",\"targets\":[{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}]}],\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/escalation_policies/PP8AEZU\",\"id\":\"PP8AEZU\",\"name\":\"{{name}}\",\"num_loops\":0,\"on_call_handoff_notifications\":\"if_has_services\",\"privilege\":null,\"self\":\"{{baseURL}}/escalation_policies/PP8AEZU\",\"send_ochons_through_level\":null,\"services\":[],\"summary\":\"{{name}}\",\"teams\":[],\"type\":\"escalation_policy\",\"updated_at\":\"2026-11-20T17:56:45-06:00\"}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/escalation_policies/PP8AEZU",
+      "body": "{\"escalation_policy\":{\"description\":\"second\",\"escalation_rules\":[{\"escalation_delay_in_minutes\":30,\"targets\":[{\"id\":\"PTZKMBJ\",\"type\":\"user_reference\"}]}],\"name\":\"{{name}}\",\"type\":\"escalation_policy\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"escalation_policy\":{\"created_at\":\"2026-11-20T17:56:43-06:00\",\"description\":\"second\",\"escalation_rules\":[{\"escalation_delay_in_minutes\":30,\"id\":\"P48DJUS\",\"targets\":[{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}]}],\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/escalation_policies/PP8AEZU\",\"id\":\"PP8AEZU\",\"name\":\"{{name}}\",\"num_loops\":0,\"on_call_handoff_notifications\":\"if_has_services\",\"privilege\":null,\"self\":\"{{baseURL}}/escalation_policies/PP8AEZU\",\"send_ochons_through_level\":null,\"services\":[],\"summary\":\"{{name}}\",\"teams\":[],\"type\":\"escalation_policy\",\"updated_at\":\"2026-11-20T17:56:45-06:00\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/escalation_policies/PP8AEZU",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"escalation_policy\":{\"created_at\":\"2026-11-20T17:56:43-06:00\",\"description\":\"second\",\"escalation_rules\":[{\"escalation_delay_in_minutes\":30,\"id\":\"P48DJUS\",\"targets\":[{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}]}],\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/escalation_policies/PP8AEZU\",\"id\":\"PP8AEZU\",\"name\":\"{{name}}\",\"num_loops\":0,\"on_call_handoff_notifications\":\"if_has_services\",\"privilege\":null,\"self\":\"{{baseURL}}/escalation_policies/PP8AEZU\",\"send_ochons_through_level\":null,\"services\":[],\"summary\":\"{{name}}\",\"teams\":[],\"type\":\"escalation_policy\",\"updated_at\":\"2026-11-20T17:56:45-06:00\"}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/escalation_policies/PP8AEZU",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/escalation_policies/PP8AEZU",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"error\":{\"message\":\"Escalation Policy Not Found\",\"code\":5001}}"
+    }
+  ]
+}

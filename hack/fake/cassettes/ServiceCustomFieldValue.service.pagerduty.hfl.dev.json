@@ -1,0 +1,87 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ep": "rehearsal-ep",
+    "optfield": "rehearsal-optfield",
+    "orch": "rehearsal-orch",
+    "svc": "rehearsal-svc",
+    "svcfield": "rehearsal-svcfield",
+    "user": "rehearsal-user",
+    "wf": "rehearsal-wf"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/services/custom_fields",
+      "body": "{\"field\":{\"data_type\":\"string\",\"display_name\":\"{{name}}-parent\",\"field_type\":\"single_value\",\"name\":\"{{name_}}_parent\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"field\":{\"data_type\":\"string\",\"display_name\":\"{{name}}-parent\",\"field_type\":\"single_value\",\"name\":\"{{name_}}_parent\"},\"id\":280000007}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/services/rehearsal-svc/custom_fields/values",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/services/rehearsal-svc/custom_fields/values",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/services/rehearsal-svc/custom_fields/values",
+      "body": "{\"custom_fields\":[{\"id\":\"rehearsal-svcfield\",\"value\":\"first\"}]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"custom_fields\":[{\"id\":\"rehearsal-svcfield\",\"value\":\"first\"}]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/services/rehearsal-svc/custom_fields/values",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"custom_fields\":[{\"id\":\"rehearsal-svcfield\",\"value\":\"first\"}]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/services/rehearsal-svc/custom_fields/values",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"custom_fields\":[{\"id\":\"rehearsal-svcfield\",\"value\":\"first\"}]}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/services/rehearsal-svc/custom_fields/values",
+      "body": "{\"custom_fields\":[{\"id\":\"rehearsal-svcfield\",\"value\":\"second\"}]}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"custom_fields\":[{\"id\":\"rehearsal-svcfield\",\"value\":\"second\"}]}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/services/rehearsal-svc/custom_fields/values",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"custom_fields\":[{\"id\":\"rehearsal-svcfield\",\"value\":\"second\"}]}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/services/rehearsal-svc/custom_fields/values",
+      "body": "{}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"custom_fields\":[{\"id\":\"rehearsal-svcfield\",\"value\":\"second\"}]}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/services/custom_fields/rehearsal-svcfield",
+      "status": 204
+    }
+  ]
+}

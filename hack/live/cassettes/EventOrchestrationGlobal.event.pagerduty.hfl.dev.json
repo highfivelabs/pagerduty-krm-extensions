@@ -1,0 +1,93 @@
+{
+  "recorded": "2026-11-20T23:56:57Z",
+  "target": "api.pagerduty.com",
+  "vars": {
+    "ep": "PA3XGDX",
+    "orch": "056d1b59-d56b-4bdd-9dd2-0f0afd05fdca",
+    "svc": "PBF07IY",
+    "user": "PTZKMBJ"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/global",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\",\"type\":\"event_orchestration_reference\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\"},\"type\":\"global\",\"version\":null,\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/global\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:56:55Z\",\"catch_all\":{\"actions\":{}},\"created_at\":\"2026-11-20T23:56:55Z\",\"updated_by\":null,\"created_by\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/global",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\",\"type\":\"event_orchestration_reference\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\"},\"type\":\"global\",\"version\":null,\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/global\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:56:55Z\",\"catch_all\":{\"actions\":{}},\"created_at\":\"2026-11-20T23:56:55Z\",\"updated_by\":null,\"created_by\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/global",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\",\"type\":\"event_orchestration_reference\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\"},\"type\":\"global\",\"version\":null,\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/global\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:56:55Z\",\"catch_all\":{\"actions\":{}},\"created_at\":\"2026-11-20T23:56:55Z\",\"updated_by\":null,\"created_by\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/global",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\",\"type\":\"event_orchestration_reference\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\"},\"type\":\"global\",\"version\":null,\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/global\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:56:56Z\",\"catch_all\":{\"actions\":{}},\"created_at\":\"2026-11-20T23:56:56Z\",\"updated_by\":null,\"created_by\":null}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/global",
+      "body": "{\"orchestration_path\":{\"catch_all\":{\"actions\":{\"suppress\":true}},\"sets\":[{\"id\":\"start\",\"rules\":[]}]}}",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\",\"type\":\"event_orchestration_reference\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\"},\"type\":\"global\",\"version\":\"mrd8PZNDdALpEZrpqBCgNTWnL4vr_mcZ\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/global\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:56:56Z\",\"catch_all\":{\"actions\":{\"suppress\":true}},\"created_at\":\"2026-11-20T23:56:56Z\",\"updated_by\":null,\"created_by\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/global",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\",\"type\":\"event_orchestration_reference\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\"},\"type\":\"global\",\"version\":\"mrd8PZNDdALpEZrpqBCgNTWnL4vr_mcZ\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/global\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:56:56Z\",\"catch_all\":{\"actions\":{\"suppress\":true}},\"created_at\":\"2026-11-20T23:56:56Z\",\"updated_by\":null,\"created_by\":null}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/global",
+      "body": "{\"orchestration_path\":{\"catch_all\":{\"actions\":{\"suppress\":false}}}}",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\",\"type\":\"event_orchestration_reference\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\"},\"type\":\"global\",\"version\":\".GtNNt9sYYDnPltVoAIy8WhBnGduteQz\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/global\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:56:56Z\",\"catch_all\":{\"actions\":{\"suppress\":false}},\"created_at\":\"2026-11-20T23:56:56Z\",\"updated_by\":null,\"created_by\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/global",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\",\"type\":\"event_orchestration_reference\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\"},\"type\":\"global\",\"version\":\".GtNNt9sYYDnPltVoAIy8WhBnGduteQz\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/global\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:56:56Z\",\"catch_all\":{\"actions\":{\"suppress\":false}},\"created_at\":\"2026-11-20T23:56:56Z\",\"updated_by\":null,\"created_by\":null}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/global",
+      "body": "{\"orchestration_path\":{\"catch_all\":{\"actions\":{\"suppress\":true}},\"sets\":[{\"id\":\"start\",\"rules\":[]}]}}",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\",\"type\":\"event_orchestration_reference\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\"},\"type\":\"global\",\"version\":\"faGwOaCfXWIlkM3HXycBC6yJ6YIAgkg7\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/global\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:56:56Z\",\"catch_all\":{\"actions\":{\"suppress\":true}},\"created_at\":\"2026-11-20T23:56:56Z\",\"updated_by\":null,\"created_by\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/global",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\",\"type\":\"event_orchestration_reference\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\"},\"type\":\"global\",\"version\":\"faGwOaCfXWIlkM3HXycBC6yJ6YIAgkg7\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/global\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:56:56Z\",\"catch_all\":{\"actions\":{\"suppress\":true}},\"created_at\":\"2026-11-20T23:56:56Z\",\"updated_by\":null,\"created_by\":null}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/global",
+      "body": "{\"orchestration_path\":{\"catch_all\":{\"actions\":{}},\"sets\":[{\"id\":\"start\",\"rules\":[]}]}}",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"orchestration_path\":{\"parent\":{\"id\":\"056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\",\"type\":\"event_orchestration_reference\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca\"},\"type\":\"global\",\"version\":\"u0XxDUa_qNfNVe1LU3RgqAet781pyzo9\",\"self\":\"{{baseURL}}/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca/global\",\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"updated_at\":\"2026-11-20T23:56:57Z\",\"catch_all\":{\"actions\":{\"suppress\":true}},\"created_at\":\"2026-11-20T23:56:56Z\",\"updated_by\":null,\"created_by\":null}}"
+    }
+  ]
+}

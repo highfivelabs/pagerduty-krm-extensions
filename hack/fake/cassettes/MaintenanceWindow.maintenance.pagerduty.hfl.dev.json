@@ -1,0 +1,93 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ep": "rehearsal-ep",
+    "optfield": "rehearsal-optfield",
+    "orch": "rehearsal-orch",
+    "svc": "rehearsal-svc",
+    "user": "rehearsal-user",
+    "wf": "rehearsal-wf"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/maintenance_windows",
+      "body": "{\"maintenance_window\":{\"description\":\"{{name}}\",\"end_time\":\"2000-01-31T01:00:00Z\",\"services\":[{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"}],\"start_time\":\"2000-01-31T00:00:00Z\",\"type\":\"maintenance_window\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"maintenance_window\":{\"description\":\"{{name}}\",\"end_time\":\"2000-01-31T01:00:00Z\",\"html_url\":\"https://example.com/\",\"id\":270000017,\"self\":\"https://example.com/\",\"sequence_number\":1,\"services\":[{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"}],\"start_time\":\"2000-01-31T00:00:00Z\",\"summary\":\"example-summary\",\"teams\":[],\"type\":\"maintenance_window\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/maintenance_windows/270000017",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"maintenance_window\":{\"description\":\"{{name}}\",\"end_time\":\"2000-01-31T01:00:00Z\",\"html_url\":\"https://example.com/\",\"id\":270000017,\"self\":\"https://example.com/\",\"sequence_number\":1,\"services\":[{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"}],\"start_time\":\"2000-01-31T00:00:00Z\",\"summary\":\"example-summary\",\"teams\":[],\"type\":\"maintenance_window\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/maintenance_windows/270000017",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"maintenance_window\":{\"description\":\"{{name}}\",\"end_time\":\"2000-01-31T01:00:00Z\",\"html_url\":\"https://example.com/\",\"id\":270000017,\"self\":\"https://example.com/\",\"sequence_number\":1,\"services\":[{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"}],\"start_time\":\"2000-01-31T00:00:00Z\",\"summary\":\"example-summary\",\"teams\":[],\"type\":\"maintenance_window\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/maintenance_windows/270000017",
+      "body": "{\"maintenance_window\":{\"description\":\"{{name}}-changed\",\"end_time\":\"2000-01-31T01:00:00Z\",\"services\":[{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"}],\"start_time\":\"2000-01-31T00:00:00Z\",\"type\":\"maintenance_window\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"maintenance_window\":{\"description\":\"{{name}}-changed\",\"end_time\":\"2000-01-31T01:00:00Z\",\"html_url\":\"https://example.com/\",\"id\":270000017,\"self\":\"https://example.com/\",\"sequence_number\":1,\"services\":[{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"}],\"start_time\":\"2000-01-31T00:00:00Z\",\"summary\":\"example-summary\",\"teams\":[],\"type\":\"maintenance_window\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/maintenance_windows/270000017",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"maintenance_window\":{\"description\":\"{{name}}-changed\",\"end_time\":\"2000-01-31T01:00:00Z\",\"html_url\":\"https://example.com/\",\"id\":270000017,\"self\":\"https://example.com/\",\"sequence_number\":1,\"services\":[{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"}],\"start_time\":\"2000-01-31T00:00:00Z\",\"summary\":\"example-summary\",\"teams\":[],\"type\":\"maintenance_window\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/maintenance_windows/270000017",
+      "body": "{\"maintenance_window\":{\"description\":\"hfl-live-drift\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"maintenance_window\":{\"description\":\"hfl-live-drift\",\"end_time\":\"2000-01-31T01:00:00Z\",\"html_url\":\"https://example.com/\",\"id\":270000017,\"self\":\"https://example.com/\",\"sequence_number\":1,\"services\":[{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"}],\"start_time\":\"2000-01-31T00:00:00Z\",\"summary\":\"example-summary\",\"teams\":[],\"type\":\"maintenance_window\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/maintenance_windows/270000017",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"maintenance_window\":{\"description\":\"hfl-live-drift\",\"end_time\":\"2000-01-31T01:00:00Z\",\"html_url\":\"https://example.com/\",\"id\":270000017,\"self\":\"https://example.com/\",\"sequence_number\":1,\"services\":[{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"}],\"start_time\":\"2000-01-31T00:00:00Z\",\"summary\":\"example-summary\",\"teams\":[],\"type\":\"maintenance_window\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/maintenance_windows/270000017",
+      "body": "{\"maintenance_window\":{\"description\":\"{{name}}-changed\",\"end_time\":\"2000-01-31T01:00:00Z\",\"services\":[{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"}],\"start_time\":\"2000-01-31T00:00:00Z\",\"type\":\"maintenance_window\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"maintenance_window\":{\"description\":\"{{name}}-changed\",\"end_time\":\"2000-01-31T01:00:00Z\",\"html_url\":\"https://example.com/\",\"id\":270000017,\"self\":\"https://example.com/\",\"sequence_number\":1,\"services\":[{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"}],\"start_time\":\"2000-01-31T00:00:00Z\",\"summary\":\"example-summary\",\"teams\":[],\"type\":\"maintenance_window\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/maintenance_windows/270000017",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"maintenance_window\":{\"description\":\"{{name}}-changed\",\"end_time\":\"2000-01-31T01:00:00Z\",\"html_url\":\"https://example.com/\",\"id\":270000017,\"self\":\"https://example.com/\",\"sequence_number\":1,\"services\":[{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"}],\"start_time\":\"2000-01-31T00:00:00Z\",\"summary\":\"example-summary\",\"teams\":[],\"type\":\"maintenance_window\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/maintenance_windows/270000017",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/maintenance_windows/270000017",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

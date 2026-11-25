@@ -1,0 +1,28 @@
+terraform: [pagerduty_service_dependency]
+kind: BusinessServiceDependency
+shape: crud
+params:
+  dependentId: {type: string, field: dependent_service.id}
+fields:
+  supporting_service:
+    type: object
+    required: [id, type]
+    properties:
+      id: {type: string, description: The service's ID.}
+      type: {type: string, enum: [business_service, service], description: Its type.}
+  dependent_service:
+    type: object
+    required: [id, type]
+    properties:
+      id: {type: string, description: The service's ID.}
+      type: {type: string, enum: [business_service], default: business_service, description: Its type.}
+required: [supporting_service, dependent_service]
+writeOnly: [supporting_service, dependent_service]
+id: id
+bodyEnvelope: relationships
+bodyArray: true
+serverFields: {type: service_dependency}
+sample: {supporting_service: {id: PSUPPORT, type: service}, dependent_service: {id: PDEPEND, type: business_service}}
+create: {method: POST, path: /service_dependencies/associate, envelope: relationships/0}
+read: {method: GET, path: "/service_dependencies/business_services/{dependentId}", find: {list: relationships, field: id}}
+delete: {method: POST, path: /service_dependencies/disassociate, sendBody: true}

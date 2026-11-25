@@ -1,0 +1,94 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ep": "rehearsal-ep",
+    "optfield": "rehearsal-optfield",
+    "orch": "rehearsal-orch",
+    "svc": "rehearsal-svc",
+    "svcfield": "rehearsal-svcfield",
+    "user": "rehearsal-user",
+    "wf": "rehearsal-wf"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/integration-jira-cloud/accounts_mappings/example-id/rules",
+      "body": "{\"config\":{\"jira\":{\"autocreate_jql\":\"example-autocreate-jql\",\"create_issue_on_incident_trigger\":false,\"custom_fields\":[],\"issue_type\":{\"id\":\"example-id\",\"name\":\"example-name\"},\"priorities\":[],\"project\":{\"id\":\"example-id\",\"key\":\"example-key\",\"name\":\"example-name\"},\"status_mapping\":{\"triggered\":{\"id\":\"example-id\",\"name\":\"example-name\"}},\"sync_notes_user\":{\"id\":\"PIJ90N7\",\"type\":\"user_reference\"}},\"service\":{\"id\":\"PIJ90N7\",\"type\":\"service_reference\"}},\"name\":\"example-name\"}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"account_mapping\":{\"id\":\"PIJ90N7\",\"self\":\"example-self\",\"type\":\"account_mapping_reference\"},\"autocreate_jql_disabled_reason\":\"example-autocreate-jql-disabled-reason\",\"autocreate_jql_disabled_until\":\"example-autocreate-jql-disabled-until\",\"config\":{\"jira\":{\"autocreate_jql\":\"example-autocreate-jql\",\"create_issue_on_incident_trigger\":false,\"custom_fields\":[],\"issue_type\":{\"id\":\"example-id\",\"name\":\"example-name\"},\"priorities\":[],\"project\":{\"id\":\"example-id\",\"key\":\"example-key\",\"name\":\"example-name\"},\"status_mapping\":{\"triggered\":{\"id\":\"example-id\",\"name\":\"example-name\"}},\"sync_notes_user\":{\"id\":\"PIJ90N7\",\"type\":\"user_reference\"}},\"service\":{\"id\":\"PIJ90N7\",\"type\":\"service_reference\"}},\"created_at\":\"example-created-at\",\"id\":270000032,\"name\":\"example-name\",\"updated_at\":\"example-updated-at\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/integration-jira-cloud/accounts_mappings/example-id/rules/270000032",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"account_mapping\":{\"id\":\"PIJ90N7\",\"self\":\"example-self\",\"type\":\"account_mapping_reference\"},\"autocreate_jql_disabled_reason\":\"example-autocreate-jql-disabled-reason\",\"autocreate_jql_disabled_until\":\"example-autocreate-jql-disabled-until\",\"config\":{\"jira\":{\"autocreate_jql\":\"example-autocreate-jql\",\"create_issue_on_incident_trigger\":false,\"custom_fields\":[],\"issue_type\":{\"id\":\"example-id\",\"name\":\"example-name\"},\"priorities\":[],\"project\":{\"id\":\"example-id\",\"key\":\"example-key\",\"name\":\"example-name\"},\"status_mapping\":{\"triggered\":{\"id\":\"example-id\",\"name\":\"example-name\"}},\"sync_notes_user\":{\"id\":\"PIJ90N7\",\"type\":\"user_reference\"}},\"service\":{\"id\":\"PIJ90N7\",\"type\":\"service_reference\"}},\"created_at\":\"example-created-at\",\"id\":270000032,\"name\":\"example-name\",\"updated_at\":\"example-updated-at\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/integration-jira-cloud/accounts_mappings/example-id/rules/270000032",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"account_mapping\":{\"id\":\"PIJ90N7\",\"self\":\"example-self\",\"type\":\"account_mapping_reference\"},\"autocreate_jql_disabled_reason\":\"example-autocreate-jql-disabled-reason\",\"autocreate_jql_disabled_until\":\"example-autocreate-jql-disabled-until\",\"config\":{\"jira\":{\"autocreate_jql\":\"example-autocreate-jql\",\"create_issue_on_incident_trigger\":false,\"custom_fields\":[],\"issue_type\":{\"id\":\"example-id\",\"name\":\"example-name\"},\"priorities\":[],\"project\":{\"id\":\"example-id\",\"key\":\"example-key\",\"name\":\"example-name\"},\"status_mapping\":{\"triggered\":{\"id\":\"example-id\",\"name\":\"example-name\"}},\"sync_notes_user\":{\"id\":\"PIJ90N7\",\"type\":\"user_reference\"}},\"service\":{\"id\":\"PIJ90N7\",\"type\":\"service_reference\"}},\"created_at\":\"example-created-at\",\"id\":270000032,\"name\":\"example-name\",\"updated_at\":\"example-updated-at\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/integration-jira-cloud/accounts_mappings/example-id/rules/270000032",
+      "body": "{\"config\":{\"jira\":{\"autocreate_jql\":\"example-autocreate-jql\",\"create_issue_on_incident_trigger\":false,\"custom_fields\":[],\"issue_type\":{\"id\":\"example-id\",\"name\":\"example-name\"},\"priorities\":[],\"status_mapping\":{\"triggered\":{\"id\":\"example-id\",\"name\":\"example-name\"}},\"sync_notes_user\":{\"id\":\"PIJ90N7\",\"type\":\"user_reference\"}}},\"name\":\"changed-name\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"account_mapping\":{\"id\":\"PIJ90N7\",\"self\":\"example-self\",\"type\":\"account_mapping_reference\"},\"autocreate_jql_disabled_reason\":\"example-autocreate-jql-disabled-reason\",\"autocreate_jql_disabled_until\":\"example-autocreate-jql-disabled-until\",\"config\":{\"jira\":{\"autocreate_jql\":\"example-autocreate-jql\",\"create_issue_on_incident_trigger\":false,\"custom_fields\":[],\"issue_type\":{\"id\":\"example-id\",\"name\":\"example-name\"},\"priorities\":[],\"project\":{\"id\":\"example-id\",\"key\":\"example-key\",\"name\":\"example-name\"},\"status_mapping\":{\"triggered\":{\"id\":\"example-id\",\"name\":\"example-name\"}},\"sync_notes_user\":{\"id\":\"PIJ90N7\",\"type\":\"user_reference\"}},\"service\":{\"id\":\"PIJ90N7\",\"type\":\"service_reference\"}},\"created_at\":\"example-created-at\",\"id\":270000032,\"name\":\"changed-name\",\"updated_at\":\"example-updated-at\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/integration-jira-cloud/accounts_mappings/example-id/rules/270000032",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"account_mapping\":{\"id\":\"PIJ90N7\",\"self\":\"example-self\",\"type\":\"account_mapping_reference\"},\"autocreate_jql_disabled_reason\":\"example-autocreate-jql-disabled-reason\",\"autocreate_jql_disabled_until\":\"example-autocreate-jql-disabled-until\",\"config\":{\"jira\":{\"autocreate_jql\":\"example-autocreate-jql\",\"create_issue_on_incident_trigger\":false,\"custom_fields\":[],\"issue_type\":{\"id\":\"example-id\",\"name\":\"example-name\"},\"priorities\":[],\"project\":{\"id\":\"example-id\",\"key\":\"example-key\",\"name\":\"example-name\"},\"status_mapping\":{\"triggered\":{\"id\":\"example-id\",\"name\":\"example-name\"}},\"sync_notes_user\":{\"id\":\"PIJ90N7\",\"type\":\"user_reference\"}},\"service\":{\"id\":\"PIJ90N7\",\"type\":\"service_reference\"}},\"created_at\":\"example-created-at\",\"id\":270000032,\"name\":\"changed-name\",\"updated_at\":\"example-updated-at\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/integration-jira-cloud/accounts_mappings/example-id/rules/270000032",
+      "body": "{\"name\":\"hfl-live-drift\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"account_mapping\":{\"id\":\"PIJ90N7\",\"self\":\"example-self\",\"type\":\"account_mapping_reference\"},\"autocreate_jql_disabled_reason\":\"example-autocreate-jql-disabled-reason\",\"autocreate_jql_disabled_until\":\"example-autocreate-jql-disabled-until\",\"config\":{\"jira\":{\"autocreate_jql\":\"example-autocreate-jql\",\"create_issue_on_incident_trigger\":false,\"custom_fields\":[],\"issue_type\":{\"id\":\"example-id\",\"name\":\"example-name\"},\"priorities\":[],\"project\":{\"id\":\"example-id\",\"key\":\"example-key\",\"name\":\"example-name\"},\"status_mapping\":{\"triggered\":{\"id\":\"example-id\",\"name\":\"example-name\"}},\"sync_notes_user\":{\"id\":\"PIJ90N7\",\"type\":\"user_reference\"}},\"service\":{\"id\":\"PIJ90N7\",\"type\":\"service_reference\"}},\"created_at\":\"example-created-at\",\"id\":270000032,\"name\":\"hfl-live-drift\",\"updated_at\":\"example-updated-at\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/integration-jira-cloud/accounts_mappings/example-id/rules/270000032",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"account_mapping\":{\"id\":\"PIJ90N7\",\"self\":\"example-self\",\"type\":\"account_mapping_reference\"},\"autocreate_jql_disabled_reason\":\"example-autocreate-jql-disabled-reason\",\"autocreate_jql_disabled_until\":\"example-autocreate-jql-disabled-until\",\"config\":{\"jira\":{\"autocreate_jql\":\"example-autocreate-jql\",\"create_issue_on_incident_trigger\":false,\"custom_fields\":[],\"issue_type\":{\"id\":\"example-id\",\"name\":\"example-name\"},\"priorities\":[],\"project\":{\"id\":\"example-id\",\"key\":\"example-key\",\"name\":\"example-name\"},\"status_mapping\":{\"triggered\":{\"id\":\"example-id\",\"name\":\"example-name\"}},\"sync_notes_user\":{\"id\":\"PIJ90N7\",\"type\":\"user_reference\"}},\"service\":{\"id\":\"PIJ90N7\",\"type\":\"service_reference\"}},\"created_at\":\"example-created-at\",\"id\":270000032,\"name\":\"hfl-live-drift\",\"updated_at\":\"example-updated-at\"}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/integration-jira-cloud/accounts_mappings/example-id/rules/270000032",
+      "body": "{\"config\":{\"jira\":{\"autocreate_jql\":\"example-autocreate-jql\",\"create_issue_on_incident_trigger\":false,\"custom_fields\":[],\"issue_type\":{\"id\":\"example-id\",\"name\":\"example-name\"},\"priorities\":[],\"status_mapping\":{\"triggered\":{\"id\":\"example-id\",\"name\":\"example-name\"}},\"sync_notes_user\":{\"id\":\"PIJ90N7\",\"type\":\"user_reference\"}}},\"name\":\"changed-name\"}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"account_mapping\":{\"id\":\"PIJ90N7\",\"self\":\"example-self\",\"type\":\"account_mapping_reference\"},\"autocreate_jql_disabled_reason\":\"example-autocreate-jql-disabled-reason\",\"autocreate_jql_disabled_until\":\"example-autocreate-jql-disabled-until\",\"config\":{\"jira\":{\"autocreate_jql\":\"example-autocreate-jql\",\"create_issue_on_incident_trigger\":false,\"custom_fields\":[],\"issue_type\":{\"id\":\"example-id\",\"name\":\"example-name\"},\"priorities\":[],\"project\":{\"id\":\"example-id\",\"key\":\"example-key\",\"name\":\"example-name\"},\"status_mapping\":{\"triggered\":{\"id\":\"example-id\",\"name\":\"example-name\"}},\"sync_notes_user\":{\"id\":\"PIJ90N7\",\"type\":\"user_reference\"}},\"service\":{\"id\":\"PIJ90N7\",\"type\":\"service_reference\"}},\"created_at\":\"example-created-at\",\"id\":270000032,\"name\":\"changed-name\",\"updated_at\":\"example-updated-at\"}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/integration-jira-cloud/accounts_mappings/example-id/rules/270000032",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"account_mapping\":{\"id\":\"PIJ90N7\",\"self\":\"example-self\",\"type\":\"account_mapping_reference\"},\"autocreate_jql_disabled_reason\":\"example-autocreate-jql-disabled-reason\",\"autocreate_jql_disabled_until\":\"example-autocreate-jql-disabled-until\",\"config\":{\"jira\":{\"autocreate_jql\":\"example-autocreate-jql\",\"create_issue_on_incident_trigger\":false,\"custom_fields\":[],\"issue_type\":{\"id\":\"example-id\",\"name\":\"example-name\"},\"priorities\":[],\"project\":{\"id\":\"example-id\",\"key\":\"example-key\",\"name\":\"example-name\"},\"status_mapping\":{\"triggered\":{\"id\":\"example-id\",\"name\":\"example-name\"}},\"sync_notes_user\":{\"id\":\"PIJ90N7\",\"type\":\"user_reference\"}},\"service\":{\"id\":\"PIJ90N7\",\"type\":\"service_reference\"}},\"created_at\":\"example-created-at\",\"id\":270000032,\"name\":\"changed-name\",\"updated_at\":\"example-updated-at\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/integration-jira-cloud/accounts_mappings/example-id/rules/270000032",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/integration-jira-cloud/accounts_mappings/example-id/rules/270000032",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

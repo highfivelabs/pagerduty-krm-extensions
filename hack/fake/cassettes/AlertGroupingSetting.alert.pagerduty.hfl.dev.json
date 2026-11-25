@@ -1,0 +1,101 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ep": "rehearsal-ep",
+    "optfield": "rehearsal-optfield",
+    "orch": "rehearsal-orch",
+    "svc": "rehearsal-svc",
+    "svcfield": "rehearsal-svcfield",
+    "user": "rehearsal-user",
+    "wf": "rehearsal-wf"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/alert_grouping_settings",
+      "body": "{\"alert_grouping_setting\":{\"config\":{\"timeout\":300},\"description\":\"first\",\"name\":\"{{name}}\",\"services\":[{\"id\":\"rehearsal-svc\"}],\"type\":\"time\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"alert_grouping_setting\":{\"config\":{\"timeout\":300},\"created_at\":\"2000-01-01T00:00:00Z\",\"description\":\"first\",\"id\":270000023,\"name\":\"{{name}}\",\"services\":[{\"id\":\"rehearsal-svc\"}],\"type\":\"time\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/alert_grouping_settings/270000023",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alert_grouping_setting\":{\"config\":{\"timeout\":300},\"created_at\":\"2000-01-01T00:00:00Z\",\"description\":\"first\",\"id\":270000023,\"name\":\"{{name}}\",\"services\":[{\"id\":\"rehearsal-svc\"}],\"type\":\"time\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/alert_grouping_settings/270000023",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alert_grouping_setting\":{\"config\":{\"timeout\":300},\"created_at\":\"2000-01-01T00:00:00Z\",\"description\":\"first\",\"id\":270000023,\"name\":\"{{name}}\",\"services\":[{\"id\":\"rehearsal-svc\"}],\"type\":\"time\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/alert_grouping_settings/270000023",
+      "body": "{\"alert_grouping_setting\":{\"config\":{\"timeout\":300},\"description\":\"second\",\"name\":\"{{name}}\",\"services\":[{\"id\":\"rehearsal-svc\"}],\"type\":\"time\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alert_grouping_setting\":{\"config\":{\"timeout\":300},\"created_at\":\"2000-01-01T00:00:00Z\",\"description\":\"second\",\"id\":270000023,\"name\":\"{{name}}\",\"services\":[{\"id\":\"rehearsal-svc\"}],\"type\":\"time\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/alert_grouping_settings/270000023",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alert_grouping_setting\":{\"config\":{\"timeout\":300},\"created_at\":\"2000-01-01T00:00:00Z\",\"description\":\"second\",\"id\":270000023,\"name\":\"{{name}}\",\"services\":[{\"id\":\"rehearsal-svc\"}],\"type\":\"time\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/alert_grouping_settings/270000023",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alert_grouping_setting\":{\"config\":{\"timeout\":300},\"created_at\":\"2000-01-01T00:00:00Z\",\"description\":\"second\",\"id\":270000023,\"name\":\"{{name}}\",\"services\":[{\"id\":\"rehearsal-svc\"}],\"type\":\"time\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/alert_grouping_settings/270000023",
+      "body": "{\"alert_grouping_setting\":{\"config\":{\"timeout\":300},\"created_at\":\"2000-01-01T00:00:00Z\",\"description\":\"hfl-live-drift\",\"id\":270000023,\"name\":\"{{name}}\",\"services\":[{\"id\":\"rehearsal-svc\"}],\"type\":\"time\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alert_grouping_setting\":{\"config\":{\"timeout\":300},\"created_at\":\"2000-01-01T00:00:00Z\",\"description\":\"hfl-live-drift\",\"id\":270000023,\"name\":\"{{name}}\",\"services\":[{\"id\":\"rehearsal-svc\"}],\"type\":\"time\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/alert_grouping_settings/270000023",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alert_grouping_setting\":{\"config\":{\"timeout\":300},\"created_at\":\"2000-01-01T00:00:00Z\",\"description\":\"hfl-live-drift\",\"id\":270000023,\"name\":\"{{name}}\",\"services\":[{\"id\":\"rehearsal-svc\"}],\"type\":\"time\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/alert_grouping_settings/270000023",
+      "body": "{\"alert_grouping_setting\":{\"config\":{\"timeout\":300},\"description\":\"second\",\"name\":\"{{name}}\",\"services\":[{\"id\":\"rehearsal-svc\"}],\"type\":\"time\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alert_grouping_setting\":{\"config\":{\"timeout\":300},\"created_at\":\"2000-01-01T00:00:00Z\",\"description\":\"second\",\"id\":270000023,\"name\":\"{{name}}\",\"services\":[{\"id\":\"rehearsal-svc\"}],\"type\":\"time\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/alert_grouping_settings/270000023",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alert_grouping_setting\":{\"config\":{\"timeout\":300},\"created_at\":\"2000-01-01T00:00:00Z\",\"description\":\"second\",\"id\":270000023,\"name\":\"{{name}}\",\"services\":[{\"id\":\"rehearsal-svc\"}],\"type\":\"time\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/alert_grouping_settings/270000023",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/alert_grouping_settings/270000023",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

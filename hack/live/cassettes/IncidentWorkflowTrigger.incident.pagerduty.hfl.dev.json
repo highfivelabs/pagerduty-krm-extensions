@@ -1,0 +1,78 @@
+{
+  "recorded": "2026-11-20T23:57:15Z",
+  "target": "api.pagerduty.com",
+  "vars": {
+    "ep": "PA3XGDX",
+    "optfield": "PX1KJ3W",
+    "orch": "056d1b59-d56b-4bdd-9dd2-0f0afd05fdca",
+    "svc": "PBF07IY",
+    "user": "PTZKMBJ",
+    "wf": "P01HLCA"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/incident_workflows",
+      "body": "{\"incident_workflow\":{\"name\":\"{{name}}-workflow\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"incident_workflow\":{\"id\":\"P01HLCA\",\"name\":\"{{name}}-workflow\",\"summary\":\"{{name}}-workflow\",\"description\":null,\"type\":\"incident_workflow\",\"is_enabled\":true,\"team\":null,\"created_at\":\"2026-11-20T23:57:13.237Z\",\"published_date\":\"2026-11-20T23:57:13.233Z\",\"self\":\"{{baseURL}}/incident_workflows/P01HLCA\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/incident-workflows/workflows/P01HLCA\",\"steps\":[]}}"
+    },
+    {
+      "method": "POST",
+      "path": "/incident_workflows/triggers",
+      "body": "{\"trigger\":{\"is_subscribed_to_all_services\":false,\"services\":[{\"id\":\"PBF07IY\"}],\"trigger_type\":\"manual\",\"workflow\":{\"id\":\"P01HLCA\"}}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"trigger\":{\"id\":\"6135bcae-a093-4b89-b00a-886725fc6bc4\",\"type\":\"workflow_trigger\",\"trigger_type_name\":\"Manual Trigger\",\"trigger_type\":\"manual\",\"is_disabled\":false,\"permissions\":{\"restricted\":false},\"trigger_url\":\"{{baseURL}}/incident_workflows/triggers/6135bcae-a093-4b89-b00a-886725fc6bc4/start\",\"self\":\"{{baseURL}}/incident_workflows/triggers/6135bcae-a093-4b89-b00a-886725fc6bc4\",\"workflow\":{\"id\":\"P01HLCA\",\"published\":false,\"name\":\"{{name}}-workflow\",\"description\":null,\"type\":\"workflow_reference\",\"self\":\"{{baseURL}}/incident_workflows/P01HLCA\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/incident-workflows/workflows/P01HLCA\",\"created_at\":\"2026-11-20T23:57:13.237Z\"},\"workflow_id\":\"P01HLCA\",\"workflow_name\":\"{{name}}-workflow\",\"is_subscribed_to_all_services\":false,\"services\":[{\"id\":\"PBF07IY\",\"summary\":\"\",\"type\":\"service\",\"self\":\"{{baseURL}}/services/PBF07IY\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/PBF07IY\"}]}}"
+    },
+    {
+      "method": "GET",
+      "path": "/incident_workflows/triggers/6135bcae-a093-4b89-b00a-886725fc6bc4",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"trigger\":{\"id\":\"6135bcae-a093-4b89-b00a-886725fc6bc4\",\"type\":\"workflow_trigger\",\"trigger_type_name\":\"Manual Trigger\",\"trigger_type\":\"manual\",\"is_disabled\":false,\"permissions\":{\"restricted\":false},\"trigger_url\":\"{{baseURL}}/incident_workflows/triggers/6135bcae-a093-4b89-b00a-886725fc6bc4/start\",\"self\":\"{{baseURL}}/incident_workflows/triggers/6135bcae-a093-4b89-b00a-886725fc6bc4\",\"workflow\":{\"id\":\"P01HLCA\",\"published\":false,\"name\":\"{{name}}-workflow\",\"description\":null,\"type\":\"workflow_reference\",\"self\":\"{{baseURL}}/incident_workflows/P01HLCA\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/incident-workflows/workflows/P01HLCA\",\"created_at\":\"2026-11-20T23:57:13.237Z\"},\"workflow_id\":\"P01HLCA\",\"workflow_name\":\"{{name}}-workflow\",\"is_subscribed_to_all_services\":false,\"services\":[{\"id\":\"PBF07IY\",\"summary\":\"\",\"type\":\"service\",\"self\":\"{{baseURL}}/services/PBF07IY\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/PBF07IY\"}]}}"
+    },
+    {
+      "method": "GET",
+      "path": "/incident_workflows/triggers/6135bcae-a093-4b89-b00a-886725fc6bc4",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"trigger\":{\"id\":\"6135bcae-a093-4b89-b00a-886725fc6bc4\",\"type\":\"workflow_trigger\",\"trigger_type_name\":\"Manual Trigger\",\"trigger_type\":\"manual\",\"is_disabled\":false,\"permissions\":{\"restricted\":false},\"trigger_url\":\"{{baseURL}}/incident_workflows/triggers/6135bcae-a093-4b89-b00a-886725fc6bc4/start\",\"self\":\"{{baseURL}}/incident_workflows/triggers/6135bcae-a093-4b89-b00a-886725fc6bc4\",\"workflow\":{\"id\":\"P01HLCA\",\"published\":false,\"name\":\"{{name}}-workflow\",\"description\":null,\"type\":\"workflow_reference\",\"self\":\"{{baseURL}}/incident_workflows/P01HLCA\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/incident-workflows/workflows/P01HLCA\",\"created_at\":\"2026-11-20T23:57:13.237Z\"},\"workflow_id\":\"P01HLCA\",\"workflow_name\":\"{{name}}-workflow\",\"is_subscribed_to_all_services\":false,\"services\":[{\"id\":\"PBF07IY\",\"summary\":\"\",\"type\":\"service\",\"self\":\"{{baseURL}}/services/PBF07IY\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/service-directory/PBF07IY\"}]}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/incident_workflows/triggers/6135bcae-a093-4b89-b00a-886725fc6bc4",
+      "body": "{\"trigger\":{\"is_subscribed_to_all_services\":true,\"services\":[]}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"trigger\":{\"id\":\"6135bcae-a093-4b89-b00a-886725fc6bc4\",\"type\":\"workflow_trigger\",\"trigger_type_name\":\"Manual Trigger\",\"trigger_type\":\"manual\",\"is_disabled\":false,\"permissions\":{\"restricted\":false},\"trigger_url\":\"{{baseURL}}/incident_workflows/triggers/6135bcae-a093-4b89-b00a-886725fc6bc4/start\",\"self\":\"{{baseURL}}/incident_workflows/triggers/6135bcae-a093-4b89-b00a-886725fc6bc4\",\"workflow\":{\"id\":\"P01HLCA\",\"published\":false,\"name\":\"{{name}}-workflow\",\"description\":null,\"type\":\"workflow_reference\",\"self\":\"{{baseURL}}/incident_workflows/P01HLCA\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/incident-workflows/workflows/P01HLCA\",\"created_at\":\"2026-11-20T23:57:13.237Z\"},\"workflow_id\":\"P01HLCA\",\"workflow_name\":\"{{name}}-workflow\",\"is_subscribed_to_all_services\":true,\"services\":[]}}"
+    },
+    {
+      "method": "GET",
+      "path": "/incident_workflows/triggers/6135bcae-a093-4b89-b00a-886725fc6bc4",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"trigger\":{\"id\":\"6135bcae-a093-4b89-b00a-886725fc6bc4\",\"type\":\"workflow_trigger\",\"trigger_type_name\":\"Manual Trigger\",\"trigger_type\":\"manual\",\"is_disabled\":false,\"permissions\":{\"restricted\":false},\"trigger_url\":\"{{baseURL}}/incident_workflows/triggers/6135bcae-a093-4b89-b00a-886725fc6bc4/start\",\"self\":\"{{baseURL}}/incident_workflows/triggers/6135bcae-a093-4b89-b00a-886725fc6bc4\",\"workflow\":{\"id\":\"P01HLCA\",\"published\":false,\"name\":\"{{name}}-workflow\",\"description\":null,\"type\":\"workflow_reference\",\"self\":\"{{baseURL}}/incident_workflows/P01HLCA\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/incident-workflows/workflows/P01HLCA\",\"created_at\":\"2026-11-20T23:57:13.237Z\"},\"workflow_id\":\"P01HLCA\",\"workflow_name\":\"{{name}}-workflow\",\"is_subscribed_to_all_services\":true,\"services\":[]}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/incident_workflows/triggers/6135bcae-a093-4b89-b00a-886725fc6bc4",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/incident_workflows/triggers/6135bcae-a093-4b89-b00a-886725fc6bc4",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"message\":\"Not Found\",\"error\":{\"message\":\"Not Found\",\"errors\":[\"Not Found\"]}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/incident_workflows/P01HLCA",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{}"
+    }
+  ]
+}

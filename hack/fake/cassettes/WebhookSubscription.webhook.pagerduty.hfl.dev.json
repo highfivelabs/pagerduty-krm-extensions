@@ -1,0 +1,94 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ep": "rehearsal-ep",
+    "optfield": "rehearsal-optfield",
+    "orch": "rehearsal-orch",
+    "svc": "rehearsal-svc",
+    "svcfield": "rehearsal-svcfield",
+    "user": "rehearsal-user",
+    "wf": "rehearsal-wf"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/webhook_subscriptions",
+      "body": "{\"webhook_subscription\":{\"active\":false,\"delivery_method\":{\"type\":\"http_delivery_method\",\"url\":\"https://example.com/{{name}}\"},\"description\":\"{{name}}\",\"events\":[\"incident.triggered\"],\"filter\":{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"},\"type\":\"webhook_subscription\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"webhook_subscription\":{\"active\":false,\"delivery_method\":{\"type\":\"http_delivery_method\",\"url\":\"https://example.com/{{name}}\"},\"description\":\"{{name}}\",\"events\":[\"incident.triggered\"],\"filter\":{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"},\"id\":270000021,\"oauth_client\":{\"id\":\"AGMEB7F7YJYELCPG4Y5YWMYGXE\",\"type\":\"oauth_client_reference\"},\"type\":\"webhook_subscription\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/webhook_subscriptions/270000021",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"webhook_subscription\":{\"active\":false,\"delivery_method\":{\"type\":\"http_delivery_method\",\"url\":\"https://example.com/{{name}}\"},\"description\":\"{{name}}\",\"events\":[\"incident.triggered\"],\"filter\":{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"},\"id\":270000021,\"oauth_client\":{\"id\":\"AGMEB7F7YJYELCPG4Y5YWMYGXE\",\"type\":\"oauth_client_reference\"},\"type\":\"webhook_subscription\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/webhook_subscriptions/270000021",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"webhook_subscription\":{\"active\":false,\"delivery_method\":{\"type\":\"http_delivery_method\",\"url\":\"https://example.com/{{name}}\"},\"description\":\"{{name}}\",\"events\":[\"incident.triggered\"],\"filter\":{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"},\"id\":270000021,\"oauth_client\":{\"id\":\"AGMEB7F7YJYELCPG4Y5YWMYGXE\",\"type\":\"oauth_client_reference\"},\"type\":\"webhook_subscription\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/webhook_subscriptions/270000021",
+      "body": "{\"webhook_subscription\":{\"active\":false,\"description\":\"{{name}}-changed\",\"events\":[\"incident.triggered\"],\"filter\":{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"}}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"webhook_subscription\":{\"active\":false,\"delivery_method\":{\"type\":\"http_delivery_method\",\"url\":\"https://example.com/{{name}}\"},\"description\":\"{{name}}-changed\",\"events\":[\"incident.triggered\"],\"filter\":{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"},\"id\":270000021,\"oauth_client\":{\"id\":\"AGMEB7F7YJYELCPG4Y5YWMYGXE\",\"type\":\"oauth_client_reference\"},\"type\":\"webhook_subscription\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/webhook_subscriptions/270000021",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"webhook_subscription\":{\"active\":false,\"delivery_method\":{\"type\":\"http_delivery_method\",\"url\":\"https://example.com/{{name}}\"},\"description\":\"{{name}}-changed\",\"events\":[\"incident.triggered\"],\"filter\":{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"},\"id\":270000021,\"oauth_client\":{\"id\":\"AGMEB7F7YJYELCPG4Y5YWMYGXE\",\"type\":\"oauth_client_reference\"},\"type\":\"webhook_subscription\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/webhook_subscriptions/270000021",
+      "body": "{\"webhook_subscription\":{\"description\":\"hfl-live-drift\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"webhook_subscription\":{\"active\":false,\"delivery_method\":{\"type\":\"http_delivery_method\",\"url\":\"https://example.com/{{name}}\"},\"description\":\"hfl-live-drift\",\"events\":[\"incident.triggered\"],\"filter\":{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"},\"id\":270000021,\"oauth_client\":{\"id\":\"AGMEB7F7YJYELCPG4Y5YWMYGXE\",\"type\":\"oauth_client_reference\"},\"type\":\"webhook_subscription\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/webhook_subscriptions/270000021",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"webhook_subscription\":{\"active\":false,\"delivery_method\":{\"type\":\"http_delivery_method\",\"url\":\"https://example.com/{{name}}\"},\"description\":\"hfl-live-drift\",\"events\":[\"incident.triggered\"],\"filter\":{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"},\"id\":270000021,\"oauth_client\":{\"id\":\"AGMEB7F7YJYELCPG4Y5YWMYGXE\",\"type\":\"oauth_client_reference\"},\"type\":\"webhook_subscription\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/webhook_subscriptions/270000021",
+      "body": "{\"webhook_subscription\":{\"active\":false,\"description\":\"{{name}}-changed\",\"events\":[\"incident.triggered\"],\"filter\":{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"}}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"webhook_subscription\":{\"active\":false,\"delivery_method\":{\"type\":\"http_delivery_method\",\"url\":\"https://example.com/{{name}}\"},\"description\":\"{{name}}-changed\",\"events\":[\"incident.triggered\"],\"filter\":{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"},\"id\":270000021,\"oauth_client\":{\"id\":\"AGMEB7F7YJYELCPG4Y5YWMYGXE\",\"type\":\"oauth_client_reference\"},\"type\":\"webhook_subscription\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/webhook_subscriptions/270000021",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"webhook_subscription\":{\"active\":false,\"delivery_method\":{\"type\":\"http_delivery_method\",\"url\":\"https://example.com/{{name}}\"},\"description\":\"{{name}}-changed\",\"events\":[\"incident.triggered\"],\"filter\":{\"id\":\"rehearsal-svc\",\"type\":\"service_reference\"},\"id\":270000021,\"oauth_client\":{\"id\":\"AGMEB7F7YJYELCPG4Y5YWMYGXE\",\"type\":\"oauth_client_reference\"},\"type\":\"webhook_subscription\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/webhook_subscriptions/270000021",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/webhook_subscriptions/270000021",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "recorded": "2026-11-20T23:57:27Z",
+  "target": "api.pagerduty.com",
+  "vars": {
+    "ep": "PA3XGDX",
+    "optfield": "PX1KJ3W",
+    "orch": "056d1b59-d56b-4bdd-9dd2-0f0afd05fdca",
+    "svc": "PBF07IY",
+    "svcfield": "PLWJ4QC",
+    "user": "PTZKMBJ",
+    "wf": "P01HLCA"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/services/custom_fields",
+      "body": "{\"field\":{\"data_type\":\"string\",\"display_name\":\"{{name}}-parent\",\"field_type\":\"single_value\",\"name\":\"{{name_}}_parent\"}}",
+      "status": 201,
+      "contentType": "application/vnd.pagerduty+json; version=2",
+      "response": "{\"field\":{\"id\":\"PLWJ4QC\",\"type\":\"field\",\"summary\":\"{{name}}-parent\",\"self\":\"{{baseURL}}/services/custom_fields/PLWJ4QC\",\"data_type\":\"string\",\"name\":\"{{name_}}_parent\",\"display_name\":\"{{name}}-parent\",\"field_type\":\"single_value\",\"origin\":\"PAGERDUTY\",\"description\":null,\"created_at\":\"2026-11-20T23:57:25Z\",\"updated_at\":\"2026-11-20T23:57:25Z\",\"enabled\":true}}"
+    },
+    {
+      "method": "GET",
+      "path": "/services/PBF07IY/custom_fields/values",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; version=2",
+      "response": "{\"custom_fields\":[{\"id\":\"PLWJ4QC\",\"type\":\"field_value\",\"name\":\"{{name_}}_parent\",\"display_name\":\"{{name}}-parent\",\"description\":null,\"data_type\":\"string\",\"field_type\":\"single_value\",\"enabled\":true,\"value\":null}]}"
+    },
+    {
+      "method": "GET",
+      "path": "/services/PBF07IY/custom_fields/values",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; version=2",
+      "response": "{\"custom_fields\":[{\"id\":\"PLWJ4QC\",\"type\":\"field_value\",\"name\":\"{{name_}}_parent\",\"display_name\":\"{{name}}-parent\",\"description\":null,\"data_type\":\"string\",\"field_type\":\"single_value\",\"enabled\":true,\"value\":null}]}"
+    },
+    {
+      "method": "PUT",
+      "path": "/services/PBF07IY/custom_fields/values",
+      "body": "{\"custom_fields\":[{\"id\":\"PLWJ4QC\",\"value\":\"first\"}]}",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; version=2",
+      "response": "{\"custom_fields\":[{\"id\":\"PLWJ4QC\",\"type\":\"field_value\",\"name\":\"{{name_}}_parent\",\"display_name\":\"{{name}}-parent\",\"description\":null,\"data_type\":\"string\",\"field_type\":\"single_value\",\"enabled\":true,\"value\":\"first\"}]}"
+    },
+    {
+      "method": "GET",
+      "path": "/services/PBF07IY/custom_fields/values",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; version=2",
+      "response": "{\"custom_fields\":[{\"id\":\"PLWJ4QC\",\"type\":\"field_value\",\"name\":\"{{name_}}_parent\",\"display_name\":\"{{name}}-parent\",\"description\":null,\"data_type\":\"string\",\"field_type\":\"single_value\",\"enabled\":true,\"value\":\"first\"}]}"
+    },
+    {
+      "method": "GET",
+      "path": "/services/PBF07IY/custom_fields/values",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; version=2",
+      "response": "{\"custom_fields\":[{\"id\":\"PLWJ4QC\",\"type\":\"field_value\",\"name\":\"{{name_}}_parent\",\"display_name\":\"{{name}}-parent\",\"description\":null,\"data_type\":\"string\",\"field_type\":\"single_value\",\"enabled\":true,\"value\":\"first\"}]}"
+    },
+    {
+      "method": "PUT",
+      "path": "/services/PBF07IY/custom_fields/values",
+      "body": "{\"custom_fields\":[{\"id\":\"PLWJ4QC\",\"value\":\"second\"}]}",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; version=2",
+      "response": "{\"custom_fields\":[{\"id\":\"PLWJ4QC\",\"type\":\"field_value\",\"name\":\"{{name_}}_parent\",\"display_name\":\"{{name}}-parent\",\"description\":null,\"data_type\":\"string\",\"field_type\":\"single_value\",\"enabled\":true,\"value\":\"second\"}]}"
+    },
+    {
+      "method": "GET",
+      "path": "/services/PBF07IY/custom_fields/values",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; version=2",
+      "response": "{\"custom_fields\":[{\"id\":\"PLWJ4QC\",\"type\":\"field_value\",\"name\":\"{{name_}}_parent\",\"display_name\":\"{{name}}-parent\",\"description\":null,\"data_type\":\"string\",\"field_type\":\"single_value\",\"enabled\":true,\"value\":\"second\"}]}"
+    },
+    {
+      "method": "PUT",
+      "path": "/services/PBF07IY/custom_fields/values",
+      "body": "{\"custom_fields\":[{\"data_type\":\"string\",\"description\":null,\"display_name\":\"{{name}}-parent\",\"enabled\":true,\"field_type\":\"single_value\",\"id\":\"PLWJ4QC\",\"name\":\"{{name_}}_parent\",\"type\":\"field_value\",\"value\":null}]}",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; version=2",
+      "response": "{\"custom_fields\":[{\"id\":\"PLWJ4QC\",\"type\":\"field_value\",\"name\":\"{{name_}}_parent\",\"display_name\":\"{{name}}-parent\",\"description\":null,\"data_type\":\"string\",\"field_type\":\"single_value\",\"enabled\":true,\"value\":null}]}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/services/custom_fields/PLWJ4QC",
+      "status": 204
+    }
+  ]
+}

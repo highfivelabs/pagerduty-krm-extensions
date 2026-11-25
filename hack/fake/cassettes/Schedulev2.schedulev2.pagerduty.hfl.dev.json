@@ -1,0 +1,100 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ep": "rehearsal-ep",
+    "optfield": "rehearsal-optfield",
+    "orch": "rehearsal-orch",
+    "svc": "rehearsal-svc",
+    "user": "rehearsal-user",
+    "wf": "rehearsal-wf"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/v3/schedules",
+      "body": "{\"schedule\":{\"description\":\"first\",\"name\":\"{{name}}\",\"time_zone\":\"America/New_York\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"first\",\"escalation_policies\":[],\"final_schedule\":{\"computed_shift_assignments\":[],\"rendered_coverage_percentage\":100,\"type\":\"final_schedule\"},\"html_url\":\"https://example.com/\",\"http_cal_url\":\"https://example.com/\",\"id\":270000019,\"name\":\"{{name}}\",\"rotations\":[],\"self\":\"https://example.com/\",\"time_zone\":\"America/New_York\",\"type\":\"schedule_v3\",\"users\":[],\"web_cal_url\":\"https://example.com/\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/v3/schedules/270000019",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"first\",\"escalation_policies\":[],\"final_schedule\":{\"computed_shift_assignments\":[],\"rendered_coverage_percentage\":100,\"type\":\"final_schedule\"},\"html_url\":\"https://example.com/\",\"http_cal_url\":\"https://example.com/\",\"id\":270000019,\"name\":\"{{name}}\",\"rotations\":[],\"self\":\"https://example.com/\",\"time_zone\":\"America/New_York\",\"type\":\"schedule_v3\",\"users\":[],\"web_cal_url\":\"https://example.com/\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/v3/schedules/270000019",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"first\",\"escalation_policies\":[],\"final_schedule\":{\"computed_shift_assignments\":[],\"rendered_coverage_percentage\":100,\"type\":\"final_schedule\"},\"html_url\":\"https://example.com/\",\"http_cal_url\":\"https://example.com/\",\"id\":270000019,\"name\":\"{{name}}\",\"rotations\":[],\"self\":\"https://example.com/\",\"time_zone\":\"America/New_York\",\"type\":\"schedule_v3\",\"users\":[],\"web_cal_url\":\"https://example.com/\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/v3/schedules/270000019",
+      "body": "{\"schedule\":{\"description\":\"second\",\"name\":\"{{name}}\",\"time_zone\":\"America/New_York\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"second\",\"escalation_policies\":[],\"final_schedule\":{\"computed_shift_assignments\":[],\"rendered_coverage_percentage\":100,\"type\":\"final_schedule\"},\"html_url\":\"https://example.com/\",\"http_cal_url\":\"https://example.com/\",\"id\":270000019,\"name\":\"{{name}}\",\"rotations\":[],\"self\":\"https://example.com/\",\"time_zone\":\"America/New_York\",\"type\":\"schedule_v3\",\"users\":[],\"web_cal_url\":\"https://example.com/\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/v3/schedules/270000019",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"second\",\"escalation_policies\":[],\"final_schedule\":{\"computed_shift_assignments\":[],\"rendered_coverage_percentage\":100,\"type\":\"final_schedule\"},\"html_url\":\"https://example.com/\",\"http_cal_url\":\"https://example.com/\",\"id\":270000019,\"name\":\"{{name}}\",\"rotations\":[],\"self\":\"https://example.com/\",\"time_zone\":\"America/New_York\",\"type\":\"schedule_v3\",\"users\":[],\"web_cal_url\":\"https://example.com/\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/v3/schedules/270000019",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"second\",\"escalation_policies\":[],\"final_schedule\":{\"computed_shift_assignments\":[],\"rendered_coverage_percentage\":100,\"type\":\"final_schedule\"},\"html_url\":\"https://example.com/\",\"http_cal_url\":\"https://example.com/\",\"id\":270000019,\"name\":\"{{name}}\",\"rotations\":[],\"self\":\"https://example.com/\",\"time_zone\":\"America/New_York\",\"type\":\"schedule_v3\",\"users\":[],\"web_cal_url\":\"https://example.com/\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/v3/schedules/270000019",
+      "body": "{\"schedule\":{\"description\":\"hfl-live-drift\",\"escalation_policies\":[],\"final_schedule\":{\"computed_shift_assignments\":[],\"rendered_coverage_percentage\":100,\"type\":\"final_schedule\"},\"html_url\":\"https://example.com/\",\"http_cal_url\":\"https://example.com/\",\"id\":270000019,\"name\":\"{{name}}\",\"rotations\":[],\"self\":\"https://example.com/\",\"time_zone\":\"America/New_York\",\"type\":\"schedule_v3\",\"users\":[],\"web_cal_url\":\"https://example.com/\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"hfl-live-drift\",\"escalation_policies\":[],\"final_schedule\":{\"computed_shift_assignments\":[],\"rendered_coverage_percentage\":100,\"type\":\"final_schedule\"},\"html_url\":\"https://example.com/\",\"http_cal_url\":\"https://example.com/\",\"id\":270000019,\"name\":\"{{name}}\",\"rotations\":[],\"self\":\"https://example.com/\",\"time_zone\":\"America/New_York\",\"type\":\"schedule_v3\",\"users\":[],\"web_cal_url\":\"https://example.com/\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/v3/schedules/270000019",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"hfl-live-drift\",\"escalation_policies\":[],\"final_schedule\":{\"computed_shift_assignments\":[],\"rendered_coverage_percentage\":100,\"type\":\"final_schedule\"},\"html_url\":\"https://example.com/\",\"http_cal_url\":\"https://example.com/\",\"id\":270000019,\"name\":\"{{name}}\",\"rotations\":[],\"self\":\"https://example.com/\",\"time_zone\":\"America/New_York\",\"type\":\"schedule_v3\",\"users\":[],\"web_cal_url\":\"https://example.com/\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/v3/schedules/270000019",
+      "body": "{\"schedule\":{\"description\":\"second\",\"name\":\"{{name}}\",\"time_zone\":\"America/New_York\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"second\",\"escalation_policies\":[],\"final_schedule\":{\"computed_shift_assignments\":[],\"rendered_coverage_percentage\":100,\"type\":\"final_schedule\"},\"html_url\":\"https://example.com/\",\"http_cal_url\":\"https://example.com/\",\"id\":270000019,\"name\":\"{{name}}\",\"rotations\":[],\"self\":\"https://example.com/\",\"time_zone\":\"America/New_York\",\"type\":\"schedule_v3\",\"users\":[],\"web_cal_url\":\"https://example.com/\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/v3/schedules/270000019",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"second\",\"escalation_policies\":[],\"final_schedule\":{\"computed_shift_assignments\":[],\"rendered_coverage_percentage\":100,\"type\":\"final_schedule\"},\"html_url\":\"https://example.com/\",\"http_cal_url\":\"https://example.com/\",\"id\":270000019,\"name\":\"{{name}}\",\"rotations\":[],\"self\":\"https://example.com/\",\"time_zone\":\"America/New_York\",\"type\":\"schedule_v3\",\"users\":[],\"web_cal_url\":\"https://example.com/\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/v3/schedules/270000019",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/v3/schedules/270000019",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

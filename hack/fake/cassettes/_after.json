@@ -1,0 +1,32 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "dependentBusiness": "rehearsal-dependentBusiness",
+    "ep": "rehearsal-ep",
+    "optfield": "rehearsal-optfield",
+    "orch": "rehearsal-orch",
+    "supporting": "rehearsal-supporting",
+    "svc": "rehearsal-svc",
+    "svcfield": "rehearsal-svcfield",
+    "user": "rehearsal-user",
+    "wf": "rehearsal-wf"
+  },
+  "interactions": [
+    {
+      "method": "DELETE",
+      "path": "/event_orchestrations/rehearsal-orch",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/services/rehearsal-svc",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/escalation_policies/rehearsal-ep",
+      "status": 204
+    }
+  ]
+}

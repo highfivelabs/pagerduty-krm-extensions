@@ -1,0 +1,94 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ep": "rehearsal-ep",
+    "optfield": "rehearsal-optfield",
+    "orch": "rehearsal-orch",
+    "svc": "rehearsal-svc",
+    "svcfield": "rehearsal-svcfield",
+    "user": "rehearsal-user",
+    "wf": "rehearsal-wf"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/users/example-id/contact_methods",
+      "body": "{\"contact_method\":{\"address\":\"example-address\",\"label\":\"example-label\",\"type\":\"email_contact_method\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"contact_method\":{\"address\":\"example-address\",\"blacklisted\":true,\"device_type\":\"android\",\"enabled\":true,\"html_url\":\"https://example.com/\",\"id\":270000027,\"label\":\"example-label\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"type\":\"email_contact_method\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/users/example-id/contact_methods/270000027",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"contact_method\":{\"address\":\"example-address\",\"blacklisted\":true,\"device_type\":\"android\",\"enabled\":true,\"html_url\":\"https://example.com/\",\"id\":270000027,\"label\":\"example-label\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"type\":\"email_contact_method\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/users/example-id/contact_methods/270000027",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"contact_method\":{\"address\":\"example-address\",\"blacklisted\":true,\"device_type\":\"android\",\"enabled\":true,\"html_url\":\"https://example.com/\",\"id\":270000027,\"label\":\"example-label\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"type\":\"email_contact_method\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/users/example-id/contact_methods/270000027",
+      "body": "{\"contact_method\":{\"address\":\"changed-address\",\"label\":\"example-label\",\"type\":\"email_contact_method\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"contact_method\":{\"address\":\"changed-address\",\"blacklisted\":true,\"device_type\":\"android\",\"enabled\":true,\"html_url\":\"https://example.com/\",\"id\":270000027,\"label\":\"example-label\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"type\":\"email_contact_method\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/users/example-id/contact_methods/270000027",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"contact_method\":{\"address\":\"changed-address\",\"blacklisted\":true,\"device_type\":\"android\",\"enabled\":true,\"html_url\":\"https://example.com/\",\"id\":270000027,\"label\":\"example-label\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"type\":\"email_contact_method\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/users/example-id/contact_methods/270000027",
+      "body": "{\"contact_method\":{\"address\":\"hfl-live-drift\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"contact_method\":{\"address\":\"hfl-live-drift\",\"blacklisted\":true,\"device_type\":\"android\",\"enabled\":true,\"html_url\":\"https://example.com/\",\"id\":270000027,\"label\":\"example-label\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"type\":\"email_contact_method\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/users/example-id/contact_methods/270000027",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"contact_method\":{\"address\":\"hfl-live-drift\",\"blacklisted\":true,\"device_type\":\"android\",\"enabled\":true,\"html_url\":\"https://example.com/\",\"id\":270000027,\"label\":\"example-label\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"type\":\"email_contact_method\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/users/example-id/contact_methods/270000027",
+      "body": "{\"contact_method\":{\"address\":\"changed-address\",\"label\":\"example-label\",\"type\":\"email_contact_method\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"contact_method\":{\"address\":\"changed-address\",\"blacklisted\":true,\"device_type\":\"android\",\"enabled\":true,\"html_url\":\"https://example.com/\",\"id\":270000027,\"label\":\"example-label\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"type\":\"email_contact_method\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/users/example-id/contact_methods/270000027",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"contact_method\":{\"address\":\"changed-address\",\"blacklisted\":true,\"device_type\":\"android\",\"enabled\":true,\"html_url\":\"https://example.com/\",\"id\":270000027,\"label\":\"example-label\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"type\":\"email_contact_method\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/users/example-id/contact_methods/270000027",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/users/example-id/contact_methods/270000027",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

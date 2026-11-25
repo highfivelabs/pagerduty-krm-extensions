@@ -1,0 +1,91 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ep": "rehearsal-ep",
+    "orch": "rehearsal-orch",
+    "svc": "rehearsal-svc",
+    "user": "rehearsal-user"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/teams",
+      "body": "{\"team\":{\"description\":\"first\",\"name\":\"{{name}}\",\"type\":\"team\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"team\":{\"description\":\"first\",\"html_url\":\"https://example.com/\",\"id\":270000002,\"name\":\"{{name}}\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"type\":\"team\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/teams/270000002",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"team\":{\"description\":\"first\",\"html_url\":\"https://example.com/\",\"id\":270000002,\"name\":\"{{name}}\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"type\":\"team\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/teams/270000002",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"team\":{\"description\":\"first\",\"html_url\":\"https://example.com/\",\"id\":270000002,\"name\":\"{{name}}\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"type\":\"team\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/teams/270000002",
+      "body": "{\"team\":{\"description\":\"second\",\"name\":\"{{name}}\",\"type\":\"team\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"team\":{\"description\":\"second\",\"html_url\":\"https://example.com/\",\"id\":270000002,\"name\":\"{{name}}\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"type\":\"team\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/teams/270000002",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"team\":{\"description\":\"second\",\"html_url\":\"https://example.com/\",\"id\":270000002,\"name\":\"{{name}}\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"type\":\"team\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/teams/270000002",
+      "body": "{\"team\":{\"description\":\"hfl-live-drift\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"team\":{\"description\":\"hfl-live-drift\",\"html_url\":\"https://example.com/\",\"id\":270000002,\"name\":\"{{name}}\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"type\":\"team\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/teams/270000002",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"team\":{\"description\":\"hfl-live-drift\",\"html_url\":\"https://example.com/\",\"id\":270000002,\"name\":\"{{name}}\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"type\":\"team\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/teams/270000002",
+      "body": "{\"team\":{\"description\":\"second\",\"name\":\"{{name}}\",\"type\":\"team\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"team\":{\"description\":\"second\",\"html_url\":\"https://example.com/\",\"id\":270000002,\"name\":\"{{name}}\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"type\":\"team\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/teams/270000002",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"team\":{\"description\":\"second\",\"html_url\":\"https://example.com/\",\"id\":270000002,\"name\":\"{{name}}\",\"self\":\"https://example.com/\",\"summary\":\"example-summary\",\"type\":\"team\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/teams/270000002",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/teams/270000002",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

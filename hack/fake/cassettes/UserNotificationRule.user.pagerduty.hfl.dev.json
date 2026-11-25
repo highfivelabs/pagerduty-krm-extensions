@@ -1,0 +1,94 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ep": "rehearsal-ep",
+    "optfield": "rehearsal-optfield",
+    "orch": "rehearsal-orch",
+    "svc": "rehearsal-svc",
+    "svcfield": "rehearsal-svcfield",
+    "user": "rehearsal-user",
+    "wf": "rehearsal-wf"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/users/example-id/notification_rules",
+      "body": "{\"notification_rule\":{\"contact_method\":{\"id\":\"example-id\",\"type\":\"email_contact_method_reference\"},\"start_delay_in_minutes\":1,\"type\":\"assignment_notification_rule\",\"urgency\":\"high\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"notification_rule\":{\"contact_method\":{\"id\":\"example-id\",\"type\":\"email_contact_method_reference\"},\"html_url\":\"https://example.com/\",\"id\":270000028,\"self\":\"https://example.com/\",\"start_delay_in_minutes\":1,\"summary\":\"example-summary\",\"type\":\"assignment_notification_rule\",\"urgency\":\"high\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/users/example-id/notification_rules/270000028",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"notification_rule\":{\"contact_method\":{\"id\":\"example-id\",\"type\":\"email_contact_method_reference\"},\"html_url\":\"https://example.com/\",\"id\":270000028,\"self\":\"https://example.com/\",\"start_delay_in_minutes\":1,\"summary\":\"example-summary\",\"type\":\"assignment_notification_rule\",\"urgency\":\"high\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/users/example-id/notification_rules/270000028",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"notification_rule\":{\"contact_method\":{\"id\":\"example-id\",\"type\":\"email_contact_method_reference\"},\"html_url\":\"https://example.com/\",\"id\":270000028,\"self\":\"https://example.com/\",\"start_delay_in_minutes\":1,\"summary\":\"example-summary\",\"type\":\"assignment_notification_rule\",\"urgency\":\"high\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/users/example-id/notification_rules/270000028",
+      "body": "{\"notification_rule\":{\"contact_method\":{\"id\":\"example-id\",\"type\":\"email_contact_method_reference\"},\"start_delay_in_minutes\":1,\"type\":\"changed-type\",\"urgency\":\"high\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"notification_rule\":{\"contact_method\":{\"id\":\"example-id\",\"type\":\"email_contact_method_reference\"},\"html_url\":\"https://example.com/\",\"id\":270000028,\"self\":\"https://example.com/\",\"start_delay_in_minutes\":1,\"summary\":\"example-summary\",\"type\":\"changed-type\",\"urgency\":\"high\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/users/example-id/notification_rules/270000028",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"notification_rule\":{\"contact_method\":{\"id\":\"example-id\",\"type\":\"email_contact_method_reference\"},\"html_url\":\"https://example.com/\",\"id\":270000028,\"self\":\"https://example.com/\",\"start_delay_in_minutes\":1,\"summary\":\"example-summary\",\"type\":\"changed-type\",\"urgency\":\"high\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/users/example-id/notification_rules/270000028",
+      "body": "{\"notification_rule\":{\"type\":\"hfl-live-drift\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"notification_rule\":{\"contact_method\":{\"id\":\"example-id\",\"type\":\"email_contact_method_reference\"},\"html_url\":\"https://example.com/\",\"id\":270000028,\"self\":\"https://example.com/\",\"start_delay_in_minutes\":1,\"summary\":\"example-summary\",\"type\":\"hfl-live-drift\",\"urgency\":\"high\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/users/example-id/notification_rules/270000028",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"notification_rule\":{\"contact_method\":{\"id\":\"example-id\",\"type\":\"email_contact_method_reference\"},\"html_url\":\"https://example.com/\",\"id\":270000028,\"self\":\"https://example.com/\",\"start_delay_in_minutes\":1,\"summary\":\"example-summary\",\"type\":\"hfl-live-drift\",\"urgency\":\"high\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/users/example-id/notification_rules/270000028",
+      "body": "{\"notification_rule\":{\"contact_method\":{\"id\":\"example-id\",\"type\":\"email_contact_method_reference\"},\"start_delay_in_minutes\":1,\"type\":\"changed-type\",\"urgency\":\"high\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"notification_rule\":{\"contact_method\":{\"id\":\"example-id\",\"type\":\"email_contact_method_reference\"},\"html_url\":\"https://example.com/\",\"id\":270000028,\"self\":\"https://example.com/\",\"start_delay_in_minutes\":1,\"summary\":\"example-summary\",\"type\":\"changed-type\",\"urgency\":\"high\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/users/example-id/notification_rules/270000028",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"notification_rule\":{\"contact_method\":{\"id\":\"example-id\",\"type\":\"email_contact_method_reference\"},\"html_url\":\"https://example.com/\",\"id\":270000028,\"self\":\"https://example.com/\",\"start_delay_in_minutes\":1,\"summary\":\"example-summary\",\"type\":\"changed-type\",\"urgency\":\"high\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/users/example-id/notification_rules/270000028",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/users/example-id/notification_rules/270000028",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

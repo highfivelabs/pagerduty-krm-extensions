@@ -1,0 +1,101 @@
+{
+  "recorded": "2026-11-20T23:57:30Z",
+  "target": "api.pagerduty.com",
+  "vars": {
+    "ep": "PA3XGDX",
+    "optfield": "PX1KJ3W",
+    "orch": "056d1b59-d56b-4bdd-9dd2-0f0afd05fdca",
+    "svc": "PBF07IY",
+    "svcfield": "PLWJ4QC",
+    "user": "PTZKMBJ",
+    "wf": "P01HLCA"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/alert_grouping_settings",
+      "body": "{\"alert_grouping_setting\":{\"config\":{\"timeout\":300},\"description\":\"first\",\"name\":\"{{name}}\",\"services\":[{\"id\":\"PBF07IY\"}],\"type\":\"time\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"alert_grouping_setting\":{\"id\":\"PJJS2QA\",\"name\":\"{{name}}\",\"type\":\"time\",\"self\":\"{{baseURL}}/alert_grouping_settings/PJJS2QA\",\"config\":{\"timeout\":300},\"description\":\"first\",\"services\":[{\"id\":\"PBF07IY\",\"name\":\"{{run}}\"}],\"updated_at\":\"2026-11-20T23:57:28.655207\",\"created_at\":\"2026-11-20T23:57:28.655207\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/reduce-noise/PJJS2QA/edit\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/alert_grouping_settings/PJJS2QA",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alert_grouping_setting\":{\"id\":\"PJJS2QA\",\"name\":\"{{name}}\",\"type\":\"time\",\"self\":\"{{baseURL}}/alert_grouping_settings/PJJS2QA\",\"config\":{\"timeout\":300},\"description\":\"first\",\"services\":[{\"id\":\"PBF07IY\",\"name\":\"{{run}}\"}],\"updated_at\":\"2026-11-20T23:57:28.655207\",\"created_at\":\"2026-11-20T23:57:28.655207\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/reduce-noise/PJJS2QA/edit\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/alert_grouping_settings/PJJS2QA",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alert_grouping_setting\":{\"id\":\"PJJS2QA\",\"name\":\"{{name}}\",\"type\":\"time\",\"self\":\"{{baseURL}}/alert_grouping_settings/PJJS2QA\",\"config\":{\"timeout\":300},\"description\":\"first\",\"services\":[{\"id\":\"PBF07IY\",\"name\":\"{{run}}\"}],\"updated_at\":\"2026-11-20T23:57:28.655207\",\"created_at\":\"2026-11-20T23:57:28.655207\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/reduce-noise/PJJS2QA/edit\"}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/alert_grouping_settings/PJJS2QA",
+      "body": "{\"alert_grouping_setting\":{\"config\":{\"timeout\":300},\"description\":\"second\",\"name\":\"{{name}}\",\"services\":[{\"id\":\"PBF07IY\"}],\"type\":\"time\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alert_grouping_setting\":{\"id\":\"PJJS2QA\",\"name\":\"{{name}}\",\"type\":\"time\",\"self\":\"{{baseURL}}/alert_grouping_settings/PJJS2QA\",\"config\":{\"timeout\":300},\"description\":\"second\",\"services\":[{\"id\":\"PBF07IY\",\"name\":\"{{run}}\"}],\"updated_at\":\"2026-11-20T23:57:29.059191\",\"created_at\":\"2026-11-20T23:57:28.655207\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/reduce-noise/PJJS2QA/edit\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/alert_grouping_settings/PJJS2QA",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alert_grouping_setting\":{\"id\":\"PJJS2QA\",\"name\":\"{{name}}\",\"type\":\"time\",\"self\":\"{{baseURL}}/alert_grouping_settings/PJJS2QA\",\"config\":{\"timeout\":300},\"description\":\"second\",\"services\":[{\"id\":\"PBF07IY\",\"name\":\"{{run}}\"}],\"updated_at\":\"2026-11-20T23:57:29.059191\",\"created_at\":\"2026-11-20T23:57:28.655207\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/reduce-noise/PJJS2QA/edit\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/alert_grouping_settings/PJJS2QA",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alert_grouping_setting\":{\"id\":\"PJJS2QA\",\"name\":\"{{name}}\",\"type\":\"time\",\"self\":\"{{baseURL}}/alert_grouping_settings/PJJS2QA\",\"config\":{\"timeout\":300},\"description\":\"second\",\"services\":[{\"id\":\"PBF07IY\",\"name\":\"{{run}}\"}],\"updated_at\":\"2026-11-20T23:57:29.059191\",\"created_at\":\"2026-11-20T23:57:28.655207\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/reduce-noise/PJJS2QA/edit\"}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/alert_grouping_settings/PJJS2QA",
+      "body": "{\"alert_grouping_setting\":{\"config\":{\"timeout\":300},\"created_at\":\"2026-11-20T23:57:28.655207\",\"description\":\"hfl-live-drift\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/reduce-noise/PJJS2QA/edit\",\"id\":\"PJJS2QA\",\"name\":\"{{name}}\",\"self\":\"{{baseURL}}/alert_grouping_settings/PJJS2QA\",\"services\":[{\"id\":\"PBF07IY\",\"name\":\"{{run}}\"}],\"type\":\"time\",\"updated_at\":\"2026-11-20T23:57:29.059191\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alert_grouping_setting\":{\"id\":\"PJJS2QA\",\"name\":\"{{name}}\",\"type\":\"time\",\"self\":\"{{baseURL}}/alert_grouping_settings/PJJS2QA\",\"config\":{\"timeout\":300},\"description\":\"hfl-live-drift\",\"services\":[{\"id\":\"PBF07IY\",\"name\":\"{{run}}\"}],\"updated_at\":\"2026-11-20T23:57:29.402033\",\"created_at\":\"2026-11-20T23:57:28.655207\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/reduce-noise/PJJS2QA/edit\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/alert_grouping_settings/PJJS2QA",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alert_grouping_setting\":{\"id\":\"PJJS2QA\",\"name\":\"{{name}}\",\"type\":\"time\",\"self\":\"{{baseURL}}/alert_grouping_settings/PJJS2QA\",\"config\":{\"timeout\":300},\"description\":\"hfl-live-drift\",\"services\":[{\"id\":\"PBF07IY\",\"name\":\"{{run}}\"}],\"updated_at\":\"2026-11-20T23:57:29.402033\",\"created_at\":\"2026-11-20T23:57:28.655207\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/reduce-noise/PJJS2QA/edit\"}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/alert_grouping_settings/PJJS2QA",
+      "body": "{\"alert_grouping_setting\":{\"config\":{\"timeout\":300},\"description\":\"second\",\"name\":\"{{name}}\",\"services\":[{\"id\":\"PBF07IY\"}],\"type\":\"time\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alert_grouping_setting\":{\"id\":\"PJJS2QA\",\"name\":\"{{name}}\",\"type\":\"time\",\"self\":\"{{baseURL}}/alert_grouping_settings/PJJS2QA\",\"config\":{\"timeout\":300},\"description\":\"second\",\"services\":[{\"id\":\"PBF07IY\",\"name\":\"{{run}}\"}],\"updated_at\":\"2026-11-20T23:57:29.696384\",\"created_at\":\"2026-11-20T23:57:28.655207\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/reduce-noise/PJJS2QA/edit\"}}"
+    },
+    {
+      "method": "GET",
+      "path": "/alert_grouping_settings/PJJS2QA",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"alert_grouping_setting\":{\"id\":\"PJJS2QA\",\"name\":\"{{name}}\",\"type\":\"time\",\"self\":\"{{baseURL}}/alert_grouping_settings/PJJS2QA\",\"config\":{\"timeout\":300},\"description\":\"second\",\"services\":[{\"id\":\"PBF07IY\",\"name\":\"{{run}}\"}],\"updated_at\":\"2026-11-20T23:57:29.696384\",\"created_at\":\"2026-11-20T23:57:28.655207\",\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/reduce-noise/PJJS2QA/edit\"}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/alert_grouping_settings/PJJS2QA",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/alert_grouping_settings/PJJS2QA",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"errors\":{\"detail\":\"Not Found\"}}"
+    }
+  ]
+}

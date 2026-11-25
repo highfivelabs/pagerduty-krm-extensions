@@ -1,0 +1,135 @@
+{
+  "recorded": "2026-11-20T23:57:20Z",
+  "target": "api.pagerduty.com",
+  "vars": {
+    "ep": "PA3XGDX",
+    "optfield": "PX1KJ3W",
+    "orch": "056d1b59-d56b-4bdd-9dd2-0f0afd05fdca",
+    "svc": "PBF07IY",
+    "user": "PTZKMBJ",
+    "wf": "P01HLCA"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/schedules",
+      "body": "{\"schedule\":{\"description\":\"first\",\"name\":\"{{name}}\",\"schedule_layers\":[{\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2026-12-20T00:00:00Z\",\"start\":\"2026-12-20T00:00:00Z\",\"users\":[{\"user\":{\"id\":\"PTZKMBJ\",\"type\":\"user_reference\"}}]}],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"first\",\"escalation_policies\":[],\"final_schedule\":{\"name\":\"Final Schedule\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[]},\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/schedules/PB6BRT6\",\"id\":\"PB6BRT6\",\"name\":\"{{name}}\",\"overrides_subschedule\":{\"name\":\"Overrides\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[]},\"schedule_layers\":[{\"end\":null,\"id\":\"PH2V8L2\",\"name\":\"Schedule Layer 2\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[],\"restrictions\":[],\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2026-12-20T00:00:00Z\",\"start\":\"2026-12-20T00:00:00Z\",\"users\":[{\"user\":{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}}]}],\"self\":\"{{baseURL}}/schedules/PB6BRT6\",\"summary\":\"{{name}}\",\"teams\":[],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\",\"users\":[{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}]}}"
+    },
+    {
+      "method": "GET",
+      "path": "/schedules/PB6BRT6",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"first\",\"escalation_policies\":[],\"final_schedule\":{\"name\":\"Final Schedule\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[]},\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/schedules/PB6BRT6\",\"id\":\"PB6BRT6\",\"name\":\"{{name}}\",\"overrides_subschedule\":{\"name\":\"Overrides\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[]},\"schedule_layers\":[{\"end\":null,\"id\":\"PH2V8L2\",\"name\":\"Schedule Layer 2\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[],\"restrictions\":[],\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2026-12-20T00:00:00Z\",\"start\":\"2026-12-20T00:00:00Z\",\"users\":[{\"user\":{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}}]}],\"self\":\"{{baseURL}}/schedules/PB6BRT6\",\"summary\":\"{{name}}\",\"teams\":[],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\",\"users\":[{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}]}}"
+    },
+    {
+      "method": "GET",
+      "path": "/schedules/PB6BRT6",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"first\",\"escalation_policies\":[],\"final_schedule\":{\"name\":\"Final Schedule\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[]},\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/schedules/PB6BRT6\",\"id\":\"PB6BRT6\",\"name\":\"{{name}}\",\"overrides_subschedule\":{\"name\":\"Overrides\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[]},\"schedule_layers\":[{\"end\":null,\"id\":\"PH2V8L2\",\"name\":\"Schedule Layer 2\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[],\"restrictions\":[],\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2026-12-20T00:00:00Z\",\"start\":\"2026-12-20T00:00:00Z\",\"users\":[{\"user\":{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}}]}],\"self\":\"{{baseURL}}/schedules/PB6BRT6\",\"summary\":\"{{name}}\",\"teams\":[],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\",\"users\":[{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}]}}"
+    },
+    {
+      "method": "GET",
+      "path": "/schedules/PB6BRT6",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"first\",\"escalation_policies\":[],\"final_schedule\":{\"name\":\"Final Schedule\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[]},\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/schedules/PB6BRT6\",\"id\":\"PB6BRT6\",\"name\":\"{{name}}\",\"overrides_subschedule\":{\"name\":\"Overrides\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[]},\"schedule_layers\":[{\"end\":null,\"id\":\"PH2V8L2\",\"name\":\"Schedule Layer 2\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[],\"restrictions\":[],\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2026-12-20T00:00:00Z\",\"start\":\"2026-12-20T00:00:00Z\",\"users\":[{\"user\":{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}}]}],\"self\":\"{{baseURL}}/schedules/PB6BRT6\",\"summary\":\"{{name}}\",\"teams\":[],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\",\"users\":[{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}]}}"
+    },
+    {
+      "method": "GET",
+      "path": "/schedules/PB6BRT6",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"first\",\"escalation_policies\":[],\"final_schedule\":{\"name\":\"Final Schedule\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[]},\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/schedules/PB6BRT6\",\"id\":\"PB6BRT6\",\"name\":\"{{name}}\",\"overrides_subschedule\":{\"name\":\"Overrides\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[]},\"schedule_layers\":[{\"end\":null,\"id\":\"PH2V8L2\",\"name\":\"Schedule Layer 2\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[],\"restrictions\":[],\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2026-12-20T00:00:00Z\",\"start\":\"2026-12-20T00:00:00Z\",\"users\":[{\"user\":{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}}]}],\"self\":\"{{baseURL}}/schedules/PB6BRT6\",\"summary\":\"{{name}}\",\"teams\":[],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\",\"users\":[{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}]}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/schedules/PB6BRT6",
+      "body": "{\"schedule\":{\"description\":\"second\",\"name\":\"{{name}}\",\"schedule_layers\":[{\"id\":\"PH2V8L2\",\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2026-12-20T00:00:00Z\",\"start\":\"2026-12-20T00:00:00Z\",\"users\":[{\"user\":{\"id\":\"PTZKMBJ\",\"type\":\"user_reference\"}}]}],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"second\",\"escalation_policies\":[],\"final_schedule\":{\"name\":\"Final Schedule\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[]},\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/schedules/PB6BRT6\",\"id\":\"PB6BRT6\",\"name\":\"{{name}}\",\"overrides_subschedule\":{\"name\":\"Overrides\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[]},\"schedule_layers\":[{\"end\":null,\"id\":\"PH2V8L2\",\"name\":\"Schedule Layer 2\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[],\"restrictions\":[],\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2026-12-20T00:00:00Z\",\"start\":\"2026-12-20T00:00:00Z\",\"users\":[{\"user\":{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}}]}],\"self\":\"{{baseURL}}/schedules/PB6BRT6\",\"summary\":\"{{name}}\",\"teams\":[],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\",\"users\":[{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}]}}"
+    },
+    {
+      "method": "GET",
+      "path": "/schedules/PB6BRT6",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"second\",\"escalation_policies\":[],\"final_schedule\":{\"name\":\"Final Schedule\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[]},\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/schedules/PB6BRT6\",\"id\":\"PB6BRT6\",\"name\":\"{{name}}\",\"overrides_subschedule\":{\"name\":\"Overrides\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[]},\"schedule_layers\":[{\"end\":null,\"id\":\"PH2V8L2\",\"name\":\"Schedule Layer 2\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[],\"restrictions\":[],\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2026-12-20T00:00:00Z\",\"start\":\"2026-12-20T00:00:00Z\",\"users\":[{\"user\":{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}}]}],\"self\":\"{{baseURL}}/schedules/PB6BRT6\",\"summary\":\"{{name}}\",\"teams\":[],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\",\"users\":[{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}]}}"
+    },
+    {
+      "method": "GET",
+      "path": "/schedules/PB6BRT6",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"second\",\"escalation_policies\":[],\"final_schedule\":{\"name\":\"Final Schedule\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[]},\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/schedules/PB6BRT6\",\"id\":\"PB6BRT6\",\"name\":\"{{name}}\",\"overrides_subschedule\":{\"name\":\"Overrides\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[]},\"schedule_layers\":[{\"end\":null,\"id\":\"PH2V8L2\",\"name\":\"Schedule Layer 2\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[],\"restrictions\":[],\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2026-12-20T00:00:00Z\",\"start\":\"2026-12-20T00:00:00Z\",\"users\":[{\"user\":{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}}]}],\"self\":\"{{baseURL}}/schedules/PB6BRT6\",\"summary\":\"{{name}}\",\"teams\":[],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\",\"users\":[{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}]}}"
+    },
+    {
+      "method": "GET",
+      "path": "/schedules/PB6BRT6",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"second\",\"escalation_policies\":[],\"final_schedule\":{\"name\":\"Final Schedule\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[]},\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/schedules/PB6BRT6\",\"id\":\"PB6BRT6\",\"name\":\"{{name}}\",\"overrides_subschedule\":{\"name\":\"Overrides\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[]},\"schedule_layers\":[{\"end\":null,\"id\":\"PH2V8L2\",\"name\":\"Schedule Layer 2\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[],\"restrictions\":[],\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2026-12-20T00:00:00Z\",\"start\":\"2026-12-20T00:00:00Z\",\"users\":[{\"user\":{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}}]}],\"self\":\"{{baseURL}}/schedules/PB6BRT6\",\"summary\":\"{{name}}\",\"teams\":[],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\",\"users\":[{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}]}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/schedules/PB6BRT6",
+      "body": "{\"schedule\":{\"description\":\"hfl-live-drift\",\"escalation_policies\":[],\"final_schedule\":{\"name\":\"Final Schedule\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[]},\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/schedules/PB6BRT6\",\"id\":\"PB6BRT6\",\"name\":\"{{name}}\",\"overrides_subschedule\":{\"name\":\"Overrides\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[]},\"schedule_layers\":[{\"end\":null,\"id\":\"PH2V8L2\",\"name\":\"Schedule Layer 2\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[],\"restrictions\":[],\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2026-12-20T00:00:00Z\",\"start\":\"2026-12-20T00:00:00Z\",\"users\":[{\"user\":{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}}]}],\"self\":\"{{baseURL}}/schedules/PB6BRT6\",\"summary\":\"{{name}}\",\"teams\":[],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\",\"users\":[{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}]}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"hfl-live-drift\",\"escalation_policies\":[],\"final_schedule\":{\"name\":\"Final Schedule\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[]},\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/schedules/PB6BRT6\",\"id\":\"PB6BRT6\",\"name\":\"{{name}}\",\"overrides_subschedule\":{\"name\":\"Overrides\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[]},\"schedule_layers\":[{\"end\":null,\"id\":\"PH2V8L2\",\"name\":\"Schedule Layer 2\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[],\"restrictions\":[],\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2026-12-20T00:00:00Z\",\"start\":\"2026-12-20T00:00:00Z\",\"users\":[{\"user\":{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}}]}],\"self\":\"{{baseURL}}/schedules/PB6BRT6\",\"summary\":\"{{name}}\",\"teams\":[],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\",\"users\":[{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}]}}"
+    },
+    {
+      "method": "GET",
+      "path": "/schedules/PB6BRT6",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"hfl-live-drift\",\"escalation_policies\":[],\"final_schedule\":{\"name\":\"Final Schedule\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[]},\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/schedules/PB6BRT6\",\"id\":\"PB6BRT6\",\"name\":\"{{name}}\",\"overrides_subschedule\":{\"name\":\"Overrides\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[]},\"schedule_layers\":[{\"end\":null,\"id\":\"PH2V8L2\",\"name\":\"Schedule Layer 2\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[],\"restrictions\":[],\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2026-12-20T00:00:00Z\",\"start\":\"2026-12-20T00:00:00Z\",\"users\":[{\"user\":{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}}]}],\"self\":\"{{baseURL}}/schedules/PB6BRT6\",\"summary\":\"{{name}}\",\"teams\":[],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\",\"users\":[{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}]}}"
+    },
+    {
+      "method": "GET",
+      "path": "/schedules/PB6BRT6",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"hfl-live-drift\",\"escalation_policies\":[],\"final_schedule\":{\"name\":\"Final Schedule\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[]},\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/schedules/PB6BRT6\",\"id\":\"PB6BRT6\",\"name\":\"{{name}}\",\"overrides_subschedule\":{\"name\":\"Overrides\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[]},\"schedule_layers\":[{\"end\":null,\"id\":\"PH2V8L2\",\"name\":\"Schedule Layer 2\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[],\"restrictions\":[],\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2026-12-20T00:00:00Z\",\"start\":\"2026-12-20T00:00:00Z\",\"users\":[{\"user\":{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}}]}],\"self\":\"{{baseURL}}/schedules/PB6BRT6\",\"summary\":\"{{name}}\",\"teams\":[],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\",\"users\":[{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}]}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/schedules/PB6BRT6",
+      "body": "{\"schedule\":{\"description\":\"second\",\"name\":\"{{name}}\",\"schedule_layers\":[{\"id\":\"PH2V8L2\",\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2026-12-20T00:00:00Z\",\"start\":\"2026-12-20T00:00:00Z\",\"users\":[{\"user\":{\"id\":\"PTZKMBJ\",\"type\":\"user_reference\"}}]}],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"second\",\"escalation_policies\":[],\"final_schedule\":{\"name\":\"Final Schedule\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[]},\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/schedules/PB6BRT6\",\"id\":\"PB6BRT6\",\"name\":\"{{name}}\",\"overrides_subschedule\":{\"name\":\"Overrides\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[]},\"schedule_layers\":[{\"end\":null,\"id\":\"PH2V8L2\",\"name\":\"Schedule Layer 2\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[],\"restrictions\":[],\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2026-12-20T00:00:00Z\",\"start\":\"2026-12-20T00:00:00Z\",\"users\":[{\"user\":{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}}]}],\"self\":\"{{baseURL}}/schedules/PB6BRT6\",\"summary\":\"{{name}}\",\"teams\":[],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\",\"users\":[{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}]}}"
+    },
+    {
+      "method": "GET",
+      "path": "/schedules/PB6BRT6",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"second\",\"escalation_policies\":[],\"final_schedule\":{\"name\":\"Final Schedule\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[]},\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/schedules/PB6BRT6\",\"id\":\"PB6BRT6\",\"name\":\"{{name}}\",\"overrides_subschedule\":{\"name\":\"Overrides\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[]},\"schedule_layers\":[{\"end\":null,\"id\":\"PH2V8L2\",\"name\":\"Schedule Layer 2\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[],\"restrictions\":[],\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2026-12-20T00:00:00Z\",\"start\":\"2026-12-20T00:00:00Z\",\"users\":[{\"user\":{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}}]}],\"self\":\"{{baseURL}}/schedules/PB6BRT6\",\"summary\":\"{{name}}\",\"teams\":[],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\",\"users\":[{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}]}}"
+    },
+    {
+      "method": "GET",
+      "path": "/schedules/PB6BRT6",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"schedule\":{\"description\":\"second\",\"escalation_policies\":[],\"final_schedule\":{\"name\":\"Final Schedule\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[]},\"html_url\":\"https://{{cred:subdomain}}.pagerduty.com/schedules/PB6BRT6\",\"id\":\"PB6BRT6\",\"name\":\"{{name}}\",\"overrides_subschedule\":{\"name\":\"Overrides\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[]},\"schedule_layers\":[{\"end\":null,\"id\":\"PH2V8L2\",\"name\":\"Schedule Layer 2\",\"rendered_coverage_percentage\":null,\"rendered_schedule_entries\":[],\"restrictions\":[],\"rotation_turn_length_seconds\":86400,\"rotation_virtual_start\":\"2026-12-20T00:00:00Z\",\"start\":\"2026-12-20T00:00:00Z\",\"users\":[{\"user\":{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}}]}],\"self\":\"{{baseURL}}/schedules/PB6BRT6\",\"summary\":\"{{name}}\",\"teams\":[],\"time_zone\":\"Etc/UTC\",\"type\":\"schedule\",\"users\":[{\"html_url\":\"{{redacted}}\",\"id\":\"PTZKMBJ\",\"self\":\"{{baseURL}}/users/PTZKMBJ\",\"summary\":\"{{redacted}}\",\"type\":\"user_reference\"}]}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/schedules/PB6BRT6",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/schedules/PB6BRT6",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"error\":{\"code\":3004,\"message\":\"Schedule Not Found\"}}"
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ep": "rehearsal-ep",
+    "orch": "rehearsal-orch",
+    "svc": "rehearsal-svc",
+    "user": "rehearsal-user"
+  },
+  "interactions": [
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/services/rehearsal-svc",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"orchestration_path\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"created_by\":{},\"migrated_at\":\"2000-01-01T00:00:00Z\",\"migrated_by\":{},\"migrated_from\":{},\"migrated_status\":\"completed\",\"migrated_via\":\"API\",\"parent\":{},\"type\":\"service\",\"updated_at\":\"2000-01-01T00:00:00Z\",\"updated_by\":{},\"version\":\"example-version\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/services/rehearsal-svc",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"orchestration_path\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"created_by\":{},\"migrated_at\":\"2000-01-01T00:00:00Z\",\"migrated_by\":{},\"migrated_from\":{},\"migrated_status\":\"completed\",\"migrated_via\":\"API\",\"parent\":{},\"type\":\"service\",\"updated_at\":\"2000-01-01T00:00:00Z\",\"updated_by\":{},\"version\":\"example-version\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/event_orchestrations/services/rehearsal-svc",
+      "body": "{\"orchestration_path\":{\"catch_all\":{\"actions\":{}},\"sets\":[{\"id\":\"start\",\"rules\":[]}]}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"orchestration_path\":{\"catch_all\":{\"actions\":{}},\"created_at\":\"2000-01-01T00:00:00Z\",\"created_by\":{},\"migrated_at\":\"2000-01-01T00:00:00Z\",\"migrated_by\":{},\"migrated_from\":{},\"migrated_status\":\"completed\",\"migrated_via\":\"API\",\"parent\":{},\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"type\":\"service\",\"updated_at\":\"2000-01-01T00:00:00Z\",\"updated_by\":{},\"version\":\"example-version\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/services/rehearsal-svc",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"orchestration_path\":{\"catch_all\":{\"actions\":{}},\"created_at\":\"2000-01-01T00:00:00Z\",\"created_by\":{},\"migrated_at\":\"2000-01-01T00:00:00Z\",\"migrated_by\":{},\"migrated_from\":{},\"migrated_status\":\"completed\",\"migrated_via\":\"API\",\"parent\":{},\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"type\":\"service\",\"updated_at\":\"2000-01-01T00:00:00Z\",\"updated_by\":{},\"version\":\"example-version\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/services/rehearsal-svc",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"orchestration_path\":{\"catch_all\":{\"actions\":{}},\"created_at\":\"2000-01-01T00:00:00Z\",\"created_by\":{},\"migrated_at\":\"2000-01-01T00:00:00Z\",\"migrated_by\":{},\"migrated_from\":{},\"migrated_status\":\"completed\",\"migrated_via\":\"API\",\"parent\":{},\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"type\":\"service\",\"updated_at\":\"2000-01-01T00:00:00Z\",\"updated_by\":{},\"version\":\"example-version\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/event_orchestrations/services/rehearsal-svc",
+      "body": "{\"orchestration_path\":{\"catch_all\":{\"actions\":{\"suppress\":true}},\"sets\":[{\"id\":\"start\",\"rules\":[]}]}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"orchestration_path\":{\"catch_all\":{\"actions\":{\"suppress\":true}},\"created_at\":\"2000-01-01T00:00:00Z\",\"created_by\":{},\"migrated_at\":\"2000-01-01T00:00:00Z\",\"migrated_by\":{},\"migrated_from\":{},\"migrated_status\":\"completed\",\"migrated_via\":\"API\",\"parent\":{},\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"type\":\"service\",\"updated_at\":\"2000-01-01T00:00:00Z\",\"updated_by\":{},\"version\":\"example-version\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/services/rehearsal-svc",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"orchestration_path\":{\"catch_all\":{\"actions\":{\"suppress\":true}},\"created_at\":\"2000-01-01T00:00:00Z\",\"created_by\":{},\"migrated_at\":\"2000-01-01T00:00:00Z\",\"migrated_by\":{},\"migrated_from\":{},\"migrated_status\":\"completed\",\"migrated_via\":\"API\",\"parent\":{},\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"type\":\"service\",\"updated_at\":\"2000-01-01T00:00:00Z\",\"updated_by\":{},\"version\":\"example-version\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/event_orchestrations/services/rehearsal-svc",
+      "body": "{\"orchestration_path\":{\"catch_all\":{\"actions\":{\"suppress\":false}}}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"orchestration_path\":{\"catch_all\":{\"actions\":{\"suppress\":false}},\"created_at\":\"2000-01-01T00:00:00Z\",\"created_by\":{},\"migrated_at\":\"2000-01-01T00:00:00Z\",\"migrated_by\":{},\"migrated_from\":{},\"migrated_status\":\"completed\",\"migrated_via\":\"API\",\"parent\":{},\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"type\":\"service\",\"updated_at\":\"2000-01-01T00:00:00Z\",\"updated_by\":{},\"version\":\"example-version\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/services/rehearsal-svc",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"orchestration_path\":{\"catch_all\":{\"actions\":{\"suppress\":false}},\"created_at\":\"2000-01-01T00:00:00Z\",\"created_by\":{},\"migrated_at\":\"2000-01-01T00:00:00Z\",\"migrated_by\":{},\"migrated_from\":{},\"migrated_status\":\"completed\",\"migrated_via\":\"API\",\"parent\":{},\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"type\":\"service\",\"updated_at\":\"2000-01-01T00:00:00Z\",\"updated_by\":{},\"version\":\"example-version\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/event_orchestrations/services/rehearsal-svc",
+      "body": "{\"orchestration_path\":{\"catch_all\":{\"actions\":{\"suppress\":true}},\"sets\":[{\"id\":\"start\",\"rules\":[]}]}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"orchestration_path\":{\"catch_all\":{\"actions\":{\"suppress\":true}},\"created_at\":\"2000-01-01T00:00:00Z\",\"created_by\":{},\"migrated_at\":\"2000-01-01T00:00:00Z\",\"migrated_by\":{},\"migrated_from\":{},\"migrated_status\":\"completed\",\"migrated_via\":\"API\",\"parent\":{},\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"type\":\"service\",\"updated_at\":\"2000-01-01T00:00:00Z\",\"updated_by\":{},\"version\":\"example-version\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/event_orchestrations/services/rehearsal-svc",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"orchestration_path\":{\"catch_all\":{\"actions\":{\"suppress\":true}},\"created_at\":\"2000-01-01T00:00:00Z\",\"created_by\":{},\"migrated_at\":\"2000-01-01T00:00:00Z\",\"migrated_by\":{},\"migrated_from\":{},\"migrated_status\":\"completed\",\"migrated_via\":\"API\",\"parent\":{},\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"type\":\"service\",\"updated_at\":\"2000-01-01T00:00:00Z\",\"updated_by\":{},\"version\":\"example-version\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/event_orchestrations/services/rehearsal-svc",
+      "body": "{\"orchestration_path\":{}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"orchestration_path\":{\"catch_all\":{\"actions\":{\"suppress\":true}},\"created_at\":\"2000-01-01T00:00:00Z\",\"created_by\":{},\"migrated_at\":\"2000-01-01T00:00:00Z\",\"migrated_by\":{},\"migrated_from\":{},\"migrated_status\":\"completed\",\"migrated_via\":\"API\",\"parent\":{},\"sets\":[{\"id\":\"start\",\"rules\":[]}],\"type\":\"service\",\"updated_at\":\"2000-01-01T00:00:00Z\",\"updated_by\":{},\"version\":\"example-version\"}}\n"
+    }
+  ]
+}

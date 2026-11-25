@@ -1,0 +1,21 @@
+{
+  "recorded": "2026-11-20T23:57:30Z",
+  "target": "api.pagerduty.com",
+  "interactions": [
+    {
+      "method": "DELETE",
+      "path": "/event_orchestrations/056d1b59-d56b-4bdd-9dd2-0f0afd05fdca",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/services/PBF07IY",
+      "status": 204
+    },
+    {
+      "method": "DELETE",
+      "path": "/escalation_policies/PA3XGDX",
+      "status": 204
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ep": "rehearsal-ep",
+    "optfield": "rehearsal-optfield",
+    "orch": "rehearsal-orch",
+    "svc": "rehearsal-svc",
+    "user": "rehearsal-user"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/incidents/types/incident_default/custom_fields",
+      "body": "{\"field\":{\"data_type\":\"string\",\"display_name\":\"{{name}}-parent\",\"field_options\":[{\"data\":{\"data_type\":\"string\",\"value\":\"keep\"}}],\"field_type\":\"single_value_fixed\",\"name\":\"{{name_}}_parent\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"_stub\":\"rehearsal stand-in: the fake API has no such resource\",\"field\":{\"data_type\":\"string\",\"display_name\":\"{{name}}-parent\",\"field_options\":[{\"data\":{\"data_type\":\"string\",\"value\":\"keep\"}}],\"field_type\":\"single_value_fixed\",\"name\":\"{{name_}}_parent\"},\"id\":280000005}\n"
+    },
+    {
+      "method": "POST",
+      "path": "/incidents/types/incident_default/custom_fields/rehearsal-optfield/field_options",
+      "body": "{\"field_option\":{\"data\":{\"data_type\":\"string\",\"value\":\"{{name}}\"}}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"field_option\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"data\":{\"data_type\":\"string\",\"value\":\"{{name}}\"},\"id\":270000014,\"type\":\"field_option\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/incidents/types/incident_default/custom_fields/rehearsal-optfield/field_options/270000014",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"field_option\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"data\":{\"data_type\":\"string\",\"value\":\"{{name}}\"},\"id\":270000014,\"type\":\"field_option\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/incidents/types/incident_default/custom_fields/rehearsal-optfield/field_options/270000014",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"field_option\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"data\":{\"data_type\":\"string\",\"value\":\"{{name}}\"},\"id\":270000014,\"type\":\"field_option\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/incidents/types/incident_default/custom_fields/rehearsal-optfield/field_options/270000014",
+      "body": "{\"field_option\":{\"data\":{\"data_type\":\"string\",\"value\":\"{{name}}-changed\"}}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"field_option\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"data\":{\"data_type\":\"string\",\"value\":\"{{name}}-changed\"},\"id\":270000014,\"type\":\"field_option\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/incidents/types/incident_default/custom_fields/rehearsal-optfield/field_options/270000014",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"field_option\":{\"created_at\":\"2000-01-01T00:00:00Z\",\"data\":{\"data_type\":\"string\",\"value\":\"{{name}}-changed\"},\"id\":270000014,\"type\":\"field_option\",\"updated_at\":\"2000-01-01T00:00:00Z\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/incidents/types/incident_default/custom_fields/rehearsal-optfield/field_options/270000014",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/incidents/types/incident_default/custom_fields/rehearsal-optfield/field_options/270000014",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/incidents/types/incident_default/custom_fields/rehearsal-optfield",
+      "status": 204
+    }
+  ]
+}

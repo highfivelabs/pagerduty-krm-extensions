@@ -1,0 +1,94 @@
+{
+  "recorded": "2000-01-01T00:00:00Z",
+  "target": "krm-rest-runtime fake API (built from types.yaml; not the vendor's API)",
+  "vars": {
+    "ep": "rehearsal-ep",
+    "optfield": "rehearsal-optfield",
+    "orch": "rehearsal-orch",
+    "svc": "rehearsal-svc",
+    "svcfield": "rehearsal-svcfield",
+    "user": "rehearsal-user",
+    "wf": "rehearsal-wf"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/workspaces/example-slack-team-id/connections",
+      "body": "{\"slack_connection\":{\"channel_id\":\"example-channel-id\",\"config\":{},\"source_id\":\"example-source-id\",\"source_type\":\"service_reference\"}}",
+      "status": 201,
+      "contentType": "application/json",
+      "response": "{\"slack_connection\":{\"channel_id\":\"example-channel-id\",\"channel_name\":\"example-channel-name\",\"config\":{},\"id\":270000031,\"source_id\":\"example-source-id\",\"source_name\":\"example-source-name\",\"source_type\":\"service_reference\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/workspaces/example-slack-team-id/connections/270000031",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"slack_connection\":{\"channel_id\":\"example-channel-id\",\"channel_name\":\"example-channel-name\",\"config\":{},\"id\":270000031,\"source_id\":\"example-source-id\",\"source_name\":\"example-source-name\",\"source_type\":\"service_reference\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/workspaces/example-slack-team-id/connections/270000031",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"slack_connection\":{\"channel_id\":\"example-channel-id\",\"channel_name\":\"example-channel-name\",\"config\":{},\"id\":270000031,\"source_id\":\"example-source-id\",\"source_name\":\"example-source-name\",\"source_type\":\"service_reference\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/workspaces/example-slack-team-id/connections/270000031",
+      "body": "{\"slack_connection\":{\"channel_id\":\"example-channel-id\",\"config\":{},\"source_id\":\"example-source-id\",\"source_type\":\"changed-source_type\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"slack_connection\":{\"channel_id\":\"example-channel-id\",\"channel_name\":\"example-channel-name\",\"config\":{},\"id\":270000031,\"source_id\":\"example-source-id\",\"source_name\":\"example-source-name\",\"source_type\":\"changed-source_type\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/workspaces/example-slack-team-id/connections/270000031",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"slack_connection\":{\"channel_id\":\"example-channel-id\",\"channel_name\":\"example-channel-name\",\"config\":{},\"id\":270000031,\"source_id\":\"example-source-id\",\"source_name\":\"example-source-name\",\"source_type\":\"changed-source_type\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/workspaces/example-slack-team-id/connections/270000031",
+      "body": "{\"slack_connection\":{\"source_type\":\"hfl-live-drift\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"slack_connection\":{\"channel_id\":\"example-channel-id\",\"channel_name\":\"example-channel-name\",\"config\":{},\"id\":270000031,\"source_id\":\"example-source-id\",\"source_name\":\"example-source-name\",\"source_type\":\"hfl-live-drift\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/workspaces/example-slack-team-id/connections/270000031",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"slack_connection\":{\"channel_id\":\"example-channel-id\",\"channel_name\":\"example-channel-name\",\"config\":{},\"id\":270000031,\"source_id\":\"example-source-id\",\"source_name\":\"example-source-name\",\"source_type\":\"hfl-live-drift\"}}\n"
+    },
+    {
+      "method": "PUT",
+      "path": "/workspaces/example-slack-team-id/connections/270000031",
+      "body": "{\"slack_connection\":{\"channel_id\":\"example-channel-id\",\"config\":{},\"source_id\":\"example-source-id\",\"source_type\":\"changed-source_type\"}}",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"slack_connection\":{\"channel_id\":\"example-channel-id\",\"channel_name\":\"example-channel-name\",\"config\":{},\"id\":270000031,\"source_id\":\"example-source-id\",\"source_name\":\"example-source-name\",\"source_type\":\"changed-source_type\"}}\n"
+    },
+    {
+      "method": "GET",
+      "path": "/workspaces/example-slack-team-id/connections/270000031",
+      "status": 200,
+      "contentType": "application/json",
+      "response": "{\"slack_connection\":{\"channel_id\":\"example-channel-id\",\"channel_name\":\"example-channel-name\",\"config\":{},\"id\":270000031,\"source_id\":\"example-source-id\",\"source_name\":\"example-source-name\",\"source_type\":\"changed-source_type\"}}\n"
+    },
+    {
+      "method": "DELETE",
+      "path": "/workspaces/example-slack-team-id/connections/270000031",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/workspaces/example-slack-team-id/connections/270000031",
+      "status": 404,
+      "contentType": "text/plain; charset=utf-8",
+      "response": "{\"message\":\"Not Found\"}\n"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "recorded": "2026-11-20T23:56:43Z",
+  "target": "api.pagerduty.com",
+  "vars": {
+    "ep": "PA3XGDX",
+    "orch": "056d1b59-d56b-4bdd-9dd2-0f0afd05fdca",
+    "svc": "PBF07IY",
+    "user": "PTZKMBJ"
+  },
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/business_services",
+      "body": "{\"business_service\":{\"description\":\"first\",\"name\":\"{{name}}\"}}",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"business_service\":{\"id\":\"PEYIUHA\",\"name\":\"{{name}}\",\"type\":\"business_service\",\"self\":\"{{baseURL}}/business_services/PEYIUHA\",\"description\":\"first\",\"team\":null,\"point_of_contact\":null,\"summary\":\"{{name}}\",\"html_url\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/business_services/PEYIUHA",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"business_service\":{\"id\":\"PEYIUHA\",\"name\":\"{{name}}\",\"type\":\"business_service\",\"self\":\"{{baseURL}}/business_services/PEYIUHA\",\"description\":\"first\",\"team\":null,\"point_of_contact\":null,\"summary\":\"{{name}}\",\"html_url\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/business_services/PEYIUHA",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"business_service\":{\"id\":\"PEYIUHA\",\"name\":\"{{name}}\",\"type\":\"business_service\",\"self\":\"{{baseURL}}/business_services/PEYIUHA\",\"description\":\"first\",\"team\":null,\"point_of_contact\":null,\"summary\":\"{{name}}\",\"html_url\":null}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/business_services/PEYIUHA",
+      "body": "{\"business_service\":{\"description\":\"second\",\"name\":\"{{name}}\"}}",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"business_service\":{\"id\":\"PEYIUHA\",\"name\":\"{{name}}\",\"type\":\"business_service\",\"self\":\"{{baseURL}}/business_services/PEYIUHA\",\"description\":\"second\",\"team\":null,\"point_of_contact\":null,\"summary\":\"{{name}}\",\"html_url\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/business_services/PEYIUHA",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"business_service\":{\"id\":\"PEYIUHA\",\"name\":\"{{name}}\",\"type\":\"business_service\",\"self\":\"{{baseURL}}/business_services/PEYIUHA\",\"description\":\"second\",\"team\":null,\"point_of_contact\":null,\"summary\":\"{{name}}\",\"html_url\":null}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/business_services/PEYIUHA",
+      "body": "{\"business_service\":{\"description\":\"hfl-live-drift\"}}",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"business_service\":{\"id\":\"PEYIUHA\",\"name\":\"{{name}}\",\"type\":\"business_service\",\"self\":\"{{baseURL}}/business_services/PEYIUHA\",\"description\":\"hfl-live-drift\",\"team\":null,\"point_of_contact\":null,\"summary\":\"{{name}}\",\"html_url\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/business_services/PEYIUHA",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"business_service\":{\"id\":\"PEYIUHA\",\"name\":\"{{name}}\",\"type\":\"business_service\",\"self\":\"{{baseURL}}/business_services/PEYIUHA\",\"description\":\"hfl-live-drift\",\"team\":null,\"point_of_contact\":null,\"summary\":\"{{name}}\",\"html_url\":null}}"
+    },
+    {
+      "method": "PUT",
+      "path": "/business_services/PEYIUHA",
+      "body": "{\"business_service\":{\"description\":\"second\",\"name\":\"{{name}}\"}}",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"business_service\":{\"id\":\"PEYIUHA\",\"name\":\"{{name}}\",\"type\":\"business_service\",\"self\":\"{{baseURL}}/business_services/PEYIUHA\",\"description\":\"second\",\"team\":null,\"point_of_contact\":null,\"summary\":\"{{name}}\",\"html_url\":null}}"
+    },
+    {
+      "method": "GET",
+      "path": "/business_services/PEYIUHA",
+      "status": 200,
+      "contentType": "application/vnd.pagerduty+json; charset=UTF-8",
+      "response": "{\"business_service\":{\"id\":\"PEYIUHA\",\"name\":\"{{name}}\",\"type\":\"business_service\",\"self\":\"{{baseURL}}/business_services/PEYIUHA\",\"description\":\"second\",\"team\":null,\"point_of_contact\":null,\"summary\":\"{{name}}\",\"html_url\":null}}"
+    },
+    {
+      "method": "DELETE",
+      "path": "/business_services/PEYIUHA",
+      "status": 204
+    },
+    {
+      "method": "GET",
+      "path": "/business_services/PEYIUHA",
+      "status": 404,
+      "contentType": "application/json",
+      "response": "{\"error\":{\"code\":404,\"message\":\"Business Service Not Found\",\"errors\":[]}}"
+    }
+  ]
+}
