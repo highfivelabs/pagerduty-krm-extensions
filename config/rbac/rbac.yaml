@@ -1,0 +1,215 @@
+# Copyright 2026 High Five Labs
+# SPDX-License-Identifier: Apache-2.0
+# The manager reads Connections and their Secrets in every namespace it
+# reconciles; narrow the binding per namespace if that is too broad.
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: manager
+  namespace: pagerduty-krm-extensions-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: pagerduty-krm-extensions-manager
+rules:
+- apiGroups: &id001
+  - addon.pagerduty.hfl.dev
+  - alert.pagerduty.hfl.dev
+  - automation.pagerduty.hfl.dev
+  - business.pagerduty.hfl.dev
+  - escalation.pagerduty.hfl.dev
+  - event.pagerduty.hfl.dev
+  - extension.pagerduty.hfl.dev
+  - incident.pagerduty.hfl.dev
+  - maintenance.pagerduty.hfl.dev
+  - ruleset.pagerduty.hfl.dev
+  - schedule.pagerduty.hfl.dev
+  - schedulev2.pagerduty.hfl.dev
+  - service.pagerduty.hfl.dev
+  - tag.pagerduty.hfl.dev
+  - team.pagerduty.hfl.dev
+  - user.pagerduty.hfl.dev
+  - webhook.pagerduty.hfl.dev
+  resources:
+  - addons
+  - alertgroupingsettings
+  - automationactionsactions
+  - automationactionsactionserviceassociations
+  - automationactionsactionteamassociations
+  - automationactionsrunners
+  - automationactionsrunnerteamassociations
+  - businessservices
+  - escalationpolicies
+  - eventorchestrationglobalcachevariables
+  - eventorchestrationglobals
+  - eventorchestrationintegrations
+  - eventorchestrationrouters
+  - eventorchestrations
+  - eventorchestrationservicecachevariables
+  - eventorchestrationservices
+  - eventorchestrationunrouteds
+  - extensions
+  - incidentcustomfieldoptions
+  - incidentcustomfields
+  - incidenttypecustomfields
+  - incidentworkflows
+  - incidentworkflowtriggers
+  - maintenancewindows
+  - rulesetrules
+  - rulesets
+  - schedules
+  - schedulev2s
+  - servicecustomfields
+  - servicecustomfieldvalues
+  - serviceeventrules
+  - services
+  - tags
+  - teams
+  - usercontactmethods
+  - userhandoffnotificationrules
+  - usernotificationrules
+  - users
+  - webhooksubscriptions
+  verbs:
+  - get
+  - list
+  - watch
+  - update
+  - patch
+- apiGroups: *id001
+  resources:
+  - addons/status
+  - alertgroupingsettings/status
+  - automationactionsactions/status
+  - automationactionsactionserviceassociations/status
+  - automationactionsactionteamassociations/status
+  - automationactionsrunners/status
+  - automationactionsrunnerteamassociations/status
+  - businessservices/status
+  - escalationpolicies/status
+  - eventorchestrationglobalcachevariables/status
+  - eventorchestrationglobals/status
+  - eventorchestrationintegrations/status
+  - eventorchestrationrouters/status
+  - eventorchestrations/status
+  - eventorchestrationservicecachevariables/status
+  - eventorchestrationservices/status
+  - eventorchestrationunrouteds/status
+  - extensions/status
+  - incidentcustomfieldoptions/status
+  - incidentcustomfields/status
+  - incidenttypecustomfields/status
+  - incidentworkflows/status
+  - incidentworkflowtriggers/status
+  - maintenancewindows/status
+  - rulesetrules/status
+  - rulesets/status
+  - schedules/status
+  - schedulev2s/status
+  - servicecustomfields/status
+  - servicecustomfieldvalues/status
+  - serviceeventrules/status
+  - services/status
+  - tags/status
+  - teams/status
+  - usercontactmethods/status
+  - userhandoffnotificationrules/status
+  - usernotificationrules/status
+  - users/status
+  - webhooksubscriptions/status
+  verbs:
+  - get
+  - update
+  - patch
+- apiGroups: *id001
+  resources:
+  - addons/finalizers
+  - alertgroupingsettings/finalizers
+  - automationactionsactions/finalizers
+  - automationactionsactionserviceassociations/finalizers
+  - automationactionsactionteamassociations/finalizers
+  - automationactionsrunners/finalizers
+  - automationactionsrunnerteamassociations/finalizers
+  - businessservices/finalizers
+  - escalationpolicies/finalizers
+  - eventorchestrationglobalcachevariables/finalizers
+  - eventorchestrationglobals/finalizers
+  - eventorchestrationintegrations/finalizers
+  - eventorchestrationrouters/finalizers
+  - eventorchestrations/finalizers
+  - eventorchestrationservicecachevariables/finalizers
+  - eventorchestrationservices/finalizers
+  - eventorchestrationunrouteds/finalizers
+  - extensions/finalizers
+  - incidentcustomfieldoptions/finalizers
+  - incidentcustomfields/finalizers
+  - incidenttypecustomfields/finalizers
+  - incidentworkflows/finalizers
+  - incidentworkflowtriggers/finalizers
+  - maintenancewindows/finalizers
+  - rulesetrules/finalizers
+  - rulesets/finalizers
+  - schedules/finalizers
+  - schedulev2s/finalizers
+  - servicecustomfields/finalizers
+  - servicecustomfieldvalues/finalizers
+  - serviceeventrules/finalizers
+  - services/finalizers
+  - tags/finalizers
+  - teams/finalizers
+  - usercontactmethods/finalizers
+  - userhandoffnotificationrules/finalizers
+  - usernotificationrules/finalizers
+  - users/finalizers
+  - webhooksubscriptions/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - core.pagerduty.hfl.dev
+  resources:
+  - connections
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ''
+  resources:
+  - secrets
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - coordination.k8s.io
+  resources:
+  - leases
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - ''
+  resources:
+  - events
+  verbs:
+  - create
+  - patch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: pagerduty-krm-extensions-manager
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: pagerduty-krm-extensions-manager
+subjects:
+- kind: ServiceAccount
+  name: manager
+  namespace: pagerduty-krm-extensions-system
