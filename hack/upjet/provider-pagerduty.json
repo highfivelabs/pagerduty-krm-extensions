@@ -1,0 +1,4474 @@
+{
+ "formatVersion": 1,
+ "generatedBy": "factory upjet sync (upjet/README.md in highfivelabs/factory)",
+ "provider": {
+  "repo": "crossplane-contrib/provider-pagerduty",
+  "tag": "v1.2.2",
+  "commit": "45f794d66fd2a32e3df4b444c15d7f54a83d0a53",
+  "commitDate": "2026-10-23T08:00:49Z",
+  "licence": "Apache-2.0"
+ },
+ "join": "types.yaml terraform",
+ "counts": {
+  "ours": 46,
+  "matched": 45,
+  "references": 42,
+  "referencesOur": 42,
+  "handExamples": 52,
+  "notTested": 0
+ },
+ "entries": [
+  {
+   "ours": {
+    "kind": "Addon",
+    "group": "addon.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_addon",
+    "group": "addon.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "Addon",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:12"
+    },
+    "examples": [
+     {
+      "id": "addon/v1alpha1/addon",
+      "at": "examples-generated/cluster/addon/v1alpha1/addon.yaml",
+      "origin": "generated",
+      "fields": [
+       "name",
+       "src"
+      ]
+     },
+     {
+      "id": "addon/v1alpha1/addon",
+      "at": "examples/cluster/addon/v1alpha1/addon.yaml",
+      "origin": "hand",
+      "fields": [
+       "name",
+       "src"
+      ],
+      "values": {
+       "name": "Internal Status Page",
+       "src": "https://intranet.example.com/status"
+      }
+     }
+    ],
+    "renamed": {
+     "shortGroup": "addon",
+     "at": "config/cluster/addon/config.go:8"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "AlertGroupingSetting",
+    "group": "alert.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_alert_grouping_setting",
+    "group": "alert.pagerduty.crossplane.io",
+    "version": "v1alpha2",
+    "kind": "GroupingSetting",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:13"
+    },
+    "references": [
+     {
+      "field": "services",
+      "target": "pagerduty_service",
+      "targetKind": "service.pagerduty.crossplane.io/Service",
+      "source": "both",
+      "at": "config/cluster/alertgrouping/config.go:13"
+     }
+    ],
+    "customCode": [
+     {
+      "what": "helper",
+      "expr": "versions.EmbedSingletonLists",
+      "at": "config/cluster/alertgrouping/config.go:12"
+     }
+    ],
+    "examples": [
+     {
+      "id": "alert/v1alpha2/groupingsetting",
+      "at": "examples-generated/cluster/alert/v1alpha2/groupingsetting.yaml",
+      "origin": "generated",
+      "with": [
+       "pagerduty_service"
+      ],
+      "fields": [
+       "config",
+       "config.aggregate",
+       "config.fields",
+       "config.time_window",
+       "name",
+       "type"
+      ],
+      "refFields": [
+       "services"
+      ]
+     },
+     {
+      "id": "alert/v1alpha1/groupingsetting",
+      "at": "examples/cluster/alert/v1alpha1/groupingsetting.yaml",
+      "origin": "hand",
+      "with": [
+       "pagerduty_service"
+      ],
+      "fields": [
+       "config",
+       "config.aggregate",
+       "config.fields",
+       "config.time_window",
+       "name",
+       "type"
+      ],
+      "refFields": [
+       "services"
+      ],
+      "values": {
+       "config": [
+        {
+         "aggregate": "all",
+         "fields": [
+          "fields"
+         ],
+         "time_window": 300
+        }
+       ],
+       "name": "Configuration for type-1 devices",
+       "type": "content_based"
+      }
+     },
+     {
+      "id": "alert/v1alpha2/groupingsetting",
+      "at": "examples/cluster/alert/v1alpha2/groupingsetting.yaml",
+      "origin": "hand",
+      "with": [
+       "pagerduty_service"
+      ],
+      "fields": [
+       "config",
+       "config.aggregate",
+       "config.fields",
+       "config.time_window",
+       "name",
+       "type"
+      ],
+      "refFields": [
+       "services"
+      ],
+      "values": {
+       "config": {
+        "aggregate": "all",
+        "fields": [
+         "fields"
+        ],
+        "time_window": 300
+       },
+       "name": "Configuration for type-1 devices",
+       "type": "content_based"
+      }
+     }
+    ]
+   },
+   "targetsOurs": {
+    "pagerduty_service": [
+     "service.pagerduty.hfl.dev/Service"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "AutomationActionsAction",
+    "group": "automation.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_automation_actions_action",
+    "group": "automation.actions.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "Action",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:16"
+    },
+    "examples": [
+     {
+      "id": "automation/v1alpha1/action",
+      "at": "examples-generated/cluster/automation/v1alpha1/action.yaml",
+      "origin": "generated",
+      "fields": [
+       "action_data_reference",
+       "action_data_reference.process_automation_job_id",
+       "action_type",
+       "description",
+       "name"
+      ]
+     },
+     {
+      "id": "automation/v1alpha1/action",
+      "at": "examples/cluster/automation/v1alpha1/action.yaml",
+      "origin": "hand",
+      "fields": [
+       "action_data_reference",
+       "action_data_reference.process_automation_job_id",
+       "action_type",
+       "description",
+       "name"
+      ],
+      "values": {
+       "action_data_reference": [
+        {
+         "process_automation_job_id": "P123456"
+        }
+       ],
+       "action_type": "process_automation",
+       "description": "Description of the PA Action created via TF",
+       "name": "PA Action created via TF"
+      }
+     }
+    ],
+    "renamed": {
+     "kind": "Action",
+     "at": "config/cluster/actions/config.go:15"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "AutomationActionsActionServiceAssociation",
+    "group": "automation.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_automation_actions_action_service_association",
+    "group": "automation.actions.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "ActionServiceAssociation",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:14"
+    },
+    "references": [
+     {
+      "field": "action_id",
+      "target": "pagerduty_automation_actions_action",
+      "targetKind": "automation.actions.pagerduty.crossplane.io/Action",
+      "source": "both",
+      "at": "config/cluster/actions/config.go:21"
+     },
+     {
+      "field": "service_id",
+      "target": "pagerduty_service",
+      "targetKind": "service.pagerduty.crossplane.io/Service",
+      "source": "both",
+      "at": "config/cluster/actions/config.go:21"
+     }
+    ],
+    "examples": [
+     {
+      "id": "automation/v1alpha1/actionserviceassociation",
+      "at": "examples-generated/cluster/automation/v1alpha1/actionserviceassociation.yaml",
+      "origin": "generated",
+      "with": [
+       "pagerduty_automation_actions_action",
+       "pagerduty_escalation_policy",
+       "pagerduty_service",
+       "pagerduty_user"
+      ],
+      "refFields": [
+       "action_id",
+       "service_id"
+      ]
+     },
+     {
+      "id": "automation/v1alpha1/actionserviceassociation",
+      "at": "examples/cluster/automation/v1alpha1/actionserviceassociation.yaml",
+      "origin": "hand",
+      "with": [
+       "pagerduty_automation_actions_action",
+       "pagerduty_escalation_policy",
+       "pagerduty_service",
+       "pagerduty_user"
+      ],
+      "refFields": [
+       "action_id",
+       "service_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "ActionServiceAssociation",
+     "at": "config/cluster/actions/config.go:19"
+    }
+   },
+   "targetsOurs": {
+    "pagerduty_automation_actions_action": [
+     "automation.pagerduty.hfl.dev/AutomationActionsAction"
+    ],
+    "pagerduty_service": [
+     "service.pagerduty.hfl.dev/Service"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "AutomationActionsActionTeamAssociation",
+    "group": "automation.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_automation_actions_action_team_association",
+    "group": "automation.actions.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "ActionTeamAssociation",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:15"
+    },
+    "references": [
+     {
+      "field": "action_id",
+      "target": "pagerduty_automation_actions_action",
+      "targetKind": "automation.actions.pagerduty.crossplane.io/Action",
+      "source": "both",
+      "at": "config/cluster/actions/config.go:34"
+     },
+     {
+      "field": "team_id",
+      "target": "pagerduty_team",
+      "targetKind": "team.pagerduty.crossplane.io/Team",
+      "source": "both",
+      "at": "config/cluster/actions/config.go:34"
+     }
+    ],
+    "examples": [
+     {
+      "id": "automation/v1alpha1/actionteamassociation",
+      "at": "examples-generated/cluster/automation/v1alpha1/actionteamassociation.yaml",
+      "origin": "generated",
+      "with": [
+       "pagerduty_automation_actions_action",
+       "pagerduty_team"
+      ],
+      "refFields": [
+       "action_id",
+       "team_id"
+      ]
+     },
+     {
+      "id": "automation/v1alpha1/actionteamassociation",
+      "at": "examples/cluster/automation/v1alpha1/actionteamassociation.yaml",
+      "origin": "hand",
+      "with": [
+       "pagerduty_automation_actions_action",
+       "pagerduty_team"
+      ],
+      "refFields": [
+       "action_id",
+       "team_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "ActionTeamAssociation",
+     "at": "config/cluster/actions/config.go:32"
+    }
+   },
+   "targetsOurs": {
+    "pagerduty_automation_actions_action": [
+     "automation.pagerduty.hfl.dev/AutomationActionsAction"
+    ],
+    "pagerduty_team": [
+     "team.pagerduty.hfl.dev/Team"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "AutomationActionsRunner",
+    "group": "automation.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_automation_actions_runner",
+    "group": "automation.actions.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "Runner",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:17"
+    },
+    "examples": [
+     {
+      "id": "automation/v1alpha1/runner",
+      "at": "examples-generated/cluster/automation/v1alpha1/runner.yaml",
+      "origin": "generated",
+      "fields": [
+       "description",
+       "name",
+       "runbook_base_uri",
+       "runner_type"
+      ]
+     },
+     {
+      "id": "automation/v1alpha1/runner",
+      "at": "examples/cluster/automation/v1alpha1/runner.yaml",
+      "origin": "hand",
+      "fields": [
+       "description",
+       "name",
+       "runbook_base_uri",
+       "runner_type"
+      ],
+      "values": {
+       "description": "Description of the Runner created via TF",
+       "name": "Runner created via TF",
+       "runbook_base_uri": "rdcat.stg",
+       "runner_type": "runbook"
+      }
+     }
+    ],
+    "renamed": {
+     "kind": "Runner",
+     "at": "config/cluster/actions/config.go:45"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "AutomationActionsRunnerTeamAssociation",
+    "group": "automation.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_automation_actions_runner_team_association",
+    "group": "automation.actions.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "RunnerTeamAssociation",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:18"
+    },
+    "references": [
+     {
+      "field": "runner_id",
+      "target": "pagerduty_automation_actions_runner",
+      "targetKind": "automation.actions.pagerduty.crossplane.io/Runner",
+      "source": "both",
+      "at": "config/cluster/actions/config.go:51"
+     },
+     {
+      "field": "team_id",
+      "target": "pagerduty_team",
+      "targetKind": "team.pagerduty.crossplane.io/Team",
+      "source": "both",
+      "at": "config/cluster/actions/config.go:51"
+     }
+    ],
+    "examples": [
+     {
+      "id": "automation/v1alpha1/runnerteamassociation",
+      "at": "examples-generated/cluster/automation/v1alpha1/runnerteamassociation.yaml",
+      "origin": "generated",
+      "with": [
+       "pagerduty_automation_actions_runner",
+       "pagerduty_team"
+      ],
+      "refFields": [
+       "runner_id",
+       "team_id"
+      ]
+     },
+     {
+      "id": "automation/v1alpha1/runnerteamassociation",
+      "at": "examples/cluster/automation/v1alpha1/runnerteamassociation.yaml",
+      "origin": "hand",
+      "with": [
+       "pagerduty_automation_actions_runner",
+       "pagerduty_team"
+      ],
+      "refFields": [
+       "runner_id",
+       "team_id"
+      ]
+     }
+    ],
+    "renamed": {
+     "kind": "RunnerTeamAssociation",
+     "at": "config/cluster/actions/config.go:49"
+    }
+   },
+   "targetsOurs": {
+    "pagerduty_automation_actions_runner": [
+     "automation.pagerduty.hfl.dev/AutomationActionsRunner"
+    ],
+    "pagerduty_team": [
+     "team.pagerduty.hfl.dev/Team"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "BusinessService",
+    "group": "business.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_business_service",
+    "group": "business.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "Service",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:20"
+    },
+    "references": [
+     {
+      "field": "team",
+      "target": "pagerduty_team",
+      "targetKind": "team.pagerduty.crossplane.io/Team",
+      "source": "both",
+      "at": "config/cluster/business/config.go:13"
+     }
+    ],
+    "examples": [
+     {
+      "id": "business/v1alpha1/service",
+      "at": "examples-generated/cluster/business/v1alpha1/service.yaml",
+      "origin": "generated",
+      "with": [
+       "pagerduty_team"
+      ],
+      "fields": [
+       "description",
+       "name",
+       "point_of_contact"
+      ],
+      "refFields": [
+       "team"
+      ]
+     },
+     {
+      "id": "business/v1alpha1/service",
+      "at": "examples/cluster/business/v1alpha1/service.yaml",
+      "origin": "hand",
+      "with": [
+       "pagerduty_team"
+      ],
+      "fields": [
+       "description",
+       "name",
+       "point_of_contact"
+      ],
+      "refFields": [
+       "team"
+      ],
+      "values": {
+       "description": "A very descriptive description of this business service",
+       "name": "My Web App",
+       "point_of_contact": "PagerDuty Admin"
+      }
+     }
+    ],
+    "renamed": {
+     "shortGroup": "business",
+     "at": "config/cluster/business/config.go:12"
+    }
+   },
+   "targetsOurs": {
+    "pagerduty_team": [
+     "team.pagerduty.hfl.dev/Team"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "BusinessServiceSubscriber",
+    "group": "business.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_business_service_subscriber",
+    "group": "business.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "ServiceSubscriber",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:19"
+    },
+    "references": [
+     {
+      "field": "business_service_id",
+      "target": "pagerduty_business_service",
+      "targetKind": "business.pagerduty.crossplane.io/Service",
+      "source": "both",
+      "at": "config/cluster/business/config.go:38"
+     },
+     {
+      "field": "subscriber_id",
+      "target": "pagerduty_user",
+      "targetKind": "user.pagerduty.crossplane.io/User",
+      "source": "both",
+      "at": "config/cluster/business/config.go:38"
+     }
+    ],
+    "examples": [
+     {
+      "id": "business/v1alpha1/servicesubscriber",
+      "at": "examples-generated/cluster/business/v1alpha1/servicesubscriber.yaml",
+      "origin": "generated",
+      "with": [
+       "pagerduty_business_service",
+       "pagerduty_team",
+       "pagerduty_user"
+      ],
+      "fields": [
+       "subscriber_type"
+      ],
+      "refFields": [
+       "business_service_id"
+      ]
+     },
+     {
+      "id": "business/v1alpha1/servicesubscriber",
+      "at": "examples/cluster/business/v1alpha1/servicesubscriber.yaml",
+      "origin": "hand",
+      "with": [
+       "pagerduty_business_service",
+       "pagerduty_team",
+       "pagerduty_user"
+      ],
+      "fields": [
+       "subscriber_type"
+      ],
+      "refFields": [
+       "business_service_id"
+      ],
+      "values": {
+       "subscriber_type": "team"
+      }
+     }
+    ],
+    "renamed": {
+     "shortGroup": "business",
+     "at": "config/cluster/business/config.go:37"
+    }
+   },
+   "targetsOurs": {
+    "pagerduty_business_service": [
+     "business.pagerduty.hfl.dev/BusinessService"
+    ],
+    "pagerduty_user": [
+     "user.pagerduty.hfl.dev/User"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "Enablement",
+    "group": "enablement.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_enablement",
+    "group": "pagerduty.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "Enablement",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:21"
+    },
+    "references": [
+     {
+      "field": "entity_id",
+      "target": "pagerduty_team",
+      "source": "config",
+      "at": "config/cluster/enablement/config.go:13"
+     }
+    ],
+    "examples": [
+     {
+      "id": "pagerduty/v1alpha1/enablement",
+      "at": "examples-generated/cluster/pagerduty/v1alpha1/enablement.yaml",
+      "origin": "generated",
+      "fields": [
+       "enabled",
+       "entity_id",
+       "entity_type",
+       "feature"
+      ]
+     },
+     {
+      "id": "pagerduty/v1alpha1/enablement",
+      "at": "examples/cluster/pagerduty/v1alpha1/enablement.yaml",
+      "origin": "hand",
+      "fields": [
+       "enabled",
+       "entity_id",
+       "entity_type",
+       "feature"
+      ],
+      "values": {
+       "enabled": true,
+       "entity_id": "${data.pagerduty_service.example.id}",
+       "entity_type": "service",
+       "feature": "aiops"
+      }
+     }
+    ],
+    "renamed": {
+     "kind": "Enablement",
+     "at": "config/cluster/enablement/config.go:11"
+    }
+   },
+   "targetsOurs": {
+    "pagerduty_team": [
+     "team.pagerduty.hfl.dev/Team"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "EscalationPolicy",
+    "group": "escalation.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_escalation_policy",
+    "group": "escalation.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "Policy",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:22"
+    },
+    "references": [
+     {
+      "field": "teams",
+      "target": "pagerduty_team",
+      "targetKind": "team.pagerduty.crossplane.io/Team",
+      "source": "both",
+      "at": "config/cluster/escalation/config.go:10"
+     }
+    ],
+    "listMapKeys": [
+     {
+      "field": "rule",
+      "keys": null,
+      "at": "config/cluster/escalation/config.go:20"
+     }
+    ],
+    "examples": [
+     {
+      "id": "escalation/v1alpha1/policy",
+      "at": "examples-generated/cluster/escalation/v1alpha1/policy.yaml",
+      "origin": "generated",
+      "with": [
+       "pagerduty_team",
+       "pagerduty_user"
+      ],
+      "fields": [
+       "name",
+       "num_loops",
+       "rule",
+       "rule.escalation_delay_in_minutes",
+       "rule.target",
+       "rule.target.id",
+       "rule.target.type"
+      ],
+      "refFields": [
+       "teams"
+      ]
+     },
+     {
+      "id": "automation/v1alpha1/actionsactionserviceassociation",
+      "at": "examples/cluster/automation/v1alpha1/actionsactionserviceassociation.yaml",
+      "origin": "hand",
+      "with": [
+       "pagerduty_service",
+       "pagerduty_user"
+      ],
+      "fields": [
+       "name",
+       "num_loops",
+       "rule",
+       "rule.escalation_delay_in_minutes",
+       "rule.target",
+       "rule.target.id",
+       "rule.target.type"
+      ],
+      "values": {
+       "name": "Engineering Escalation Policy",
+       "num_loops": 2,
+       "rule": [
+        {
+         "escalation_delay_in_minutes": 10,
+         "target": [
+          {
+           "id": "${pagerduty_user.example.id}",
+           "type": "user_reference"
+          }
+         ]
+        }
+       ]
+      }
+     },
+     {
+      "id": "escalation/v1alpha1/policy",
+      "at": "examples/cluster/escalation/v1alpha1/policy.yaml",
+      "origin": "hand",
+      "with": [
+       "pagerduty_team",
+       "pagerduty_user"
+      ],
+      "fields": [
+       "name",
+       "num_loops",
+       "rule",
+       "rule.escalation_delay_in_minutes",
+       "rule.target",
+       "rule.target.id",
+       "rule.target.type"
+      ],
+      "refFields": [
+       "teams"
+      ],
+      "values": {
+       "name": "Engineering Escalation Policy",
+       "num_loops": 2,
+       "rule": [
+        {
+         "escalation_delay_in_minutes": 10,
+         "target": [
+          {
+           "id": "${pagerduty_user.example.id}",
+           "type": "user_reference"
+          },
+          {
+           "id": "${pagerduty_user.example2.id}",
+           "type": "user_reference"
+          }
+         ]
+        }
+       ]
+      }
+     }
+    ],
+    "renamed": {
+     "shortGroup": "escalation",
+     "at": "config/cluster/escalation/config.go:9"
+    }
+   },
+   "targetsOurs": {
+    "pagerduty_team": [
+     "team.pagerduty.hfl.dev/Team"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "EventOrchestration",
+    "group": "event.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_event_orchestration",
+    "group": "event.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "Orchestration",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:30"
+    },
+    "references": [
+     {
+      "field": "team",
+      "target": "pagerduty_team",
+      "targetKind": "team.pagerduty.crossplane.io/Team",
+      "source": "inferred",
+      "at": "apis/cluster/event/v1alpha1/zz_orchestration_types.go:94"
+     }
+    ],
+    "examples": [
+     {
+      "id": "event/v1alpha1/orchestration",
+      "at": "examples-generated/cluster/event/v1alpha1/orchestration.yaml",
+      "origin": "generated",
+      "with": [
+       "pagerduty_team"
+      ],
+      "fields": [
+       "description",
+       "name"
+      ],
+      "refFields": [
+       "team"
+      ]
+     },
+     {
+      "id": "event/v1alpha1/orchestration",
+      "at": "examples/cluster/event/v1alpha1/orchestration.yaml",
+      "origin": "hand",
+      "with": [
+       "pagerduty_team"
+      ],
+      "fields": [
+       "description",
+       "name"
+      ],
+      "refFields": [
+       "team"
+      ],
+      "values": {
+       "description": "Send events to a pair of services",
+       "name": "My Monitoring Orchestration"
+      }
+     }
+    ]
+   },
+   "targetsOurs": {
+    "pagerduty_team": [
+     "team.pagerduty.hfl.dev/Team"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "EventOrchestrationGlobal",
+    "group": "event.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_event_orchestration_global",
+    "group": "event.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "OrchestrationGlobal",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:24"
+    },
+    "references": [
+     {
+      "field": "event_orchestration",
+      "target": "pagerduty_event_orchestration",
+      "targetKind": "event.pagerduty.crossplane.io/Orchestration",
+      "source": "inferred",
+      "at": "apis/cluster/event/v1alpha1/zz_orchestrationglobal_types.go:686"
+     }
+    ],
+    "listMapKeys": [
+     {
+      "field": "set",
+      "keys": null,
+      "at": "config/cluster/event/config.go:140"
+     },
+     {
+      "field": "catch_all",
+      "keys": null,
+      "at": "config/cluster/event/config.go:141"
+     }
+    ],
+    "examples": [
+     {
+      "id": "event/v1alpha1/orchestrationglobal",
+      "at": "examples-generated/cluster/event/v1alpha1/orchestrationglobal.yaml",
+      "origin": "generated",
+      "with": [
+       "pagerduty_event_orchestration",
+       "pagerduty_team"
+      ],
+      "fields": [
+       "catch_all",
+       "catch_all.actions",
+       "set",
+       "set.id",
+       "set.rule",
+       "set.rule.actions",
+       "set.rule.actions.annotate",
+       "set.rule.actions.automation_action",
+       "set.rule.actions.automation_action.auto_send",
+       "set.rule.actions.automation_action.name",
+       "set.rule.actions.automation_action.trigger_types",
+       "set.rule.actions.automation_action.url",
+       "set.rule.actions.drop_event",
+       "set.rule.actions.escalation_policy",
+       "set.rule.actions.priority",
+       "set.rule.actions.route_to",
+       "set.rule.actions.severity",
+       "set.rule.actions.suspend",
+       "set.rule.condition",
+       "set.rule.condition.expression",
+       "set.rule.label"
+      ],
+      "refFields": [
+       "event_orchestration"
+      ]
+     },
+     {
+      "id": "event/v1alpha1/orchestrationglobal",
+      "at": "examples/cluster/event/v1alpha1/orchestrationglobal.yaml",
+      "origin": "hand",
+      "with": [
+       "pagerduty_event_orchestration",
+       "pagerduty_team"
+      ],
+      "fields": [
+       "catch_all",
+       "catch_all.actions",
+       "set",
+       "set.id",
+       "set.rule",
+       "set.rule.actions",
+       "set.rule.actions.annotate",
+       "set.rule.actions.automation_action",
+       "set.rule.actions.automation_action.auto_send",
+       "set.rule.actions.automation_action.name",
+       "set.rule.actions.automation_action.trigger_types",
+       "set.rule.actions.automation_action.url",
+       "set.rule.actions.drop_event",
+       "set.rule.actions.escalation_policy",
+       "set.rule.actions.priority",
+       "set.rule.actions.route_to",
+       "set.rule.actions.severity",
+       "set.rule.actions.suspend",
+       "set.rule.condition",
+       "set.rule.condition.expression",
+       "set.rule.label"
+      ],
+      "refFields": [
+       "event_orchestration"
+      ],
+      "values": {
+       "catch_all": [
+        {
+         "actions": [
+          {}
+         ]
+        }
+       ],
+       "set": [
+        {
+         "id": "start",
+         "rule": [
+          {
+           "actions": [
+            {
+             "annotate": "This incident was created by the Database Team via a Global Orchestration",
+             "route_to": "step-two"
+            }
+           ],
+           "label": "Always annotate a note to all events"
+          }
+         ]
+        },
+        {
+         "id": "step-two",
+         "rule": [
+          {
+           "actions": [
+            {
+             "drop_event": true
+            }
+           ],
+           "condition": [
+            {
+             "expression": "event.summary matches 'no-op'"
+            }
+           ],
+           "label": "Drop events that are marked as no-op"
+          },
+          {
+           "actions": [
+            {
+             "escalation_policy": "${data.pagerduty_escalation_policy.sre_esc_policy.id}"
+            }
+           ],
+           "condition": [
+            {
+             "expression": "event.summary matches part 'running out of space'"
+            }
+           ],
+           "label": "If the DB host is running out of space, then page the SRE team"
+          },
+          {
+           "actions": [
+            {
+             "severity": "warning"
+            }
+           ],
+           "condition": [
+            {
+             "expression": "event.custom_details.hostname matches part 'replica'"
+            }
+           ],
+           "label": "If there's something wrong on the replica, then mark the alert as a warning"
+          },
+          {
+           "actions": [
+            {
+             "automation_action": [
+              {
+               "auto_send": true,
+               "name": "db-diagnostic",
+               "trigger_types": [
+                "alert_suspended"
+               ],
+               "url": "https://example.com/run-diagnostic"
+              }
+             ],
+             "priority": "${data.pagerduty_priority.p1.id}",
+             "suspend": 600
+            }
+           ],
+           "label": "Otherwise, set the incident to P1, pause for 10 mins and run a diagnostic once the alert is suspended"
+          }
+         ]
+        }
+       ]
+      }
+     }
+    ]
+   },
+   "targetsOurs": {
+    "pagerduty_event_orchestration": [
+     "event.pagerduty.hfl.dev/EventOrchestration"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "EventOrchestrationGlobalCacheVariable",
+    "group": "event.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_event_orchestration_global_cache_variable",
+    "group": "event.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "OrchestrationGlobalCacheVariable",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:23"
+    },
+    "references": [
+     {
+      "field": "event_orchestration",
+      "target": "pagerduty_event_orchestration",
+      "targetKind": "event.pagerduty.crossplane.io/Orchestration",
+      "source": "inferred",
+      "at": "apis/cluster/event/v1alpha1/zz_orchestrationglobalcachevariable_types.go:159"
+     }
+    ],
+    "examples": [
+     {
+      "id": "event/v1alpha1/orchestrationglobalcachevariable",
+      "at": "examples-generated/cluster/event/v1alpha1/orchestrationglobalcachevariable.yaml",
+      "origin": "generated",
+      "with": [
+       "pagerduty_event_orchestration",
+       "pagerduty_event_orchestration_global",
+       "pagerduty_event_orchestration_service_cache_variable",
+       "pagerduty_team"
+      ],
+      "fields": [
+       "condition",
+       "condition.expression",
+       "configuration",
+       "configuration.regex",
+       "configuration.source",
+       "configuration.type",
+       "name"
+      ],
+      "refFields": [
+       "event_orchestration"
+      ]
+     },
+     {
+      "id": "event/v1alpha1/orchestrationglobalcachevariable",
+      "at": "examples/cluster/event/v1alpha1/orchestrationglobalcachevariable.yaml",
+      "origin": "hand",
+      "with": [
+       "pagerduty_event_orchestration",
+       "pagerduty_event_orchestration_global",
+       "pagerduty_event_orchestration_service_cache_variable",
+       "pagerduty_team"
+      ],
+      "fields": [
+       "condition",
+       "condition.expression",
+       "configuration",
+       "configuration.regex",
+       "configuration.source",
+       "configuration.type",
+       "name"
+      ],
+      "refFields": [
+       "event_orchestration"
+      ],
+      "values": {
+       "condition": [
+        {
+         "expression": "event.source exists"
+        }
+       ],
+       "configuration": [
+        {
+         "regex": ".*",
+         "source": "event.source",
+         "type": "recent_value"
+        }
+       ],
+       "name": "recent_host"
+      }
+     }
+    ]
+   },
+   "targetsOurs": {
+    "pagerduty_event_orchestration": [
+     "event.pagerduty.hfl.dev/EventOrchestration"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "EventOrchestrationIntegration",
+    "group": "event.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_event_orchestration_integration",
+    "group": "event.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "OrchestrationIntegration",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:25"
+    },
+    "references": [
+     {
+      "field": "event_orchestration",
+      "target": "pagerduty_event_orchestration",
+      "targetKind": "event.pagerduty.crossplane.io/Orchestration",
+      "source": "inferred",
+      "at": "apis/cluster/event/v1alpha1/zz_orchestrationintegration_types.go:53"
+     }
+    ],
+    "examples": [
+     {
+      "id": "event/v1alpha1/orchestrationintegration",
+      "at": "examples-generated/cluster/event/v1alpha1/orchestrationintegration.yaml",
+      "origin": "generated",
+      "with": [
+       "pagerduty_event_orchestration",
+       "pagerduty_team"
+      ],
+      "fields": [
+       "label"
+      ],
+      "refFields": [
+       "event_orchestration"
+      ]
+     },
+     {
+      "id": "event/v1alpha1/orchestrationintegration",
+      "at": "examples/cluster/event/v1alpha1/orchestrationintegration.yaml",
+      "origin": "hand",
+      "with": [
+       "pagerduty_event_orchestration",
+       "pagerduty_team"
+      ],
+      "fields": [
+       "label"
+      ],
+      "refFields": [
+       "event_orchestration"
+      ],
+      "values": {
+       "label": "Example integration"
+      }
+     }
+    ]
+   },
+   "targetsOurs": {
+    "pagerduty_event_orchestration": [
+     "event.pagerduty.hfl.dev/EventOrchestration"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "EventOrchestrationRouter",
+    "group": "event.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_event_orchestration_router",
+    "group": "event.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "OrchestrationRouter",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:26"
+    },
+    "references": [
+     {
+      "field": "catch_all.actions.route_to",
+      "target": "pagerduty_service",
+      "targetKind": "service.pagerduty.crossplane.io/Service",
+      "source": "both",
+      "at": "config/cluster/event/config.go:67"
+     },
+     {
+      "field": "event_orchestration",
+      "target": "pagerduty_event_orchestration",
+      "targetKind": "event.pagerduty.crossplane.io/Orchestration",
+      "source": "inferred",
+      "at": "apis/cluster/event/v1alpha1/zz_orchestrationrouter_types.go:206"
+     },
+     {
+      "field": "set.rule.actions.route_to",
+      "target": "pagerduty_service",
+      "targetKind": "service.pagerduty.crossplane.io/Service",
+      "source": "both",
+      "at": "config/cluster/event/config.go:67"
+     }
+    ],
+    "listMapKeys": [
+     {
+      "field": "set",
+      "keys": null,
+      "at": "config/cluster/event/config.go:86"
+     },
+     {
+      "field": "set.rule",
+      "keys": null,
+      "at": "config/cluster/event/config.go:90"
+     },
+     {
+      "field": "set.rule.actions",
+      "keys": null,
+      "at": "config/cluster/event/config.go:93"
+     },
+     {
+      "field": "set.rule.condition",
+      "keys": null,
+      "at": "config/cluster/event/config.go:96"
+     },
+     {
+      "field": "set.rule.actions.dynamic_route_to",
+      "keys": null,
+      "at": "config/cluster/event/config.go:100"
+     },
+     {
+      "field": "catch_all",
+      "keys": null,
+      "at": "config/cluster/event/config.go:103"
+     },
+     {
+      "field": "catch_all.actions",
+      "keys": null,
+      "at": "config/cluster/event/config.go:106"
+     }
+    ],
+    "examples": [
+     {
+      "id": "event/v1alpha1/orchestrationrouter",
+      "at": "examples-generated/cluster/event/v1alpha1/orchestrationrouter.yaml",
+      "origin": "generated",
+      "fields": [
+       "catch_all",
+       "catch_all.actions",
+       "set",
+       "set.id",
+       "set.rule",
+       "set.rule.actions",
+       "set.rule.actions.dynamic_route_to",
+       "set.rule.actions.dynamic_route_to.lookup_by",
+       "set.rule.actions.dynamic_route_to.regex",
+       "set.rule.actions.dynamic_route_to.source",
+       "set.rule.condition",
+       "set.rule.condition.expression",
+       "set.rule.label"
+      ],
+      "refFields": [
+       "event_orchestration"
+      ]
+     },
+     {
+      "id": "event/v1alpha1/orchestrationrouter",
+      "at": "examples/cluster/event/v1alpha1/orchestrationrouter.yaml",
+      "origin": "hand",
+      "fields": [
+       "catch_all",
+       "catch_all.actions",
+       "set",
+       "set.id",
+       "set.rule",
+       "set.rule.actions",
+       "set.rule.actions.dynamic_route_to",
+       "set.rule.actions.dynamic_route_to.lookup_by",
+       "set.rule.actions.dynamic_route_to.regex",
+       "set.rule.actions.dynamic_route_to.source",
+       "set.rule.condition",
+       "set.rule.condition.expression",
+       "set.rule.label"
+      ],
+      "refFields": [
+       "event_orchestration"
+      ],
+      "values": {
+       "catch_all": [
+        {
+         "actions": [
+          {}
+         ]
+        }
+       ],
+       "set": [
+        {
+         "id": "start",
+         "rule": [
+          {
+           "actions": [
+            {
+             "dynamic_route_to": [
+              {
+               "lookup_by": "service_id",
+               "regex": "(.*)",
+               "source": "event.custom_details.pd_service_id"
+              }
+             ]
+            }
+           ],
+           "label": "Dynamically route events related to specific PagerDuty services"
+          },
+          {
+           "actions": [
+            {}
+           ],
+           "condition": [
+            {
+             "expression": "event.summary matches part 'database'"
+            },
+            {
+             "expression": "event.source matches regex 'db[0-9]+-server'"
+            }
+           ],
+           "label": "Events relating to our relational database"
+          },
+          {
+           "actions": [
+            {}
+           ],
+           "condition": [
+            {
+             "expression": "event.summary matches part 'www'"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     }
+    ]
+   },
+   "targetsOurs": {
+    "pagerduty_event_orchestration": [
+     "event.pagerduty.hfl.dev/EventOrchestration"
+    ],
+    "pagerduty_service": [
+     "service.pagerduty.hfl.dev/Service"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "EventOrchestrationService",
+    "group": "event.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_event_orchestration_service",
+    "group": "event.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "OrchestrationService",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:28"
+    },
+    "references": [
+     {
+      "field": "service",
+      "target": "pagerduty_service",
+      "targetKind": "service.pagerduty.crossplane.io/Service",
+      "source": "both",
+      "at": "config/cluster/event/config.go:54"
+     }
+    ],
+    "listMapKeys": [
+     {
+      "field": "set",
+      "keys": null,
+      "at": "config/cluster/event/config.go:60"
+     },
+     {
+      "field": "catch_all",
+      "keys": null,
+      "at": "config/cluster/event/config.go:61"
+     }
+    ],
+    "examples": [
+     {
+      "id": "event/v1alpha1/orchestrationservice",
+      "at": "examples-generated/cluster/event/v1alpha1/orchestrationservice.yaml",
+      "origin": "generated",
+      "with": [
+       "pagerduty_escalation_policy",
+       "pagerduty_incident_custom_field",
+       "pagerduty_service",
+       "pagerduty_team",
+       "pagerduty_team_membership",
+       "pagerduty_user"
+      ],
+      "fields": [
+       "catch_all",
+       "catch_all.actions",
+       "enable_event_orchestration_for_service",
+       "set",
+       "set.id",
+       "set.rule",
+       "set.rule.actions",
+       "set.rule.actions.annotate",
+       "set.rule.actions.automation_action",
+       "set.rule.actions.automation_action.auto_send",
+       "set.rule.actions.automation_action.header",
+       "set.rule.actions.automation_action.header.key",
+       "set.rule.actions.automation_action.header.value",
+       "set.rule.actions.automation_action.name",
+       "set.rule.actions.automation_action.parameter",
+       "set.rule.actions.automation_action.parameter.key",
+       "set.rule.actions.automation_action.parameter.value",
+       "set.rule.actions.automation_action.trigger_types",
+       "set.rule.actions.automation_action.url",
+       "set.rule.actions.escalation_policy",
+       "set.rule.actions.extraction",
+       "set.rule.actions.extraction.regex",
+       "set.rule.actions.extraction.source",
+       "set.rule.actions.extraction.target",
+       "set.rule.actions.extraction.template",
+       "set.rule.actions.incident_custom_field_update",
+       "set.rule.actions.incident_custom_field_update.id",
+       "set.rule.actions.incident_custom_field_update.value",
+       "set.rule.actions.pagerduty_automation_action",
+       "set.rule.actions.pagerduty_automation_action.action_id",
+       "set.rule.actions.pagerduty_automation_action.trigger_types",
+       "set.rule.actions.priority",
+       "set.rule.actions.route_to",
+       "set.rule.actions.suppress",
+       "set.rule.actions.variable",
+       "set.rule.actions.variable.name",
+       "set.rule.actions.variable.path",
+       "set.rule.actions.variable.type",
+       "set.rule.actions.variable.value",
+       "set.rule.condition",
+       "set.rule.condition.expression",
+       "set.rule.label"
+      ],
+      "refFields": [
+       "service"
+      ]
+     },
+     {
+      "id": "event/v1alpha1/orchestrationservice",
+      "at": "examples/cluster/event/v1alpha1/orchestrationservice.yaml",
+      "origin": "hand",
+      "with": [
+       "pagerduty_escalation_policy",
+       "pagerduty_incident_custom_field",
+       "pagerduty_service",
+       "pagerduty_team",
+       "pagerduty_team_membership",
+       "pagerduty_user"
+      ],
+      "fields": [
+       "catch_all",
+       "catch_all.actions",
+       "enable_event_orchestration_for_service",
+       "set",
+       "set.id",
+       "set.rule",
+       "set.rule.actions",
+       "set.rule.actions.annotate",
+       "set.rule.actions.automation_action",
+       "set.rule.actions.automation_action.auto_send",
+       "set.rule.actions.automation_action.header",
+       "set.rule.actions.automation_action.header.key",
+       "set.rule.actions.automation_action.header.value",
+       "set.rule.actions.automation_action.name",
+       "set.rule.actions.automation_action.parameter",
+       "set.rule.actions.automation_action.parameter.key",
+       "set.rule.actions.automation_action.parameter.value",
+       "set.rule.actions.automation_action.trigger_types",
+       "set.rule.actions.automation_action.url",
+       "set.rule.actions.escalation_policy",
+       "set.rule.actions.extraction",
+       "set.rule.actions.extraction.regex",
+       "set.rule.actions.extraction.source",
+       "set.rule.actions.extraction.target",
+       "set.rule.actions.extraction.template",
+       "set.rule.actions.incident_custom_field_update",
+       "set.rule.actions.incident_custom_field_update.id",
+       "set.rule.actions.incident_custom_field_update.value",
+       "set.rule.actions.pagerduty_automation_action",
+       "set.rule.actions.pagerduty_automation_action.action_id",
+       "set.rule.actions.pagerduty_automation_action.trigger_types",
+       "set.rule.actions.priority",
+       "set.rule.actions.route_to",
+       "set.rule.actions.suppress",
+       "set.rule.actions.variable",
+       "set.rule.actions.variable.name",
+       "set.rule.actions.variable.path",
+       "set.rule.actions.variable.type",
+       "set.rule.actions.variable.value",
+       "set.rule.condition",
+       "set.rule.condition.expression",
+       "set.rule.label"
+      ],
+      "refFields": [
+       "service"
+      ],
+      "values": {
+       "catch_all": [
+        {
+         "actions": [
+          {}
+         ]
+        }
+       ],
+       "enable_event_orchestration_for_service": true,
+       "set": [
+        {
+         "id": "start",
+         "rule": [
+          {
+           "actions": [
+            {
+             "extraction": [
+              {
+               "target": "event.custom_details.hostname",
+               "template": "{{variables.hostname}}"
+              },
+              {
+               "regex": "www (.*) service",
+               "source": "event.source",
+               "target": "event.source"
+              }
+             ],
+             "route_to": "step-two",
+             "variable": [
+              {
+               "name": "hostname",
+               "path": "event.component",
+               "type": "regex",
+               "value": "hostname: (.*)"
+              }
+             ]
+            }
+           ],
+           "label": "Always apply some consistent event transformations to all events"
+          }
+         ]
+        },
+        {
+         "id": "step-two",
+         "rule": [
+          {
+           "actions": [
+            {
+             "annotate": "Please use our P1 runbook: https://docs.test/p1-runbook",
+             "incident_custom_field_update": [
+              {
+               "id": "${pagerduty_incident_custom_field.cs_impact.id}",
+               "value": "High Impact"
+              }
+             ],
+             "priority": "${data.pagerduty_priority.p1.id}"
+            }
+           ],
+           "condition": [
+            {
+             "expression": "event.severity matches 'critical'"
+            }
+           ],
+           "label": "All critical alerts should be treated as P1 incident"
+          },
+          {
+           "actions": [
+            {
+             "escalation_policy": "${data.pagerduty_escalation_policy.sre_esc_policy.id}"
+            }
+           ],
+           "condition": [
+            {
+             "expression": "event.custom_details.service_name matches part '-api' and event.custom_details.status_code matches '502'"
+            }
+           ],
+           "label": "If any of the API apps are unavailable, page the SRE team"
+          },
+          {
+           "actions": [
+            {
+             "automation_action": [
+              {
+               "auto_send": true,
+               "header": [
+                {
+                 "key": "X-Notification-Source",
+                 "value": "PagerDuty Incident Webhook"
+                }
+               ],
+               "name": "Canary Slack Notification",
+               "parameter": [
+                {
+                 "key": "channel",
+                 "value": "#my-team-channel"
+                },
+                {
+                 "key": "message",
+                 "value": "something is wrong with the canary deployment"
+                }
+               ],
+               "trigger_types": [
+                "alert_triggered"
+               ],
+               "url": "https://our-slack-listerner.test/canary-notification"
+              }
+             ]
+            }
+           ],
+           "condition": [
+            {
+             "expression": "event.custom_details.hostname matches part 'canary'"
+            }
+           ],
+           "label": "If there's something wrong on the canary let the team know about it in our deployments Slack channel"
+          },
+          {
+           "actions": [
+            {
+             "pagerduty_automation_action": [
+              {
+               "action_id": "01FJV5A8OA5MKHOYFHV35SM2Z0",
+               "trigger_types": [
+                "alert_suppressed"
+               ]
+              }
+             ],
+             "suppress": true
+            }
+           ],
+           "condition": [
+            {
+             "expression": "event.severity matches 'info' and not (now in Mon,Tue,Wed,Thu,Fri 09:00:00 to 17:00:00 America/Los_Angeles)"
+            }
+           ],
+           "label": "Never bother the on-call for info-level events outside of work hours, and let an Automation Action fix it instead"
+          }
+         ]
+        }
+       ]
+      }
+     }
+    ]
+   },
+   "targetsOurs": {
+    "pagerduty_service": [
+     "service.pagerduty.hfl.dev/Service"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "EventOrchestrationServiceCacheVariable",
+    "group": "event.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_event_orchestration_service_cache_variable",
+    "group": "event.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "OrchestrationServiceCacheVariable",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:27"
+    },
+    "references": [
+     {
+      "field": "service",
+      "target": "pagerduty_event_orchestration_service",
+      "targetKind": "event.pagerduty.crossplane.io/OrchestrationService",
+      "source": "both",
+      "at": "config/cluster/event/config.go:161"
+     }
+    ],
+    "examples": [
+     {
+      "id": "event/v1alpha1/orchestrationservicecachevariable",
+      "at": "examples-generated/cluster/event/v1alpha1/orchestrationservicecachevariable.yaml",
+      "origin": "generated",
+      "with": [
+       "pagerduty_escalation_policy",
+       "pagerduty_event_orchestration_service",
+       "pagerduty_service",
+       "pagerduty_team",
+       "pagerduty_user"
+      ],
+      "fields": [
+       "condition",
+       "condition.expression",
+       "configuration",
+       "configuration.ttl_seconds",
+       "configuration.type",
+       "name"
+      ],
+      "refFields": [
+       "service"
+      ]
+     },
+     {
+      "id": "event/v1alpha1/orchestrationservicecachevariable",
+      "at": "examples/cluster/event/v1alpha1/orchestrationservicecachevariable.yaml",
+      "origin": "hand",
+      "with": [
+       "pagerduty_escalation_policy",
+       "pagerduty_event_orchestration_service",
+       "pagerduty_service",
+       "pagerduty_team",
+       "pagerduty_user"
+      ],
+      "fields": [
+       "condition",
+       "condition.expression",
+       "configuration",
+       "configuration.ttl_seconds",
+       "configuration.type",
+       "name"
+      ],
+      "refFields": [
+       "service"
+      ],
+      "values": {
+       "condition": [
+        {
+         "expression": "event.summary matches part 'database'"
+        }
+       ],
+       "configuration": [
+        {
+         "ttl_seconds": 60,
+         "type": "trigger_event_count"
+        }
+       ],
+       "name": "num_db_triggers"
+      }
+     }
+    ]
+   },
+   "targetsOurs": {
+    "pagerduty_event_orchestration_service": [
+     "event.pagerduty.hfl.dev/EventOrchestrationService"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "EventOrchestrationUnrouted",
+    "group": "event.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_event_orchestration_unrouted",
+    "group": "event.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "OrchestrationUnrouted",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:29"
+    },
+    "references": [
+     {
+      "field": "event_orchestration",
+      "target": "pagerduty_event_orchestration",
+      "targetKind": "event.pagerduty.crossplane.io/Orchestration",
+      "source": "inferred",
+      "at": "apis/cluster/event/v1alpha1/zz_orchestrationunrouted_types.go:247"
+     }
+    ],
+    "listMapKeys": [
+     {
+      "field": "set",
+      "keys": null,
+      "at": "config/cluster/event/config.go:47"
+     },
+     {
+      "field": "catch_all",
+      "keys": null,
+      "at": "config/cluster/event/config.go:48"
+     }
+    ],
+    "examples": [
+     {
+      "id": "event/v1alpha1/orchestrationunrouted",
+      "at": "examples-generated/cluster/event/v1alpha1/orchestrationunrouted.yaml",
+      "origin": "generated",
+      "fields": [
+       "catch_all",
+       "catch_all.actions",
+       "catch_all.actions.severity",
+       "set",
+       "set.id",
+       "set.rule",
+       "set.rule.actions",
+       "set.rule.actions.extraction",
+       "set.rule.actions.extraction.target",
+       "set.rule.actions.extraction.template",
+       "set.rule.actions.severity",
+       "set.rule.condition",
+       "set.rule.condition.expression",
+       "set.rule.label"
+      ],
+      "refFields": [
+       "event_orchestration"
+      ]
+     },
+     {
+      "id": "event/v1alpha1/orchestrationunrouted",
+      "at": "examples/cluster/event/v1alpha1/orchestrationunrouted.yaml",
+      "origin": "hand",
+      "fields": [
+       "catch_all",
+       "catch_all.actions",
+       "catch_all.actions.severity",
+       "set",
+       "set.id",
+       "set.rule",
+       "set.rule.actions",
+       "set.rule.actions.extraction",
+       "set.rule.actions.extraction.target",
+       "set.rule.actions.extraction.template",
+       "set.rule.actions.severity",
+       "set.rule.condition",
+       "set.rule.condition.expression",
+       "set.rule.label"
+      ],
+      "refFields": [
+       "event_orchestration"
+      ],
+      "values": {
+       "catch_all": [
+        {
+         "actions": [
+          {
+           "severity": "info"
+          }
+         ]
+        }
+       ],
+       "set": [
+        {
+         "id": "start",
+         "rule": [
+          {
+           "actions": [
+            {
+             "extraction": [
+              {
+               "target": "event.summary",
+               "template": "[Critical Unrouted] {{event.summary}}"
+              }
+             ],
+             "severity": "critical"
+            }
+           ],
+           "condition": [
+            {
+             "expression": "event.severity matches 'critical'"
+            }
+           ],
+           "label": "Update the summary of un-matched Critical alerts so they're easier to spot"
+          }
+         ]
+        }
+       ]
+      }
+     }
+    ]
+   },
+   "targetsOurs": {
+    "pagerduty_event_orchestration": [
+     "event.pagerduty.hfl.dev/EventOrchestration"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "Extension",
+    "group": "extension.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_extension",
+    "group": "extensions.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "Extension",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:33"
+    },
+    "references": [
+     {
+      "field": "extension_objects",
+      "target": "pagerduty_service",
+      "targetKind": "service.pagerduty.crossplane.io/Service",
+      "source": "both",
+      "at": "config/cluster/extensions/config.go:9"
+     }
+    ],
+    "examples": [
+     {
+      "id": "extensions/v1alpha1/extension",
+      "at": "examples-generated/cluster/extensions/v1alpha1/extension.yaml",
+      "origin": "generated",
+      "with": [
+       "pagerduty_escalation_policy",
+       "pagerduty_service",
+       "pagerduty_user"
+      ],
+      "fields": [
+       "config",
+       "extension_schema",
+       "name"
+      ],
+      "refFields": [
+       "extension_objects"
+      ]
+     },
+     {
+      "id": "extensions/v1alpha1/extension",
+      "at": "examples/cluster/extensions/v1alpha1/extension.yaml",
+      "origin": "hand",
+      "with": [
+       "pagerduty_escalation_policy",
+       "pagerduty_service",
+       "pagerduty_user"
+      ],
+      "fields": [
+       "config",
+       "extension_schema",
+       "name"
+      ],
+      "refFields": [
+       "extension_objects"
+      ],
+      "values": {
+       "config": "{\n\t\"restrict\": \"any\",\n\t\"notify_types\": {\n\t\t\t\"resolve\": false,\n\t\t\t\"acknowledge\": false,\n\t\t\t\"assignments\": false\n\t},\n\t\"access_token\": \"XXX\"\n}\n",
+       "extension_schema": "${data.pagerduty_extension_schema.webhook.id}",
+       "name": "My Web App Extension"
+      }
+     }
+    ],
+    "renamed": {
+     "shortGroup": "extensions",
+     "at": "config/cluster/extensions/config.go:8"
+    }
+   },
+   "targetsOurs": {
+    "pagerduty_service": [
+     "service.pagerduty.hfl.dev/Service"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "Extension",
+    "group": "extension.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_extension_servicenow",
+    "group": "extensions.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "Servicenow",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:32"
+    },
+    "examples": [
+     {
+      "id": "extensions/v1alpha1/servicenow",
+      "at": "examples-generated/cluster/extensions/v1alpha1/servicenow.yaml",
+      "origin": "generated",
+      "with": [
+       "pagerduty_escalation_policy",
+       "pagerduty_service",
+       "pagerduty_user"
+      ],
+      "fields": [
+       "extension_objects",
+       "extension_schema",
+       "name",
+       "referer",
+       "snow_user",
+       "sync_options",
+       "target",
+       "task_type"
+      ]
+     },
+     {
+      "id": "extensions/v1alpha1/servicenow",
+      "at": "examples/cluster/extensions/v1alpha1/servicenow.yaml",
+      "origin": "hand",
+      "with": [
+       "pagerduty_escalation_policy",
+       "pagerduty_service",
+       "pagerduty_user"
+      ],
+      "fields": [
+       "extension_objects",
+       "extension_schema",
+       "name",
+       "referer",
+       "snow_user",
+       "sync_options",
+       "target",
+       "task_type"
+      ],
+      "values": {
+       "extension_objects": [
+        "${pagerduty_service.example.id}"
+       ],
+       "extension_schema": "${data.pagerduty_extension_schema.servicenow.id}",
+       "name": "My Web App Extension",
+       "referer": "None",
+       "snow_user": "meeps",
+       "sync_options": "manual_sync",
+       "target": "https://foo.servicenow.com/webhook_foo",
+       "task_type": "incident"
+      }
+     }
+    ],
+    "renamed": {
+     "shortGroup": "extensions",
+     "at": "config/cluster/extensions/config.go:18"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "IncidentCustomField",
+    "group": "incident.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_incident_custom_field",
+    "group": "incident.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "CustomField",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:35"
+    },
+    "examples": [
+     {
+      "id": "incident/v1alpha1/customfield",
+      "at": "examples-generated/cluster/incident/v1alpha1/customfield.yaml",
+      "origin": "generated",
+      "fields": [
+       "data_type",
+       "display_name",
+       "field_type",
+       "name"
+      ]
+     },
+     {
+      "id": "incident/v1alpha1/customfield",
+      "at": "examples/cluster/incident/v1alpha1/customfield.yaml",
+      "origin": "hand",
+      "fields": [
+       "data_type",
+       "display_name",
+       "field_type",
+       "name"
+      ],
+      "values": {
+       "data_type": "string",
+       "display_name": "Customer Impact",
+       "field_type": "single_value",
+       "name": "impact"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "IncidentCustomFieldOption",
+    "group": "incident.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_incident_custom_field_option",
+    "group": "incident.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "CustomFieldOption",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:34"
+    },
+    "references": [
+     {
+      "field": "field",
+      "target": "pagerduty_incident_custom_field",
+      "targetKind": "incident.pagerduty.crossplane.io/CustomField",
+      "source": "both",
+      "at": "config/cluster/incident/config.go:8"
+     }
+    ],
+    "examples": [
+     {
+      "id": "incident/v1alpha1/customfieldoption",
+      "at": "examples-generated/cluster/incident/v1alpha1/customfieldoption.yaml",
+      "origin": "generated",
+      "with": [
+       "pagerduty_incident_custom_field"
+      ],
+      "fields": [
+       "data_type",
+       "value"
+      ],
+      "refFields": [
+       "field"
+      ]
+     },
+     {
+      "id": "incident/v1alpha1/customfieldoption",
+      "at": "examples/cluster/incident/v1alpha1/customfieldoption.yaml",
+      "origin": "hand",
+      "with": [
+       "pagerduty_incident_custom_field"
+      ],
+      "fields": [
+       "data_type",
+       "value"
+      ],
+      "refFields": [
+       "field"
+      ],
+      "values": {
+       "data_type": "string",
+       "value": "dev"
+      }
+     }
+    ]
+   },
+   "targetsOurs": {
+    "pagerduty_incident_custom_field": [
+     "incident.pagerduty.hfl.dev/IncidentCustomField"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "IncidentType",
+    "group": "incident.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_incident_type",
+    "group": "incident.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "IncidentType",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:36"
+    },
+    "references": [
+     {
+      "field": "parent_type",
+      "target": "pagerduty_incident_type",
+      "targetKind": "incident.pagerduty.crossplane.io/IncidentType",
+      "source": "both",
+      "at": "config/cluster/incident/config.go:36"
+     }
+    ],
+    "examples": [
+     {
+      "id": "incident/v1alpha1/incidenttype",
+      "at": "examples-generated/cluster/incident/v1alpha1/incidenttype.yaml",
+      "origin": "generated",
+      "fields": [
+       "description",
+       "display_name",
+       "name"
+      ],
+      "refFields": [
+       "parent_type"
+      ]
+     },
+     {
+      "id": "incident/v1alpha1/incidenttype",
+      "at": "examples/cluster/incident/v1alpha1/incidenttype.yaml",
+      "origin": "hand",
+      "fields": [
+       "description",
+       "display_name",
+       "name"
+      ],
+      "refFields": [
+       "parent_type"
+      ],
+      "values": {
+       "description": "Internal incidents not facing customer",
+       "display_name": "Backoffice Incident",
+       "name": "backoffice"
+      }
+     }
+    ],
+    "renamed": {
+     "kind": "IncidentType",
+     "at": "config/cluster/incident/config.go:35"
+    }
+   },
+   "targetsOurs": {
+    "pagerduty_incident_type": [
+     "incident.pagerduty.hfl.dev/IncidentType"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "IncidentTypeCustomField",
+    "group": "incident.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_incident_type_custom_field",
+    "group": "incident.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "TypeCustomField",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:37"
+    },
+    "references": [
+     {
+      "field": "incident_type",
+      "target": "pagerduty_incident_type",
+      "targetKind": "incident.pagerduty.crossplane.io/IncidentType",
+      "source": "both",
+      "at": "config/cluster/incident/config.go:43"
+     }
+    ],
+    "examples": [
+     {
+      "id": "incident/v1alpha1/typecustomfield",
+      "at": "examples-generated/cluster/incident/v1alpha1/typecustomfield.yaml",
+      "origin": "generated",
+      "fields": [
+       "data_type",
+       "default_value",
+       "display_name",
+       "field_type",
+       "name"
+      ],
+      "refFields": [
+       "incident_type"
+      ]
+     },
+     {
+      "id": "incident/v1alpha1/typecustomfield",
+      "at": "examples/cluster/incident/v1alpha1/typecustomfield.yaml",
+      "origin": "hand",
+      "fields": [
+       "data_type",
+       "default_value",
+       "display_name",
+       "field_type",
+       "name"
+      ],
+      "refFields": [
+       "incident_type"
+      ],
+      "values": {
+       "data_type": "integer",
+       "default_value": "${jsonencode(5)}",
+       "display_name": "Alarm Time",
+       "field_type": "single_value",
+       "name": "alarm_time_minutes"
+      }
+     }
+    ]
+   },
+   "targetsOurs": {
+    "pagerduty_incident_type": [
+     "incident.pagerduty.hfl.dev/IncidentType"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "IncidentWorkflow",
+    "group": "incident.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_incident_workflow",
+    "group": "incident.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "Workflow",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:39"
+    },
+    "references": [
+     {
+      "field": "team",
+      "target": "pagerduty_team",
+      "targetKind": "team.pagerduty.crossplane.io/Team",
+      "source": "both",
+      "at": "config/cluster/incident/config.go:15"
+     }
+    ],
+    "examples": [
+     {
+      "id": "incident/v1alpha1/workflow",
+      "at": "examples-generated/cluster/incident/v1alpha1/workflow.yaml",
+      "origin": "generated",
+      "fields": [
+       "description",
+       "name",
+       "step",
+       "step.action",
+       "step.input",
+       "step.input.name",
+       "step.input.value",
+       "step.name"
+      ]
+     },
+     {
+      "id": "incident/v1alpha1/workflow",
+      "at": "examples/cluster/incident/v1alpha1/workflow.yaml",
+      "origin": "hand",
+      "fields": [
+       "description",
+       "name",
+       "step",
+       "step.action",
+       "step.input",
+       "step.input.name",
+       "step.input.value",
+       "step.name"
+      ],
+      "values": {
+       "description": "This Incident Workflow is an example",
+       "name": "Example Incident Workflow",
+       "step": [
+        {
+         "action": "pagerduty.com:incident-workflows:send-status-update:1",
+         "input": [
+          {
+           "name": "Message",
+           "value": "Example status message sent on {{current_date}}"
+          }
+         ],
+         "name": "Send Status Update"
+        }
+       ]
+      }
+     }
+    ]
+   },
+   "targetsOurs": {
+    "pagerduty_team": [
+     "team.pagerduty.hfl.dev/Team"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "IncidentWorkflowTrigger",
+    "group": "incident.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_incident_workflow_trigger",
+    "group": "incident.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "WorkflowTrigger",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:38"
+    },
+    "references": [
+     {
+      "field": "permissions.team_id",
+      "target": "pagerduty_team",
+      "targetKind": "team.pagerduty.crossplane.io/Team",
+      "source": "both",
+      "at": "config/cluster/incident/config.go:22"
+     },
+     {
+      "field": "service",
+      "target": "pagerduty_service",
+      "source": "config",
+      "at": "config/cluster/incident/config.go:22"
+     },
+     {
+      "field": "workflow",
+      "target": "pagerduty_incident_workflow",
+      "targetKind": "incident.pagerduty.crossplane.io/Workflow",
+      "source": "both",
+      "at": "config/cluster/incident/config.go:22"
+     }
+    ],
+    "examples": [
+     {
+      "id": "incident/v1alpha1/workflowtrigger",
+      "at": "examples-generated/cluster/incident/v1alpha1/workflowtrigger.yaml",
+      "origin": "generated",
+      "with": [
+       "pagerduty_incident_workflow"
+      ],
+      "fields": [
+       "condition",
+       "services",
+       "subscribed_to_all_services",
+       "type"
+      ],
+      "refFields": [
+       "workflow"
+      ]
+     },
+     {
+      "id": "incident/v1alpha1/workflowtrigger",
+      "at": "examples/cluster/incident/v1alpha1/workflowtrigger.yaml",
+      "origin": "hand",
+      "with": [
+       "pagerduty_incident_workflow"
+      ],
+      "fields": [
+       "condition",
+       "services",
+       "subscribed_to_all_services",
+       "type"
+      ],
+      "refFields": [
+       "workflow"
+      ],
+      "values": {
+       "condition": "incident.priority matches 'P1'",
+       "services": [
+        "${pagerduty_service.first_service.id}"
+       ],
+       "subscribed_to_all_services": false,
+       "type": "conditional"
+      }
+     }
+    ]
+   },
+   "targetsOurs": {
+    "pagerduty_incident_workflow": [
+     "incident.pagerduty.hfl.dev/IncidentWorkflow"
+    ],
+    "pagerduty_service": [
+     "service.pagerduty.hfl.dev/Service"
+    ],
+    "pagerduty_team": [
+     "team.pagerduty.hfl.dev/Team"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "JiraCloudAccountMappingRule",
+    "group": "jira.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_jira_cloud_account_mapping_rule",
+    "group": "jira.pagerduty.crossplane.io",
+    "version": "v1alpha2",
+    "kind": "CloudAccountMappingRule",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:40"
+    },
+    "references": [
+     {
+      "field": "config.jira.sync_notes_user",
+      "target": "pagerduty_user",
+      "targetKind": "user.pagerduty.crossplane.io/User",
+      "source": "both",
+      "at": "config/cluster/jira/config.go:19"
+     },
+     {
+      "field": "config.service",
+      "target": "pagerduty_service",
+      "targetKind": "service.pagerduty.crossplane.io/Service",
+      "source": "both",
+      "at": "config/cluster/jira/config.go:19"
+     }
+    ],
+    "customCode": [
+     {
+      "what": "helper",
+      "expr": "versions.EmbedSingletonLists",
+      "at": "config/cluster/jira/config.go:13"
+     }
+    ],
+    "examples": [
+     {
+      "id": "jira/v1alpha2/cloudaccountmappingrule",
+      "at": "examples-generated/cluster/jira/v1alpha2/cloudaccountmappingrule.yaml",
+      "origin": "generated",
+      "with": [
+       "pagerduty_service",
+       "pagerduty_user"
+      ],
+      "fields": [
+       "account_mapping",
+       "config",
+       "config.jira",
+       "config.jira.autocreate_jql",
+       "config.jira.create_issue_on_incident_trigger",
+       "config.jira.custom_fields",
+       "config.jira.custom_fields.source_incident_field",
+       "config.jira.custom_fields.target_issue_field",
+       "config.jira.custom_fields.target_issue_field_name",
+       "config.jira.custom_fields.type",
+       "config.jira.custom_fields.value",
+       "config.jira.issue_type",
+       "config.jira.issue_type.id",
+       "config.jira.issue_type.name",
+       "config.jira.priorities",
+       "config.jira.priorities.jira_id",
+       "config.jira.priorities.pagerduty_id",
+       "config.jira.project",
+       "config.jira.project.id",
+       "config.jira.project.key",
+       "config.jira.project.name",
+       "config.jira.status_mapping",
+       "config.jira.status_mapping.acknowledged",
+       "config.jira.status_mapping.acknowledged.id",
+       "config.jira.status_mapping.acknowledged.name",
+       "config.jira.status_mapping.resolved",
+       "config.jira.status_mapping.resolved.id",
+       "config.jira.status_mapping.resolved.name",
+       "config.jira.status_mapping.triggered",
+       "config.jira.status_mapping.triggered.id",
+       "config.jira.status_mapping.triggered.name",
+       "name"
+      ],
+      "refFields": [
+       "config.service"
+      ]
+     },
+     {
+      "id": "jira/v1alpha1/cloudaccountmappingrule",
+      "at": "examples/cluster/jira/v1alpha1/cloudaccountmappingrule.yaml",
+      "origin": "hand",
+      "with": [
+       "pagerduty_service",
+       "pagerduty_user"
+      ],
+      "fields": [
+       "account_mapping",
+       "config",
+       "config.jira",
+       "config.jira.autocreate_jql",
+       "config.jira.create_issue_on_incident_trigger",
+       "config.jira.custom_fields",
+       "config.jira.custom_fields.source_incident_field",
+       "config.jira.custom_fields.target_issue_field",
+       "config.jira.custom_fields.target_issue_field_name",
+       "config.jira.custom_fields.type",
+       "config.jira.custom_fields.value",
+       "config.jira.issue_type",
+       "config.jira.issue_type.id",
+       "config.jira.issue_type.name",
+       "config.jira.priorities",
+       "config.jira.priorities.jira_id",
+       "config.jira.priorities.pagerduty_id",
+       "config.jira.project",
+       "config.jira.project.id",
+       "config.jira.project.key",
+       "config.jira.project.name",
+       "config.jira.status_mapping",
+       "config.jira.status_mapping.acknowledged",
+       "config.jira.status_mapping.acknowledged.id",
+       "config.jira.status_mapping.acknowledged.name",
+       "config.jira.status_mapping.resolved",
+       "config.jira.status_mapping.resolved.id",
+       "config.jira.status_mapping.resolved.name",
+       "config.jira.status_mapping.triggered",
+       "config.jira.status_mapping.triggered.id",
+       "config.jira.status_mapping.triggered.name",
+       "name"
+      ],
+      "refFields": [
+       "config.service"
+      ],
+      "values": {
+       "account_mapping": "PLBP09X",
+       "config": [
+        {
+         "jira": [
+          {
+           "autocreate_jql": "priority = Highest",
+           "create_issue_on_incident_trigger": true,
+           "custom_fields": [
+            {
+             "source_incident_field": "incident_description",
+             "target_issue_field": "description",
+             "target_issue_field_name": "Description",
+             "type": "attribute"
+            },
+            {
+             "target_issue_field": "security",
+             "target_issue_field_name": "Security Level",
+             "type": "jira_value",
+             "value": "${jsonencode({\n          displayName = \"Sec Level 1\"\n          id = \"10000\"\n        })}"
+            }
+           ],
+           "issue_type": [
+            {
+             "id": "10001",
+             "name": "Incident"
+            }
+           ],
+           "priorities": [
+            {
+             "jira_id": "1",
+             "pagerduty_id": "${data.pagerduty_priority.p1.id}"
+            },
+            {
+             "jira_id": "2",
+             "pagerduty_id": "${data.pagerduty_priority.p2.id}"
+            },
+            {
+             "jira_id": "3",
+             "pagerduty_id": "${data.pagerduty_priority.p3.id}"
+            }
+           ],
+           "project": [
+            {
+             "id": "10100",
+             "key": "ITS",
+             "name": "IT Support"
+            }
+           ],
+           "status_mapping": [
+            {
+             "acknowledged": [
+              {
+               "id": "2",
+               "name": "In Progress"
+              }
+             ],
+             "resolved": [
+              {
+               "id": "3",
+               "name": "Resolved"
+              }
+             ],
+             "triggered": [
+              {
+               "id": "1",
+               "name": "Open"
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "name": "Integration with My Web App"
+      }
+     },
+     {
+      "id": "jira/v1alpha2/cloudaccountmappingrule",
+      "at": "examples/cluster/jira/v1alpha2/cloudaccountmappingrule.yaml",
+      "origin": "hand",
+      "with": [
+       "pagerduty_service",
+       "pagerduty_user"
+      ],
+      "fields": [
+       "account_mapping",
+       "config",
+       "config.jira",
+       "config.jira.autocreate_jql",
+       "config.jira.create_issue_on_incident_trigger",
+       "config.jira.custom_fields",
+       "config.jira.custom_fields.source_incident_field",
+       "config.jira.custom_fields.target_issue_field",
+       "config.jira.custom_fields.target_issue_field_name",
+       "config.jira.custom_fields.type",
+       "config.jira.custom_fields.value",
+       "config.jira.issue_type",
+       "config.jira.issue_type.id",
+       "config.jira.issue_type.name",
+       "config.jira.priorities",
+       "config.jira.priorities.jira_id",
+       "config.jira.priorities.pagerduty_id",
+       "config.jira.project",
+       "config.jira.project.id",
+       "config.jira.project.key",
+       "config.jira.project.name",
+       "config.jira.status_mapping",
+       "config.jira.status_mapping.acknowledged",
+       "config.jira.status_mapping.acknowledged.id",
+       "config.jira.status_mapping.acknowledged.name",
+       "config.jira.status_mapping.resolved",
+       "config.jira.status_mapping.resolved.id",
+       "config.jira.status_mapping.resolved.name",
+       "config.jira.status_mapping.triggered",
+       "config.jira.status_mapping.triggered.id",
+       "config.jira.status_mapping.triggered.name",
+       "name"
+      ],
+      "refFields": [
+       "config.service"
+      ],
+      "values": {
+       "account_mapping": "PLBP09X",
+       "config": {
+        "jira": {
+         "autocreate_jql": "priority = Highest",
+         "create_issue_on_incident_trigger": true,
+         "custom_fields": [
+          {
+           "source_incident_field": "incident_description",
+           "target_issue_field": "description",
+           "target_issue_field_name": "Description",
+           "type": "attribute"
+          },
+          {
+           "target_issue_field": "security",
+           "target_issue_field_name": "Security Level",
+           "type": "jira_value",
+           "value": "${jsonencode({\n          displayName = \"Sec Level 1\"\n          id = \"10000\"\n        })}"
+          }
+         ],
+         "issue_type": {
+          "id": "10001",
+          "name": "Incident"
+         },
+         "priorities": [
+          {
+           "jira_id": "1",
+           "pagerduty_id": "${data.pagerduty_priority.p1.id}"
+          },
+          {
+           "jira_id": "2",
+           "pagerduty_id": "${data.pagerduty_priority.p2.id}"
+          },
+          {
+           "jira_id": "3",
+           "pagerduty_id": "${data.pagerduty_priority.p3.id}"
+          }
+         ],
+         "project": {
+          "id": "10100",
+          "key": "ITS",
+          "name": "IT Support"
+         },
+         "status_mapping": {
+          "acknowledged": {
+           "id": "2",
+           "name": "In Progress"
+          },
+          "resolved": {
+           "id": "3",
+           "name": "Resolved"
+          },
+          "triggered": {
+           "id": "1",
+           "name": "Open"
+          }
+         }
+        }
+       },
+       "name": "Integration with My Web App"
+      }
+     }
+    ]
+   },
+   "targetsOurs": {
+    "pagerduty_service": [
+     "service.pagerduty.hfl.dev/Service"
+    ],
+    "pagerduty_user": [
+     "user.pagerduty.hfl.dev/User"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "MaintenanceWindow",
+    "group": "maintenance.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_maintenance_window",
+    "group": "maintenance.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "Window",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:41"
+    },
+    "references": [
+     {
+      "field": "services",
+      "target": "pagerduty_service",
+      "targetKind": "service.pagerduty.crossplane.io/Service",
+      "source": "both",
+      "at": "config/cluster/maintenance/config.go:10"
+     }
+    ],
+    "examples": [
+     {
+      "id": "maintenance/v1alpha1/window",
+      "at": "examples-generated/cluster/maintenance/v1alpha1/window.yaml",
+      "origin": "generated",
+      "fields": [
+       "end_time",
+       "start_time"
+      ],
+      "refFields": [
+       "services"
+      ]
+     },
+     {
+      "id": "maintenance/v1alpha1/window",
+      "at": "examples/cluster/maintenance/v1alpha1/window.yaml",
+      "origin": "hand",
+      "fields": [
+       "end_time",
+       "start_time"
+      ],
+      "refFields": [
+       "services"
+      ],
+      "values": {
+       "end_time": "2015-11-09T22:00:00-05:00",
+       "start_time": "2015-11-09T20:00:00-05:00"
+      }
+     }
+    ],
+    "renamed": {
+     "shortGroup": "maintenance",
+     "at": "config/cluster/maintenance/config.go:9"
+    }
+   },
+   "targetsOurs": {
+    "pagerduty_service": [
+     "service.pagerduty.hfl.dev/Service"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "Schedule",
+    "group": "schedule.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_schedule",
+    "group": "schedule.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "Schedule",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:45"
+    },
+    "references": [
+     {
+      "field": "layer.users",
+      "target": "pagerduty_user",
+      "targetKind": "user.pagerduty.crossplane.io/User",
+      "source": "both",
+      "at": "config/cluster/schedule/config.go:10"
+     },
+     {
+      "field": "teams",
+      "target": "pagerduty_team",
+      "targetKind": "team.pagerduty.crossplane.io/Team",
+      "source": "both",
+      "at": "config/cluster/schedule/config.go:10"
+     }
+    ],
+    "listMapKeys": [
+     {
+      "field": "layer",
+      "keys": null,
+      "at": "config/cluster/schedule/config.go:23"
+     },
+     {
+      "field": "layer.users",
+      "keys": null,
+      "at": "config/cluster/schedule/config.go:34"
+     },
+     {
+      "field": "layer.restriction",
+      "keys": null,
+      "at": "config/cluster/schedule/config.go:39"
+     },
+     {
+      "field": "teams",
+      "keys": null,
+      "at": "config/cluster/schedule/config.go:44"
+     }
+    ],
+    "examples": [
+     {
+      "id": "schedule/v1alpha1/schedule",
+      "at": "examples-generated/cluster/schedule/v1alpha1/schedule.yaml",
+      "origin": "generated",
+      "with": [
+       "pagerduty_team",
+       "pagerduty_user"
+      ],
+      "fields": [
+       "layer",
+       "layer.name",
+       "layer.restriction",
+       "layer.restriction.duration_seconds",
+       "layer.restriction.start_time_of_day",
+       "layer.restriction.type",
+       "layer.rotation_turn_length_seconds",
+       "layer.rotation_virtual_start",
+       "layer.start",
+       "name",
+       "time_zone"
+      ],
+      "refFields": [
+       "layer.users",
+       "teams"
+      ]
+     },
+     {
+      "id": "schedule/v1alpha1/schedule",
+      "at": "examples/cluster/schedule/v1alpha1/schedule.yaml",
+      "origin": "hand",
+      "with": [
+       "pagerduty_team",
+       "pagerduty_user"
+      ],
+      "fields": [
+       "layer",
+       "layer.name",
+       "layer.restriction",
+       "layer.restriction.duration_seconds",
+       "layer.restriction.start_time_of_day",
+       "layer.restriction.type",
+       "layer.rotation_turn_length_seconds",
+       "layer.rotation_virtual_start",
+       "layer.start",
+       "name",
+       "time_zone"
+      ],
+      "refFields": [
+       "layer.users",
+       "teams"
+      ],
+      "values": {
+       "layer": [
+        {
+         "name": "Night Shift",
+         "restriction": [
+          {
+           "duration_seconds": 32400,
+           "start_time_of_day": "08:00:00",
+           "type": "daily_restriction"
+          }
+         ],
+         "rotation_turn_length_seconds": 86400,
+         "rotation_virtual_start": "2015-11-06T20:00:00-05:00",
+         "start": "2015-11-06T20:00:00-05:00"
+        }
+       ],
+       "name": "Daily Engineering Rotation",
+       "time_zone": "America/New_York"
+      }
+     }
+    ],
+    "renamed": {
+     "shortGroup": "schedule",
+     "at": "config/cluster/schedule/config.go:9"
+    }
+   },
+   "targetsOurs": {
+    "pagerduty_team": [
+     "team.pagerduty.hfl.dev/Team"
+    ],
+    "pagerduty_user": [
+     "user.pagerduty.hfl.dev/User"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "BusinessServiceDependency",
+    "group": "service.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_service_dependency",
+    "group": "service.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "Dependency",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:48"
+    },
+    "examples": [
+     {
+      "id": "service/v1alpha1/dependency",
+      "at": "examples-generated/cluster/service/v1alpha1/dependency.yaml",
+      "origin": "generated",
+      "fields": [
+       "dependency",
+       "dependency.dependent_service",
+       "dependency.dependent_service.id",
+       "dependency.dependent_service.type",
+       "dependency.supporting_service",
+       "dependency.supporting_service.id",
+       "dependency.supporting_service.type"
+      ]
+     },
+     {
+      "id": "service/v1alpha1/dependency",
+      "at": "examples/cluster/service/v1alpha1/dependency.yaml",
+      "origin": "hand",
+      "fields": [
+       "dependency",
+       "dependency.dependent_service",
+       "dependency.dependent_service.id",
+       "dependency.dependent_service.type",
+       "dependency.supporting_service",
+       "dependency.supporting_service.id",
+       "dependency.supporting_service.type"
+      ],
+      "values": {
+       "dependency": [
+        {
+         "dependent_service": [
+          {
+           "id": "${pagerduty_business_service.foo.id}",
+           "type": "${pagerduty_business_service.foo.type}"
+          }
+         ],
+         "supporting_service": [
+          {
+           "id": "${pagerduty_service.foo.id}",
+           "type": "${pagerduty_service.foo.type}"
+          }
+         ]
+        }
+       ]
+      }
+     }
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "Service",
+    "group": "service.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_service",
+    "group": "service.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "Service",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:51"
+    },
+    "references": [
+     {
+      "field": "escalation_policy",
+      "target": "pagerduty_escalation_policy",
+      "targetKind": "escalation.pagerduty.crossplane.io/Policy",
+      "source": "both",
+      "at": "config/cluster/service/config.go:19"
+     }
+    ],
+    "lateInitIgnored": [
+     {
+      "field": "alert_grouping_parameters",
+      "at": "config/cluster/service/config.go:13"
+     },
+     {
+      "field": "alert_grouping",
+      "at": "config/cluster/service/config.go:13"
+     },
+     {
+      "field": "alert_grouping_timeout",
+      "at": "config/cluster/service/config.go:13"
+     }
+    ],
+    "examples": [
+     {
+      "id": "service/v1alpha1/service",
+      "at": "examples-generated/cluster/service/v1alpha1/service.yaml",
+      "origin": "generated",
+      "with": [
+       "pagerduty_escalation_policy",
+       "pagerduty_user"
+      ],
+      "fields": [
+       "acknowledgement_timeout",
+       "alert_creation",
+       "auto_pause_notifications_parameters",
+       "auto_pause_notifications_parameters.enabled",
+       "auto_pause_notifications_parameters.timeout",
+       "auto_resolve_timeout",
+       "name"
+      ],
+      "refFields": [
+       "escalation_policy"
+      ]
+     },
+     {
+      "id": "service/v1alpha1/service",
+      "at": "examples/cluster/service/v1alpha1/service.yaml",
+      "origin": "hand",
+      "with": [
+       "pagerduty_escalation_policy",
+       "pagerduty_user"
+      ],
+      "fields": [
+       "acknowledgement_timeout",
+       "alert_creation",
+       "auto_pause_notifications_parameters",
+       "auto_pause_notifications_parameters.enabled",
+       "auto_pause_notifications_parameters.timeout",
+       "auto_resolve_timeout",
+       "name"
+      ],
+      "refFields": [
+       "escalation_policy"
+      ],
+      "values": {
+       "acknowledgement_timeout": 600,
+       "alert_creation": "create_alerts_and_incidents",
+       "auto_pause_notifications_parameters": [
+        {
+         "enabled": true,
+         "timeout": 300
+        }
+       ],
+       "auto_resolve_timeout": 14400,
+       "name": "My Web App"
+      }
+     }
+    ]
+   },
+   "targetsOurs": {
+    "pagerduty_escalation_policy": [
+     "escalation.pagerduty.hfl.dev/EscalationPolicy"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "ServiceCustomField",
+    "group": "service.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_service_custom_field",
+    "group": "service.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "CustomField",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:46"
+    },
+    "examples": [
+     {
+      "id": "service/v1alpha1/customfield",
+      "at": "examples-generated/cluster/service/v1alpha1/customfield.yaml",
+      "origin": "generated",
+      "fields": [
+       "data_type",
+       "description",
+       "display_name",
+       "field_type",
+       "name"
+      ]
+     },
+     {
+      "id": "service/v1alpha1/customfield",
+      "at": "examples/cluster/service/v1alpha1/customfield.yaml",
+      "origin": "hand",
+      "fields": [
+       "data_type",
+       "description",
+       "display_name",
+       "field_type",
+       "name"
+      ],
+      "values": {
+       "data_type": "string",
+       "description": "The environment this service runs in",
+       "display_name": "Environment",
+       "field_type": "single_value",
+       "name": "environment"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "ServiceCustomFieldValue",
+    "group": "service.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_service_custom_field_value",
+    "group": "service.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "CustomFieldValue",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:47"
+    },
+    "examples": [
+     {
+      "id": "service/v1alpha1/customfieldvalue",
+      "at": "examples-generated/cluster/service/v1alpha1/customfieldvalue.yaml",
+      "origin": "generated",
+      "with": [
+       "pagerduty_service",
+       "pagerduty_service_custom_field"
+      ],
+      "fields": [
+       "custom_fields",
+       "custom_fields.name",
+       "custom_fields.value",
+       "service_id"
+      ]
+     },
+     {
+      "id": "service/v1alpha1/customfieldvalue",
+      "at": "examples/cluster/service/v1alpha1/customfieldvalue.yaml",
+      "origin": "hand",
+      "with": [
+       "pagerduty_service",
+       "pagerduty_service_custom_field"
+      ],
+      "fields": [
+       "custom_fields",
+       "custom_fields.name",
+       "custom_fields.value",
+       "service_id"
+      ],
+      "values": {
+       "custom_fields": [
+        {
+         "name": "environment",
+         "value": "${jsonencode(\"production\")}"
+        },
+        {
+         "name": "environment",
+         "value": "${jsonencode(\"us-east-1\")}"
+        },
+        {
+         "name": "environment",
+         "value": "${jsonencode(true)}"
+        },
+        {
+         "name": "environment",
+         "value": "${jsonencode([\"us-east-1\", \"us-west-1\"])}"
+        }
+       ],
+       "service_id": "${pagerduty_service.example.id}"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "ServiceIntegration",
+    "group": "service.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_service_integration",
+    "group": "service.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "Integration",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:50"
+    },
+    "references": [
+     {
+      "field": "service",
+      "target": "pagerduty_service",
+      "targetKind": "service.pagerduty.crossplane.io/Service",
+      "source": "inferred",
+      "at": "apis/cluster/service/v1alpha1/zz_integration_types.go:251"
+     }
+    ],
+    "lateInitIgnored": [
+     {
+      "field": "type",
+      "at": "config/cluster/service/config.go:57"
+     },
+     {
+      "field": "vendor",
+      "at": "config/cluster/service/config.go:57"
+     },
+     {
+      "field": "integration_key",
+      "at": "config/cluster/service/config.go:57"
+     }
+    ],
+    "customCode": [
+     {
+      "what": "connection details",
+      "at": "config/cluster/service/config.go:75"
+     }
+    ],
+    "examples": [
+     {
+      "id": "service/v1alpha1/integration",
+      "at": "examples-generated/cluster/service/v1alpha1/integration.yaml",
+      "origin": "generated",
+      "with": [
+       "pagerduty_escalation_policy",
+       "pagerduty_service",
+       "pagerduty_user"
+      ],
+      "fields": [
+       "name",
+       "type"
+      ],
+      "refFields": [
+       "service"
+      ]
+     },
+     {
+      "id": "service/v1alpha1/integration",
+      "at": "examples/cluster/service/v1alpha1/integration.yaml",
+      "origin": "hand",
+      "with": [
+       "pagerduty_escalation_policy",
+       "pagerduty_service",
+       "pagerduty_user"
+      ],
+      "fields": [
+       "name",
+       "type"
+      ],
+      "refFields": [
+       "service"
+      ],
+      "values": {
+       "name": "Generic API Service Integration",
+       "type": "generic_events_api_inbound_integration"
+      }
+     }
+    ]
+   },
+   "targetsOurs": {
+    "pagerduty_service": [
+     "service.pagerduty.hfl.dev/Service"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "TechnicalServiceDependency",
+    "group": "service.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_service_dependency",
+    "group": "service.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "Dependency",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:48"
+    },
+    "examples": [
+     {
+      "id": "service/v1alpha1/dependency",
+      "at": "examples-generated/cluster/service/v1alpha1/dependency.yaml",
+      "origin": "generated",
+      "fields": [
+       "dependency",
+       "dependency.dependent_service",
+       "dependency.dependent_service.id",
+       "dependency.dependent_service.type",
+       "dependency.supporting_service",
+       "dependency.supporting_service.id",
+       "dependency.supporting_service.type"
+      ]
+     },
+     {
+      "id": "service/v1alpha1/dependency",
+      "at": "examples/cluster/service/v1alpha1/dependency.yaml",
+      "origin": "hand",
+      "fields": [
+       "dependency",
+       "dependency.dependent_service",
+       "dependency.dependent_service.id",
+       "dependency.dependent_service.type",
+       "dependency.supporting_service",
+       "dependency.supporting_service.id",
+       "dependency.supporting_service.type"
+      ],
+      "values": {
+       "dependency": [
+        {
+         "dependent_service": [
+          {
+           "id": "${pagerduty_business_service.foo.id}",
+           "type": "${pagerduty_business_service.foo.type}"
+          }
+         ],
+         "supporting_service": [
+          {
+           "id": "${pagerduty_service.foo.id}",
+           "type": "${pagerduty_service.foo.type}"
+          }
+         ]
+        }
+       ]
+      }
+     }
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "SlackConnection",
+    "group": "slack.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_slack_connection",
+    "group": "slack.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "Connection",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:52"
+    },
+    "examples": [
+     {
+      "id": "slack/v1alpha1/connection",
+      "at": "examples-generated/cluster/slack/v1alpha1/connection.yaml",
+      "origin": "generated",
+      "with": [
+       "pagerduty_team"
+      ],
+      "fields": [
+       "channel_id",
+       "config",
+       "config.events",
+       "config.priorities",
+       "notification_type",
+       "source_id",
+       "source_type",
+       "workspace_id"
+      ]
+     },
+     {
+      "id": "slack/v1alpha1/connection",
+      "at": "examples/cluster/slack/v1alpha1/connection.yaml",
+      "origin": "hand",
+      "with": [
+       "pagerduty_team"
+      ],
+      "fields": [
+       "channel_id",
+       "config",
+       "config.events",
+       "config.priorities",
+       "notification_type",
+       "source_id",
+       "source_type",
+       "workspace_id"
+      ],
+      "values": {
+       "channel_id": "C02CABCDAC9",
+       "config": [
+        {
+         "events": [
+          "incident.triggered",
+          "incident.acknowledged",
+          "incident.escalated",
+          "incident.resolved",
+          "incident.reassigned",
+          "incident.annotated",
+          "incident.unacknowledged",
+          "incident.delegated",
+          "incident.priority_updated",
+          "incident.responder.added",
+          "incident.responder.replied",
+          "incident.status_update_published",
+          "incident.reopened"
+         ],
+         "priorities": [
+          "${data.pagerduty_priority.p1.id}"
+         ]
+        }
+       ],
+       "notification_type": "responder",
+       "source_id": "${pagerduty_team.foo.id}",
+       "source_type": "team_reference",
+       "workspace_id": "T02A123LV1A"
+      }
+     }
+    ],
+    "renamed": {
+     "shortGroup": "slack",
+     "at": "config/cluster/slack/config.go:9"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "Tag",
+    "group": "tag.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_tag",
+    "group": "tag.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "Tag",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:54"
+    },
+    "examples": [
+     {
+      "id": "tag/v1alpha1/tag",
+      "at": "examples-generated/cluster/tag/v1alpha1/tag.yaml",
+      "origin": "generated",
+      "fields": [
+       "label"
+      ]
+     },
+     {
+      "id": "tag/v1alpha1/tag",
+      "at": "examples/cluster/tag/v1alpha1/tag.yaml",
+      "origin": "hand",
+      "fields": [
+       "label"
+      ],
+      "values": {
+       "label": "Product"
+      }
+     }
+    ],
+    "renamed": {
+     "shortGroup": "tag",
+     "at": "config/cluster/tag/config.go:9"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "TagAssignment",
+    "group": "tag.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_tag_assignment",
+    "group": "tag.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "Assignment",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:53"
+    },
+    "examples": [
+     {
+      "id": "tag/v1alpha1/assignment",
+      "at": "examples-generated/cluster/tag/v1alpha1/assignment.yaml",
+      "origin": "generated",
+      "with": [
+       "pagerduty_tag",
+       "pagerduty_team"
+      ],
+      "fields": [
+       "entity_id",
+       "entity_type",
+       "tag_id"
+      ]
+     },
+     {
+      "id": "tag/v1alpha1/assignment",
+      "at": "examples/cluster/tag/v1alpha1/assignment.yaml",
+      "origin": "hand",
+      "with": [
+       "pagerduty_tag",
+       "pagerduty_team"
+      ],
+      "fields": [
+       "entity_id",
+       "entity_type",
+       "tag_id"
+      ],
+      "values": {
+       "entity_id": "${pagerduty_team.engteam.id}",
+       "entity_type": "teams",
+       "tag_id": "${pagerduty_tag.example.id}"
+      }
+     }
+    ],
+    "renamed": {
+     "shortGroup": "tag",
+     "at": "config/cluster/tag/config.go:14"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "Team",
+    "group": "team.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_team",
+    "group": "team.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "Team",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:56"
+    },
+    "examples": [
+     {
+      "id": "team/v1alpha1/team",
+      "at": "examples-generated/cluster/team/v1alpha1/team.yaml",
+      "origin": "generated",
+      "fields": [
+       "description",
+       "name"
+      ]
+     },
+     {
+      "id": "automation/v1alpha1/actionsactionteamassociation",
+      "at": "examples/cluster/automation/v1alpha1/actionsactionteamassociation.yaml",
+      "origin": "hand",
+      "fields": [
+       "description",
+       "name"
+      ],
+      "values": {
+       "description": "All engineering",
+       "name": "Engineering"
+      }
+     },
+     {
+      "id": "automation/v1alpha1/actionsrunnerteamassociation",
+      "at": "examples/cluster/automation/v1alpha1/actionsrunnerteamassociation.yaml",
+      "origin": "hand",
+      "fields": [
+       "description",
+       "name"
+      ],
+      "values": {
+       "description": "Enterprise engineering",
+       "name": "Enterprise Engineering"
+      }
+     },
+     {
+      "id": "team/v1alpha1/team",
+      "at": "examples/cluster/team/v1alpha1/team.yaml",
+      "origin": "hand",
+      "fields": [
+       "description",
+       "name"
+      ],
+      "values": {
+       "description": "Product and Engineering",
+       "name": "Product Development"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "TeamMembership",
+    "group": "team.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_team_membership",
+    "group": "team.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "Membership",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:55"
+    },
+    "references": [
+     {
+      "field": "team_id",
+      "target": "pagerduty_team",
+      "targetKind": "team.pagerduty.crossplane.io/Team",
+      "source": "both",
+      "at": "config/cluster/team/config.go:25"
+     },
+     {
+      "field": "user_id",
+      "target": "pagerduty_user",
+      "targetKind": "user.pagerduty.crossplane.io/User",
+      "source": "both",
+      "at": "config/cluster/team/config.go:25"
+     }
+    ],
+    "examples": [
+     {
+      "id": "team/v1alpha1/membership",
+      "at": "examples-generated/cluster/team/v1alpha1/membership.yaml",
+      "origin": "generated",
+      "with": [
+       "pagerduty_team",
+       "pagerduty_user"
+      ],
+      "fields": [
+       "role"
+      ],
+      "refFields": [
+       "team_id",
+       "user_id"
+      ]
+     },
+     {
+      "id": "team/v1alpha1/membership",
+      "at": "examples/cluster/team/v1alpha1/membership.yaml",
+      "origin": "hand",
+      "with": [
+       "pagerduty_team",
+       "pagerduty_user"
+      ],
+      "fields": [
+       "role"
+      ],
+      "refFields": [
+       "team_id",
+       "user_id"
+      ],
+      "values": {
+       "role": "manager"
+      }
+     }
+    ]
+   },
+   "targetsOurs": {
+    "pagerduty_team": [
+     "team.pagerduty.hfl.dev/Team"
+    ],
+    "pagerduty_user": [
+     "user.pagerduty.hfl.dev/User"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "User",
+    "group": "user.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_user",
+    "group": "user.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "User",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:60"
+    },
+    "examples": [
+     {
+      "id": "user/v1alpha1/user",
+      "at": "examples-generated/cluster/user/v1alpha1/user.yaml",
+      "origin": "generated",
+      "fields": [
+       "email",
+       "name"
+      ]
+     },
+     {
+      "id": "user/v1alpha1/user",
+      "at": "examples/cluster/user/v1alpha1/user.yaml",
+      "origin": "hand",
+      "fields": [
+       "email",
+       "name"
+      ],
+      "values": {
+       "email": "125.greenholt.earline@graham.name",
+       "name": "Earline Greenholt"
+      }
+     }
+    ],
+    "renamed": {
+     "shortGroup": "user",
+     "at": "config/cluster/user/config.go:13"
+    }
+   }
+  },
+  {
+   "ours": {
+    "kind": "UserContactMethod",
+    "group": "user.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_user_contact_method",
+    "group": "user.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "ContactMethod",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:57"
+    },
+    "references": [
+     {
+      "field": "user_id",
+      "target": "pagerduty_user",
+      "targetKind": "user.pagerduty.crossplane.io/User",
+      "source": "both",
+      "at": "config/cluster/user/config.go:35"
+     }
+    ],
+    "examples": [
+     {
+      "id": "user/v1alpha1/contactmethod",
+      "at": "examples-generated/cluster/user/v1alpha1/contactmethod.yaml",
+      "origin": "generated",
+      "with": [
+       "pagerduty_user"
+      ],
+      "fields": [
+       "address",
+       "label",
+       "type"
+      ],
+      "refFields": [
+       "user_id"
+      ]
+     },
+     {
+      "id": "user/v1alpha1/contactmethod",
+      "at": "examples/cluster/user/v1alpha1/contactmethod.yaml",
+      "origin": "hand",
+      "with": [
+       "pagerduty_user"
+      ],
+      "fields": [
+       "address",
+       "label",
+       "type"
+      ],
+      "refFields": [
+       "user_id"
+      ],
+      "values": {
+       "address": "foo@bar.com",
+       "label": "Work",
+       "type": "email_contact_method"
+      }
+     }
+    ],
+    "renamed": {
+     "shortGroup": "user",
+     "at": "config/cluster/user/config.go:34"
+    }
+   },
+   "targetsOurs": {
+    "pagerduty_user": [
+     "user.pagerduty.hfl.dev/User"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "UserHandoffNotificationRule",
+    "group": "user.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_user_handoff_notification_rule",
+    "group": "user.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "HandoffNotificationRule",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:58"
+    },
+    "references": [
+     {
+      "field": "user_id",
+      "target": "pagerduty_user",
+      "targetKind": "user.pagerduty.crossplane.io/User",
+      "source": "both",
+      "at": "config/cluster/user/config.go:45"
+     }
+    ],
+    "examples": [
+     {
+      "id": "user/v1alpha1/handoffnotificationrule",
+      "at": "examples-generated/cluster/user/v1alpha1/handoffnotificationrule.yaml",
+      "origin": "generated",
+      "with": [
+       "pagerduty_user",
+       "pagerduty_user_contact_method"
+      ],
+      "fields": [
+       "contact_method",
+       "contact_method.id",
+       "contact_method.type",
+       "handoff_type",
+       "notify_advance_in_minutes"
+      ],
+      "refFields": [
+       "user_id"
+      ]
+     },
+     {
+      "id": "user/v1alpha1/handoffnotificationrule",
+      "at": "examples/cluster/user/v1alpha1/handoffnotificationrule.yaml",
+      "origin": "hand",
+      "with": [
+       "pagerduty_user",
+       "pagerduty_user_contact_method"
+      ],
+      "fields": [
+       "contact_method",
+       "contact_method.id",
+       "contact_method.type",
+       "handoff_type",
+       "notify_advance_in_minutes"
+      ],
+      "refFields": [
+       "user_id"
+      ],
+      "values": {
+       "contact_method": [
+        {
+         "id": "${pagerduty_user_contact_method.phone.id}",
+         "type": "email_contact_method"
+        }
+       ],
+       "handoff_type": "both",
+       "notify_advance_in_minutes": 180
+      }
+     }
+    ],
+    "renamed": {
+     "shortGroup": "user",
+     "at": "config/cluster/user/config.go:44"
+    }
+   },
+   "targetsOurs": {
+    "pagerduty_user": [
+     "user.pagerduty.hfl.dev/User"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "UserNotificationRule",
+    "group": "user.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_user_notification_rule",
+    "group": "user.pagerduty.crossplane.io",
+    "version": "v1alpha2",
+    "kind": "NotificationRule",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:59"
+    },
+    "references": [
+     {
+      "field": "user_id",
+      "target": "pagerduty_user",
+      "targetKind": "user.pagerduty.crossplane.io/User",
+      "source": "both",
+      "at": "config/cluster/user/config.go:25"
+     }
+    ],
+    "customCode": [
+     {
+      "what": "helper",
+      "expr": "versions.EmbedSingletonLists",
+      "at": "config/cluster/user/config.go:22"
+     }
+    ],
+    "examples": [
+     {
+      "id": "user/v1alpha2/notificationrule",
+      "at": "examples-generated/cluster/user/v1alpha2/notificationrule.yaml",
+      "origin": "generated",
+      "with": [
+       "pagerduty_user",
+       "pagerduty_user_contact_method"
+      ],
+      "fields": [
+       "contact_method",
+       "contact_method.id",
+       "contact_method.type",
+       "start_delay_in_minutes",
+       "urgency"
+      ],
+      "refFields": [
+       "user_id"
+      ]
+     },
+     {
+      "id": "user/v1alpha1/notificationrule",
+      "at": "examples/cluster/user/v1alpha1/notificationrule.yaml",
+      "origin": "hand",
+      "with": [
+       "pagerduty_user",
+       "pagerduty_user_contact_method"
+      ],
+      "fields": [
+       "contact_method",
+       "contact_method.id",
+       "contact_method.type",
+       "start_delay_in_minutes",
+       "urgency"
+      ],
+      "refFields": [
+       "user_id"
+      ],
+      "values": {
+       "contact_method": [
+        {
+         "id": "${pagerduty_user_contact_method.phone.id}",
+         "type": "phone_contact_method"
+        }
+       ],
+       "start_delay_in_minutes": 1,
+       "urgency": "high"
+      }
+     },
+     {
+      "id": "user/v1alpha2/notificationrule",
+      "at": "examples/cluster/user/v1alpha2/notificationrule.yaml",
+      "origin": "hand",
+      "with": [
+       "pagerduty_user",
+       "pagerduty_user_contact_method"
+      ],
+      "fields": [
+       "contact_method",
+       "contact_method.id",
+       "contact_method.type",
+       "start_delay_in_minutes",
+       "urgency"
+      ],
+      "refFields": [
+       "user_id"
+      ],
+      "values": {
+       "contact_method": {
+        "id": "${pagerduty_user_contact_method.phone.id}",
+        "type": "phone_contact_method"
+       },
+       "start_delay_in_minutes": 1,
+       "urgency": "high"
+      }
+     }
+    ],
+    "renamed": {
+     "shortGroup": "user",
+     "at": "config/cluster/user/config.go:24"
+    }
+   },
+   "targetsOurs": {
+    "pagerduty_user": [
+     "user.pagerduty.hfl.dev/User"
+    ]
+   }
+  },
+  {
+   "ours": {
+    "kind": "WebhookSubscription",
+    "group": "webhook.pagerduty.hfl.dev"
+   },
+   "facts": {
+    "terraform": "pagerduty_webhook_subscription",
+    "group": "webhook.pagerduty.crossplane.io",
+    "version": "v1alpha1",
+    "kind": "Subscription",
+    "tested": true,
+    "generated": true,
+    "externalName": {
+     "style": "custom",
+     "base": "provider",
+     "expr": "idWithStub()",
+     "at": "config/external_name.go:61"
+    },
+    "examples": [
+     {
+      "id": "webhook/v1alpha1/subscription",
+      "at": "examples-generated/cluster/webhook/v1alpha1/subscription.yaml",
+      "origin": "generated",
+      "fields": [
+       "active",
+       "delivery_method",
+       "delivery_method.custom_header",
+       "delivery_method.custom_header.name",
+       "delivery_method.custom_header.value",
+       "delivery_method.type",
+       "delivery_method.url",
+       "description",
+       "events",
+       "filter",
+       "filter.id",
+       "filter.type",
+       "type"
+      ]
+     },
+     {
+      "id": "webhook/v1alpha1/subscription",
+      "at": "examples/cluster/webhook/v1alpha1/subscription.yaml",
+      "origin": "hand",
+      "fields": [
+       "active",
+       "delivery_method",
+       "delivery_method.custom_header",
+       "delivery_method.custom_header.name",
+       "delivery_method.custom_header.value",
+       "delivery_method.type",
+       "delivery_method.url",
+       "description",
+       "events",
+       "filter",
+       "filter.id",
+       "filter.type",
+       "type"
+      ],
+      "values": {
+       "active": true,
+       "delivery_method": [
+        {
+         "custom_header": [
+          {
+           "name": "X-Foo",
+           "value": "foo"
+          },
+          {
+           "name": "X-Bar",
+           "value": "bar"
+          }
+         ],
+         "type": "http_delivery_method",
+         "url": "https://example.com/receive_a_pagerduty_webhook"
+        }
+       ],
+       "description": "%s",
+       "events": [
+        "incident.acknowledged",
+        "incident.annotated",
+        "incident.delegated",
+        "incident.escalated",
+        "incident.priority_updated",
+        "incident.reassigned",
+        "incident.reopened",
+        "incident.resolved",
+        "incident.responder.added",
+        "incident.responder.replied",
+        "incident.status_update_published",
+        "incident.triggered",
+        "incident.unacknowledged"
+       ],
+       "filter": [
+        {
+         "id": "${data.pagerduty_service.example.id}",
+         "type": "service_reference"
+        }
+       ],
+       "type": "webhook_subscription"
+      }
+     }
+    ],
+    "renamed": {
+     "shortGroup": "webhook",
+     "at": "config/cluster/webhook/config.go:9"
+    }
+   }
+  }
+ ],
+ "noUpjet": [
+  "schedulev2.pagerduty.hfl.dev/Schedulev2"
+ ]
+}
