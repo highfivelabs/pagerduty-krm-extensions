@@ -1,0 +1,8 @@
+# Upjet references that gen/examples.py (krm-rest-runtime) would turn into
+# examples/<Kind>/with-<Target>.yaml, but that don't hold here, with why.
+upjet:
+  IncidentTypeCustomField: >-
+    typeIdOrName takes the IncidentType's ID, as PagerDuty's path does, but
+    the IncidentType's example has a placeholder parent_type, and
+    PagerDuty takes only an incident type that exists (such as
+    incident_default) as a parent. The fake takes it.
